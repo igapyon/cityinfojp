@@ -11,12 +11,19 @@ import jp.igapyon.cityinfojp.input.stayathome.StayAtHomeEntryUtil;
 class StayAtHomeTest {
     @Test
     void contextLoads() throws Exception {
-        File jsonInputFile = new File(
-                "./src/main/resources/static/input/2020/202004/stayathome-saitama-20200405a.json");
-
-        List<StayAtHomeEntry> entryList = StayAtHomeEntryUtil.readEntryList(jsonInputFile);
-        for (StayAtHomeEntry entry : entryList) {
-            System.err.println(entry.getState());
+        {
+            List<StayAtHomeEntry> entryList = StayAtHomeEntryUtil.readEntryList(
+                    new File("./src/main/resources/static/input/2020/202004/saitama-stayathome-20200405a.json"));
+            for (StayAtHomeEntry entry : entryList) {
+                System.err.println(entry.getState());
+            }
+        }
+        {
+            List<StayAtHomeEntry> entryList = StayAtHomeEntryUtil.readEntryList(
+                    new File("./src/main/resources/static/input/2020/202004/chiba-school-20200405a.json"));
+            for (StayAtHomeEntry entry : entryList) {
+                System.err.println(entry.getState());
+            }
         }
     }
 }
