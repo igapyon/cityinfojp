@@ -25,6 +25,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class CityInfoEntryMergeProcessor {
     public static final void main(String[] args) throws IOException {
@@ -43,6 +44,7 @@ public class CityInfoEntryMergeProcessor {
         }
 
         ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
         String result = mapper.writeValueAsString(mergedEntryList);
         FileUtils.write(new File("./src/main/resources/static/input/merged/merged-cityinfoentry-all.json"), result,
                 "UTF-8");
