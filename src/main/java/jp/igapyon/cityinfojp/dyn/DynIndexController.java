@@ -85,9 +85,13 @@ public class DynIndexController {
 
             dispEntry.setTitleText(
                     entry.getPref() + (null == entry.getCity() || "-".equals(entry.getCity()) ? "" : entry.getCity()));
-            dispEntry.setDescText(
-                    entry.getTarget() + " " + (null == entry.getTargetRange() || "-".equals(entry.getTargetRange()) ? ""
-                            : entry.getTargetRange()) + " : " + entry.getReason());
+
+            String descText = "";
+            descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "
+                    + (null == entry.getTargetRange() || "-".equals(entry.getTargetRange()) ? ""
+                            : entry.getTargetRange())
+                    + " : " + entry.getReason();
+            dispEntry.setDescText(descText);
             dispEntryList.add(dispEntry);
         }
 
