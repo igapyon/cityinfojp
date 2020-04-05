@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
@@ -60,6 +62,17 @@ public class DynIndexController {
         }
 
         // TODO sort
+        Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
+            @Override
+            public int compare(CityInfoEntry left, CityInfoEntry right) {
+                if (left.getEntryDate().compareTo(right.getEntryDate()) != 0) {
+                    // 降順
+                    return -left.getEntryDate().compareTo(right.getEntryDate());
+                }
+                // TODO
+                return -1;
+            }
+        });
 
         List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
         for (CityInfoEntry entry : allEntryList) {
@@ -99,5 +112,4 @@ public class DynIndexController {
 
         return "dyn/index";
     }
-
 }
