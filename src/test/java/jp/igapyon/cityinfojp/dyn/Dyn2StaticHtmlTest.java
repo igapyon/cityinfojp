@@ -15,34 +15,39 @@
  */
 package jp.igapyon.cityinfojp.dyn;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
+import org.thymeleaf.context.Context;
+import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 class Dyn2StaticHtmlTest {
     @Test
-    void contextLoads() throws Exception {
-        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-        // templateResolver.setApplicationContext(this.applicationContext);
-        templateResolver.setPrefix("/src/main/resources/templates/");
+    void dyn2static() throws Exception {
+        final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        templateResolver.setPrefix("templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCacheable(false);
 
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
-        // Enabling the SpringEL compiler with Spring 4.2.4 or newer can
-        // speed up execution in most scenarios, but might be incompatible
-        // with specific cases when expressions in one template are reused
-        // across different data types, so this flag is "false" by default
-        // for safer backwards compatibility.
         templateEngine.setEnableSpringELCompiler(true);
 
-//        templateEngine.process("dyn/index", context);
+        final IContext ctx = new Context();
 
-        //        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        //      viewResolver.setTemplateEngine(templateEngine);
+        List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
+        DynIndexController.sortEntryList(allEntryList);
+        List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
 
+        ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+
+        String result = templateEngine.process("dyn/index", ctx);
+        System.err.println(result);
     }
 }

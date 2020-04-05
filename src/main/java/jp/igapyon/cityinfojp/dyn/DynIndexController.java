@@ -36,6 +36,19 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
+        List<CityInfoEntry> allEntryList = buildEntityList();
+
+        // Sort
+        sortEntryList(allEntryList);
+
+        List<CityInfoDisplayEntry> dispEntryList = entryList2DispEntryList(allEntryList);
+
+        model.addAttribute("dispEntryList", dispEntryList);
+
+        return "dyn/index";
+    }
+
+    public static List<CityInfoEntry> buildEntityList() throws IOException {
         List<CityInfoEntry> allEntryList = new ArrayList<CityInfoEntry>();
 
         // 個別エントリではなくマージ済みjsonファイルを利用して読み込み。
@@ -53,15 +66,7 @@ public class DynIndexController {
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
             allEntryList.addAll(entryList);
         }
-
-        // Sort
-        sortEntryList(allEntryList);
-
-        List<CityInfoDisplayEntry> dispEntryList = entryList2DispEntryList(allEntryList);
-
-        model.addAttribute("dispEntryList", dispEntryList);
-
-        return "dyn/index";
+        return allEntryList;
     }
 
     public static void sortEntryList(final List<CityInfoEntry> allEntryList) {
