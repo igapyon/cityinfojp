@@ -35,7 +35,7 @@ public class StayAtHomeEntry {
     @JsonProperty("TargetRange")
     private String targetRange;
     @JsonProperty("URL")
-    private String uRL;
+    private String url;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -121,12 +121,12 @@ public class StayAtHomeEntry {
 
     @JsonProperty("URL")
     public String getURL() {
-        return uRL;
+        return url;
     }
 
     @JsonProperty("URL")
     public void setURL(String uRL) {
-        this.uRL = uRL;
+        this.url = uRL;
     }
 
     @JsonAnyGetter
