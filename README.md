@@ -6,6 +6,10 @@
 いただいた情報は Apache ライセンスのもとで扱われます。
 
 
+成果物は Heroku 上でホストしてます。
+https://cityinfojp.herokuapp.com/
+
+
 
 # 自分用の開発メモ
 
