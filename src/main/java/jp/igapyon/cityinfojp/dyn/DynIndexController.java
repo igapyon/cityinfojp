@@ -72,11 +72,11 @@ public class DynIndexController {
             } else if ("指示".equals(entry.getState())) {
                 dispEntry.setIconText("指示");
                 dispEntry.setIconColor("#dc3545");
-                dispEntry.setIconTextColor("#000000");
+                dispEntry.setIconTextColor("#ffffff");
             } else if ("休校".equals(entry.getState())) {
                 dispEntry.setIconText("休校");
                 dispEntry.setIconColor("#17a2b8");
-                dispEntry.setIconTextColor("#000000");
+                dispEntry.setIconTextColor("#ffffff");
             } else {
                 dispEntry.setIconText("その他");
                 dispEntry.setIconColor("#6c757d");
