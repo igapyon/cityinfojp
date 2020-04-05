@@ -87,7 +87,7 @@ public class DynIndexController {
                     entry.getPref() + (null == entry.getCity() || "-".equals(entry.getCity()) ? "" : entry.getCity()));
             dispEntry.setDescText(
                     entry.getTarget() + " " + (null == entry.getTargetRange() || "-".equals(entry.getTargetRange()) ? ""
-                            : entry.getTargetRange()));
+                            : entry.getTargetRange()) + " : " + entry.getReason());
             dispEntryList.add(dispEntry);
         }
 

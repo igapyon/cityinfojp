@@ -50,6 +50,9 @@ public class CityInfoEntry {
     private String target;
     @JsonProperty("TargetRange")
     private String targetRange;
+    @JsonProperty("Reason")
+    private String reason;
+
     @JsonProperty("URL")
     private List<String> url;
     @JsonIgnore
@@ -133,6 +136,16 @@ public class CityInfoEntry {
     @JsonProperty("TargetRange")
     public void setTargetRange(String targetRange) {
         this.targetRange = targetRange;
+    }
+
+    @JsonProperty("Reason")
+    public String getReason() {
+        return reason;
+    }
+
+    @JsonProperty("Reason")
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     @JsonProperty("URL")
