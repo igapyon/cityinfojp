@@ -1,9 +1,13 @@
 package jp.igapyon.cityinfojp.input;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 class StayAtHomeTest {
     @Test
@@ -12,10 +16,10 @@ class StayAtHomeTest {
                 new File("./src/main/resources/static/input/stayathome/2020/stayathome-saitama-20200405a.json"),
                 "UTF-8");
 
-        System.err.println(val);
-        /*
         ObjectMapper mapper = new ObjectMapper();
-        Model model = mapper.readValue(json, Model.class);
-        */
+        List<StayAtHomeEntry> entryList = Arrays.asList(mapper.readValue(val, StayAtHomeEntry[].class));
+        for (StayAtHomeEntry entry : entryList) {
+            System.err.println(entry.getState());
+        }
     }
 }
