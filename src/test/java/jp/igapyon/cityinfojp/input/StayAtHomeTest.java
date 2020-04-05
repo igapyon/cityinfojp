@@ -16,6 +16,9 @@ class StayAtHomeTest {
                     new File("./src/main/resources/static/input/2020/202004/saitama-stayathome-20200405a.json"));
             for (StayAtHomeEntry entry : entryList) {
                 System.err.println(entry.getState());
+                for (String look : entry.getURL()) {
+                    System.err.println("  " + look);
+                }
             }
         }
         {
@@ -23,6 +26,9 @@ class StayAtHomeTest {
                     new File("./src/main/resources/static/input/2020/202004/chiba-school-20200405a.json"));
             for (StayAtHomeEntry entry : entryList) {
                 System.err.println(entry.getState());
+                for (String look : entry.getURL()) {
+                    System.err.println("  " + look);
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 package jp.igapyon.cityinfojp.input.stayathome;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -35,7 +36,7 @@ public class StayAtHomeEntry {
     @JsonProperty("TargetRange")
     private String targetRange;
     @JsonProperty("URL")
-    private String url;
+    private List<String> url;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -120,13 +121,13 @@ public class StayAtHomeEntry {
     }
 
     @JsonProperty("URL")
-    public String getURL() {
+    public List<String> getURL() {
         return url;
     }
 
     @JsonProperty("URL")
-    public void setURL(String uRL) {
-        this.url = uRL;
+    public void setURL(List<String> url) {
+        this.url = url;
     }
 
     @JsonAnyGetter
