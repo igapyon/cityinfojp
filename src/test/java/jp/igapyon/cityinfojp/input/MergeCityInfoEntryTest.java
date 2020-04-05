@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp;
+package jp.igapyon.cityinfojp.input;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.junit.jupiter.api.Test;
 
-@SpringBootApplication
-public class CityinfojpApplication {
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntryMergeProcessor;
 
-    public static void main(String[] args) {
-        SpringApplication.run(CityinfojpApplication.class, args);
+class MergeCityInfoEntryTest {
+    @Test
+    void contextLoads() throws Exception {
+        // JSONを一括マージします。
+        CityInfoEntryMergeProcessor.main(new String[] { "this" });
     }
-
 }
