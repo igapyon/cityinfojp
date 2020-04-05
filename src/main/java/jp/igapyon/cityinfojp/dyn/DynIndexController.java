@@ -35,12 +35,13 @@ public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
 
-        List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
         /*
         customers.add(new Customer(1 , "Miura", "Kazuyoshi"));
         customers.add(new Customer(2 , "Kitazawa", "Tsuyoshi"));
         customers.add(new Customer(3 , "Hashiratani", "Tetsuji"));
         */
+
+        List<CityInfoEntry> allEntryList = new ArrayList<CityInfoEntry>();
 
         // 「src/main/resources/hoge.csv」を読み込む
         try (InputStream is = new ClassPathResource("static/input/merged/merged-cityinfoentry-all.json")
@@ -55,16 +56,37 @@ public class DynIndexController {
                 buf.append(new String(copyBuf, 0, length));
             }
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
-            for (CityInfoEntry entry : entryList) {
-                CityInfoDisplayEntry dispEntry = new CityInfoDisplayEntry();
-                dispEntry.setIconText("うそうそ");
-                dispEntry.setIconColor("#ffc107");
-                dispEntry.setTitleText(entry.getPref());
-                dispEntry.setDescText("DESCDESC");
-                dispEntryList.add(dispEntry);
-            }
+            allEntryList.addAll(entryList);
         }
+
         // TODO sort
+
+        List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
+        for (CityInfoEntry entry : allEntryList) {
+            CityInfoDisplayEntry dispEntry = new CityInfoDisplayEntry();
+
+            if ("要請".equals(entry.getState())) {
+                dispEntry.setIconText("要請");
+                dispEntry.setIconColor("#ffc107");
+                dispEntry.setIconTextColor("#000000");
+            } else if ("指示".equals(entry.getState())) {
+                dispEntry.setIconText("指示");
+                dispEntry.setIconColor("#dc3545");
+                dispEntry.setIconTextColor("#000000");
+            } else if ("休校".equals(entry.getState())) {
+                dispEntry.setIconText("休校");
+                dispEntry.setIconColor("#17a2b8");
+                dispEntry.setIconTextColor("#000000");
+            }else {
+                dispEntry.setIconText("その他");
+                dispEntry.setIconColor("#6c757d");
+                dispEntry.setIconTextColor("#000000");
+            }
+
+            dispEntry.setTitleText(entry.getPref());
+            dispEntry.setDescText("DESCDESC");
+            dispEntryList.add(dispEntry);
+        }
 
         model.addAttribute("dispEntryList", dispEntryList);
 

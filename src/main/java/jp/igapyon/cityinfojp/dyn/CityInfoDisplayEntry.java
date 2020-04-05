@@ -23,6 +23,16 @@ package jp.igapyon.cityinfojp.dyn;
 public class CityInfoDisplayEntry {
     private String iconText;
     private String iconColor;
+    private String iconTextColor;
+
+    public String getIconTextColor() {
+        return iconTextColor;
+    }
+
+    public void setIconTextColor(String iconTextColor) {
+        this.iconTextColor = iconTextColor;
+    }
+
     private String titleText;
     private String descText;
 
