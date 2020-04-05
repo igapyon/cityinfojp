@@ -96,12 +96,12 @@ public class DynIndexController {
                 dispEntry.setIconTextColor("#000000");
             }
 
-            dispEntry.setTitleText(
-                    entry.getPref() + (null == entry.getCity() || "-".equals(entry.getCity()) ? "" : entry.getCity()));
+            dispEntry.setTitleText(entry.getPref()
+                    + (null == entry.getCity() || entry.getCity().trim().length() == 0 ? "" : entry.getCity()));
 
             String descText = "";
             descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "
-                    + (null == entry.getTargetRange() || "-".equals(entry.getTargetRange()) ? ""
+                    + (null == entry.getTargetRange() || entry.getTargetRange().trim().length() == 0 ? ""
                             : entry.getTargetRange())
                     + " : " + entry.getReason();
             dispEntry.setDescText(descText);

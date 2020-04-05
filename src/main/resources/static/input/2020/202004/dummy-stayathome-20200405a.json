@@ -2,12 +2,12 @@
     {
         "EntryDate": "2020-04-01",
         "Pref": "ダミー県",
-        "City": "-",
+        "City": "",
         "StartDate": "2020-04-01",
         "EndDate": "2020-04-01",
         "State": "指示",
         "Target": "外出自粛",
-        "TargetRange": "-",
+        "TargetRange": "",
         "Reason": "指示のテスト用のダミーデータ",
         "URL": ["https://github.com/igapyon/cityinfojp"]
     }
