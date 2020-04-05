@@ -12,7 +12,7 @@ class StayAtHomeTest {
     @Test
     void contextLoads() throws Exception {
         File jsonInputFile = new File(
-                "./src/main/resources/static/input/stayathome/2020/stayathome-saitama-20200405a.json");
+                "./src/main/resources/static/input/2020/202004/stayathome-saitama-20200405a.json");
 
         List<StayAtHomeEntry> entryList = StayAtHomeEntryUtil.readEntryList(jsonInputFile);
         for (StayAtHomeEntry entry : entryList) {
