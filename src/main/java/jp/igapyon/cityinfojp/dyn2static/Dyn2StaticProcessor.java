@@ -36,6 +36,8 @@ public class Dyn2StaticProcessor {
     }
 
     static void dyn2staticIndex(SpringTemplateEngine templateEngine) throws IOException {
+        System.err.println("index.html を静的ファイル化.");
+
         final IContext ctx = new Context();
 
         List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
