@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jp.igapyon.cityinfojp.input.stayathome.StayAtHomeEntry;
+
 class StayAtHomeTest {
     @Test
     void contextLoads() throws Exception {

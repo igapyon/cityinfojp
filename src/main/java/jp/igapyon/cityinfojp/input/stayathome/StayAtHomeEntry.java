@@ -1,4 +1,4 @@
-package jp.igapyon.cityinfojp.input;
+package jp.igapyon.cityinfojp.input.stayathome;
 
 import java.util.HashMap;
 import java.util.Map;
