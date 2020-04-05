@@ -27,7 +27,7 @@ public class DynIndexController {
         */
 
         // 「src/main/resources/hoge.csv」を読み込む
-        try (InputStream is = new ClassPathResource("static/input/2020/202004/saitama-stayathome-20200405a.json")
+        try (InputStream is = new ClassPathResource("static/input/merged/merged-cityinfoentry-all.json")
                 .getInputStream(); BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
             StringBuffer buf = new StringBuffer();
             char[] copyBuf = new char[8192];
