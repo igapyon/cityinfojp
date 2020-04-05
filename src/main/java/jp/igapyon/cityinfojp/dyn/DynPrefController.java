@@ -51,6 +51,7 @@ public class DynPrefController {
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         // FIX HERE
+        // 都道府県ごとに処理するよう改善すること。
         return "dyn/pref/tokyo";
     }
 
