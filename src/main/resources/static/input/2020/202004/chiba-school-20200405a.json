@@ -2,12 +2,13 @@
     {
         "EntryDate": "2020-04-05",
         "Pref": "千葉県",
-        "City": "-",
-        "StartDate": "-",
+        "City": "",
+        "StartDate": "",
         "EndDate": "2020-04-30",
         "State": "休校",
         "Target": "県立学校",
-        "TargetRange": "-",
+        "TargetRange": "",
+        "Reason": "",
         "URL": ["https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html"]
     }
 ]
