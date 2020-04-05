@@ -36,16 +36,9 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
-
-        /*
-        customers.add(new Customer(1 , "Miura", "Kazuyoshi"));
-        customers.add(new Customer(2 , "Kitazawa", "Tsuyoshi"));
-        customers.add(new Customer(3 , "Hashiratani", "Tetsuji"));
-        */
-
         List<CityInfoEntry> allEntryList = new ArrayList<CityInfoEntry>();
 
-        // 「src/main/resources/hoge.csv」を読み込む
+        // 個別エントリではなくマージ済みjsonファイルを利用して読み込み。
         try (InputStream is = new ClassPathResource("static/input/merged/merged-cityinfoentry-all.json")
                 .getInputStream(); BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
             StringBuffer buf = new StringBuffer();
@@ -61,7 +54,7 @@ public class DynIndexController {
             allEntryList.addAll(entryList);
         }
 
-        // TODO sort
+        // Sort
         Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
             @Override
             public int compare(CityInfoEntry left, CityInfoEntry right) {
@@ -69,7 +62,8 @@ public class DynIndexController {
                     // 降順
                     return -left.getEntryDate().compareTo(right.getEntryDate());
                 }
-                // TODO
+
+                // TODO 同日エントリのソート順が未記述
                 return -1;
             }
         });
