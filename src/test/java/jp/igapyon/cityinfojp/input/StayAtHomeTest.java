@@ -1,25 +1,20 @@
 package jp.igapyon.cityinfojp.input;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import jp.igapyon.cityinfojp.input.stayathome.StayAtHomeEntry;
+import jp.igapyon.cityinfojp.input.stayathome.StayAtHomeEntryUtil;
 
 class StayAtHomeTest {
     @Test
     void contextLoads() throws Exception {
-        String val = FileUtils.readFileToString(
-                new File("./src/main/resources/static/input/stayathome/2020/stayathome-saitama-20200405a.json"),
-                "UTF-8");
+        File jsonInputFile = new File(
+                "./src/main/resources/static/input/stayathome/2020/stayathome-saitama-20200405a.json");
 
-        ObjectMapper mapper = new ObjectMapper();
-        List<StayAtHomeEntry> entryList = Arrays.asList(mapper.readValue(val, StayAtHomeEntry[].class));
+        List<StayAtHomeEntry> entryList = StayAtHomeEntryUtil.readEntryList(jsonInputFile);
         for (StayAtHomeEntry entry : entryList) {
             System.err.println(entry.getState());
         }
