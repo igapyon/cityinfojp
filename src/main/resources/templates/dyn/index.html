@@ -29,7 +29,6 @@
     </nav>
 
     <main role="main">
-        <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
             <div class="container">
                 <h1 class="display-3">cityinfojp</h1>
@@ -41,6 +40,11 @@
         <div class="container">
             <div class="my-3 p-3 bg-white rounded shadow-sm">
                 <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+
+                <div th:each="recentEntry : ${recentEntryList}">
+                    <p th:text="${recentEntry.state}"></p>
+                </div>
+
                 <div class="media text-muted pt-3">
                     <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"

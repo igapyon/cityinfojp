@@ -28,6 +28,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 
 @Controller
 public class DynIndexController {
@@ -53,8 +54,10 @@ public class DynIndexController {
                 }
                 buf.append(new String(copyBuf, 0, length));
             }
-            System.err.println(buf.toString());
+            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
+            recentEntryList.addAll(entryList);
         }
+        // TODO sort
 
         model.addAttribute("recentEntryList", recentEntryList);
 
