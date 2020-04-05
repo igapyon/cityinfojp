@@ -17,6 +17,8 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -33,9 +35,13 @@ public class Dyn2StaticProcessor {
         SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticIndex(templateEngine);
+
+        dyn2staticPrefList(templateEngine);
     }
 
     static void dyn2staticIndex(SpringTemplateEngine templateEngine) throws IOException {
+        System.err.println("index.html を静的ファイル化.");
+
         final IContext ctx = new Context();
 
         List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
@@ -44,7 +50,33 @@ public class Dyn2StaticProcessor {
 
         ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+
         String result = templateEngine.process("dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
+    }
+
+    static void dyn2staticPrefList(SpringTemplateEngine templateEngine) throws IOException {
+        System.err.println("都道府県 html を静的ファイル化.");
+
+        final IContext ctx = new Context();
+
+        List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
+        DynIndexController.sortEntryList(allEntryList);
+        List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
+
+        ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+
+        String result = templateEngine.process("dyn/pref/tokyo", ctx);
+        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/tokyo.html"), result, "UTF-8");
+
+        // DUMMY
+        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/saitama.html"), result, "UTF-8");
+        // DUMMY
+        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/chiba.html"), result, "UTF-8");
     }
 }

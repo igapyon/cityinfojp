@@ -35,8 +35,8 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 
 @Controller
-public class DynIndexController {
-    @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
+public class DynPrefController {
+    @GetMapping({ "/dyn/pref/{city}" })
     public String index(Model model) throws IOException {
         List<CityInfoEntry> allEntryList = buildEntityList();
 
@@ -50,7 +50,9 @@ public class DynIndexController {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
-        return "dyn/index";
+        // FIX HERE
+        // 都道府県ごとに処理するよう改善すること。
+        return "dyn/pref/tokyo";
     }
 
     public static List<CityInfoEntry> buildEntityList() throws IOException {

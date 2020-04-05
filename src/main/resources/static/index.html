@@ -26,13 +26,33 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">都道府県</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="/pref/tokyo.html">東京都</a>
+                        <a class="dropdown-item" href="/pref/saitama.html">埼玉県</a>
+                        <a class="dropdown-item" href="/pref/chiba.html">千葉県</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <main role="main">
         <div class="jumbotron">
             <div class="container">
                 <h1 class="display-3">cityinfojp</h1>
-                <p>日本の都市情報をまとめて提供するサイトになる予定です。当面は、日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報を整理して表示するサイトを目指します。</p>
+                <p>cityinfojp は、日本の都市情報のまとめサイトを目指すプロジェクトです。 <br />
+                    しかしながら、当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示するサイトを目指します。<br />
+                    現在このサイトはアルファ版のフェーズにあります。
+                </p>
                 <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
             </div>
         </div>
@@ -109,7 +129,7 @@
     </main>
 
     <footer class="container">
-        <p>&copy; cityinfojp 2020</p>
+        <p>&copy; cityinfojp 2020 : 2020-04-05 23:18</p>
     </footer>
 
     <!-- Bootstrap JavaScript -->
