@@ -17,6 +17,8 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -45,6 +47,9 @@ public class Dyn2StaticProcessor {
         List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
 
         ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
         String result = templateEngine.process("dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");

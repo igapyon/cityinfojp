@@ -19,6 +19,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -44,6 +46,9 @@ public class DynIndexController {
         List<CityInfoDisplayEntry> dispEntryList = entryList2DispEntryList(allEntryList);
 
         model.addAttribute("dispEntryList", dispEntryList);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         return "dyn/index";
     }
