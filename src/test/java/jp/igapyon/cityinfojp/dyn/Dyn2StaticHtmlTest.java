@@ -27,8 +27,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 class Dyn2StaticHtmlTest {
-    @Test
-    void dyn2static() throws Exception {
+    public static SpringTemplateEngine getStandaloneSpringTemplateEngine() {
         final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setPrefix("templates/");
         templateResolver.setSuffix(".html");
@@ -38,6 +37,13 @@ class Dyn2StaticHtmlTest {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
         templateEngine.setEnableSpringELCompiler(true);
+
+        return templateEngine;
+    }
+
+    @Test
+    void dyn2static() throws Exception {
+        SpringTemplateEngine templateEngine = getStandaloneSpringTemplateEngine();
 
         final IContext ctx = new Context();
 
