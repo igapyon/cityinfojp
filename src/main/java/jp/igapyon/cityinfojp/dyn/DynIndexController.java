@@ -77,14 +77,17 @@ public class DynIndexController {
                 dispEntry.setIconText("休校");
                 dispEntry.setIconColor("#17a2b8");
                 dispEntry.setIconTextColor("#000000");
-            }else {
+            } else {
                 dispEntry.setIconText("その他");
                 dispEntry.setIconColor("#6c757d");
                 dispEntry.setIconTextColor("#000000");
             }
 
-            dispEntry.setTitleText(entry.getPref());
-            dispEntry.setDescText("DESCDESC");
+            dispEntry.setTitleText(
+                    entry.getPref() + (null == entry.getCity() || "-".equals(entry.getCity()) ? "" : entry.getCity()));
+            dispEntry.setDescText(
+                    entry.getTarget() + " " + (null == entry.getTargetRange() || "-".equals(entry.getTargetRange()) ? ""
+                            : entry.getTargetRange()));
             dispEntryList.add(dispEntry);
         }
 
