@@ -15,7 +15,8 @@ class PrefEntryTest {
             List<PrefEntry> entryList = PrefEntryUtil
                     .readEntryList(new File("./src/main/resources/static/input/prefjp.json"));
             for (PrefEntry entry : entryList) {
-                System.err.println(entry.getCode() + ":" + entry.getName());
+                System.err.println(entry.getCode() + ":" + entry.getName() + ":"
+                        + (entry.getNameen() == null ? "" : entry.getNameen()));
             }
         }
     }
