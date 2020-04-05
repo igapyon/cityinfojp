@@ -35,7 +35,7 @@ public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
 
-        List<CityInfoEntry> recentEntryList = new ArrayList<CityInfoEntry>();
+        List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
         /*
         customers.add(new Customer(1 , "Miura", "Kazuyoshi"));
         customers.add(new Customer(2 , "Kitazawa", "Tsuyoshi"));
@@ -55,11 +55,18 @@ public class DynIndexController {
                 buf.append(new String(copyBuf, 0, length));
             }
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
-            recentEntryList.addAll(entryList);
+            for (CityInfoEntry entry : entryList) {
+                CityInfoDisplayEntry dispEntry = new CityInfoDisplayEntry();
+                dispEntry.setIconText("うそうそ");
+                dispEntry.setIconColor("#ffc107");
+                dispEntry.setTitleText(entry.getPref());
+                dispEntry.setDescText("DESCDESC");
+                dispEntryList.add(dispEntry);
+            }
         }
         // TODO sort
 
-        model.addAttribute("recentEntryList", recentEntryList);
+        model.addAttribute("dispEntryList", dispEntryList);
 
         return "dyn/index";
     }
