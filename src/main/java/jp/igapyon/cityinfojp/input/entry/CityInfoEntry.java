@@ -1,4 +1,4 @@
-package jp.igapyon.cityinfojp.input.stayathome;
+package jp.igapyon.cityinfojp.input.entry;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "EntryDate", "Pref", "City", "StartDate", "EndDate", "State", "Target", "TargetRange", "URL" })
-public class StayAtHomeEntry {
+public class CityInfoEntry {
     @JsonProperty("EntryDate")
     private String entryDate;
     @JsonProperty("Pref")

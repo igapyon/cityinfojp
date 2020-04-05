@@ -1,4 +1,4 @@
-package jp.igapyon.cityinfojp.input.stayathome;
+package jp.igapyon.cityinfojp.input.entry;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,14 +9,14 @@ import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class StayAtHomeEntryUtil {
-    public static List<StayAtHomeEntry> readEntryList(File jsonInputFile) throws IOException {
+public class CityInfoEntryUtil {
+    public static List<CityInfoEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");
         return readEntryList(jsonInput);
     }
 
-    public static List<StayAtHomeEntry> readEntryList(String jsonInput) throws IOException {
+    public static List<CityInfoEntry> readEntryList(String jsonInput) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return Arrays.asList(mapper.readValue(jsonInput, StayAtHomeEntry[].class));
+        return Arrays.asList(mapper.readValue(jsonInput, CityInfoEntry[].class));
     }
 }
