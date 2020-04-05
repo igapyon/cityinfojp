@@ -41,19 +41,23 @@
     },
     {
         "code": "11",
-        "name": "埼玉県"
+        "name": "埼玉県",
+        "nameen": "Saitama"
     },
     {
         "code": "12",
-        "name": "千葉県"
+        "name": "千葉県",
+        "nameen": "Chiba"
     },
     {
         "code": "13",
-        "name": "東京都"
+        "name": "東京都",
+        "nameen": "Tokyo"
     },
     {
         "code": "14",
-        "name": "神奈川県"
+        "name": "神奈川県",
+        "nameen": "Kanagawa"
     },
     {
         "code": "15",
