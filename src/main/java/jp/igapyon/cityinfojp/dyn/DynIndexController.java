@@ -55,6 +55,16 @@ public class DynIndexController {
         }
 
         // Sort
+        sortEntryList(allEntryList);
+
+        List<CityInfoDisplayEntry> dispEntryList = entryList2DispEntryList(allEntryList);
+
+        model.addAttribute("dispEntryList", dispEntryList);
+
+        return "dyn/index";
+    }
+
+    public static void sortEntryList(final List<CityInfoEntry> allEntryList) {
         Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
             @Override
             public int compare(CityInfoEntry left, CityInfoEntry right) {
@@ -67,7 +77,9 @@ public class DynIndexController {
                 return -1;
             }
         });
+    }
 
+    public static List<CityInfoDisplayEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList) {
         List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
         for (CityInfoEntry entry : allEntryList) {
             CityInfoDisplayEntry dispEntry = new CityInfoDisplayEntry();
@@ -102,8 +114,6 @@ public class DynIndexController {
             dispEntryList.add(dispEntry);
         }
 
-        model.addAttribute("dispEntryList", dispEntryList);
-
-        return "dyn/index";
+        return dispEntryList;
     }
 }
