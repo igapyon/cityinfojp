@@ -13,37 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jp.igapyon.cityinfojp.input;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntryMergeProcessor;
 
 class MergeCityInfoEntryTest {
     @Test
     void contextLoads() throws Exception {
-        List<CityInfoEntry> mergedEntryList = new ArrayList<CityInfoEntry>();
-        {
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
-                    new File("./src/main/resources/static/input/2020/202004/saitama-stayathome-20200405a.json"));
-            mergedEntryList.addAll(entryList);
-        }
-        {
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
-                    new File("./src/main/resources/static/input/2020/202004/chiba-school-20200405a.json"));
-            mergedEntryList.addAll(entryList);
-        }
-
-        ObjectMapper mapper = new ObjectMapper();
-        String result = mapper.writeValueAsString(mergedEntryList);
-        System.err.println(result);
+        // JSONを一括マージします。
+        CityInfoEntryMergeProcessor.main(new String[] { "this" });
     }
 }
