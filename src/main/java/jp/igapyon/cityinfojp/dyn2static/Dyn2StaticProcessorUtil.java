@@ -13,22 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn;
+package jp.igapyon.cityinfojp.dyn2static;
 
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
-import org.thymeleaf.context.Context;
-import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
+public class Dyn2StaticProcessorUtil {
+    public static SpringTemplateEngine getStandaloneSpringTemplateEngine() {
+        final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        templateResolver.setPrefix("templates/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCacheable(false);
 
-class Dyn2StaticHtmlTest {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(templateResolver);
+        templateEngine.setEnableSpringELCompiler(true);
 
-    @Test
-    void dyn2static() throws Exception {
+        return templateEngine;
     }
 }
