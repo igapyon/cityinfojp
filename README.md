@@ -35,3 +35,19 @@ mvn spring-boot:run
 git config user.email "igapyon@gmail.com"
 git config user.name "Toshiki Iga"
 ```
+
+```sh
+cd /tmp
+heroku login
+heroku git:clone -a cityinfojp
+cd cityinfojp
+cp -pv ~/Documents/gitiga/cityinfojp/pom.xml .
+cp -pvR ~/Documents/gitiga/cityinfojp/src .
+```
+
+```sh
+git add .
+git commit -am "make it better"
+git push heroku master
+```
+ 
