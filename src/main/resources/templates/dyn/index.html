@@ -43,6 +43,9 @@
                             <strong class="d-block text-gray-dark"><span th:text="${dispEntry.titleText}"
                                     th:remove="tag" /></strong>
                             <span th:text="${dispEntry.descText}" th:remove="tag" />
+                            <div th:each="url : ${dispEntry.URL}" th:remove="tag">
+                                , <a th:href="${url}">Link</a>
+                            </div>
                         </p>
                     </div>
                 </div>

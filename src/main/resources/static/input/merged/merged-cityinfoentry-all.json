@@ -1,4 +1,15 @@
 [ {
+  "EntryDate" : "2020-04-06",
+  "Pref" : "愛知県",
+  "City" : "",
+  "StartDate" : "2020-04-07",
+  "EndDate" : "2020-04-19",
+  "State" : "休校",
+  "Target" : "公立小中高校",
+  "TargetRange" : "",
+  "URL" : [ "https://www.nikkei.com/article/DGXMZO57694920W0A400C2CE0000/" ],
+  "Reason" : "国内と県内の感染状況を踏まえ"
+}, {
   "EntryDate" : "2020-04-01",
   "Pref" : "ダミー県",
   "City" : "",
@@ -20,6 +31,17 @@
   "TargetRange" : "週末",
   "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message2020040202.html" ],
   "Reason" : ""
+}, {
+  "EntryDate" : "2020-04-06",
+  "Pref" : "兵庫県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-04-19",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200406/k10012370191000.html" ],
+  "Reason" : "感染者数の増加"
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "山梨県",

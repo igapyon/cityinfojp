@@ -138,6 +138,7 @@ public class DynIndexController {
                 descText += " " + entry.getEndDate() + "まで";
             }
             dispEntry.setDescText(descText);
+            dispEntry.setUrls(entry.getURL());
             dispEntryList.add(dispEntry);
         }
 
