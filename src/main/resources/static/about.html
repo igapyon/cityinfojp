@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>About cityinfo</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="cityinfojp">
+    <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
+
+    <link rel="canonical" href="https://github.com/igapyon/cityinfojp">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    
+        <p>aaaaa</p>
+        <!--        <p th:text="'Name: ' + *{name}"></p>
+        <p th:text="'Message: ' + *{message}"></p>
+    -->
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">cityinfojp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">都道府県</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="/pref/tokyo.html">東京都</a>
+                            <a class="dropdown-item" href="/pref/saitama.html">埼玉県</a>
+                            <a class="dropdown-item" href="/pref/chiba.html">千葉県</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/link.html">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">About cityinfojp</h1>
+                <p>cityinfojp は、日本の都市情報のまとめサイトを目指すプロジェクトです。 <br />
+                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示します。
+                </p>
+                <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>cityinfojp の目的</h2>
+                    <p>cityinfojp は、日本の都市情報のまとめサイトを目指すプロジェクトです。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>cityinfojp の当面の目的</h2>
+                    <p>cityinfojp は、当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示するサイトを目指します。<br />
+                        現在このサイトはアルファ版のフェーズにあります。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>オープンソース (OSS)</h2>
+                    <p>cityinfojp を実現するためのソースコードは、基本的に github 上でオープンソースとして公開されています。
+                        オープンソース (OSS) ライセンスを理解して同意することにより、cityinfojp のソースコードを再利用・改変することが可能です。
+                    </p>
+                    <p><a class="btn btn-secondary" href="https://github.com/igapyon/cityinfojp/" role="button">github
+                            を開く &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>データの集積</h2>
+                    <p>
+                        cityinfojp はデータの充実こそが肝です。さまざまな自治体情報をこつこつと集積・更新してはじめて役立つ情報としてなりたつからです。
+                        cityinfojp ではデータを提供する貢献者を歓迎します。所定の JSON データ形式ファイルを作成し、プルリクエストを寄せてください。
+                    </p>
+                    <p><a class="btn btn-secondary"
+                            href="https://github.com/igapyon/cityinfojp/tree/devel/src/main/resources/static/input/2020/202004"
+                            role="button">データ集積先 &raquo;</a></p>
+                </div>
+            </div>
+            <hr>
+        </div> <!-- /container -->
+    </main>
+
+    <footer class="container">
+        <p>&copy; cityinfojp 2020 : 2020-04-06 21:51</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

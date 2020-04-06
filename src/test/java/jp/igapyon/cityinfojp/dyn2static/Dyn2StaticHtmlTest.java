@@ -22,5 +22,7 @@ class Dyn2StaticHtmlTest {
     @Test
     void dyn2static() throws Exception {
         Dyn2StaticProcessor.main(new String[] { "this" });
+
+        Dyn2StaticSimpleProcessor.main(new String[] { "this" });
     }
 }
