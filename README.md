@@ -39,6 +39,9 @@ git config user.name "Toshiki Iga"
 ```sh
 cd /tmp
 heroku login
+```
+
+```sh
 heroku git:clone -a cityinfojp
 cd cityinfojp
 cp -pv ~/Documents/gitiga/cityinfojp/pom.xml .
@@ -46,6 +49,7 @@ cp -pvR ~/Documents/gitiga/cityinfojp/src .
 ```
 
 ```sh
+git status
 git add .
 git commit -am "make it better"
 git push heroku master
