@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Index of cityinfo</title>
+    <title>About cityinfo</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Cache-Control" content="no-cache">
@@ -54,42 +54,50 @@
     <main role="main">
         <div class="jumbotron">
             <div class="container">
-                <h1 class="display-3">cityinfojp</h1>
+                <h1 class="display-3">About cityinfojp</h1>
                 <p>cityinfojp は、日本の都市情報のまとめサイトを目指すプロジェクトです。 <br />
-                    しかしながら、当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示するサイトを目指します。<br />
-                    現在このサイトはアルファ版のフェーズにあります。
+                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示します。
                 </p>
                 <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
             </div>
         </div>
 
         <div class="container">
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-
-                <div th:each="dispEntry : ${dispEntryList}">
-                    <div class="media text-muted pt-3">
-                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
-                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                            role="img" aria-label="Placeholder">
-                            <title><span th:text="${dispEntry.iconText}" th:remove="tag" /></title>
-                            <rect width="100%" height="100%" th:fill="${dispEntry.iconColor}" /><text x="25%" y="50%"
-                                th:fill="${dispEntry.iconTextColor}" dy=".3em"><span th:text="${dispEntry.iconText}"
-                                    th:remove="tag" /></text>
-                        </svg>
-                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                            <strong class="d-block text-gray-dark"><span th:text="${dispEntry.titleText}"
-                                    th:remove="tag" /></strong>
-                            <span th:text="${dispEntry.descText}" th:remove="tag" />
-                        </p>
-                    </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>cityinfojp の目的</h2>
+                    <p>cityinfojp は、日本の都市情報のまとめサイトを目指すプロジェクトです。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>cityinfojp の当面の目的</h2>
+                    <p>cityinfojp は、当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を整理して表示するサイトを目指します。<br />
+                        現在このサイトはアルファ版のフェーズにあります。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>オープンソース (OSS)</h2>
+                    <p>cityinfojp を実現するためのソースコードは、基本的に github 上でオープンソースとして公開されています。
+                        オープンソース (OSS) ライセンスを理解して同意することにより、cityinfojp のソースコードを再利用・改変することが可能です。
+                    </p>
+                    <p><a class="btn btn-secondary" href="https://github.com/igapyon/cityinfojp/" role="button">github
+                            を開く &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>データの集積</h2>
+                    <p>
+                        cityinfojp はデータの充実こそが肝です。さまざまな自治体情報をこつこつと集積・更新してはじめて役立つ情報としてなりたつからです。
+                        cityinfojp ではデータを提供する貢献者を歓迎します。所定の JSON データ形式ファイルを作成し、プルリクエストを寄せてください。
+                    </p>
+                    <p><a class="btn btn-secondary"
+                            href="https://github.com/igapyon/cityinfojp/tree/devel/src/main/resources/static/input/2020/202004"
+                            role="button">データ集積先 &raquo;</a></p>
                 </div>
             </div>
-        </div>
+            <hr>
+        </div> <!-- /container -->
     </main>
 
     <footer class="container">
-        <p>&copy; cityinfojp 2020 : <span th:text="${processDateTime}" th:remove="tag" /></p>
+        <p>&copy; cityinfojp 2020 : 2020-04-06 21:40</p>
     </footer>
 
     <!-- Bootstrap JavaScript -->
