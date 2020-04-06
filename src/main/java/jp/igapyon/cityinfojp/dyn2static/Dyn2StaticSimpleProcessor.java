@@ -25,12 +25,14 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import jp.igapyon.cityinfojp.dyn.DynSimpleController;
+
 public class Dyn2StaticSimpleProcessor {
     public static final void main(String[] args) throws IOException {
         SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
 
-        dyn2staticSimple(templateEngine, "dyn/about", "src/main/resources/static/about.html");
-        dyn2staticSimple(templateEngine, "dyn/link", "src/main/resources/static/link.html");
+        dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
+        dyn2staticSimple(templateEngine, "/dyn/link", "src/main/resources/static/link.html");
     }
 
     static void dyn2staticSimple(SpringTemplateEngine templateEngine, String sourcePath, String targetPath)
@@ -38,6 +40,8 @@ public class Dyn2StaticSimpleProcessor {
         System.err.println(sourcePath + " を静的ファイル化.");
 
         final IContext ctx = new Context();
+
+        ((Context) ctx).setVariable("jumbotron", DynSimpleController.getJumbotronBean(sourcePath));
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));

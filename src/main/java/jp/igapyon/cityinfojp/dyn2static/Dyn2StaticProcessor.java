@@ -28,6 +28,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
 import jp.igapyon.cityinfojp.dyn.DynIndexController;
+import jp.igapyon.cityinfojp.dyn.DynPrefController;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 public class Dyn2StaticProcessor {
@@ -50,10 +51,12 @@ public class Dyn2StaticProcessor {
 
         ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
+        ((Context) ctx).setVariable("jumbotron", DynIndexController.getJumbotronBean());
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
-        String result = templateEngine.process("dyn/index", ctx);
+        String result = templateEngine.process("/dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
     }
 
@@ -68,10 +71,12 @@ public class Dyn2StaticProcessor {
 
         ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
+        ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean());
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
-        String result = templateEngine.process("dyn/pref/tokyo", ctx);
+        String result = templateEngine.process("/dyn/pref/tokyo", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/pref/tokyo.html"), result, "UTF-8");
 
         // DUMMY
