@@ -19,17 +19,22 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class DynAboutController {
-    @GetMapping({ "/dyn/about.html" })
-    public String index(Model model) throws IOException {
+public class DynSimpleController {
+    @GetMapping({ "/dyn/about.html", "/dyn/link.html" })
+    public String index(Model model, HttpServletRequest request) throws IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
-        return "dyn/about";
+        String path = request.getRequestURI();
+        String body = path.substring(0, path.lastIndexOf('.'));
+
+        return body;
     }
 }
