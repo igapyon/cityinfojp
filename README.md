@@ -18,7 +18,7 @@ https://cityinfojp.herokuapp.com/
 - ジャンボトロンのボタンを有効化
 - トップメニューのフラグメント化
 - /pref/city/ について実装。
-
+- https://www.open-governmentdata.org/ を調べる
 
 # 自分用の開発メモ
 
