@@ -32,6 +32,7 @@ public class Dyn2StaticSimpleProcessor {
         SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
+        dyn2staticSimple(templateEngine, "/dyn/contributor", "src/main/resources/static/contributor.html");
         dyn2staticSimple(templateEngine, "/dyn/link", "src/main/resources/static/link.html");
     }
 
