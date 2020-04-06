@@ -1,1 +1,45 @@
-[{"EntryDate":"2020-04-01","Pref":"ダミー県","City":"","StartDate":"2020-04-01","EndDate":"2020-04-01","State":"指示","Target":"外出自粛","TargetRange":"","URL":["https://github.com/igapyon/cityinfojp"],"Reason":"指示のテスト用のダミーデータ"},{"EntryDate":"2020-04-05","Pref":"埼玉県","City":"","StartDate":"","EndDate":"2020-04-19","State":"要請","Target":"外出自粛","TargetRange":"週末","URL":["https://www.pref.saitama.lg.jp/a0701/message2020040202.html"],"Reason":""},{"EntryDate":"2020-04-05","Pref":"山梨県","City":"","StartDate":"","EndDate":"2020-04-19","State":"休校","Target":"県立学校","TargetRange":"","URL":["https://news.tv-asahi.co.jp/news_society/articles/000181023.html"],"Reason":"感染リスク高い"},{"EntryDate":"2020-04-05","Pref":"千葉県","City":"","StartDate":"","EndDate":"2020-04-30","State":"休校","Target":"県立学校","TargetRange":"","URL":["https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html"],"Reason":""}]
+[ {
+  "EntryDate" : "2020-04-01",
+  "Pref" : "ダミー県",
+  "City" : "",
+  "StartDate" : "2020-04-01",
+  "EndDate" : "2020-04-01",
+  "State" : "指示",
+  "Target" : "外出自粛",
+  "TargetRange" : "",
+  "URL" : [ "https://github.com/igapyon/cityinfojp" ],
+  "Reason" : "指示のテスト用のダミーデータ"
+}, {
+  "EntryDate" : "2020-04-05",
+  "Pref" : "埼玉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-04-19",
+  "State" : "要請",
+  "Target" : "外出自粛",
+  "TargetRange" : "週末",
+  "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message2020040202.html" ],
+  "Reason" : ""
+}, {
+  "EntryDate" : "2020-04-05",
+  "Pref" : "山梨県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-04-19",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "URL" : [ "https://news.tv-asahi.co.jp/news_society/articles/000181023.html" ],
+  "Reason" : "感染リスク高い"
+}, {
+  "EntryDate" : "2020-04-05",
+  "Pref" : "千葉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-04-30",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html" ],
+  "Reason" : ""
+} ]

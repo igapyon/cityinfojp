@@ -6,6 +6,19 @@
 いただいた情報は Apache ライセンスのもとで扱われます。
 
 
+成果物は Heroku 上でホストしてます。
+https://cityinfojp.herokuapp.com/
+
+
+
+## TBD
+- レコードの明細部分を強化
+- 日付の from to を含めて pref レベルの状態表示
+- about.html を作成
+- ジャンボトロンのボタンを有効化
+- トップメニューのフラグメント化
+- /pref/city/ について実装。
+- https://www.open-governmentdata.org/ を調べる
 
 # 自分用の開発メモ
 
