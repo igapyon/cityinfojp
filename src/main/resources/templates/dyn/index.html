@@ -45,7 +45,7 @@
                                     th:remove="tag" /></strong>
                             <span th:text="${dispEntry.descText}" th:remove="tag" />
                             <div th:each="url : ${dispEntry.URL}" th:remove="tag">
-                                , <a th:href="${url}">Link</a>
+                                , <a th:href="${url}" target="_blank">Link</a>
                             </div>
                         </p>
                     </div>

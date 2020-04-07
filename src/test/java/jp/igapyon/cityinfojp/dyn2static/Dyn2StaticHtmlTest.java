@@ -17,10 +17,15 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import org.junit.jupiter.api.Test;
 
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntryMergeProcessor;
+
 class Dyn2StaticHtmlTest {
 
     @Test
     void dyn2static() throws Exception {
+        // JSONを一括マージが必ず先。
+        CityInfoEntryMergeProcessor.main(new String[] { "this" });
+
         Dyn2StaticProcessor.main(new String[] { "this" });
 
         Dyn2StaticSimpleProcessor.main(new String[] { "this" });
