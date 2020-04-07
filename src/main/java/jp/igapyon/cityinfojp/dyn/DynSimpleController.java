@@ -29,7 +29,7 @@ import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 
 @Controller
 public class DynSimpleController {
-    @GetMapping({ "/dyn/about.html", "/dyn/link.html" })
+    @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
@@ -53,6 +53,8 @@ public class DynSimpleController {
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
             jumbotron.setTitle("About cityinfojp");
+        } else if (body.startsWith("/dyn/contributor")) {
+            jumbotron.setTitle("cityinfojp 貢献者");
         } else if (body.startsWith("/dyn/link")) {
             jumbotron.setTitle("cityinfojp 関連リンク");
         }

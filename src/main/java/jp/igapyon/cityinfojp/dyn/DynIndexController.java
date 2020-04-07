@@ -127,9 +127,18 @@ public class DynIndexController {
             String descText = "";
             descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "
                     + (null == entry.getTargetRange() || entry.getTargetRange().trim().length() == 0 ? ""
-                            : entry.getTargetRange())
-                    + " : " + entry.getReason();
+                            : entry.getTargetRange());
+            if (entry.getReason() != null && entry.getReason().trim().length() > 0) {
+                descText += " : " + entry.getReason();
+            }
+            if (entry.getStartDate() != null && entry.getStartDate().trim().length() > 0) {
+                descText += " " + entry.getStartDate() + "から";
+            }
+            if (entry.getEndDate() != null && entry.getEndDate().trim().length() > 0) {
+                descText += " " + entry.getEndDate() + "まで";
+            }
             dispEntry.setDescText(descText);
+            dispEntry.setUrls(entry.getURL());
             dispEntryList.add(dispEntry);
         }
 

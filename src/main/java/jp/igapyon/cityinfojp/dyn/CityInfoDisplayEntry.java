@@ -15,6 +15,8 @@
  */
 package jp.igapyon.cityinfojp.dyn;
 
+import java.util.List;
+
 /**
  * HTMLレンダリング用のエントリ
  * 
@@ -24,17 +26,9 @@ public class CityInfoDisplayEntry {
     private String iconText;
     private String iconColor;
     private String iconTextColor;
-
-    public String getIconTextColor() {
-        return iconTextColor;
-    }
-
-    public void setIconTextColor(String iconTextColor) {
-        this.iconTextColor = iconTextColor;
-    }
-
     private String titleText;
     private String descText;
+    private List<String> url;
 
     public String getIconText() {
         return iconText;
@@ -66,5 +60,21 @@ public class CityInfoDisplayEntry {
 
     public void setDescText(String descText) {
         this.descText = descText;
+    }
+
+    public List<String> getURL() {
+        return url;
+    }
+
+    public void setUrls(List<String> url) {
+        this.url = url;
+    }
+
+    public String getIconTextColor() {
+        return iconTextColor;
+    }
+
+    public void setIconTextColor(String iconTextColor) {
+        this.iconTextColor = iconTextColor;
     }
 }

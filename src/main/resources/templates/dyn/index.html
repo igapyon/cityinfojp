@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Index of cityinfo</title>
+    <meta name="google-site-verification" content="BDhI_W_YvhLMkf47CGsA2C7UOMVyj4OBvcqhoajA2R8" />
+    <title>cityinfo top</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Cache-Control" content="no-cache">
@@ -12,7 +13,7 @@
     <meta name="description" content="cityinfojp">
     <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
 
-    <link rel="canonical" href="https://github.com/igapyon/cityinfojp">
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/about.html">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -43,6 +44,9 @@
                             <strong class="d-block text-gray-dark"><span th:text="${dispEntry.titleText}"
                                     th:remove="tag" /></strong>
                             <span th:text="${dispEntry.descText}" th:remove="tag" />
+                            <div th:each="url : ${dispEntry.URL}" th:remove="tag">
+                                , <a th:href="${url}">Link</a>
+                            </div>
                         </p>
                     </div>
                 </div>
