@@ -47,6 +47,14 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
+
+		<!-- 仮 -->
+		<dependency>
+			<groupId>jp.igapyon</groupId>
+			<artifactId>sitemapgenerator4j</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
