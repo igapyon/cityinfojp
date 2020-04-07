@@ -10,6 +10,17 @@
   "URL" : [ "https://www.nikkei.com/article/DGXMZO57694920W0A400C2CE0000/" ],
   "Reason" : "国内と県内の感染状況を踏まえ"
 }, {
+  "EntryDate" : "2020-04-07",
+  "Pref" : "群馬県",
+  "City" : "",
+  "StartDate" : "2020-04-10",
+  "EndDate" : "2020-05-10",
+  "State" : "休校",
+  "Target" : "市立小中学校",
+  "TargetRange" : "伊勢崎、太田、下仁田、玉村、大泉",
+  "URL" : [ "https://www.jomo-news.co.jp/news/gunma/society/205021" ],
+  "Reason" : "緊急事態宣言を受け"
+}, {
   "EntryDate" : "2020-04-01",
   "Pref" : "ダミー県",
   "City" : "",
@@ -31,6 +42,17 @@
   "TargetRange" : "週末",
   "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message2020040202.html" ],
   "Reason" : ""
+}, {
+  "EntryDate" : "2020-04-07",
+  "Pref" : "茨城県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-04-22",
+  "State" : "休校",
+  "Target" : "市立小中学校",
+  "TargetRange" : "半数",
+  "URL" : [ "https://ibarakinews.jp/news/newsdetail.php?f_jun=15861809680308" ],
+  "Reason" : "県立校の再開延期などを踏まえ"
 }, {
   "EntryDate" : "2020-04-06",
   "Pref" : "兵庫県",
