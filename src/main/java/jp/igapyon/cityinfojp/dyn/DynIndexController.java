@@ -125,21 +125,23 @@ public class DynIndexController {
                 dispEntry.setIconTextColor("#000000");
             }
 
-            dispEntry.setTitleText(entry.getPref()
-                    + (null == entry.getCity() || entry.getCity().trim().length() == 0 ? "" : " " + entry.getCity()));
+            dispEntry.setTitleText(entry.getPref() //
+                    + (null == entry.getCity() || entry.getCity().trim().length() == 0 //
+                            ? "" //
+                            : " (" + entry.getCity() + ")"));
 
             String descText = "";
             descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "
                     + (null == entry.getTargetRange() || entry.getTargetRange().trim().length() == 0 ? ""
                             : entry.getTargetRange());
-            if (entry.getReason() != null && entry.getReason().trim().length() > 0) {
-                descText += " : " + entry.getReason();
-            }
             if (entry.getStartDate() != null && entry.getStartDate().trim().length() > 0) {
                 descText += " " + entry.getStartDate() + "から";
             }
             if (entry.getEndDate() != null && entry.getEndDate().trim().length() > 0) {
                 descText += " " + entry.getEndDate() + "まで";
+            }
+            if (entry.getReason() != null && entry.getReason().trim().length() > 0) {
+                descText += " : " + entry.getReason();
             }
             dispEntry.setDescText(descText);
             dispEntry.setUrls(entry.getURL());

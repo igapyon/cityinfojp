@@ -12,12 +12,12 @@
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "群馬県",
-  "City" : "",
+  "City" : "伊勢崎市、太田市、下仁田市、玉村市、大泉市",
   "StartDate" : "2020-04-10",
   "EndDate" : "2020-05-10",
   "State" : "休校",
   "Target" : "市立小中学校",
-  "TargetRange" : "伊勢崎、太田、下仁田、玉村、大泉",
+  "TargetRange" : "",
   "URL" : [ "https://www.jomo-news.co.jp/news/gunma/society/205021" ],
   "Reason" : "緊急事態宣言を受け"
 }, {
@@ -56,12 +56,12 @@
 }, {
   "EntryDate" : "2020-04-08",
   "Pref" : "日本国",
-  "City" : "",
+  "City" : "東京都、神奈川県、埼玉県、千葉県、大阪府、兵庫県、福岡県",
   "StartDate" : "2020-04-08",
   "EndDate" : "2020-05-06",
   "State" : "宣言",
   "Target" : "緊急事態",
-  "TargetRange" : "東京都、神奈川県、埼玉県、千葉県、大阪府、兵庫県、福岡県",
+  "TargetRange" : "",
   "URL" : [ "https://www3.nhk.or.jp/news/html/20200408/k10012374361000.html" ],
   "Reason" : "感染症の急速拡大"
 }, {
@@ -100,12 +100,12 @@
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "栃木県",
-  "City" : "",
+  "City" : "宇都宮市",
   "StartDate" : "2020-04-09",
   "EndDate" : "2020-04-22",
   "State" : "休校",
   "Target" : "市立小中学校",
-  "TargetRange" : "宇都宮市",
+  "TargetRange" : "",
   "URL" : [ "https://www.sankei.com/life/news/200407/lif2004070135-n1.html" ],
   "Reason" : "緊急事態宣言対象地域が生活圏を受け"
 }, {
