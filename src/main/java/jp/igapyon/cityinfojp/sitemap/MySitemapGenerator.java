@@ -47,7 +47,7 @@ public class MySitemapGenerator {
             SitemapEntryUrl url = new SitemapEntryUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/about.html");
-            url.setLastmod(DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
+            // 更新日付は出力しない
             url.setChangefreq("monthly");
             url.setPriority("0.6");
         }
@@ -56,7 +56,7 @@ public class MySitemapGenerator {
             SitemapEntryUrl url = new SitemapEntryUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/link.html");
-            url.setLastmod(DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
+            // 更新日付は出力しない
             url.setChangefreq("monthly");
             url.setPriority("0.2");
         }
