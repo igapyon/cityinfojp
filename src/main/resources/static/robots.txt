@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://cityinfojp.herokuapp.com/sitemap.xml
