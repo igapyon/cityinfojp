@@ -52,11 +52,11 @@ public class DynSimpleController {
 
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
-            jumbotron.setTitle("About cityinfojp");
+            jumbotron.setTitle("About");
         } else if (body.startsWith("/dyn/contributor")) {
-            jumbotron.setTitle("cityinfojp 貢献者");
+            jumbotron.setTitle("Contributor");
         } else if (body.startsWith("/dyn/link")) {
-            jumbotron.setTitle("cityinfojp 関連リンク");
+            jumbotron.setTitle("関連リンク");
         }
 
         return jumbotron;
