@@ -1,0 +1,14 @@
+[
+    {
+        "EntryDate": "2020-04-08",
+        "Pref": "茨城県",
+        "City": "",
+        "StartDate": "",
+        "EndDate": "2020-05-06",
+        "State": "要請",
+        "Target": "外出自粛",
+        "TargetRange": "古河市、つくば市、つくばみらい市、守谷市、土浦市、阿見町、牛久市、龍ケ崎市、取手市、神栖市、古河市",
+        "Reason": "緊急事態宣言の都県と近接",
+        "URL": ["https://www.pref.ibaraki.jp/1saigai/2019-ncov/yousei.html"]
+    }
+]
