@@ -115,6 +115,10 @@ public class DynIndexController {
                 dispEntry.setIconText("休校");
                 dispEntry.setIconColor("#17a2b8");
                 dispEntry.setIconTextColor("#ffffff");
+            } else if ("宣言".equals(entry.getState())) {
+                dispEntry.setIconText("宣言");
+                dispEntry.setIconColor("#6610f2");
+                dispEntry.setIconTextColor("#ffffff");
             } else {
                 dispEntry.setIconText("その他");
                 dispEntry.setIconColor("#6c757d");
@@ -122,7 +126,7 @@ public class DynIndexController {
             }
 
             dispEntry.setTitleText(entry.getPref()
-                    + (null == entry.getCity() || entry.getCity().trim().length() == 0 ? "" : entry.getCity()));
+                    + (null == entry.getCity() || entry.getCity().trim().length() == 0 ? "" : " " + entry.getCity()));
 
             String descText = "";
             descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "
