@@ -1,0 +1,14 @@
+[
+    {
+        "EntryDate": "2020-04-09",
+        "Pref": "千葉県",
+        "City": "",
+        "StartDate": "2020-04-08",
+        "EndDate": "2020-05-06",
+        "State": "要請",
+        "Target": "外出自粛",
+        "TargetRange": "",
+        "Reason": "緊急事態措置",
+        "URL": ["https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti.html"]
+    }
+]

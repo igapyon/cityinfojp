@@ -28,7 +28,7 @@ class CityInfoEntryTest {
     void contextLoads() throws Exception {
         {
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
-                    new File("./src/main/resources/static/input/2020/202004/saitama-stayathome-20200405a.json"));
+                    new File("./src/main/resources/static/input/2020/202004/11-saitama-stayathome-20200405a.json"));
             for (CityInfoEntry entry : entryList) {
                 System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
@@ -38,7 +38,7 @@ class CityInfoEntryTest {
         }
         {
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
-                    new File("./src/main/resources/static/input/2020/202004/chiba-school-20200405a.json"));
+                    new File("./src/main/resources/static/input/2020/202004/12-chiba-school-20200405a.json"));
             for (CityInfoEntry entry : entryList) {
                 System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
