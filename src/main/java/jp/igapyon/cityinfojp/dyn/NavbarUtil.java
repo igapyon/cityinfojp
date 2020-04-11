@@ -16,6 +16,8 @@
 package jp.igapyon.cityinfojp.dyn;
 
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;
+import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownItemBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarItemBean;
 
 public class NavbarUtil {
@@ -32,7 +34,12 @@ public class NavbarUtil {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("都道府県");
-            //            item.setHref("https://cityinfojp.herokuapp.com/");
+            item.setDropdown(true);
+
+            NavbarDropdownBean dropdown = new NavbarDropdownBean();
+            item.setDropdownBean(dropdown);
+            NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
+            dropdown.getItemList().add(dropdownItem);
         }
         {
             NavbarItemBean item = new NavbarItemBean();

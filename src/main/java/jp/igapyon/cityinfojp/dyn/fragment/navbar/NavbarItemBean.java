@@ -20,6 +20,7 @@ public class NavbarItemBean {
     private String href = "#";
     private boolean current = false;
     private boolean dropdown = false;
+    private NavbarDropdownBean dropdownBean = null;
 
     public boolean isDropdown() {
         return dropdown;
@@ -53,4 +54,11 @@ public class NavbarItemBean {
         this.current = current;
     }
 
+    public NavbarDropdownBean getDropdownBean() {
+        return dropdownBean;
+    }
+
+    public void setDropdownBean(NavbarDropdownBean dropdownBean) {
+        this.dropdownBean = dropdownBean;
+    }
 }
