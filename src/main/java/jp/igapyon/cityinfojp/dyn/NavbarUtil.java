@@ -38,8 +38,23 @@ public class NavbarUtil {
 
             NavbarDropdownBean dropdown = new NavbarDropdownBean();
             item.setDropdownBean(dropdown);
-            NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
-            dropdown.getItemList().add(dropdownItem);
+
+            {
+                NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
+                dropdown.getItemList().add(dropdownItem);
+                dropdownItem.setText("東京都");
+                dropdownItem.setHref("/pref/tokyo.html");
+
+                dropdownItem = new NavbarDropdownItemBean();
+                dropdown.getItemList().add(dropdownItem);
+                dropdownItem.setText("埼玉県");
+                dropdownItem.setHref("/pref/saitama.html");
+
+                dropdownItem = new NavbarDropdownItemBean();
+                dropdown.getItemList().add(dropdownItem);
+                dropdownItem.setText("千葉県");
+                dropdownItem.setHref("/pref/chiba.html");
+            }
         }
         {
             NavbarItemBean item = new NavbarItemBean();
