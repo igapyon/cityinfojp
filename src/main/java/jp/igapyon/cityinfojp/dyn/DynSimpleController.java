@@ -32,21 +32,25 @@ import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 public class DynSimpleController {
     @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
+        System.err.println("trace:DynSimpleController#index");
+        
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         model.addAttribute("jumbotron", getJumbotronBean(request.getRequestURI()));
 
-        model.addAttribute("navbar", getNavbarBean());
+        model.addAttribute("navbar", getNavbarBean(request.getRequestURI()));
 
         return getPathStringWithoutExt(request.getRequestURI());
     }
 
     public static String getPathStringWithoutExt(String requestURI) {
         if (requestURI.lastIndexOf('.') < 0) {
+            System.err.println("trace:" + requestURI);
             return requestURI;
         }
         String body = requestURI.substring(0, requestURI.lastIndexOf('.'));
+        System.err.println("trace:" + body);
         return body;
     }
 
@@ -65,8 +69,16 @@ public class DynSimpleController {
         return jumbotron;
     }
 
-    public static NavbarBean getNavbarBean() {
+    public static NavbarBean getNavbarBean(String requestURI) {
         NavbarBean navbar = NavbarUtil.buildNavbar();
+        String body = getPathStringWithoutExt(requestURI);
+        if (body.startsWith("/dyn/about")) {
+            navbar.getItemList().get(4).setCurrent(true);
+        } else if (body.startsWith("/dyn/contributor")) {
+            navbar.getItemList().get(3).setCurrent(true);
+        } else if (body.startsWith("/dyn/link")) {
+            navbar.getItemList().get(2).setCurrent(true);
+        }
         return navbar;
     }
 }

@@ -69,6 +69,7 @@ public class DynPrefController {
 
     public static NavbarBean getNavbarBean() {
         NavbarBean navbar = NavbarUtil.buildNavbar();
+        navbar.getItemList().get(1).setCurrent(true);
         return navbar;
     }
 

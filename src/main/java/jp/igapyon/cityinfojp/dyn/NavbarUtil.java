@@ -26,7 +26,7 @@ public class NavbarUtil {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("Home");
-            item.setHref("https://cityinfojp.herokuapp.com/");
+            item.setHref("/index.html");
         }
         {
             NavbarItemBean item = new NavbarItemBean();
@@ -38,19 +38,19 @@ public class NavbarUtil {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("Link");
-            item.setHref("https://cityinfojp.herokuapp.com/link.html");
+            item.setHref("/link.html");
         }
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("Contributor");
-            item.setHref("https://cityinfojp.herokuapp.com/contributor.html");
+            item.setHref("/contributor.html");
         }
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("About");
-            item.setHref("https://cityinfojp.herokuapp.com/about.html");
+            item.setHref("/about.html");
         }
 
         return navbar;
