@@ -1,0 +1,16 @@
+[
+    {
+        "EntryDate": "2020-04-09",
+        "Pref": "神奈川県",
+        "City": "",
+        "StartDate": "2020-04-07",
+        "EndDate": "2020-05-06",
+        "State": "要請",
+        "Target": "外出自粛",
+        "TargetRange": "",
+        "Reason": "緊急事態宣言",
+        "URL": [
+            "https://www.pref.kanagawa.jp/docs/bu4/covid19/20200407_policy.html"
+        ]
+    }
+]

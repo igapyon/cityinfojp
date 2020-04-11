@@ -26,6 +26,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 
 @Controller
 public class DynSimpleController {
@@ -35,6 +36,8 @@ public class DynSimpleController {
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         model.addAttribute("jumbotron", getJumbotronBean(request.getRequestURI()));
+
+        model.addAttribute("navbar", getNavbarBean(request.getRequestURI()));
 
         return getPathStringWithoutExt(request.getRequestURI());
     }
@@ -60,5 +63,18 @@ public class DynSimpleController {
         }
 
         return jumbotron;
+    }
+
+    public static NavbarBean getNavbarBean(String requestURI) {
+        NavbarBean navbar = NavbarUtil.buildNavbar();
+        String body = getPathStringWithoutExt(requestURI);
+        if (body.startsWith("/dyn/about")) {
+            navbar.getItemList().get(4).setCurrent(true);
+        } else if (body.startsWith("/dyn/contributor")) {
+            navbar.getItemList().get(3).setCurrent(true);
+        } else if (body.startsWith("/dyn/link")) {
+            navbar.getItemList().get(2).setCurrent(true);
+        }
+        return navbar;
     }
 }

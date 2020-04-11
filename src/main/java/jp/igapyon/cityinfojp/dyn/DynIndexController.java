@@ -32,6 +32,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 
@@ -50,6 +51,8 @@ public class DynIndexController {
 
         model.addAttribute("jumbotron", getJumbotronBean());
 
+        model.addAttribute("navbar", getNavbarBean());
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
@@ -60,6 +63,12 @@ public class DynIndexController {
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
         jumbotron.setTitle("cityinfojp");
         return jumbotron;
+    }
+
+    public static NavbarBean getNavbarBean() {
+        NavbarBean navbar = NavbarUtil.buildNavbar();
+        navbar.getItemList().get(0).setCurrent(true);
+        return navbar;
     }
 
     public static List<CityInfoEntry> buildEntityList() throws IOException {

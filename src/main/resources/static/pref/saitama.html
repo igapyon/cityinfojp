@@ -12,7 +12,7 @@
     <meta name="description" content="cityinfojp">
     <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
 
-    <link rel="canonical" href="https://cityinfojp.herokuapp.com/about.html">
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/pref/tokyo.html">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -21,11 +21,6 @@
 
 <body>
     
-        <!-- TBD
-        <p th:text="'Name: ' + *{name}"></p>
-        <p th:text="'Message: ' + *{message}"></p>
-        -->
-
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">cityinfojp</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -35,27 +30,73 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">都道府県</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="/pref/tokyo.html">東京都</a>
-                            <a class="dropdown-item" href="/pref/saitama.html">埼玉県</a>
-                            <a class="dropdown-item" href="/pref/chiba.html">千葉県</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/link.html">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contributor.html">Contributor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.html">About</a>
-                    </li>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/index.html">
+                                    Home</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item active dropdown">
+                            
+
+                            
+                                <a class="nav-link dropdown-toggle active"
+                                    href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">都道府県</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/tokyo.html">東京都</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/saitama.html">埼玉県</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/chiba.html">千葉県</a>
+                                    </div>
+                                </div>
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/link.html">
+                                    Link</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/contributor.html">
+                                    Contributor</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/about.html">
+                                    About</a>
+                            
+
+                            
+                        </li>
+                    </div>
                 </ul>
             </div>
         </nav>
@@ -90,6 +131,22 @@
                         <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                             <strong class="d-block text-gray-dark">千葉県</strong>
                             (2020-04-09起票) 外出自粛  2020-04-08から 2020-05-06まで : 緊急事態措置
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">神奈川県</strong>
+                            (2020-04-09起票) 外出自粛  2020-04-07から 2020-05-06まで : 緊急事態宣言
                         </p>
                     </div>
                 </div>
@@ -370,7 +427,7 @@
     </main>
 
     <footer class="container">
-        <p>&copy; cityinfojp 2020 : 2020-04-09 22:19</p>
+        <p>&copy; cityinfojp 2020 : 2020-04-11 22:27</p>
     </footer>
 
     <!-- Bootstrap JavaScript -->

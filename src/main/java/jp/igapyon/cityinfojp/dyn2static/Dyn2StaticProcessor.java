@@ -53,6 +53,8 @@ public class Dyn2StaticProcessor {
 
         ((Context) ctx).setVariable("jumbotron", DynIndexController.getJumbotronBean());
 
+        ((Context) ctx).setVariable("navbar", DynIndexController.getNavbarBean());
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
@@ -72,6 +74,8 @@ public class Dyn2StaticProcessor {
         ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
         ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean());
+
+        ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean());
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
