@@ -32,8 +32,6 @@ import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 public class DynSimpleController {
     @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
-        System.err.println("trace:DynSimpleController#index");
-        
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
@@ -46,11 +44,9 @@ public class DynSimpleController {
 
     public static String getPathStringWithoutExt(String requestURI) {
         if (requestURI.lastIndexOf('.') < 0) {
-            System.err.println("trace:" + requestURI);
             return requestURI;
         }
         String body = requestURI.substring(0, requestURI.lastIndexOf('.'));
-        System.err.println("trace:" + body);
         return body;
     }
 
