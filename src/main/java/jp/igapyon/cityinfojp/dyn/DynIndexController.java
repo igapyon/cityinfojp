@@ -67,6 +67,7 @@ public class DynIndexController {
 
     public static NavbarBean getNavbarBean() {
         NavbarBean navbar = NavbarUtil.buildNavbar();
+        navbar.getItemList().get(0).setCurrent(true);
         return navbar;
     }
 
