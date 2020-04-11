@@ -26,6 +26,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 
 @Controller
 public class DynSimpleController {
@@ -35,6 +36,8 @@ public class DynSimpleController {
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         model.addAttribute("jumbotron", getJumbotronBean(request.getRequestURI()));
+
+        model.addAttribute("navbar", getNavbarBean());
 
         return getPathStringWithoutExt(request.getRequestURI());
     }
@@ -60,5 +63,10 @@ public class DynSimpleController {
         }
 
         return jumbotron;
+    }
+
+    public static NavbarBean getNavbarBean() {
+        NavbarBean navbar = NavbarUtil.buildNavbar();
+        return navbar;
     }
 }
