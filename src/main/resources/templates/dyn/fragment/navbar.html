@@ -23,10 +23,12 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <div th:each="item : *{itemList}">
-                        <li class="nav-item active">
-                            <a class="nav-link" th:href="${item.href}"><span th:text="${item.text}" th:remove="tag" /> <span class="sr-only">(current)</span></a>
+                        <li th:class="${'nav-item' + (item.current ? ' active' : '')}">
+                            <a class="nav-link" th:href="${item.href}">
+                                <span th:text="${item.text}" th:remove="tag" /><span th:if="${item.current}"
+                                    class="sr-only">
+                                    (current)</span></a>
                         </li>
-
                     </div>
 
                     <li class="nav-item active">
