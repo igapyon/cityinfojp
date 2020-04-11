@@ -207,4 +207,15 @@
   "TargetRange" : "",
   "URL" : [ "https://www3.nhk.or.jp/news/html/20200408/k10012374361000.html" ],
   "Reason" : "感染症の急速拡大"
+}, {
+  "EntryDate" : "2020-04-11",
+  "Pref" : "日本国",
+  "City" : "東京都、神奈川県、埼玉県、千葉県、大阪府、兵庫県、福岡県",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "オフィス出勤者の削減",
+  "TargetRange" : "",
+  "URL" : [ "https://www.nikkei.com/article/DGXMZO57959650R10C20A4EA3000/" ],
+  "Reason" : "緊急事態宣言"
 } ]
