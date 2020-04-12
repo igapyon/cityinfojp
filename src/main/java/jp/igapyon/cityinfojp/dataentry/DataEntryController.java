@@ -100,8 +100,11 @@ public class DataEntryController {
             resultData = resultJson.getBytes("UTF-8");
         }
 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String filename = "00-japan-stayathome-" + dtf.format(LocalDateTime.now()) + "a.json";
+
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment; filename=" + "sample.json");
+        response.setHeader("Content-Disposition", "attachment; filename=" + filename);
         response.setContentLength(resultData.length);
 
         ByteArrayInputStream inStream = new ByteArrayInputStream(resultData);
