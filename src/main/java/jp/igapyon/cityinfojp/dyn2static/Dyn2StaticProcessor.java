@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -92,6 +93,38 @@ public class Dyn2StaticProcessor {
                 FileUtils.writeStringToFile(
                         new File("src/main/resources/static/pref/" + pref.getNameen().toLowerCase() + ".html"), result,
                         "UTF-8");
+            }
+        } catch (IOException ex) {
+            System.err.println("Unexpected exception: " + ex.toString());
+            ex.printStackTrace();
+        }
+
+        String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" }, { "chubu", "中部" },
+                { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" }, { "kyushuokinawa", "九州沖縄" } };
+        try {
+            for (String[] area : AREA_INFO) {
+                final IContext ctx = new Context();
+
+                List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
+                DynIndexController.sortEntryList(allEntryList);
+                List<CityInfoDisplayEntry> dispEntryAllList = DynIndexController.entryList2DispEntryList(allEntryList);
+
+                // Prefでしぼりこみ
+                List<CityInfoDisplayEntry> dispEntryList = new ArrayList<>();
+                dispEntryList.add(dispEntryAllList.get(0));
+
+                ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+
+                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(area[1]));
+
+                ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(area[0]));
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+
+                String result = templateEngine.process("/dyn/pref/pref", ctx);
+                FileUtils.writeStringToFile(
+                        new File("src/main/resources/static/pref/" + area[0].toLowerCase() + ".html"), result, "UTF-8");
             }
         } catch (IOException ex) {
             System.err.println("Unexpected exception: " + ex.toString());
