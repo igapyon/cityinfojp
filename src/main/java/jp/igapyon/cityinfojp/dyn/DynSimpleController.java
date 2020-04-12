@@ -66,7 +66,7 @@ public class DynSimpleController {
     }
 
     public static NavbarBean getNavbarBean(String requestURI) {
-        NavbarBean navbar = NavbarUtil.buildNavbar();
+        NavbarBean navbar = NavbarUtil.buildNavbar(null);
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
             navbar.getItemList().get(4).setCurrent(true);

@@ -30,6 +30,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
@@ -38,8 +39,12 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 
 @Controller
 public class DynPrefController {
-    @GetMapping({ "/dyn/pref/{city}" })
-    public String index(Model model) throws IOException {
+    @GetMapping({ "/dyn/pref/{pref}" })
+    public String index(Model model, @PathVariable("pref") String pref) throws IOException {
+        if (pref.endsWith(".html")) {
+            pref = pref.substring(0, pref.length() - ".html".length());
+        }
+
         List<CityInfoEntry> allEntryList = buildEntityList();
 
         // Sort
@@ -51,7 +56,7 @@ public class DynPrefController {
 
         model.addAttribute("jumbotron", getJumbotronBean());
 
-        model.addAttribute("navbar", getNavbarBean());
+        model.addAttribute("navbar", getNavbarBean(pref));
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
@@ -67,8 +72,8 @@ public class DynPrefController {
         return jumbotron;
     }
 
-    public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar();
+    public static NavbarBean getNavbarBean(String pref) {
+        NavbarBean navbar = NavbarUtil.buildNavbar(pref);
         navbar.getItemList().get(1).setCurrent(true);
         return navbar;
     }

@@ -157,7 +157,7 @@ public class DataEntryController {
     }
 
     public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar();
+        NavbarBean navbar = NavbarUtil.buildNavbar(null);
         navbar.getItemList().get(3).setCurrent(true);
         return navbar;
     }

@@ -25,7 +25,7 @@ import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 public class NavbarUtil {
-    public static NavbarBean buildNavbar() {
+    public static NavbarBean buildNavbar(String pref) {
         NavbarBean navbar = new NavbarBean();
         navbar.setText("cityinfojp");
         {
@@ -43,27 +43,98 @@ public class NavbarUtil {
             NavbarDropdownBean dropdown = new NavbarDropdownBean();
             item.setDropdownBean(dropdown);
 
+            boolean isPrefSelected = false;
+
             // 八地方区分
             // 北海道、東北、関東、中部、近畿、中国、四国、九州沖縄
             NavbarItemBean dropdownMenuItem = new NavbarItemBean();
             dropdown.getItemList().add(dropdownMenuItem);
             dropdownMenuItem.setText("北海道");
+            dropdownMenuItem.setHref("/pref/hokkaido.html");
+            if ("hokkaido".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
 
             dropdownMenuItem = new NavbarItemBean();
             dropdown.getItemList().add(dropdownMenuItem);
             dropdownMenuItem.setText("東北");
+            dropdownMenuItem.setHref("/pref/tohoku.html");
+            if ("tohoku".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
 
-            try {
-                List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-                for (PrefEntry pref : prefList) {
-                    NavbarItemBean dropdownItem = new NavbarItemBean();
-                    dropdown.getItemList().add(dropdownItem);
-                    dropdownItem.setText(pref.getName());
-                    dropdownItem.setHref("/pref/" + pref.getNameen().toLowerCase() + ".html");
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("関東");
+            dropdownMenuItem.setHref("/pref/kanto.html");
+            if ("kanto".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("中部");
+            dropdownMenuItem.setHref("/pref/chubu.html");
+            if ("chubu".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("近畿");
+            dropdownMenuItem.setHref("/pref/kinki.html");
+            if ("kinki".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("中国");
+            dropdownMenuItem.setHref("/pref/chugoku.html");
+            if ("chugoku".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("四国");
+            dropdownMenuItem.setHref("/pref/shikoku.html");
+            if ("shikoku".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("九州沖縄");
+            dropdownMenuItem.setHref("/pref/kyushuokinawa.html");
+            if ("kyushuokinawa".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
+            if (isPrefSelected == false) {
+                try {
+                    List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+                    for (PrefEntry prefEntry : prefList) {
+                        if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
+                            NavbarItemBean dropdownItem = new NavbarItemBean();
+                            dropdown.getItemList().add(dropdownItem);
+                            dropdownItem.setText(prefEntry.getName());
+                            dropdownItem.setHref("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
+                            dropdownItem.setCurrent(true);
+                        }
+                    }
+                } catch (IOException ex) {
+                    System.err.println("Unexpected exception: " + ex.toString());
+                    ex.printStackTrace();
                 }
-            } catch (IOException ex) {
-                System.err.println("Unexpected exception: " + ex.toString());
-                ex.printStackTrace();
             }
         }
         {
