@@ -15,12 +15,19 @@
  */
 package jp.igapyon.cityinfojp.dataentry;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StreamUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,9 +42,13 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 @Controller
 public class DataEntryController {
+    @RequestMapping(value = { "/dataentry.html" }, method = { RequestMethod.GET })
+    public String dataentryhtml(Model model, DataEntryForm form, BindingResult result) throws IOException {
+        return dataentry(model, form, result);
+    }
 
-    @RequestMapping(value = { "/dataentry" }, method = { RequestMethod.GET, RequestMethod.POST })
-    public String index(Model model, DataEntryForm form, BindingResult result) throws IOException {
+    @RequestMapping(value = { "/dataentry" }, params = { "update" }, method = { RequestMethod.GET, RequestMethod.POST })
+    public String dataentry(Model model, DataEntryForm form, BindingResult result) throws IOException {
 
         model.addAttribute("jumbotron", getJumbotronBean());
 
@@ -77,6 +88,30 @@ public class DataEntryController {
         }
 
         return entry;
+    }
+
+    @RequestMapping(value = "/dataentry", params = "download", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public String dataentryDownload(Model model, DataEntryForm form, HttpServletResponse response) throws IOException {
+        byte[] resultData = new byte[0];
+
+        if (form.getPref() != null && form.getPref().trim().length() > 0) {
+            CityInfoEntry entry = form2Entry(form);
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String resultJson = mapper.writeValueAsString(entry);
+            resultData = resultJson.getBytes("UTF-8");
+        }
+
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; filename=" + "sample.json");
+        response.setContentLength(resultData.length);
+
+        ByteArrayInputStream inStream = new ByteArrayInputStream(resultData);
+        OutputStream outStream = new BufferedOutputStream(response.getOutputStream());
+        StreamUtils.copy(inStream, outStream);
+        outStream.flush();
+
+        return null;
     }
 
     public static JumbotronFragmentBean getJumbotronBean() {
