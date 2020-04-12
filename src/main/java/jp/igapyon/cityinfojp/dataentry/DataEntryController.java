@@ -23,9 +23,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 import jp.igapyon.cityinfojp.dyn.NavbarUtil;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 @Controller
 public class DataEntryController {
@@ -40,6 +44,28 @@ public class DataEntryController {
         model.addAttribute("dataentry", form);
 
         form.setResultJson("USOUSO");
+
+        if (form.getPref() != null && form.getPref().trim().length() > 0) {
+            CityInfoEntry entry = new CityInfoEntry();
+            entry.setEntryDate("2000-01-01");
+            entry.setPref(form.getPref());
+            entry.setCity(form.getCity());
+            entry.setStartDate(form.getStartDate());
+            entry.setEndDate(form.getEndDate());
+            entry.setState(form.getState());
+            entry.setTarget(form.getTarget());
+            entry.setTargetRange(form.getTargetRange());
+            entry.setReason(form.getReason());
+            entry.getURL().add(form.getUrl1());
+            if (form.getUrl2() != null && form.getUrl2().trim().length() > 0) {
+                entry.getURL().add(form.getUrl2());
+            }
+
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String resultJson = mapper.writeValueAsString(entry);
+            form.setResultJson(resultJson);
+        }
 
         return "dataentry";
     }
