@@ -30,15 +30,15 @@
     <div class="row">
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">登録データ</h4>
-        <form class="needs-validation"  th:action="@{/dataentry}" th:object="${dataentry}" method="post">
+        <form class="needs-validation" th:action="@{/dataentry}" th:object="${dataentry}">
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="pref">都道府県</label>
-              <select class="custom-select d-block w-100" id="pref" required>
+              <select class="custom-select d-block w-100" id="pref" required th:field="*{pref}">
                 <option value="">Choose...</option>
-                <option>日本国</option>
-                <option>東京都</option>
-                <option>埼玉県</option>
+                <option th:value="日本国" th:text="日本国" th:selected="${dataentry.pref == '日本国'}" th:inline="text" />
+                <option th:value="東京都" th:text="東京都" th:selected="${dataentry.pref == '東京都'}" th:inline="text" />
+                <option th:value="埼玉県" th:text="埼玉県" th:selected="${dataentry.pref == '埼玉県'}" th:inline="text" />
               </select>
               <div class="invalid-feedback">
                 Please select a valid pref.
