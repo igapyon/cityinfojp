@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">登録データ</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation"  th:action="@{/dataentry}" th:object="${dataentry}" method="post">
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="pref">都道府県</label>
@@ -138,7 +138,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="resultjson">生成後 JSON</label>
-              <textarea class="form-control" id="resultjson" rows="20"></textarea>
+              <textarea class="form-control" id="resultjson" rows="20" th:field="*{resultJson}"></textarea>
             </div>
           </div>
         </form>

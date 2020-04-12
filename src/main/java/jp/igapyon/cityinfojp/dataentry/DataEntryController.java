@@ -19,7 +19,11 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.igapyon.cityinfojp.dyn.NavbarUtil;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
@@ -27,12 +31,35 @@ import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 
 @Controller
 public class DataEntryController {
-    @GetMapping({ "/dataentry.html" })
-    public String index(Model model) throws IOException {
+
+    @GetMapping({ "/dataentry" })
+    public String index(Model model, DataEntryForm form) throws IOException {
 
         model.addAttribute("jumbotron", getJumbotronBean());
 
         model.addAttribute("navbar", getNavbarBean());
+
+        model.addAttribute("dataentry", form);
+
+        return "dataentry";
+    }
+
+    @PostMapping({ "/dataentry" })
+    public String confirm(Model model, @Validated @ModelAttribute DataEntryForm form, BindingResult result)
+            throws IOException {
+
+        model.addAttribute("jumbotron", getJumbotronBean());
+
+        model.addAttribute("navbar", getNavbarBean());
+
+        model.addAttribute("dataentry", form);
+
+        //        if (result.hasErrors()) {
+        //            model.addAttribute("validationError", "Invalid value.");
+        //            return index(model, form);
+        //        }
+
+        form.setResultJson("USOUSO");
 
         return "dataentry";
     }
