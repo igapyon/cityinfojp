@@ -15,10 +15,15 @@
  */
 package jp.igapyon.cityinfojp.dyn;
 
+import java.io.IOException;
+import java.util.List;
+
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownItemBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarItemBean;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 public class NavbarUtil {
     public static NavbarBean buildNavbar() {
@@ -39,21 +44,17 @@ public class NavbarUtil {
             NavbarDropdownBean dropdown = new NavbarDropdownBean();
             item.setDropdownBean(dropdown);
 
-            {
-                NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
-                dropdown.getItemList().add(dropdownItem);
-                dropdownItem.setText("東京都");
-                dropdownItem.setHref("/pref/tokyo.html");
-
-                dropdownItem = new NavbarDropdownItemBean();
-                dropdown.getItemList().add(dropdownItem);
-                dropdownItem.setText("埼玉県");
-                dropdownItem.setHref("/pref/saitama.html");
-
-                dropdownItem = new NavbarDropdownItemBean();
-                dropdown.getItemList().add(dropdownItem);
-                dropdownItem.setText("千葉県");
-                dropdownItem.setHref("/pref/chiba.html");
+            try {
+                List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+                for (PrefEntry pref : prefList) {
+                    NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
+                    dropdown.getItemList().add(dropdownItem);
+                    dropdownItem.setText(pref.getName());
+                    dropdownItem.setHref("/pref/" + pref.getNameen().toLowerCase() + ".html");
+                }
+            } catch (IOException ex) {
+                System.err.println("Unexpected exception: " + ex.toString());
+                ex.printStackTrace();
             }
         }
         {
