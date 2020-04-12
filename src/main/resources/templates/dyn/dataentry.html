@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-6">
               <label for="city">市町村 <span class="text-muted">(Optional)</span></label>
               <input type="text" class="form-control" id="city">
               <div class="invalid-feedback">
@@ -55,14 +55,14 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-3 mb-3">
+            <div class="col-md-4 mb-4">
               <label for="startdate">開始日 <span class="text-muted">(Optional)</span></label>
               <input type="text" class="form-control datepicker" id="startdate">
               <div class="invalid-feedback">
                 Please enter start date.
               </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-4 mb-4">
               <label for="enddate">終了日 <span class="text-muted">(Optional)</span></label>
               <input type="text" class="form-control datepicker" id="enddate">
               <div class="invalid-feedback">
@@ -132,7 +132,15 @@
           </div>
 
           <hr class="mb-4">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">JSON の生成</button>
+          <hr class="mb-4">
+
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label for="resultjson">生成後 JSON</label>
+              <textarea class="form-control" id="resultjson" rows="20"></textarea>
+            </div>
+          </div>
         </form>
       </div>
     </div>
