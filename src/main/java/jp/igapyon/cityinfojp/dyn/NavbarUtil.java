@@ -20,7 +20,6 @@ import java.util.List;
 
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownItemBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarItemBean;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
@@ -46,10 +45,18 @@ public class NavbarUtil {
 
             // 八地方区分
             // 北海道、東北、関東、中部、近畿、中国、四国、九州沖縄
+            NavbarItemBean dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("北海道");
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("東北");
+
             try {
                 List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
                 for (PrefEntry pref : prefList) {
-                    NavbarDropdownItemBean dropdownItem = new NavbarDropdownItemBean();
+                    NavbarItemBean dropdownItem = new NavbarItemBean();
                     dropdown.getItemList().add(dropdownItem);
                     dropdownItem.setText(pref.getName());
                     dropdownItem.setHref("/pref/" + pref.getNameen().toLowerCase() + ".html");

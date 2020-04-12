@@ -21,7 +21,7 @@ import java.util.List;
 public class NavbarDropdownBean {
     private String text;
 
-    private List<NavbarDropdownItemBean> itemList = new ArrayList<>();
+    private List<NavbarItemBean> itemList = new ArrayList<>();
 
     public String getText() {
         return text;
@@ -31,11 +31,11 @@ public class NavbarDropdownBean {
         this.text = text;
     }
 
-    public List<NavbarDropdownItemBean> getItemList() {
+    public List<NavbarItemBean> getItemList() {
         return itemList;
     }
 
-    public void setItemList(List<NavbarDropdownItemBean> itemList) {
+    public void setItemList(List<NavbarItemBean> itemList) {
         this.itemList = itemList;
     }
 }
