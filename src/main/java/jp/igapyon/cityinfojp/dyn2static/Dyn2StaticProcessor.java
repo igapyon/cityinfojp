@@ -77,7 +77,17 @@ public class Dyn2StaticProcessor {
 
                 List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
                 DynIndexController.sortEntryList(allEntryList);
-                List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
+
+                // pref で絞り込み
+                List<CityInfoEntry> entryList = new ArrayList<>();
+                for (CityInfoEntry lookup : allEntryList) {
+                    if (pref.getName().equals(lookup.getPref())) {
+                        entryList.add(lookup);
+                    }
+                }
+
+                // 絞り込み後のデータを利用
+                List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(entryList);
 
                 // Prefでしぼりこみ
                 ((Context) ctx).setVariable("dispEntryList", dispEntryList);
@@ -99,7 +109,7 @@ public class Dyn2StaticProcessor {
             ex.printStackTrace();
         }
 
-        // areaごと
+        // areaごと静的ページ
 
         String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" }, { "chubu", "中部" },
                 { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" }, { "kyushuokinawa", "九州沖縄" } };
@@ -130,17 +140,9 @@ public class Dyn2StaticProcessor {
 
                 final IContext ctx = new Context();
 
-                List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
-                DynIndexController.sortEntryList(allEntryList);
-                List<CityInfoDisplayEntry> dispEntryAllList = DynIndexController.entryList2DispEntryList(allEntryList);
-
-                // Prefでしぼりこみ
-                List<CityInfoDisplayEntry> dispEntryList = new ArrayList<>();
-                dispEntryList.add(dispEntryAllList.get(0));
-
                 ((Context) ctx).setVariable("prefList", prefList);
 
-                ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+                // "dispEntryList"は不要
 
                 ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(area[1]));
 
@@ -157,6 +159,5 @@ public class Dyn2StaticProcessor {
             System.err.println("Unexpected exception: " + ex.toString());
             ex.printStackTrace();
         }
-
     }
 }
