@@ -16,6 +16,8 @@
 package jp.igapyon.cityinfojp.dataentry;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +49,9 @@ public class DataEntryController {
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
             CityInfoEntry entry = new CityInfoEntry();
-            entry.setEntryDate("2000-01-01");
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+            entry.setEntryDate(dtf.format(LocalDateTime.now()));
             entry.setPref(form.getPref());
             entry.setCity(form.getCity());
             entry.setStartDate(form.getStartDate());
