@@ -55,6 +55,16 @@
             </div>
           </div>
 
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="startdate">開始日 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control datepicker" id="city">
+              <div class="invalid-feedback">
+                Please enter a city or pref.
+              </div>
+            </div>
+          </div>
+
 
 
           <div class="mb-3">
@@ -228,6 +238,19 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+
+  <!-- Bootstrap datepicker -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ja.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+    });
+  </script>
 </body>
 
 </html>
