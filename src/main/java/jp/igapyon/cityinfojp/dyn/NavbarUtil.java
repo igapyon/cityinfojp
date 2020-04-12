@@ -45,9 +45,18 @@ public class NavbarUtil {
 
             boolean isPrefSelected = false;
 
+            NavbarItemBean dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("日本国");
+            dropdownMenuItem.setHref("/pref/japan.html");
+            if ("japan".equalsIgnoreCase(pref)) {
+                dropdownMenuItem.setCurrent(true);
+                isPrefSelected = true;
+            }
+
             // 八地方区分
             // 北海道、東北、関東、中部、近畿、中国、四国、九州沖縄
-            NavbarItemBean dropdownMenuItem = new NavbarItemBean();
+            dropdownMenuItem = new NavbarItemBean();
             dropdown.getItemList().add(dropdownMenuItem);
             dropdownMenuItem.setText("北海道");
             dropdownMenuItem.setHref("/pref/hokkaido.html");

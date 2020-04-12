@@ -1,4 +1,15 @@
 [ {
+  "EntryDate" : "2020-04-13",
+  "Pref" : "青森県",
+  "City" : "青森市",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "外出自粛",
+  "TargetRange" : "",
+  "Reason" : "感染拡大",
+  "URL" : [ "https://www3.nhk.or.jp/lnews/aomori/20200410/6080008148.html" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "栃木県",
   "City" : "宇都宮市",
@@ -97,6 +108,17 @@
   "TargetRange" : "週末",
   "Reason" : "緊急事態措置",
   "URL" : [ "https://www3.nhk.or.jp/shutoken-news/20200407/1000046977.html" ]
+}, {
+  "EntryDate" : "2020-04-13",
+  "Pref" : "北海道",
+  "City" : "北海道, 札幌",
+  "StartDate" : "2020-04-14",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "緊急共同宣言",
+  "TargetRange" : "外出自粛",
+  "Reason" : "",
+  "URL" : [ "https://news.so-net.ne.jp/article/abstract/1951317/" ]
 }, {
   "EntryDate" : "2020-04-06",
   "Pref" : "愛知県",
