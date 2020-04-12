@@ -36,6 +36,8 @@ import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 @Controller
 public class DynPrefController {
@@ -54,7 +56,17 @@ public class DynPrefController {
 
         model.addAttribute("dispEntryList", dispEntryList);
 
-        model.addAttribute("jumbotron", getJumbotronBean(pref));
+        try {
+            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            for (PrefEntry prefEntry : prefList) {
+                if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
+                    model.addAttribute("jumbotron", getJumbotronBean(prefEntry.getName()));
+                }
+            }
+        } catch (IOException ex) {
+            System.err.println("Unexpected exception: " + ex.toString());
+            ex.printStackTrace();
+        }
 
         model.addAttribute("navbar", getNavbarBean(pref));
 
@@ -67,10 +79,9 @@ public class DynPrefController {
         return "dyn/pref/pref";
     }
 
-    public static JumbotronFragmentBean getJumbotronBean(String pref) {
-        // pref から prefname を取得
+    public static JumbotronFragmentBean getJumbotronBean(String prefName) {
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
-        jumbotron.setTitle(pref);
+        jumbotron.setTitle(prefName);
         return jumbotron;
     }
 

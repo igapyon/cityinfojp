@@ -81,7 +81,7 @@ public class Dyn2StaticProcessor {
                 // Prefでしぼりこみ
                 ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
-                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(pref.getNameen()));
+                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(pref.getName()));
 
                 ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(pref.getNameen()));
 
