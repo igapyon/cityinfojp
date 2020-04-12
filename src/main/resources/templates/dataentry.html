@@ -57,14 +57,14 @@
           <div class="row">
             <div class="col-md-4 mb-4">
               <label for="startdate">開始日 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control datepicker" id="startdate">
+              <input type="text" class="form-control datepicker" id="startdate" th:field="*{startDate}">
               <div class="invalid-feedback">
                 Please enter start date.
               </div>
             </div>
             <div class="col-md-4 mb-4">
               <label for="enddate">終了日 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control datepicker" id="enddate">
+              <input type="text" class="form-control datepicker" id="enddate" th:field="*{endDate}">
               <div class="invalid-feedback">
                 Please enter start date.
               </div>
@@ -115,7 +115,8 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="url">URL</label>
-              <input type="text" class="form-control" id="url" required th:field=*{url1}>
+              <input type="text" class="form-control" id="url" placeholder="https://example.org/" required
+                th:field=*{url1}>
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
@@ -124,7 +125,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="url">URL other <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="url"  th:field=*{url2}>
+              <input type="text" class="form-control" id="url" placeholder="https://example.org/" th:field=*{url2}>
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
