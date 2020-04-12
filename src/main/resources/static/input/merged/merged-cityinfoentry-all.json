@@ -7,8 +7,8 @@
   "State" : "休校",
   "Target" : "市立小中学校",
   "TargetRange" : "",
-  "URL" : [ "https://www.jomo-news.co.jp/news/gunma/society/205021" ],
-  "Reason" : "緊急事態宣言を受け"
+  "Reason" : "緊急事態宣言を受け",
+  "URL" : [ "https://www.jomo-news.co.jp/news/gunma/society/205021" ]
 }, {
   "EntryDate" : "2020-04-06",
   "Pref" : "兵庫県",
@@ -18,8 +18,8 @@
   "State" : "休校",
   "Target" : "県立学校",
   "TargetRange" : "",
-  "URL" : [ "https://www3.nhk.or.jp/news/html/20200406/k10012370191000.html" ],
-  "Reason" : "感染者数の増加"
+  "Reason" : "感染者数の増加",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200406/k10012370191000.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "茨城県",
@@ -29,8 +29,8 @@
   "State" : "休校",
   "Target" : "市立小中学校",
   "TargetRange" : "半数",
-  "URL" : [ "https://ibarakinews.jp/news/newsdetail.php?f_jun=15861809680308" ],
-  "Reason" : "県立校の再開延期などを踏まえ"
+  "Reason" : "県立校の再開延期などを踏まえ",
+  "URL" : [ "https://ibarakinews.jp/news/newsdetail.php?f_jun=15861809680308" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "大阪府",
@@ -40,8 +40,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373441000.html" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373441000.html" ]
 }, {
   "EntryDate" : "2020-04-09",
   "Pref" : "群馬県",
@@ -51,8 +51,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.pref.gunma.jp/07/z87g_00028.html" ],
-  "Reason" : "緊急事態宣言の発令に伴う"
+  "Reason" : "緊急事態宣言の発令に伴う",
+  "URL" : [ "https://www.pref.gunma.jp/07/z87g_00028.html" ]
 }, {
   "EntryDate" : "2020-04-01",
   "Pref" : "ダミー県",
@@ -62,8 +62,8 @@
   "State" : "指示",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://github.com/igapyon/cityinfojp" ],
-  "Reason" : "指示のテスト用のダミーデータ"
+  "Reason" : "指示のテスト用のダミーデータ",
+  "URL" : [ "https://github.com/igapyon/cityinfojp" ]
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "埼玉県",
@@ -73,8 +73,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "週末",
-  "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message2020040202.html" ],
-  "Reason" : ""
+  "Reason" : "",
+  "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message2020040202.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "福岡県",
@@ -84,8 +84,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.nishinippon.co.jp/item/n/598435/" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www.nishinippon.co.jp/item/n/598435/" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "埼玉県",
@@ -95,8 +95,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "週末",
-  "URL" : [ "https://www3.nhk.or.jp/shutoken-news/20200407/1000046977.html" ],
-  "Reason" : "緊急事態措置"
+  "Reason" : "緊急事態措置",
+  "URL" : [ "https://www3.nhk.or.jp/shutoken-news/20200407/1000046977.html" ]
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "千葉県",
@@ -106,8 +106,8 @@
   "State" : "休校",
   "Target" : "県立学校",
   "TargetRange" : "",
-  "URL" : [ "https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html" ],
-  "Reason" : ""
+  "Reason" : "",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html" ]
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "山梨県",
@@ -117,8 +117,8 @@
   "State" : "休校",
   "Target" : "県立学校",
   "TargetRange" : "",
-  "URL" : [ "https://news.tv-asahi.co.jp/news_society/articles/000181023.html" ],
-  "Reason" : "感染リスク高い"
+  "Reason" : "感染リスク高い",
+  "URL" : [ "https://news.tv-asahi.co.jp/news_society/articles/000181023.html" ]
 }, {
   "EntryDate" : "2020-04-08",
   "Pref" : "茨城県",
@@ -128,8 +128,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.pref.ibaraki.jp/1saigai/2019-ncov/yousei.html" ],
-  "Reason" : "緊急事態宣言の都県と近接"
+  "Reason" : "緊急事態宣言の都県と近接",
+  "URL" : [ "https://www.pref.ibaraki.jp/1saigai/2019-ncov/yousei.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "栃木県",
@@ -139,8 +139,8 @@
   "State" : "休校",
   "Target" : "市立小中学校",
   "TargetRange" : "",
-  "URL" : [ "https://www.sankei.com/life/news/200407/lif2004070135-n1.html" ],
-  "Reason" : "緊急事態宣言対象地域が生活圏を受け"
+  "Reason" : "緊急事態宣言対象地域が生活圏を受け",
+  "URL" : [ "https://www.sankei.com/life/news/200407/lif2004070135-n1.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "東京都",
@@ -150,8 +150,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.bousai.metro.tokyo.lg.jp/1007617/1007632.html", "https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www.bousai.metro.tokyo.lg.jp/1007617/1007632.html", "https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "兵庫県",
@@ -161,8 +161,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373971000.html" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373971000.html" ]
 }, {
   "EntryDate" : "2020-04-09",
   "Pref" : "神奈川県",
@@ -172,8 +172,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/covid19/20200407_policy.html" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/covid19/20200407_policy.html" ]
 }, {
   "EntryDate" : "2020-04-09",
   "Pref" : "千葉県",
@@ -183,8 +183,8 @@
   "State" : "要請",
   "Target" : "外出自粛",
   "TargetRange" : "",
-  "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti.html" ],
-  "Reason" : "緊急事態措置"
+  "Reason" : "緊急事態措置",
+  "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti.html" ]
 }, {
   "EntryDate" : "2020-04-06",
   "Pref" : "愛知県",
@@ -194,8 +194,8 @@
   "State" : "休校",
   "Target" : "公立小中高校",
   "TargetRange" : "",
-  "URL" : [ "https://www.nikkei.com/article/DGXMZO57694920W0A400C2CE0000/" ],
-  "Reason" : "国内と県内の感染状況を踏まえ"
+  "Reason" : "国内と県内の感染状況を踏まえ",
+  "URL" : [ "https://www.nikkei.com/article/DGXMZO57694920W0A400C2CE0000/" ]
 }, {
   "EntryDate" : "2020-04-08",
   "Pref" : "日本国",
@@ -205,8 +205,8 @@
   "State" : "宣言",
   "Target" : "緊急事態",
   "TargetRange" : "",
-  "URL" : [ "https://www3.nhk.or.jp/news/html/20200408/k10012374361000.html" ],
-  "Reason" : "感染症の急速拡大"
+  "Reason" : "感染症の急速拡大",
+  "URL" : [ "https://www3.nhk.or.jp/news/html/20200408/k10012374361000.html" ]
 }, {
   "EntryDate" : "2020-04-11",
   "Pref" : "日本国",
@@ -216,6 +216,6 @@
   "State" : "要請",
   "Target" : "オフィス出勤者の削減",
   "TargetRange" : "",
-  "URL" : [ "https://www.nikkei.com/article/DGXMZO57959650R10C20A4EA3000/" ],
-  "Reason" : "緊急事態宣言"
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www.nikkei.com/article/DGXMZO57959650R10C20A4EA3000/" ]
 } ]
