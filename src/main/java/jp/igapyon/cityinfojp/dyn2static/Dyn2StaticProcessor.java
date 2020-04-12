@@ -99,10 +99,35 @@ public class Dyn2StaticProcessor {
             ex.printStackTrace();
         }
 
+        // areaごと
+
         String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" }, { "chubu", "中部" },
                 { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" }, { "kyushuokinawa", "九州沖縄" } };
+        String[][] AREA_PREF_CODES = new String[][] { { "02", "03", "04", "05", "06", "07" },
+                { "08", "09", "10", "11", "12", "13", "14" }, { "15", "16", "17", "18", "19", "20", "21", "22", "23" },
+                { "24", "25", "26", "27", "28", "29", "30" }, { "31", "32", "33", "34", "35" },
+                { "36", "37", "38", "39" }, { "40", "41", "42", "43", "44", "45", "46", "47" } };
+
         try {
-            for (String[] area : AREA_INFO) {
+            for (int index = 0; index < AREA_INFO.length; index++) {
+                String[] area = AREA_INFO[index];
+
+                List<PrefEntry> prefList = new ArrayList<>();
+                try {
+                    String[] localareacodes = AREA_PREF_CODES[index];
+                    List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
+                    for (PrefEntry prefEntry : prefAllList) {
+                        for (String lookPrefCode : localareacodes) {
+                            if (lookPrefCode.equals(prefEntry.getCode())) {
+                                prefList.add(prefEntry);
+                            }
+                        }
+                    }
+                } catch (IOException ex) {
+                    System.err.println("Unexpected exception: " + ex.toString());
+                    ex.printStackTrace();
+                }
+
                 final IContext ctx = new Context();
 
                 List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
@@ -113,6 +138,8 @@ public class Dyn2StaticProcessor {
                 List<CityInfoDisplayEntry> dispEntryList = new ArrayList<>();
                 dispEntryList.add(dispEntryAllList.get(0));
 
+                ((Context) ctx).setVariable("prefList", prefList);
+
                 ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
                 ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(area[1]));
@@ -122,7 +149,7 @@ public class Dyn2StaticProcessor {
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                 ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
-                String result = templateEngine.process("/dyn/pref/pref", ctx);
+                String result = templateEngine.process("/dyn/pref/area", ctx);
                 FileUtils.writeStringToFile(
                         new File("src/main/resources/static/pref/" + area[0].toLowerCase() + ".html"), result, "UTF-8");
             }
