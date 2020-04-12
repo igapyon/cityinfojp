@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>cityinfojp Contributor</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="cityinfojp">
+  <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
+
+  <link rel="canonical" href="https://cityinfojp.herokuapp.com/contributor.html">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div th:insert="dyn/fragment/navbar :: navbar-fragment" th:remove="tag" />
+
+  <main role="main">
+    <div th:insert="dyn/fragment/jumbotron :: jumbotron-fragment" th:remove="tag" />
+  </main>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">登録内容</h4>
+        <form class="needs-validation" th:action="@{/dataentry}" th:object="${dataentry}">
+          <div th:if="*{resultJson != ''}">
+            <div class="row">
+              <div class="col-md-8 mb-3">
+                <label for="resultjson">生成データ (JSON形式)</label>
+                <textarea class="form-control" id="resultjson" rows="12" th:text="*{resultJson}" readonly></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-primary btn-lg" type="submit" name="download">JSON Download</button>
+                <p><small>ダウンロードしたファイルを github に Pull request することでデータ投入を実現</small></p>
+              </div>
+            </div>
+            <hr class="mb-4">
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="pref">都道府県</label>
+              <select class="custom-select d-block w-100" id="pref" required th:field="*{pref}">
+                <option value="">Choose...</option>
+                <option th:value="日本国" th:text="日本国" th:selected="${dataentry.pref == '日本国'}" />
+                <option th:value="東京都" th:text="東京都" th:selected="${dataentry.pref == '東京都'}" />
+                <option th:value="埼玉県" th:text="埼玉県" th:selected="${dataentry.pref == '埼玉県'}" />
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid pref.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-6">
+              <label for="city">市町村 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="city" th:field="*{city}" />
+              <div class="invalid-feedback">
+                Please enter a city or pref.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <label for="startdate">開始日 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control datepicker" id="startdate" th:field="*{startDate}" />
+              <div class="invalid-feedback">
+                Please enter start date.
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <label for="enddate">終了日 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control datepicker" id="enddate" th:field="*{endDate}" />
+              <div class="invalid-feedback">
+                Please enter start date.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label for="stete">ステータス</label>
+              <select class="custom-select d-block w-100" id="state" required th:field="*{state}">
+                <option value="">Choose...</option>
+                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
+                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
+                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
+                <option th:value="宣言" th:text="宣言" th:selected="${dataentry.state == '宣言'}" />
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="target">対象 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="target" th:field="*{target}" />
+              <div class="invalid-feedback">
+                Please enter a target.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="targetrange">対象範囲 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="targetrange" th:field="*{targetRange}" />
+              <div class="invalid-feedback">
+                Please enter a target range.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="reason">理由 <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="reason" th:field="*{reason}" />
+              <div class="invalid-feedback">
+                Please enter a reason.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label for="url">URL</label>
+              <input type="text" class="form-control" id="url" placeholder="https://example.org/" required
+                th:field=*{url1} />
+              <div class="invalid-feedback">
+                Please enter a url.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 mb-3">
+              <label for="url">URL other <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="url" placeholder="https://example.org/" th:field=*{url2} />
+              <div class="invalid-feedback">
+                Please enter a url.
+              </div>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <button class="btn btn-primary btn-lg" type="submit" name="update">JSON 表示</button>
+            </div>
+            <div class="col-md-4 mb-3">
+              <button class="btn btn-secondary btn-lg" type="submit" name="download">JSON Download</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="container">
+    <p>&copy; cityinfojp 2020</p>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap datepicker -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ja.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd'
+    });
+  </script>
+</body>
+
+</html>

@@ -15,6 +15,7 @@
  */
 package jp.igapyon.cityinfojp.input.entry;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +33,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  * @author Toshiki Iga
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "EntryDate", "Pref", "City", "StartDate", "EndDate", "State", "Target", "TargetRange", "URL" })
+@JsonPropertyOrder({ "EntryDate", "Pref", "City", "StartDate", "EndDate", "State", "Target", "TargetRange", "Reason",
+        "URL" })
 public class CityInfoEntry {
     @JsonProperty("EntryDate")
     private String entryDate;
@@ -54,7 +56,7 @@ public class CityInfoEntry {
     private String reason;
 
     @JsonProperty("URL")
-    private List<String> url;
+    private List<String> url = new ArrayList<>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
