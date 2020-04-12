@@ -36,9 +36,9 @@
               <label for="pref">都道府県</label>
               <select class="custom-select d-block w-100" id="pref" required th:field="*{pref}">
                 <option value="">Choose...</option>
-                <option th:value="日本国" th:text="日本国" th:selected="${dataentry.pref == '日本国'}" th:inline="text" />
-                <option th:value="東京都" th:text="東京都" th:selected="${dataentry.pref == '東京都'}" th:inline="text" />
-                <option th:value="埼玉県" th:text="埼玉県" th:selected="${dataentry.pref == '埼玉県'}" th:inline="text" />
+                <option th:value="日本国" th:text="日本国" th:selected="${dataentry.pref == '日本国'}" />
+                <option th:value="東京都" th:text="東京都" th:selected="${dataentry.pref == '東京都'}" />
+                <option th:value="埼玉県" th:text="埼玉県" th:selected="${dataentry.pref == '埼玉県'}" />
               </select>
               <div class="invalid-feedback">
                 Please select a valid pref.
@@ -75,10 +75,10 @@
               <label for="stete">ステータス</label>
               <select class="custom-select d-block w-100" id="state" required th:field="*{state}">
                 <option value="">Choose...</option>
-                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" th:inline="text" />
-                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" th:inline="text" />
-                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" th:inline="text" />
-                <option th:value="宣言" th:text="宣言" th:selected="${dataentry.state == '宣言'}" th:inline="text" />
+                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
+                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
+                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
+                <option th:value="宣言" th:text="宣言" th:selected="${dataentry.state == '宣言'}" />
               </select>
               <div class="invalid-feedback">
                 Please select a valid state.
@@ -115,7 +115,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="url">URL</label>
-              <input type="text" class="form-control" id="url" required>
+              <input type="text" class="form-control" id="url" required th:field=*{url1}>
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
@@ -124,7 +124,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="url">URL other <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="url">
+              <input type="text" class="form-control" id="url"  th:field=*{url2}>
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
