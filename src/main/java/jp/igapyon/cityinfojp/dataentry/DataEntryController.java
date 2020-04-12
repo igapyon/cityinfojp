@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -39,6 +40,8 @@ import jp.igapyon.cityinfojp.dyn.NavbarUtil;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 @Controller
 public class DataEntryController {
@@ -123,8 +126,17 @@ public class DataEntryController {
             state = "closure";
         }
 
+        String prefString = "99-dummy";
+        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+        for (PrefEntry pref : prefList) {
+            if (pref.getName().equals(form.getPref())) {
+                prefString = pref.getCode() + "-" + pref.getName();
+                break;
+            }
+        }
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
-        String filename = "00-japan-" + state + "-" + dtf.format(LocalDateTime.now()) + "a.json";
+        String filename = prefString + "-" + state + "-" + dtf.format(LocalDateTime.now()) + "a.json";
 
         response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=" + filename);

@@ -15,16 +15,36 @@
  */
 package jp.igapyon.cityinfojp.input.entry;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PrefEntryUtil {
+    public static List<PrefEntry> readEntryListFromClasspath() throws IOException {
+        try (InputStream is = new ClassPathResource("static/input/prefjp.json").getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
+            StringBuffer buf = new StringBuffer();
+            char[] copyBuf = new char[8192];
+            for (;;) {
+                int length = br.read(copyBuf);
+                if (length <= 0) {
+                    break;
+                }
+                buf.append(new String(copyBuf, 0, length));
+            }
+            return readEntryList(buf.toString());
+        }
+    }
+
     public static List<PrefEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");
         return readEntryList(jsonInput);
