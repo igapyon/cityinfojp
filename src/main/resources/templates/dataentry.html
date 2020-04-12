@@ -54,9 +54,9 @@
               <label for="pref">都道府県</label>
               <select class="custom-select d-block w-100" id="pref" required th:field="*{pref}">
                 <option value="">Choose...</option>
-                <option th:value="日本国" th:text="日本国" th:selected="${dataentry.pref == '日本国'}" />
-                <option th:value="東京都" th:text="東京都" th:selected="${dataentry.pref == '東京都'}" />
-                <option th:value="埼玉県" th:text="埼玉県" th:selected="${dataentry.pref == '埼玉県'}" />
+                <div th:each="pref : ${prefList}">
+                  <option th:value="${pref.name}" th:text="${pref.name}" th:selected="${dataentry.pref == pref.name}" />
+                </div>
               </select>
               <div class="invalid-feedback">
                 Please select a valid pref.

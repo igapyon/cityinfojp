@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -59,11 +60,20 @@ public class DataEntryController {
 
         model.addAttribute("dataentry", form);
 
+        try {
+            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            model.addAttribute("prefList", prefList);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
             CityInfoEntry entry = form2Entry(form);
+            List<CityInfoEntry> entryList = new ArrayList<>();
+            entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String resultJson = mapper.writeValueAsString(entry);
+            String resultJson = mapper.writeValueAsString(entryList);
             form.setResultJson(resultJson);
         }
 
@@ -97,9 +107,11 @@ public class DataEntryController {
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
             CityInfoEntry entry = form2Entry(form);
+            List<CityInfoEntry> entryList = new ArrayList<>();
+            entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String resultJson = mapper.writeValueAsString(entry);
+            String resultJson = mapper.writeValueAsString(entryList);
             resultData = resultJson.getBytes("UTF-8");
         }
 
