@@ -44,6 +44,8 @@ public class NavbarUtil {
             NavbarDropdownBean dropdown = new NavbarDropdownBean();
             item.setDropdownBean(dropdown);
 
+            // 八地方区分
+            // 北海道、東北、関東、中部、近畿、中国、四国、九州沖縄
             try {
                 List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
                 for (PrefEntry pref : prefList) {
