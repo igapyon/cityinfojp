@@ -56,8 +56,6 @@ public class DataEntryController {
 
         model.addAttribute("dataentry", form);
 
-        form.setResultJson("USOUSO");
-
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
             CityInfoEntry entry = form2Entry(form);
             ObjectMapper mapper = new ObjectMapper();

@@ -31,6 +31,21 @@
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">登録データ</h4>
         <form class="needs-validation" th:action="@{/dataentry}" th:object="${dataentry}">
+          <div th:if="*{resultJson != ''}">
+            <div class="row">
+              <div class="col-md-8 mb-3">
+                <label for="resultjson">生成後 JSON</label>
+                <textarea class="form-control" id="resultjson" rows="12" th:text="*{resultJson}" readonly></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <button class="btn btn-secondary btn-lg" type="submit" name="download">JSON Download</button>
+              </div>
+            </div>
+            <hr class="mb-4">
+          </div>
+
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="pref">都道府県</label>
@@ -136,20 +151,10 @@
 
           <div class="row">
             <div class="col-md-4 mb-3">
-              <button class="btn btn-primary btn-lg" type="submit" name="update">JSON 生成/更新</button>
+              <button class="btn btn-primary btn-lg" type="submit" name="update">JSON 表示</button>
             </div>
             <div class="col-md-4 mb-3">
-              <button class="btn btn-primary btn-lg" type="submit" name="download">JSON Download</button>
-              <a class="btn btn-secondary btn-lg" href="/about.html" role="button">JSON Download</a>
-            </div>
-          </div>
-
-          <hr class="mb-4">
-
-          <div class="row">
-            <div class="col-md-8 mb-3">
-              <label for="resultjson">生成後 JSON</label>
-              <textarea class="form-control" id="resultjson" rows="12" th:text="*{resultJson}" readonly></textarea>
+              <button class="btn btn-secondary btn-lg" type="submit" name="download">JSON Download</button>
             </div>
           </div>
         </form>
