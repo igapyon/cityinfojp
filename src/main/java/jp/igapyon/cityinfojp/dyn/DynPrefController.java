@@ -30,16 +30,23 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 @Controller
 public class DynPrefController {
-    @GetMapping({ "/dyn/pref/{city}" })
-    public String index(Model model) throws IOException {
+    @GetMapping({ "/dyn/pref/{pref}" })
+    public String index(Model model, @PathVariable("pref") String pref) throws IOException {
+        if (pref.endsWith(".html")) {
+            pref = pref.substring(0, pref.length() - ".html".length());
+        }
+
         List<CityInfoEntry> allEntryList = buildEntityList();
 
         // Sort
@@ -49,26 +56,37 @@ public class DynPrefController {
 
         model.addAttribute("dispEntryList", dispEntryList);
 
-        model.addAttribute("jumbotron", getJumbotronBean());
+        try {
+            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            for (PrefEntry prefEntry : prefList) {
+                if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
+                    model.addAttribute("jumbotron", getJumbotronBean(prefEntry.getName()));
+                }
+            }
+        } catch (IOException ex) {
+            System.err.println("Unexpected exception: " + ex.toString());
+            ex.printStackTrace();
+        }
 
-        model.addAttribute("navbar", getNavbarBean());
+        model.addAttribute("navbar", getNavbarBean(pref));
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
 
         // FIX HERE
         // 都道府県ごとに処理するよう改善すること。
-        return "dyn/pref/tokyo";
+        // あと地域ごとに分岐も必要
+        return "dyn/pref/pref";
     }
 
-    public static JumbotronFragmentBean getJumbotronBean() {
+    public static JumbotronFragmentBean getJumbotronBean(String prefName) {
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
-        jumbotron.setTitle("cityinfojp : 東京都");
+        jumbotron.setTitle(prefName);
         return jumbotron;
     }
 
-    public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar();
+    public static NavbarBean getNavbarBean(String pref) {
+        NavbarBean navbar = NavbarUtil.buildNavbar(pref);
         navbar.getItemList().get(1).setCurrent(true);
         return navbar;
     }

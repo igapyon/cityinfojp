@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -30,6 +31,8 @@ import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
 import jp.igapyon.cityinfojp.dyn.DynIndexController;
 import jp.igapyon.cityinfojp.dyn.DynPrefController;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 public class Dyn2StaticProcessor {
     public static final void main(String[] args) throws IOException {
@@ -65,27 +68,96 @@ public class Dyn2StaticProcessor {
     static void dyn2staticPrefList(SpringTemplateEngine templateEngine) throws IOException {
         System.err.println("都道府県 html を静的ファイル化.");
 
-        final IContext ctx = new Context();
+        // pref ごとに処理
 
-        List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
-        DynIndexController.sortEntryList(allEntryList);
-        List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
+        try {
+            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            for (PrefEntry pref : prefList) {
+                final IContext ctx = new Context();
 
-        ((Context) ctx).setVariable("dispEntryList", dispEntryList);
+                List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
+                DynIndexController.sortEntryList(allEntryList);
 
-        ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean());
+                // pref で絞り込み
+                List<CityInfoEntry> entryList = new ArrayList<>();
+                for (CityInfoEntry lookup : allEntryList) {
+                    if (pref.getName().equals(lookup.getPref())) {
+                        entryList.add(lookup);
+                    }
+                }
 
-        ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean());
+                // 絞り込み後のデータを利用
+                List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(entryList);
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+                // Prefでしぼりこみ
+                ((Context) ctx).setVariable("dispEntryList", dispEntryList);
 
-        String result = templateEngine.process("/dyn/pref/tokyo", ctx);
-        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/tokyo.html"), result, "UTF-8");
+                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(pref.getName()));
 
-        // DUMMY
-        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/saitama.html"), result, "UTF-8");
-        // DUMMY
-        FileUtils.writeStringToFile(new File("src/main/resources/static/pref/chiba.html"), result, "UTF-8");
+                ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(pref.getNameen()));
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+
+                String result = templateEngine.process("/dyn/pref/pref", ctx);
+                FileUtils.writeStringToFile(
+                        new File("src/main/resources/static/pref/" + pref.getNameen().toLowerCase() + ".html"), result,
+                        "UTF-8");
+            }
+        } catch (IOException ex) {
+            System.err.println("Unexpected exception: " + ex.toString());
+            ex.printStackTrace();
+        }
+
+        // areaごと静的ページ
+
+        String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" }, { "chubu", "中部" },
+                { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" }, { "kyushuokinawa", "九州沖縄" } };
+        String[][] AREA_PREF_CODES = new String[][] { { "02", "03", "04", "05", "06", "07" },
+                { "08", "09", "10", "11", "12", "13", "14" }, { "15", "16", "17", "18", "19", "20", "21", "22", "23" },
+                { "24", "25", "26", "27", "28", "29", "30" }, { "31", "32", "33", "34", "35" },
+                { "36", "37", "38", "39" }, { "40", "41", "42", "43", "44", "45", "46", "47" } };
+
+        try {
+            for (int index = 0; index < AREA_INFO.length; index++) {
+                String[] area = AREA_INFO[index];
+
+                List<PrefEntry> prefList = new ArrayList<>();
+                try {
+                    String[] localareacodes = AREA_PREF_CODES[index];
+                    List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
+                    for (PrefEntry prefEntry : prefAllList) {
+                        for (String lookPrefCode : localareacodes) {
+                            if (lookPrefCode.equals(prefEntry.getCode())) {
+                                prefList.add(prefEntry);
+                            }
+                        }
+                    }
+                } catch (IOException ex) {
+                    System.err.println("Unexpected exception: " + ex.toString());
+                    ex.printStackTrace();
+                }
+
+                final IContext ctx = new Context();
+
+                ((Context) ctx).setVariable("prefList", prefList);
+
+                // "dispEntryList"は不要
+
+                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(area[1]));
+
+                ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(area[0]));
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+
+                String result = templateEngine.process("/dyn/pref/area", ctx);
+                FileUtils.writeStringToFile(
+                        new File("src/main/resources/static/pref/" + area[0].toLowerCase() + ".html"), result, "UTF-8");
+            }
+        } catch (IOException ex) {
+            System.err.println("Unexpected exception: " + ex.toString());
+            ex.printStackTrace();
+        }
     }
 }
