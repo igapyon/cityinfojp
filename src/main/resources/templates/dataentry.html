@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col-md-6 mb-6">
               <label for="city">市町村 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="city">
+              <input type="text" class="form-control" id="city" th:field="*{city}" />
               <div class="invalid-feedback">
                 Please enter a city or pref.
               </div>
@@ -57,14 +57,14 @@
           <div class="row">
             <div class="col-md-4 mb-4">
               <label for="startdate">開始日 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control datepicker" id="startdate" th:field="*{startDate}">
+              <input type="text" class="form-control datepicker" id="startdate" th:field="*{startDate}" />
               <div class="invalid-feedback">
                 Please enter start date.
               </div>
             </div>
             <div class="col-md-4 mb-4">
               <label for="enddate">終了日 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control datepicker" id="enddate" th:field="*{endDate}">
+              <input type="text" class="form-control datepicker" id="enddate" th:field="*{endDate}" />
               <div class="invalid-feedback">
                 Please enter start date.
               </div>
@@ -88,7 +88,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="target">対象 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="target">
+              <input type="text" class="form-control" id="target" th:field="*{target}" />
               <div class="invalid-feedback">
                 Please enter a target.
               </div>
@@ -97,7 +97,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="targetrange">対象範囲 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="targetrange">
+              <input type="text" class="form-control" id="targetrange" th:field="*{targetRange}" />
               <div class="invalid-feedback">
                 Please enter a target range.
               </div>
@@ -106,7 +106,7 @@
           <div class="row">
             <div class="col-md-5 mb-3">
               <label for="reason">理由 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="reason">
+              <input type="text" class="form-control" id="reason" th:field="*{reason}" />
               <div class="invalid-feedback">
                 Please enter a reason.
               </div>
@@ -116,7 +116,7 @@
             <div class="col-md-8 mb-3">
               <label for="url">URL</label>
               <input type="text" class="form-control" id="url" placeholder="https://example.org/" required
-                th:field=*{url1}>
+                th:field=*{url1} />
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
@@ -125,7 +125,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="url">URL other <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="url" placeholder="https://example.org/" th:field=*{url2}>
+              <input type="text" class="form-control" id="url" placeholder="https://example.org/" th:field=*{url2} />
               <div class="invalid-feedback">
                 Please enter a url.
               </div>
@@ -139,7 +139,7 @@
           <div class="row">
             <div class="col-md-8 mb-3">
               <label for="resultjson">生成後 JSON</label>
-              <textarea class="form-control" id="resultjson" rows="20" th:field="*{resultJson}"></textarea>
+              <textarea class="form-control" id="resultjson" rows="20" th:text="*{resultJson}" readonly></textarea>
             </div>
           </div>
         </form>
