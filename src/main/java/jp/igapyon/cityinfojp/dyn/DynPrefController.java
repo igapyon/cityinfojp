@@ -54,7 +54,7 @@ public class DynPrefController {
 
         model.addAttribute("dispEntryList", dispEntryList);
 
-        model.addAttribute("jumbotron", getJumbotronBean());
+        model.addAttribute("jumbotron", getJumbotronBean(pref));
 
         model.addAttribute("navbar", getNavbarBean(pref));
 
@@ -63,12 +63,14 @@ public class DynPrefController {
 
         // FIX HERE
         // 都道府県ごとに処理するよう改善すること。
-        return "dyn/pref/tokyo";
+        // あと地域ごとに分岐も必要
+        return "dyn/pref/pref";
     }
 
-    public static JumbotronFragmentBean getJumbotronBean() {
+    public static JumbotronFragmentBean getJumbotronBean(String pref) {
+        // pref から prefname を取得
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
-        jumbotron.setTitle("cityinfojp : 東京都");
+        jumbotron.setTitle(pref);
         return jumbotron;
     }
 
