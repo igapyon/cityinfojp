@@ -13,32 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn;
+package jp.igapyon.cityinfojp.dataentry;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jp.igapyon.cityinfojp.dyn.NavbarUtil;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 
 @Controller
 public class DataEntryController {
-    @GetMapping({ "/dyn/dataentry.html" })
+    @GetMapping({ "/dataentry.html" })
     public String index(Model model) throws IOException {
 
         model.addAttribute("jumbotron", getJumbotronBean());
 
         model.addAttribute("navbar", getNavbarBean());
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
-
-        return "dyn/dataentry";
+        return "dataentry";
     }
 
     public static JumbotronFragmentBean getJumbotronBean() {
