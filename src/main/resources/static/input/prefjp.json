@@ -1,43 +1,58 @@
 [
     {
+        "code": "00",
+        "name": "日本国",
+        "nameen": "Japan"
+    },
+    {
         "code": "01",
-        "name": "北海道"
+        "name": "北海道",
+        "nameen": "Hokkaido"
     },
     {
         "code": "02",
-        "name": "青森県"
+        "name": "青森県",
+        "nameen": "Aomori"
     },
     {
         "code": "03",
-        "name": "岩手県"
+        "name": "岩手県",
+        "nameen": "Iwate"
     },
     {
         "code": "04",
-        "name": "宮城県"
+        "name": "宮城県",
+        "nameen": "Miyagi"
     },
     {
         "code": "05",
-        "name": "秋田県"
+        "name": "秋田県",
+        "nameen": "Akita"
     },
     {
         "code": "06",
-        "name": "山形県"
+        "name": "山形県",
+        "nameen": "Yamagata"
     },
     {
         "code": "07",
-        "name": "福島県"
+        "name": "福島県",
+        "nameen": "Fukushima"
     },
     {
         "code": "08",
-        "name": "茨城県"
+        "name": "茨城県",
+        "nameen": "Ibaraki"
     },
     {
         "code": "09",
-        "name": "栃木県"
+        "name": "栃木県",
+        "nameen": "Tochigi"
     },
     {
         "code": "10",
-        "name": "群馬県"
+        "name": "群馬県",
+        "nameen": "Gunma"
     },
     {
         "code": "11",
@@ -61,134 +76,167 @@
     },
     {
         "code": "15",
-        "name": "新潟県"
+        "name": "新潟県",
+        "nameen": "Niigata"
     },
     {
         "code": "16",
-        "name": "富山県"
+        "name": "富山県",
+        "nameen": "Toyama"
     },
     {
         "code": "17",
-        "name": "石川県"
+        "name": "石川県",
+        "nameen": "Ishikawa"
     },
     {
         "code": "18",
-        "name": "福井県"
+        "name": "福井県",
+        "nameen": "Fukui"
     },
     {
         "code": "19",
-        "name": "山梨県"
+        "name": "山梨県",
+        "nameen": "Yamanashi"
     },
     {
         "code": "20",
-        "name": "長野県"
+        "name": "長野県",
+        "nameen": "Nagano"
     },
     {
         "code": "21",
-        "name": "岐阜県"
+        "name": "岐阜県",
+        "nameen": "Gifu"
     },
     {
         "code": "22",
-        "name": "静岡県"
+        "name": "静岡県",
+        "nameen": "Shizuoka"
     },
     {
         "code": "23",
-        "name": "愛知県"
+        "name": "愛知県",
+        "nameen": "Aichi"
     },
     {
         "code": "24",
-        "name": "三重県"
+        "name": "三重県",
+        "nameen": "Mie"
     },
     {
         "code": "25",
-        "name": "滋賀県"
+        "name": "滋賀県",
+        "nameen": "Shiga"
     },
     {
         "code": "26",
-        "name": "京都府"
+        "name": "京都府",
+        "nameen": "Kyoto"
     },
     {
         "code": "27",
-        "name": "大阪府"
+        "name": "大阪府",
+        "nameen": "Osaka"
     },
     {
         "code": "28",
-        "name": "兵庫県"
+        "name": "兵庫県",
+        "nameen": "Hyogo"
     },
     {
         "code": "29",
-        "name": "奈良県"
+        "name": "奈良県",
+        "nameen": "Nara"
     },
     {
         "code": "30",
-        "name": "和歌山県"
+        "name": "和歌山県",
+        "nameen": "Wakayama"
     },
     {
         "code": "31",
-        "name": "鳥取県"
+        "name": "鳥取県",
+        "nameen": "Tottori"
     },
     {
         "code": "32",
-        "name": "島根県"
+        "name": "島根県",
+        "nameen": "Shimane"
     },
     {
         "code": "33",
-        "name": "岡山県"
+        "name": "岡山県",
+        "nameen": "Okayama"
     },
     {
         "code": "34",
-        "name": "広島県"
+        "name": "広島県",
+        "nameen": "Hiroshima"
     },
     {
         "code": "35",
-        "name": "山口県"
+        "name": "山口県",
+        "nameen": "Yamaguchi"
     },
     {
         "code": "36",
-        "name": "徳島県"
+        "name": "徳島県",
+        "nameen": "Tokushima"
     },
     {
         "code": "37",
-        "name": "香川県"
+        "name": "香川県",
+        "nameen": "Kagawa"
     },
     {
         "code": "38",
-        "name": "愛媛県"
+        "name": "愛媛県",
+        "nameen": "Ehime"
     },
     {
         "code": "39",
-        "name": "高知県"
+        "name": "高知県",
+        "nameen": "Kochi"
     },
     {
         "code": "40",
-        "name": "福岡県"
+        "name": "福岡県",
+        "nameen": "Fukuoka"
     },
     {
         "code": "41",
-        "name": "佐賀県"
+        "name": "佐賀県",
+        "nameen": "Saga"
     },
     {
         "code": "42",
-        "name": "長崎県"
+        "name": "長崎県",
+        "nameen": "Nagasaki"
     },
     {
         "code": "43",
-        "name": "熊本県"
+        "name": "熊本県",
+        "nameen": "Kumamoto"
     },
     {
         "code": "44",
-        "name": "大分県"
+        "name": "大分県",
+        "nameen": "Oita"
     },
     {
         "code": "45",
-        "name": "宮崎県"
+        "name": "宮崎県",
+        "nameen": "Miyazaki"
     },
     {
         "code": "46",
-        "name": "鹿児島県"
+        "name": "鹿児島県",
+        "nameen": "Kagoshima"
     },
     {
         "code": "47",
-        "name": "沖縄県"
+        "name": "沖縄県",
+        "nameen": "Okinawa"
     }
 ]

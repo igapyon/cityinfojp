@@ -130,7 +130,7 @@ public class DataEntryController {
         List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
         for (PrefEntry pref : prefList) {
             if (pref.getName().equals(form.getPref())) {
-                prefString = pref.getCode() + "-" + pref.getName();
+                prefString = pref.getCode() + "-" + pref.getNameen().toLowerCase();
                 break;
             }
         }
