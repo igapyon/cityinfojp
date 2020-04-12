@@ -48,23 +48,7 @@ public class DataEntryController {
         form.setResultJson("USOUSO");
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
-            CityInfoEntry entry = new CityInfoEntry();
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-            entry.setEntryDate(dtf.format(LocalDateTime.now()));
-            entry.setPref(form.getPref());
-            entry.setCity(form.getCity());
-            entry.setStartDate(form.getStartDate());
-            entry.setEndDate(form.getEndDate());
-            entry.setState(form.getState());
-            entry.setTarget(form.getTarget());
-            entry.setTargetRange(form.getTargetRange());
-            entry.setReason(form.getReason());
-            entry.getURL().add(form.getUrl1());
-            if (form.getUrl2() != null && form.getUrl2().trim().length() > 0) {
-                entry.getURL().add(form.getUrl2());
-            }
-
+            CityInfoEntry entry = form2Entry(form);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
             String resultJson = mapper.writeValueAsString(entry);
@@ -72,6 +56,27 @@ public class DataEntryController {
         }
 
         return "dataentry";
+    }
+
+    static CityInfoEntry form2Entry(DataEntryForm form) {
+        CityInfoEntry entry = new CityInfoEntry();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        entry.setEntryDate(dtf.format(LocalDateTime.now()));
+        entry.setPref(form.getPref());
+        entry.setCity(form.getCity());
+        entry.setStartDate(form.getStartDate());
+        entry.setEndDate(form.getEndDate());
+        entry.setState(form.getState());
+        entry.setTarget(form.getTarget());
+        entry.setTargetRange(form.getTargetRange());
+        entry.setReason(form.getReason());
+        entry.getURL().add(form.getUrl1());
+        if (form.getUrl2() != null && form.getUrl2().trim().length() > 0) {
+            entry.getURL().add(form.getUrl2());
+        }
+
+        return entry;
     }
 
     public static JumbotronFragmentBean getJumbotronBean() {
