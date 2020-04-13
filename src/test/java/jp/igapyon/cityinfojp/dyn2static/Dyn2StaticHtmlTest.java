@@ -30,6 +30,8 @@ class Dyn2StaticHtmlTest {
 
         Dyn2StaticIndexProcessor.main(new String[] { "this" });
 
+        Dyn2StaticAreaProcessor.main(new String[] { "this" });
+
         Dyn2StaticPrefProcessor.main(new String[] { "this" });
 
         Dyn2StaticSimpleProcessor.main(new String[] { "this" });
