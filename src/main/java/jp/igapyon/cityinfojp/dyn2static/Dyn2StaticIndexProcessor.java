@@ -17,18 +17,15 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
+import java.util.LinkedHashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
-import jp.igapyon.cityinfojp.dyn.DynIndexController;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 
 public class Dyn2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {
@@ -42,18 +39,8 @@ public class Dyn2StaticIndexProcessor {
 
         final IContext ctx = new Context();
 
-        List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
-        DynIndexController.sortEntryList(allEntryList);
-        List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
-
-        ((Context) ctx).setVariable("dispEntryList", dispEntryList);
-
-        ((Context) ctx).setVariable("jumbotron", DynIndexController.getJumbotronBean());
-
-        ((Context) ctx).setVariable("navbar", DynIndexController.getNavbarBean());
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+        LinkedHashMap<String, Object> map = ThymVarMapIndexBuilder.buildVarMap();
+        ThymVarMapUtil.applyContextVariable(ctx, map);
 
         String result = templateEngine.process("/dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
