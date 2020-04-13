@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.dyn2static.ThymeleafVarMapPrefBuilder;
+import jp.igapyon.cityinfojp.dyn2static.ThymVarMapPrefBuilder;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
@@ -62,7 +62,7 @@ public class DynPrefController {
             ex.printStackTrace();
         }
 
-        LinkedHashMap<String, Object> map = ThymeleafVarMapPrefBuilder.buildVarMap(pref, prefName);
+        LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref, prefName);
         for (Map.Entry<String, Object> look : map.entrySet()) {
             model.addAttribute(look.getKey(), look.getValue());
         }

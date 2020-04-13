@@ -17,9 +17,6 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,11 +26,18 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.DynPrefController;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 public class Dyn2StaticPrefProcessor {
+    public static final String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" },
+            { "chubu", "中部" }, { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" },
+            { "kyushuokinawa", "九州沖縄" } };
+    public static final String[][] AREA_PREF_CODES = new String[][] { { "02", "03", "04", "05", "06", "07" },
+            { "08", "09", "10", "11", "12", "13", "14" }, { "15", "16", "17", "18", "19", "20", "21", "22", "23" },
+            { "24", "25", "26", "27", "28", "29", "30" }, { "31", "32", "33", "34", "35" }, { "36", "37", "38", "39" },
+            { "40", "41", "42", "43", "44", "45", "46", "47" } };
+
     public static final void main(String[] args) throws IOException {
         SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
 
@@ -50,8 +54,7 @@ public class Dyn2StaticPrefProcessor {
             for (PrefEntry pref : prefList) {
                 final IContext ctx = new Context();
 
-                LinkedHashMap<String, Object> map = ThymeleafVarMapPrefBuilder.buildVarMap(pref.getNameen(),
-                        pref.getName());
+                LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref.getNameen(), pref.getName());
                 for (Map.Entry<String, Object> look : map.entrySet()) {
                     ((Context) ctx).setVariable(look.getKey(), look.getValue());
                 }
@@ -68,45 +71,18 @@ public class Dyn2StaticPrefProcessor {
 
         // areaごと静的ページ
 
-        String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" }, { "chubu", "中部" },
-                { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" }, { "kyushuokinawa", "九州沖縄" } };
-        String[][] AREA_PREF_CODES = new String[][] { { "02", "03", "04", "05", "06", "07" },
-                { "08", "09", "10", "11", "12", "13", "14" }, { "15", "16", "17", "18", "19", "20", "21", "22", "23" },
-                { "24", "25", "26", "27", "28", "29", "30" }, { "31", "32", "33", "34", "35" },
-                { "36", "37", "38", "39" }, { "40", "41", "42", "43", "44", "45", "46", "47" } };
-
         try {
             for (int index = 0; index < AREA_INFO.length; index++) {
-                String[] area = AREA_INFO[index];
-
-                List<PrefEntry> prefList = new ArrayList<>();
-                try {
-                    String[] localareacodes = AREA_PREF_CODES[index];
-                    List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
-                    for (PrefEntry prefEntry : prefAllList) {
-                        for (String lookPrefCode : localareacodes) {
-                            if (lookPrefCode.equals(prefEntry.getCode())) {
-                                prefList.add(prefEntry);
-                            }
-                        }
-                    }
-                } catch (IOException ex) {
-                    System.err.println("Unexpected exception: " + ex.toString());
-                    ex.printStackTrace();
-                }
-
                 final IContext ctx = new Context();
 
-                ((Context) ctx).setVariable("prefList", prefList);
+                String[] area = AREA_INFO[index];
 
-                // "dispEntryList"は不要
+                LinkedHashMap<String, Object> map = ThymVarMapAreaBuilder.buildVarMap(area[0], area[1],
+                        AREA_PREF_CODES[index]);
 
-                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(area[1]));
-
-                ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(area[0]));
-
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-                ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+                for (Map.Entry<String, Object> look : map.entrySet()) {
+                    ((Context) ctx).setVariable(look.getKey(), look.getValue());
+                }
 
                 String result = templateEngine.process("/dyn/pref/area", ctx);
                 FileUtils.writeStringToFile(

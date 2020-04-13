@@ -32,7 +32,7 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
  * 
  * 都道府県の単位でビルドします。
  */
-public class ThymeleafVarMapPrefBuilder {
+public class ThymVarMapPrefBuilder {
     /**
      * final String name, final Object value
      */
