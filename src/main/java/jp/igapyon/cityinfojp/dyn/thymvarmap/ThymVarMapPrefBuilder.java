@@ -32,11 +32,19 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
  * 
  * 都道府県の単位でビルドします。
  */
-public class ThymVarMapPrefBuilder {
+public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
+    private String prefNameen;
+    String prefName;
+
+    public ThymVarMapPrefBuilder(String prefNameen, String prefName) {
+        this.prefNameen = prefNameen;
+        this.prefName = prefName;
+    }
+
     /**
      * final String name, final Object value
      */
-    public static LinkedHashMap<String, Object> buildVarMap(String prefNameen, String prefName) {
+    protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         try {

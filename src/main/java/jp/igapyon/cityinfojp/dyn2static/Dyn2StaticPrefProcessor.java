@@ -17,7 +17,6 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -26,7 +25,6 @@ import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
@@ -48,8 +46,7 @@ public class Dyn2StaticPrefProcessor {
             for (PrefEntry pref : prefList) {
                 final IContext ctx = new Context();
 
-                LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref.getNameen(), pref.getName());
-                ThymVarMapUtil.applyContextVariable(ctx, map);
+                new ThymVarMapPrefBuilder(pref.getNameen(), pref.getName()).applyContextVariable(ctx);
 
                 String result = templateEngine.process("/dyn/pref/pref", ctx);
                 FileUtils.writeStringToFile(

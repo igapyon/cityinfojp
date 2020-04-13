@@ -22,7 +22,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
@@ -34,7 +33,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
@@ -62,8 +60,7 @@ public class DynPrefController {
             ex.printStackTrace();
         }
 
-        LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref, prefName);
-        ThymVarMapUtil.applyModelAttr(model, map);
+        new ThymVarMapPrefBuilder(pref, prefName).applyModelAttr(model);
 
         return "dyn/pref/pref";
     }
