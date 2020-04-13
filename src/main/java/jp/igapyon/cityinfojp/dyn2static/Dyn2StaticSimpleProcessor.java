@@ -17,15 +17,15 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.DynSimpleController;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 
 public class Dyn2StaticSimpleProcessor {
     public static final void main(String[] args) throws IOException {
@@ -42,12 +42,8 @@ public class Dyn2StaticSimpleProcessor {
 
         final IContext ctx = new Context();
 
-        ((Context) ctx).setVariable("jumbotron", DynSimpleController.getJumbotronBean(sourcePath));
-
-        ((Context) ctx).setVariable("navbar", DynSimpleController.getNavbarBean(sourcePath));
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
+        LinkedHashMap<String, Object> map = ThymVarMapSimpleBuilder.buildVarMap(sourcePath);
+        ThymVarMapUtil.applyContextVariable(ctx, map);
 
         String result = templateEngine.process(sourcePath, ctx);
         FileUtils.writeStringToFile(new File(targetPath), result, "UTF-8");

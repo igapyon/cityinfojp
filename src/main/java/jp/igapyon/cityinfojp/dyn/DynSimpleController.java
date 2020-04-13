@@ -16,8 +16,7 @@
 package jp.igapyon.cityinfojp.dyn;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,17 +26,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 
 @Controller
 public class DynSimpleController {
     @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
-
-        model.addAttribute("jumbotron", getJumbotronBean(request.getRequestURI()));
-
-        model.addAttribute("navbar", getNavbarBean(request.getRequestURI()));
+        LinkedHashMap<String, Object> map = ThymVarMapSimpleBuilder.buildVarMap(request.getRequestURI());
+        ThymVarMapUtil.applyModelAttr(model, map);
 
         return getPathStringWithoutExt(request.getRequestURI());
     }
