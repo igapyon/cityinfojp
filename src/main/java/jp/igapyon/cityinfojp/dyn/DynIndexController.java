@@ -22,7 +22,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
@@ -33,7 +32,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 
@@ -41,8 +39,7 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
-        LinkedHashMap<String, Object> map = ThymVarMapIndexBuilder.buildVarMap();
-        ThymVarMapUtil.applyModelAttr(model, map);
+        new ThymVarMapIndexBuilder().applyModelAttr(model);
 
         return "dyn/index";
     }

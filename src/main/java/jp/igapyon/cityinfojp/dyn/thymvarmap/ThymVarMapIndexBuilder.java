@@ -30,11 +30,11 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
  * 
  * Indexの単位でビルドします。
  */
-public class ThymVarMapIndexBuilder {
+public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
     /**
      * 変数をビルド。
      */
-    public static LinkedHashMap<String, Object> buildVarMap() throws IOException {
+    protected LinkedHashMap<String, Object> buildVarMap() throws IOException {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();

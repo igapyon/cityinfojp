@@ -17,7 +17,6 @@ package jp.igapyon.cityinfojp.dyn2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
@@ -25,7 +24,6 @@ import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 
 public class Dyn2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {
@@ -39,8 +37,7 @@ public class Dyn2StaticIndexProcessor {
 
         final IContext ctx = new Context();
 
-        LinkedHashMap<String, Object> map = ThymVarMapIndexBuilder.buildVarMap();
-        ThymVarMapUtil.applyContextVariable(ctx, map);
+        new ThymVarMapIndexBuilder().applyContextVariable(ctx);
 
         String result = templateEngine.process("/dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
