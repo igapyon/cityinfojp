@@ -16,8 +16,6 @@
 package jp.igapyon.cityinfojp.dyn;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,56 +23,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
 
 @Controller
 public class DynSimpleController {
     @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
+        new ThymVarMapSimpleBuilder(request.getRequestURI()).applyModelAttr(model);
 
-        model.addAttribute("jumbotron", getJumbotronBean(request.getRequestURI()));
-
-        model.addAttribute("navbar", getNavbarBean(request.getRequestURI()));
-
-        return getPathStringWithoutExt(request.getRequestURI());
-    }
-
-    public static String getPathStringWithoutExt(String requestURI) {
-        if (requestURI.lastIndexOf('.') < 0) {
-            return requestURI;
-        }
-        String body = requestURI.substring(0, requestURI.lastIndexOf('.'));
-        return body;
-    }
-
-    public static JumbotronFragmentBean getJumbotronBean(String requestURI) {
-        JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
-
-        String body = getPathStringWithoutExt(requestURI);
-        if (body.startsWith("/dyn/about")) {
-            jumbotron.setTitle("About");
-        } else if (body.startsWith("/dyn/contributor")) {
-            jumbotron.setTitle("Contributor");
-        } else if (body.startsWith("/dyn/link")) {
-            jumbotron.setTitle("関連リンク");
-        }
-
-        return jumbotron;
-    }
-
-    public static NavbarBean getNavbarBean(String requestURI) {
-        NavbarBean navbar = NavbarUtil.buildNavbar(null);
-        String body = getPathStringWithoutExt(requestURI);
-        if (body.startsWith("/dyn/about")) {
-            navbar.getItemList().get(4).setCurrent(true);
-        } else if (body.startsWith("/dyn/contributor")) {
-            navbar.getItemList().get(3).setCurrent(true);
-        } else if (body.startsWith("/dyn/link")) {
-            navbar.getItemList().get(2).setCurrent(true);
-        }
-        return navbar;
+        return ThymVarMapSimpleBuilder.getPathStringWithoutExt(request.getRequestURI());
     }
 }

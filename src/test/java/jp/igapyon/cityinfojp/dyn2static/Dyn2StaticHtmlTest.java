@@ -26,7 +26,13 @@ class Dyn2StaticHtmlTest {
         // JSONを一括マージが必ず先。
         CityInfoEntryMergeProcessor.main(new String[] { "this" });
 
-        Dyn2StaticProcessor.main(new String[] { "this" });
+        // その次に個別の生成
+
+        Dyn2StaticIndexProcessor.main(new String[] { "this" });
+
+        Dyn2StaticAreaProcessor.main(new String[] { "this" });
+
+        Dyn2StaticPrefProcessor.main(new String[] { "this" });
 
         Dyn2StaticSimpleProcessor.main(new String[] { "this" });
     }

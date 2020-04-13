@@ -23,26 +23,23 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
 
-public class Dyn2StaticSimpleProcessor {
+public class Dyn2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {
         SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
-        dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
-        dyn2staticSimple(templateEngine, "/dyn/contributor", "src/main/resources/static/contributor.html");
-        dyn2staticSimple(templateEngine, "/dyn/link", "src/main/resources/static/link.html");
+        dyn2staticIndex(templateEngine);
     }
 
-    static void dyn2staticSimple(SpringTemplateEngine templateEngine, String sourcePath, String targetPath)
-            throws IOException {
-        System.err.println(sourcePath + " を静的ファイル化.");
+    static void dyn2staticIndex(SpringTemplateEngine templateEngine) throws IOException {
+        System.err.println("index.html を静的ファイル化.");
 
         final IContext ctx = new Context();
 
-        new ThymVarMapSimpleBuilder(sourcePath).applyContextVariable(ctx);
+        new ThymVarMapIndexBuilder().applyContextVariable(ctx);
 
-        String result = templateEngine.process(sourcePath, ctx);
-        FileUtils.writeStringToFile(new File(targetPath), result, "UTF-8");
+        String result = templateEngine.process("/dyn/index", ctx);
+        FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
     }
 }
