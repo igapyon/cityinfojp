@@ -31,11 +31,21 @@ import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
  * 
  * エリアの単位でビルドします。
  */
-public class ThymVarMapAreaBuilder {
+public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
+    private String areaId;
+    private String areaName;
+    private String[] prefs;
+
+    public ThymVarMapAreaBuilder(String areaId, String areaName, String[] prefs) {
+        this.areaId = areaId;
+        this.areaName = areaName;
+        this.prefs = prefs;
+    }
+
     /**
      * 変数をビルド。
      */
-    public static LinkedHashMap<String, Object> buildVarMap(String areaId, String areaName, String[] prefs) {
+    protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         List<PrefEntry> prefList = new ArrayList<>();
