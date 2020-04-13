@@ -26,6 +26,8 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapAreaBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 

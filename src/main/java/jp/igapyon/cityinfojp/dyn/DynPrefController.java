@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.dyn2static.ThymVarMapPrefBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
