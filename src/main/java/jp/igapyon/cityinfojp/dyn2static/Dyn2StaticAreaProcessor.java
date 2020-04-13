@@ -53,7 +53,7 @@ public class Dyn2StaticAreaProcessor {
 
                 LinkedHashMap<String, Object> map = ThymVarMapAreaBuilder.buildVarMap(area[0], area[1],
                         AREA_PREF_CODES[index]);
-                ThymVarMapUtil.setContextVariable(ctx, map);
+                ThymVarMapUtil.applyContextVariable(ctx, map);
 
                 String result = templateEngine.process("/dyn/pref/area", ctx);
                 FileUtils.writeStringToFile(

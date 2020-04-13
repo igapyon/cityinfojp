@@ -50,7 +50,7 @@ public class Dyn2StaticPrefProcessor {
                 final IContext ctx = new Context();
 
                 LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref.getNameen(), pref.getName());
-                ThymVarMapUtil.setContextVariable(ctx, map);
+                ThymVarMapUtil.applyContextVariable(ctx, map);
 
                 String result = templateEngine.process("/dyn/pref/pref", ctx);
                 FileUtils.writeStringToFile(

@@ -18,6 +18,7 @@ package jp.igapyon.cityinfojp.dyn.thymvarmap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.ui.Model;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 
@@ -29,9 +30,21 @@ public class ThymVarMapUtil {
      * @param ctx Target Context. must be instance of Context.
      * @param map Map of value.
      */
-    public static void setContextVariable(IContext ctx, LinkedHashMap<String, Object> map) {
+    public static void applyContextVariable(IContext ctx, LinkedHashMap<String, Object> map) {
         for (Map.Entry<String, Object> look : map.entrySet()) {
             ((Context) ctx).setVariable(look.getKey(), look.getValue());
+        }
+    }
+
+    /**
+     * 与えられた map 情報を Model に設定します。
+     * 
+     * @param model Target model.
+     * @param map Map of value.
+     */
+    public static void applyModelAttr(Model model, LinkedHashMap<String, Object> map) {
+        for (Map.Entry<String, Object> look : map.entrySet()) {
+            model.addAttribute(look.getKey(), look.getValue());
         }
     }
 }
