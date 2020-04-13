@@ -26,11 +26,17 @@ import jp.igapyon.cityinfojp.dyn.DynSimpleController;
  * 
  * ベーシックな変数をビルドします。
  */
-public class ThymVarMapSimpleBuilder {
+public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
+    private String sourcePath;
+
+    public ThymVarMapSimpleBuilder(String sourcePath) {
+        this.sourcePath = sourcePath;
+    }
+
     /**
      * 変数をビルド。
      */
-    public static LinkedHashMap<String, Object> buildVarMap(String sourcePath) {
+    protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         result.put("jumbotron", DynSimpleController.getJumbotronBean(sourcePath));
