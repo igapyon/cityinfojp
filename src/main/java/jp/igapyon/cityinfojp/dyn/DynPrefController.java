@@ -19,12 +19,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.dyn2static.ThymeleafVarMapPrefBuilder;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
@@ -47,20 +48,13 @@ public class DynPrefController {
             pref = pref.substring(0, pref.length() - ".html".length());
         }
 
-        List<CityInfoEntry> allEntryList = buildEntityList();
-
-        // Sort
-        sortEntryList(allEntryList);
-
-        List<CityInfoDisplayEntry> dispEntryList = entryList2DispEntryList(allEntryList);
-
-        model.addAttribute("dispEntryList", dispEntryList);
-
+        String prefName = "";
         try {
             List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
             for (PrefEntry prefEntry : prefList) {
                 if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
-                    model.addAttribute("jumbotron", getJumbotronBean(prefEntry.getName()));
+                    prefName = prefEntry.getName();
+                    break;
                 }
             }
         } catch (IOException ex) {
@@ -68,14 +62,11 @@ public class DynPrefController {
             ex.printStackTrace();
         }
 
-        model.addAttribute("navbar", getNavbarBean(pref));
+        LinkedHashMap<String, Object> map = ThymeleafVarMapPrefBuilder.buildVarMap(pref, prefName);
+        for (Map.Entry<String, Object> look : map.entrySet()) {
+            model.addAttribute(look.getKey(), look.getValue());
+        }
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        model.addAttribute("processDateTime", dtf.format(LocalDateTime.now()));
-
-        // FIX HERE
-        // 都道府県ごとに処理するよう改善すること。
-        // あと地域ごとに分岐も必要
         return "dyn/pref/pref";
     }
 
