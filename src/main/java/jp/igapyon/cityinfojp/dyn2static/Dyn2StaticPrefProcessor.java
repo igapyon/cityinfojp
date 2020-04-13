@@ -20,17 +20,16 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
-import jp.igapyon.cityinfojp.dyn.DynIndexController;
 import jp.igapyon.cityinfojp.dyn.DynPrefController;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
@@ -51,29 +50,11 @@ public class Dyn2StaticPrefProcessor {
             for (PrefEntry pref : prefList) {
                 final IContext ctx = new Context();
 
-                List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
-                DynIndexController.sortEntryList(allEntryList);
-
-                // pref で絞り込み
-                List<CityInfoEntry> entryList = new ArrayList<>();
-                for (CityInfoEntry lookup : allEntryList) {
-                    if (pref.getName().equals(lookup.getPref())) {
-                        entryList.add(lookup);
-                    }
+                LinkedHashMap<String, Object> map = ThymeleafVarMapPrefBuilder.buildVarMap(pref.getNameen(),
+                        pref.getName());
+                for (Map.Entry<String, Object> look : map.entrySet()) {
+                    ((Context) ctx).setVariable(look.getKey(), look.getValue());
                 }
-
-                // 絞り込み後のデータを利用
-                List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(entryList);
-
-                // Prefでしぼりこみ
-                ((Context) ctx).setVariable("dispEntryList", dispEntryList);
-
-                ((Context) ctx).setVariable("jumbotron", DynPrefController.getJumbotronBean(pref.getName()));
-
-                ((Context) ctx).setVariable("navbar", DynPrefController.getNavbarBean(pref.getNameen()));
-
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-                ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
 
                 String result = templateEngine.process("/dyn/pref/pref", ctx);
                 FileUtils.writeStringToFile(
