@@ -32,7 +32,7 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 
 public class Dyn2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticIndex(templateEngine);
     }

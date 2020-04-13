@@ -19,7 +19,7 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-public class Dyn2StaticProcessorUtil {
+public class Dyn2StaticUtil {
     public static SpringTemplateEngine getStandaloneSpringTemplateEngine() {
         final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setPrefix("templates/");

@@ -19,7 +19,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
@@ -34,7 +33,7 @@ import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 public class Dyn2StaticPrefProcessor {
 
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticPrefList(templateEngine);
     }

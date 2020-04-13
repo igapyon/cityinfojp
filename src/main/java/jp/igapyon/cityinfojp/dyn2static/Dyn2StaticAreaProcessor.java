@@ -37,7 +37,7 @@ public class Dyn2StaticAreaProcessor {
             { "40", "41", "42", "43", "44", "45", "46", "47" } };
 
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticAreaList(templateEngine);
     }

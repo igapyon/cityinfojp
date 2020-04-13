@@ -29,7 +29,7 @@ import jp.igapyon.cityinfojp.dyn.DynSimpleController;
 
 public class Dyn2StaticSimpleProcessor {
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
         dyn2staticSimple(templateEngine, "/dyn/contributor", "src/main/resources/static/contributor.html");
