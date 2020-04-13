@@ -27,6 +27,7 @@ import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
@@ -49,9 +50,7 @@ public class Dyn2StaticPrefProcessor {
                 final IContext ctx = new Context();
 
                 LinkedHashMap<String, Object> map = ThymVarMapPrefBuilder.buildVarMap(pref.getNameen(), pref.getName());
-                for (Map.Entry<String, Object> look : map.entrySet()) {
-                    ((Context) ctx).setVariable(look.getKey(), look.getValue());
-                }
+                ThymVarMapUtil.setContextVariable(ctx, map);
 
                 String result = templateEngine.process("/dyn/pref/pref", ctx);
                 FileUtils.writeStringToFile(

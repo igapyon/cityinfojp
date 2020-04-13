@@ -18,7 +18,6 @@ package jp.igapyon.cityinfojp.dyn2static;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
@@ -26,6 +25,7 @@ import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapAreaBuilder;
+import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapUtil;
 
 public class Dyn2StaticAreaProcessor {
     public static final String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" },
@@ -53,10 +53,7 @@ public class Dyn2StaticAreaProcessor {
 
                 LinkedHashMap<String, Object> map = ThymVarMapAreaBuilder.buildVarMap(area[0], area[1],
                         AREA_PREF_CODES[index]);
-
-                for (Map.Entry<String, Object> look : map.entrySet()) {
-                    ((Context) ctx).setVariable(look.getKey(), look.getValue());
-                }
+                ThymVarMapUtil.setContextVariable(ctx, map);
 
                 String result = templateEngine.process("/dyn/pref/area", ctx);
                 FileUtils.writeStringToFile(
