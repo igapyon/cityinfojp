@@ -34,35 +34,11 @@ import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
-public class Dyn2StaticProcessor {
+public class Dyn2StaticPrefProcessor {
     public static final void main(String[] args) throws IOException {
         SpringTemplateEngine templateEngine = Dyn2StaticProcessorUtil.getStandaloneSpringTemplateEngine();
 
-        dyn2staticIndex(templateEngine);
-
         dyn2staticPrefList(templateEngine);
-    }
-
-    static void dyn2staticIndex(SpringTemplateEngine templateEngine) throws IOException {
-        System.err.println("index.html を静的ファイル化.");
-
-        final IContext ctx = new Context();
-
-        List<CityInfoEntry> allEntryList = DynIndexController.buildEntityList();
-        DynIndexController.sortEntryList(allEntryList);
-        List<CityInfoDisplayEntry> dispEntryList = DynIndexController.entryList2DispEntryList(allEntryList);
-
-        ((Context) ctx).setVariable("dispEntryList", dispEntryList);
-
-        ((Context) ctx).setVariable("jumbotron", DynIndexController.getJumbotronBean());
-
-        ((Context) ctx).setVariable("navbar", DynIndexController.getNavbarBean());
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        ((Context) ctx).setVariable("processDateTime", dtf.format(LocalDateTime.now()));
-
-        String result = templateEngine.process("/dyn/index", ctx);
-        FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");
     }
 
     static void dyn2staticPrefList(SpringTemplateEngine templateEngine) throws IOException {
