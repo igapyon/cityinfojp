@@ -17,12 +17,11 @@ package jp.igapyon.cityinfojp.sitemap;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
-import jp.igapyon.sitemapgenerator4j.SitemapEntry;
-import jp.igapyon.sitemapgenerator4j.SitemapEntryUrl;
 import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
+import jp.igapyon.sitemapgenerator4j.SitemapInfo;
+import jp.igapyon.sitemapgenerator4j.SitemapInfoUrl;
 
 /**
  * 
@@ -32,32 +31,32 @@ import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
 public class MySitemapGenerator {
     public static void main(String[] args) throws IOException {
         SitemapGenerator4j gen = new SitemapGenerator4j();
-        SitemapEntry entry = new SitemapEntry();
+        SitemapInfo entry = new SitemapInfo();
 
         {
-            SitemapEntryUrl url = new SitemapEntryUrl();
+            SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/");
-            url.setLastmod(DateTimeFormatter.ofPattern("yyyy-MM-dd").format(LocalDateTime.now()));
-            url.setChangefreq("daily");
+            url.setLastmod(new Date());
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Daily);
             url.setPriority("0.8");
         }
 
         {
-            SitemapEntryUrl url = new SitemapEntryUrl();
+            SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/about.html");
             // 更新日付は出力しない
-            url.setChangefreq("monthly");
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
             url.setPriority("0.6");
         }
 
         {
-            SitemapEntryUrl url = new SitemapEntryUrl();
+            SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/link.html");
             // 更新日付は出力しない
-            url.setChangefreq("monthly");
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
             url.setPriority("0.2");
         }
 
