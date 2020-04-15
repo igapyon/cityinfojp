@@ -15,14 +15,9 @@
  */
 package jp.igapyon.cityinfojp.dyn.thymvarmap;
 
-import java.io.IOException;
-import java.util.List;
-
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarItemBean;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 public class NavbarUtil {
     public static NavbarBean buildNavbar(String pref) {
@@ -43,15 +38,12 @@ public class NavbarUtil {
             NavbarDropdownBean dropdown = new NavbarDropdownBean();
             item.setDropdownBean(dropdown);
 
-            boolean isPrefSelected = false;
-
             NavbarItemBean dropdownMenuItem = new NavbarItemBean();
             dropdown.getItemList().add(dropdownMenuItem);
             dropdownMenuItem.setText("日本国");
             dropdownMenuItem.setHref("/pref/japan.html");
             if ("japan".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             // 八地方区分
@@ -62,7 +54,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/hokkaido.html");
             if ("hokkaido".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -71,7 +62,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/tohoku.html");
             if ("tohoku".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -80,7 +70,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/kanto.html");
             if ("kanto".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -89,7 +78,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/chubu.html");
             if ("chubu".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -98,7 +86,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/kinki.html");
             if ("kinki".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -107,7 +94,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/chugoku.html");
             if ("chugoku".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -116,7 +102,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/shikoku.html");
             if ("shikoku".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
             }
 
             dropdownMenuItem = new NavbarItemBean();
@@ -125,25 +110,6 @@ public class NavbarUtil {
             dropdownMenuItem.setHref("/pref/kyushuokinawa.html");
             if ("kyushuokinawa".equalsIgnoreCase(pref)) {
                 dropdownMenuItem.setCurrent(true);
-                isPrefSelected = true;
-            }
-
-            if (isPrefSelected == false) {
-                try {
-                    List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-                    for (PrefEntry prefEntry : prefList) {
-                        if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
-                            NavbarItemBean dropdownItem = new NavbarItemBean();
-                            dropdown.getItemList().add(dropdownItem);
-                            dropdownItem.setText(prefEntry.getName());
-                            dropdownItem.setHref("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
-                            dropdownItem.setCurrent(true);
-                        }
-                    }
-                } catch (IOException ex) {
-                    System.err.println("Unexpected exception: " + ex.toString());
-                    ex.printStackTrace();
-                }
             }
         }
         {
