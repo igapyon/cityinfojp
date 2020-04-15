@@ -68,6 +68,8 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
             jumbotron.setTitle("Contributor");
         } else if (body.startsWith("/dyn/link")) {
             jumbotron.setTitle("関連リンク");
+        } else if (body.startsWith("/dyn/policy")) {
+            jumbotron.setTitle("Policy");
         }
 
         return jumbotron;
@@ -82,6 +84,8 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
             navbar.getItemList().get(3).setCurrent(true);
         } else if (body.startsWith("/dyn/link")) {
             navbar.getItemList().get(2).setCurrent(true);
+        } else if (body.startsWith("/dyn/policy")) {
+            navbar.getItemList().get(4).setCurrent(true);
         }
         return navbar;
     }

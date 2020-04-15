@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Policy</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="cityinfojp">
+    <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
+
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/about.html">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div th:insert="dyn/fragment/navbar :: navbar-fragment" th:remove="tag" />
+
+    <main role="main">
+        <div th:insert="dyn/fragment/jumbotron :: jumbotron-fragment" th:remove="tag" />
+    </main>
+
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <h1 class="mt-5">cityinfojp のデータポリシー</h1>
+            <p class="lead">
+                cityinfojp では自治体などの組織による都市情報のファクトを淡々と集積します。</p>
+            <p>以下のポリシーとします。
+                <ul>
+                    <li>ファクトにのみ着眼し解説や論評といった情報は扱いません。</li>
+                    <li>その組織の一次情報源に近いファクトを優先して収集します。</li>
+                    <li>cityinfojp のデータレビューを通過したデータのみ収集します。</li>
+                </ul>
+            </p>
+
+            <p class="lead">
+                集められたデータはオープンデータとして扱います。</p>
+            <p>以下のポリシーで取り扱います。
+                <ul>
+                    <li>オープンソースのルールを理解していることが参加条件です (OSS よりなクリエイティブコモンズを採択予定)。</li>
+                    <li>データ提供の貢献者は歓迎されます。</li>
+                    <li>提供を希望をデータは github のプルリクエストを経由して貢献してください。</li>
+                </ul>
+            </p>
+
+            <p class="lead">以下の順でデータを貢献できます。</p>
+            <p>
+                <ul>
+                    <li><p><a class="btn btn-sm btn-primary" href="/dataentry.html" role="button">データ生成</a>で JSON データファイルを生成します。</p></li>
+                    <li><p><a class="btn btn-sm btn-secondary" href="https://github.com/igapyon/cityinfojp/tree/devel/src/main/resources/static/input/2020/202004" role="button">データ投入</a>にデータをプルリクエストします。</p></li>
+                </ul>
+            </p>
+        </div> <!-- /container -->
+    </main>
+
+    <footer class="container">
+        <p>&copy; cityinfojp 2020</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
