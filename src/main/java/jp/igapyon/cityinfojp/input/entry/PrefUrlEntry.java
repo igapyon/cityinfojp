@@ -16,6 +16,7 @@
 package jp.igapyon.cityinfojp.input.entry;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -26,34 +27,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * 都道府県情報のエントリー。
+ * 都道府県のURL情報のエントリー。
  * 
  * http://www.jsonschema2pojo.org/ をもちいて生成。
  */
-public class PrefEntry {
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonPropertyOrder({ "code", "name", "nameen" })
-    @JsonProperty("code")
-    private String code;
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({ "name", "url" })
+public class PrefUrlEntry {
     @JsonProperty("name")
     private String name;
-
-    @JsonProperty("nameen")
-    private String nameen;
-
+    @JsonProperty("url")
+    private List<String> url = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("code")
-    public String getCode() {
-        return code;
-    }
-
-    @JsonProperty("code")
-    public void setCode(String code) {
-        this.code = code;
-    }
 
     @JsonProperty("name")
     public String getName() {
@@ -65,14 +51,14 @@ public class PrefEntry {
         this.name = name;
     }
 
-    @JsonProperty("nameen")
-    public String getNameen() {
-        return nameen;
+    @JsonProperty("url")
+    public List<String> getUrl() {
+        return url;
     }
 
-    @JsonProperty("nameen")
-    public void setNameen(String nameen) {
-        this.nameen = nameen;
+    @JsonProperty("url")
+    public void setUrl(List<String> url) {
+        this.url = url;
     }
 
     @JsonAnyGetter
