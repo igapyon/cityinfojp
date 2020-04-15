@@ -25,6 +25,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * 都道府県情報のエントリー。
+ * 
+ * http://www.jsonschema2pojo.org/ をもちいて生成。
+ */
 public class PrefEntry {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonPropertyOrder({ "code", "name", "nameen" })

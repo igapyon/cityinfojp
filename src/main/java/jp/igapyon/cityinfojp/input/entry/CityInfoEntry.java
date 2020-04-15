@@ -28,9 +28,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * http://www.jsonschema2pojo.org/ をもちいて生成。
+ * 都市情報のエントリー。
  * 
- * @author Toshiki Iga
+ * http://www.jsonschema2pojo.org/ をもちいて生成。
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "EntryDate", "Pref", "City", "StartDate", "EndDate", "State", "Target", "TargetRange", "Reason",
