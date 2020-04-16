@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment for Jumbotron</title>
+</head>
+
+<body>
+    <div th:fragment="jumbotron-fragment" th:object="${jumbotron}" th:remove="tag">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3"><span th:text="*{title}" th:remove="tag" /></h1>
+                <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。
+                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

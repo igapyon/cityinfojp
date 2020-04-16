@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment for Navbar</title>
+</head>
+
+<body>
+    <div th:fragment="navbar-fragment" th:object="${navbar}" th:remove="tag">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><span th:text="*{text}" th:remove="tag" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <div th:each="item : *{itemList}">
+                        <li
+                            th:class="${'nav-item' + (item.current ? ' active' : '') + (item.dropdown ? ' dropdown' : '')}">
+                            <span th:if="${item.dropdown == false}" th:remove="tag">
+                                <a class="nav-link" th:href="${item.href}">
+                                    <span th:text="${item.text}" th:remove="tag" /><span th:if="${item.current}"
+                                        class="sr-only">
+                                        (current)</span></a>
+                            </span>
+
+                            <span th:if="${item.dropdown == true}" th:remove="tag">
+                                <a th:class="${'nav-link dropdown-toggle' + (item.current ? ' active' : '')}"
+                                    th:href="${item.href}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"><span th:text="${item.text}" th:remove="tag" /></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <div th:each="dropdownItem : ${item.dropdownBean.itemList}">
+                                        <a class="dropdown-item" th:href="${dropdownItem.href}"><span
+                                                th:text="${dropdownItem.text}" th:remove="tag" /></a>
+                                    </div>
+                                </div>
+                            </span>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

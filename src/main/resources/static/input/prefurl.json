@@ -1,0 +1,293 @@
+[
+    {
+        "name": "日本国",
+        "url": [
+            "https://kanpou.npb.go.jp/",
+            "https://www.kantei.go.jp/",
+            "https://www.mhlw.go.jp/",
+            "https://www.meti.go.jp/"
+        ]
+    },
+    {
+        "name": "北海道",
+        "url": [
+            "http://www.pref.hokkaido.lg.jp/"
+        ]
+    },
+    {
+        "name": "青森県",
+        "url": [
+            "https://www.pref.aomori.lg.jp/"
+        ]
+    },
+    {
+        "name": "岩手県",
+        "url": [
+            "https://www.pref.iwate.jp/"
+        ]
+    },
+    {
+        "name": "宮城県",
+        "url": [
+            "https://www.pref.miyagi.jp/"
+        ]
+    },
+    {
+        "name": "秋田県",
+        "url": [
+            "https://www.pref.akita.lg.jp/"
+        ]
+    },
+    {
+        "name": "山形県",
+        "url": [
+            "https://www.pref.yamagata.jp/"
+        ]
+    },
+    {
+        "name": "福島県",
+        "url": [
+            "https://www.pref.fukushima.lg.jp/"
+        ]
+    },
+    {
+        "name": "茨城県",
+        "url": [
+            "https://www.pref.ibaraki.jp/"
+        ]
+    },
+    {
+        "name": "栃木県",
+        "url": [
+            "http://www.pref.tochigi.lg.jp/"
+        ]
+    },
+    {
+        "name": "群馬県",
+        "url": [
+            "https://www.pref.gunma.jp/"
+        ]
+    },
+    {
+        "name": "埼玉県",
+        "url": [
+            "https://www.pref.saitama.lg.jp/"
+        ]
+    },
+    {
+        "name": "千葉県",
+        "url": [
+            "https://www.pref.chiba.lg.jp/"
+        ]
+    },
+    {
+        "name": "東京都",
+        "url": [
+            "https://www.metro.tokyo.lg.jp/"
+        ]
+    },
+    {
+        "name": "神奈川県",
+        "url": [
+            "https://www.pref.kanagawa.jp/"
+        ]
+    },
+    {
+        "name": "新潟県",
+        "url": [
+            "https://www.pref.niigata.lg.jp/"
+        ]
+    },
+    {
+        "name": "富山県",
+        "url": [
+            "http://www.pref.toyama.jp/"
+        ]
+    },
+    {
+        "name": "石川県",
+        "url": [
+            "https://www.pref.ishikawa.lg.jp/"
+        ]
+    },
+    {
+        "name": "福井県",
+        "url": [
+            "https://www.pref.fukui.lg.jp/"
+        ]
+    },
+    {
+        "name": "山梨県",
+        "url": [
+            "https://www.pref.yamanashi.jp/"
+        ]
+    },
+    {
+        "name": "長野県",
+        "url": [
+            "https://www.pref.nagano.lg.jp/"
+        ]
+    },
+    {
+        "name": "岐阜県",
+        "url": [
+            "https://www.pref.gifu.lg.jp/"
+        ]
+    },
+    {
+        "name": "静岡県",
+        "url": [
+            "https://www.pref.shizuoka.jp/"
+        ]
+    },
+    {
+        "name": "愛知県",
+        "url": [
+            "https://www.pref.aichi.jp/"
+        ]
+    },
+    {
+        "name": "三重県",
+        "url": [
+            "https://www.pref.mie.lg.jp/"
+        ]
+    },
+    {
+        "name": "滋賀県",
+        "url": [
+            "https://www.pref.shiga.lg.jp/"
+        ]
+    },
+    {
+        "name": "京都府",
+        "url": [
+            "https://www.pref.kyoto.jp/"
+        ]
+    },
+    {
+        "name": "大阪府",
+        "url": [
+            "http://www.pref.osaka.lg.jp/"
+        ]
+    },
+    {
+        "name": "兵庫県",
+        "url": [
+            "https://web.pref.hyogo.lg.jp/"
+        ]
+    },
+    {
+        "name": "奈良県",
+        "url": [
+            "http://www.pref.nara.jp/"
+        ]
+    },
+    {
+        "name": "和歌山県",
+        "url": [
+            "https://www.pref.wakayama.lg.jp/"
+        ]
+    },
+    {
+        "name": "鳥取県",
+        "url": [
+            "https://www.pref.tottori.lg.jp/"
+        ]
+    },
+    {
+        "name": "島根県",
+        "url": [
+            "https://www.pref.shimane.lg.jp/"
+        ]
+    },
+    {
+        "name": "岡山県",
+        "url": [
+            "https://www.pref.okayama.jp/"
+        ]
+    },
+    {
+        "name": "広島県",
+        "url": [
+            "https://www.pref.hiroshima.lg.jp/"
+        ]
+    },
+    {
+        "name": "山口県",
+        "url": [
+            "https://www.pref.yamaguchi.lg.jp/"
+        ]
+    },
+    {
+        "name": "徳島県",
+        "url": [
+            "https://www.pref.tokushima.lg.jp/"
+        ]
+    },
+    {
+        "name": "香川県",
+        "url": [
+            "https://www.pref.kagawa.lg.jp/"
+        ]
+    },
+    {
+        "name": "愛媛県",
+        "url": [
+            "https://www.pref.ehime.jp/"
+        ]
+    },
+    {
+        "name": "高知県",
+        "url": [
+            "https://www.pref.kochi.lg.jp/"
+        ]
+    },
+    {
+        "name": "福岡県",
+        "url": [
+            "https://www.pref.fukuoka.lg.jp/"
+        ]
+    },
+    {
+        "name": "佐賀県",
+        "url": [
+            "https://www.pref.saga.lg.jp/"
+        ]
+    },
+    {
+        "name": "長崎県",
+        "url": [
+            "https://www.pref.nagasaki.jp/"
+        ]
+    },
+    {
+        "name": "熊本県",
+        "url": [
+            "https://www.pref.kumamoto.jp/"
+        ]
+    },
+    {
+        "name": "大分県",
+        "url": [
+            "http://www.pref.oita.jp/"
+        ]
+    },
+    {
+        "name": "宮崎県",
+        "url": [
+            "https://www.pref.miyazaki.lg.jp/"
+        ]
+    },
+    {
+        "name": "鹿児島県",
+        "url": [
+            "https://www.pref.kagoshima.jp/"
+        ]
+    },
+    {
+        "name": "沖縄県",
+        "url": [
+            "https://www.pref.okinawa.jp/"
+        ]
+    }
+]

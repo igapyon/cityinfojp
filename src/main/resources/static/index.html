@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- site owner -->
+    <meta name="google-site-verification" content="BDhI_W_YvhLMkf47CGsA2C7UOMVyj4OBvcqhoajA2R8" />
+    <meta name="msvalidate.01" content="40D4E8F628D62F7FF8EF7A3C91C510BA" />
+
+    <title>cityinfojp Home</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="cityinfojp,cityinfo,fact,city,info,oss,web">
+    <meta name="description"
+        content="cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。 当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。">
+    <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
+
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/index.html">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">cityinfojp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <div>
+                        <li
+                            class="nav-item active">
+                            
+                                <a class="nav-link" href="/index.html">
+                                    Home<span class="sr-only">
+                                        (current)</span></a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item dropdown">
+                            
+
+                            
+                                <a class="nav-link dropdown-toggle"
+                                    href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">都道府県</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/japan.html">日本国</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/hokkaido.html">北海道</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/tohoku.html">東北</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/kanto.html">関東</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/chubu.html">中部</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/kinki.html">近畿</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/chugoku.html">中国</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/shikoku.html">四国</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/pref/kyushuokinawa.html">九州沖縄</a>
+                                    </div>
+                                </div>
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/link.html">
+                                    Link</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/contributor.html">
+                                    Contributor</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                    <div>
+                        <li
+                            class="nav-item">
+                            
+                                <a class="nav-link" href="/about.html">
+                                    About</a>
+                            
+
+                            
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    
+
+    <main role="main">
+        
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">cityinfojp</h1>
+                <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。
+                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    
+
+        <div class="container">
+            <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>宣言</title>
+                            <rect width="100%" height="100%" fill="#6610f2" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">宣言</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">北海道 (北海道, 札幌)</strong>
+                            (2020-04-13起票) 緊急共同宣言 外出自粛 2020-04-14から 2020-05-06まで
+                            
+                                , <a href="https://news.so-net.ne.jp/article/abstract/1951317/" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">青森県 (青森市)</strong>
+                            (2020-04-13起票) 外出自粛  : 感染拡大
+                            
+                                , <a href="https://www3.nhk.or.jp/lnews/aomori/20200410/6080008148.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">日本国 (東京都、神奈川県、埼玉県、千葉県、大阪府、兵庫県、福岡県)</strong>
+                            (2020-04-11起票) オフィス出勤者の削減  : 緊急事態宣言
+                            
+                                , <a href="https://www.nikkei.com/article/DGXMZO57959650R10C20A4EA3000/" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">千葉県</strong>
+                            (2020-04-09起票) 外出自粛  2020-04-08から 2020-05-06まで : 緊急事態措置
+                            
+                                , <a href="https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">群馬県</strong>
+                            (2020-04-09起票) 外出自粛  : 緊急事態宣言の発令に伴う
+                            
+                                , <a href="https://www.pref.gunma.jp/07/z87g_00028.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">神奈川県</strong>
+                            (2020-04-09起票) 外出自粛  2020-04-07から 2020-05-06まで : 緊急事態宣言
+                            
+                                , <a href="https://www.pref.kanagawa.jp/docs/bu4/covid19/20200407_policy.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">茨城県 (古河市、つくば市、つくばみらい市、守谷市、土浦市、阿見町、牛久市、龍ケ崎市、取手市、神栖市、古河市)</strong>
+                            (2020-04-08起票) 外出自粛  2020-05-06まで : 緊急事態宣言の都県と近接
+                            
+                                , <a href="https://www.pref.ibaraki.jp/1saigai/2019-ncov/yousei.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>宣言</title>
+                            <rect width="100%" height="100%" fill="#6610f2" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">宣言</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">日本国 (東京都、神奈川県、埼玉県、千葉県、大阪府、兵庫県、福岡県)</strong>
+                            (2020-04-08起票) 緊急事態  2020-04-08から 2020-05-06まで : 感染症の急速拡大
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200408/k10012374361000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">大阪府</strong>
+                            (2020-04-07起票) 外出自粛  2020-05-06まで : 緊急事態宣言
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200407/k10012373441000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">兵庫県</strong>
+                            (2020-04-07起票) 外出自粛  : 緊急事態宣言
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200407/k10012373971000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">群馬県 (伊勢崎市、太田市、下仁田市、玉村市、大泉市)</strong>
+                            (2020-04-07起票) 市立小中学校  2020-04-10から 2020-05-10まで : 緊急事態宣言を受け
+                            
+                                , <a href="https://www.jomo-news.co.jp/news/gunma/society/205021" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">埼玉県</strong>
+                            (2020-04-07起票) 外出自粛 週末 2020-05-06まで : 緊急事態措置
+                            
+                                , <a href="https://www3.nhk.or.jp/shutoken-news/20200407/1000046977.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">茨城県</strong>
+                            (2020-04-07起票) 市立小中学校 半数 2020-04-22まで : 県立校の再開延期などを踏まえ
+                            
+                                , <a href="https://ibarakinews.jp/news/newsdetail.php?f_jun=15861809680308" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">福岡県</strong>
+                            (2020-04-07起票) 外出自粛  : 緊急事態宣言
+                            
+                                , <a href="https://www.nishinippon.co.jp/item/n/598435/" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">東京都</strong>
+                            (2020-04-07起票) 外出自粛  2020-04-07から 2020-05-06まで : 緊急事態宣言
+                            
+                                , <a href="https://www.bousai.metro.tokyo.lg.jp/1007617/1007632.html" target="_blank">Link</a>
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">栃木県 (宇都宮市)</strong>
+                            (2020-04-07起票) 市立小中学校  2020-04-09から 2020-04-22まで : 緊急事態宣言対象地域が生活圏を受け
+                            
+                                , <a href="https://www.sankei.com/life/news/200407/lif2004070135-n1.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">兵庫県</strong>
+                            (2020-04-06起票) 県立学校  2020-04-19まで : 感染者数の増加
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200406/k10012370191000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">愛知県</strong>
+                            (2020-04-06起票) 公立小中高校  2020-04-07から 2020-04-19まで : 国内と県内の感染状況を踏まえ
+                            
+                                , <a href="https://www.nikkei.com/article/DGXMZO57694920W0A400C2CE0000/" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">千葉県</strong>
+                            (2020-04-05起票) 県立学校  2020-04-30まで
+                            
+                                , <a href="https://www3.nhk.or.jp/news/html/20200405/k10012369271000.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>休校</title>
+                            <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">休校</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">山梨県</strong>
+                            (2020-04-05起票) 県立学校  2020-04-19まで : 感染リスク高い
+                            
+                                , <a href="https://news.tv-asahi.co.jp/news_society/articles/000181023.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>要請</title>
+                            <rect width="100%" height="100%" fill="#ffc107" /><text x="25%" y="50%"
+                                fill="#000000" dy=".3em">要請</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">埼玉県</strong>
+                            (2020-04-05起票) 外出自粛 週末 2020-04-19まで
+                            
+                                , <a href="https://www.pref.saitama.lg.jp/a0701/message2020040202.html" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="media text-muted pt-3">
+                        <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            role="img" aria-label="Placeholder">
+                            <title>指示</title>
+                            <rect width="100%" height="100%" fill="#dc3545" /><text x="25%" y="50%"
+                                fill="#ffffff" dy=".3em">指示</text>
+                        </svg>
+                        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <strong class="d-block text-gray-dark">ダミー県</strong>
+                            (2020-04-01起票) 外出自粛  2020-04-01から 2020-04-01まで : 指示のテスト用のダミーデータ
+                            
+                                , <a href="https://github.com/igapyon/cityinfojp" target="_blank">Link</a>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>&copy; cityinfojp 2020 : 2020-04-16 21:57</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
