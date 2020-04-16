@@ -33,7 +33,7 @@
             <p>
                 <div th:each="pref : ${prefList}" th:remove="tag">
                     <a class="btn btn-outline-dark"
-                        th:href="${pref.url}">[[${pref.text}]]</a>
+                        th:href="${pref.url}">[[${pref.text}]] <span class="badge badge-info">[[${pref.infoCount}]]</span></a>
                 </div>
             </p>
         </div>
