@@ -23,6 +23,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
@@ -66,6 +67,16 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
                         prefList.add(dispPref);
                         dispPref.setText(prefEntry.getName());
                         dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
+
+                        List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
+                        ThymVarMapIndexBuilder.sortEntryList(allEntryList);
+
+                        // pref で絞り込み
+                        for (CityInfoEntry lookup : allEntryList) {
+                            if (prefEntry.getName().equals(lookup.getPref())) {
+                                dispPref.setInfoCount(dispPref.getInfoCount() + 1);
+                            }
+                        }
                     }
                 }
             }
