@@ -19,21 +19,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
 import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
+import jp.igapyon.cityinfojp.dyn.DisplaySearchButton;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.PrefUrlEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -52,10 +58,45 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
     /**
      * final String name, final Object value
      */
+    @SuppressWarnings("deprecation")
     protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         try {
+            // 基準日
+            final Date searchBaseDate = new Date(System.currentTimeMillis() - (3 * 24 * 60 * 60 * 1000));
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            // 検索ボタン生成
+            List<DisplaySearchButton> dispSearchButtonList = new ArrayList<>();
+            result.put("dispSearchButtonList", dispSearchButtonList);
+            List<PrefUrlEntry> urlList = PrefUrlEntryUtil.readEntryListFromClasspath();
+            for (PrefUrlEntry prefUrl : urlList) {
+                if (prefName.equals(prefUrl.getName())) {
+                    for (String url : prefUrl.getUrl()) {
+                        DisplaySearchButton button = new DisplaySearchButton();
+                        button.setText("宣言");
+                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url) + "+after:"
+                                + sdf.format(searchBaseDate) + "+宣言");
+                        dispSearchButtonList.add(button);
+                    }
+                    for (String url : prefUrl.getUrl()) {
+                        DisplaySearchButton button = new DisplaySearchButton();
+                        button.setText("要請");
+                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode( url) + "+after:"
+                                + sdf.format(searchBaseDate) + "+要請");
+                        dispSearchButtonList.add(button);
+                    }
+                    for (String url : prefUrl.getUrl()) {
+                        DisplaySearchButton button = new DisplaySearchButton();
+                        button.setText("休校");
+                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode( url) + "+after:"
+                                + sdf.format(searchBaseDate) + "+休校");
+                        dispSearchButtonList.add(button);
+                    }
+                }
+            }
+
             List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
             ThymVarMapIndexBuilder.sortEntryList(allEntryList);
 
