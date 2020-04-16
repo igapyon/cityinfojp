@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
@@ -55,13 +57,26 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
     protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
-        List<PrefEntry> prefList = new ArrayList<>();
+        List<DisplayPrefEntry> prefList = new ArrayList<>();
         try {
             List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
             for (PrefEntry prefEntry : prefAllList) {
                 for (String lookPrefCode : prefs) {
                     if (lookPrefCode.equals(prefEntry.getCode())) {
-                        prefList.add(prefEntry);
+                        DisplayPrefEntry dispPref = new DisplayPrefEntry();
+                        prefList.add(dispPref);
+                        dispPref.setText(prefEntry.getName());
+                        dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
+
+                        List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
+                        ThymVarMapIndexBuilder.sortEntryList(allEntryList);
+
+                        // pref で絞り込み
+                        for (CityInfoEntry lookup : allEntryList) {
+                            if (prefEntry.getName().equals(lookup.getPref())) {
+                                dispPref.setInfoCount(dispPref.getInfoCount() + 1);
+                            }
+                        }
                     }
                 }
             }

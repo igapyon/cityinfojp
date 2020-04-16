@@ -22,7 +22,7 @@ import java.util.List;
  * 
  * @author Toshiki Iga
  */
-public class CityInfoDisplayEntry {
+public class DisplayCityInfoEntry {
     private String iconText;
     private String iconColor;
     private String iconTextColor;
