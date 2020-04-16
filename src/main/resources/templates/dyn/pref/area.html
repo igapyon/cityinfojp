@@ -33,7 +33,7 @@
             <p>
                 <div th:each="pref : ${prefList}" th:remove="tag">
                     <a class="btn btn-outline-dark"
-                        th:href="${'/pref/' + pref.nameen.toLowerCase() + '.html'}">[[${pref.name}]]</a>
+                        th:href="${pref.url}">[[${pref.text}]]</a>
                 </div>
             </p>
         </div>
