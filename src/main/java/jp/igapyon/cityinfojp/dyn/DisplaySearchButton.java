@@ -23,6 +23,18 @@ package jp.igapyon.cityinfojp.dyn;
 public class DisplaySearchButton {
     private String text;
     private String searchUrl;
+    /**
+     * 最初のボタンのみprimary.
+     */
+    private boolean primary = false;
+
+    public boolean isPrimary() {
+        return primary;
+    }
+
+    public void setPrimary(boolean primary) {
+        this.primary = primary;
+    }
 
     public String getText() {
         return text;
