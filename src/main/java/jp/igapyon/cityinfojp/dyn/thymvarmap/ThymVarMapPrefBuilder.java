@@ -32,7 +32,7 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
-import jp.igapyon.cityinfojp.dyn.CityInfoDisplayEntry;
+import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.dyn.DisplaySearchButton;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
@@ -109,7 +109,7 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
             }
 
             // 絞り込み後のデータを利用
-            List<CityInfoDisplayEntry> dispEntryList = ThymVarMapIndexBuilder.entryList2DispEntryList(entryList);
+            List<DisplayCityInfoEntry> dispEntryList = ThymVarMapIndexBuilder.entryList2DispEntryList(entryList);
 
             // Prefでしぼりこみ
             result.put("dispEntryList", dispEntryList);
@@ -176,10 +176,10 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         });
     }
 
-    public static List<CityInfoDisplayEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList) {
-        List<CityInfoDisplayEntry> dispEntryList = new ArrayList<CityInfoDisplayEntry>();
+    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList) {
+        List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
         for (CityInfoEntry entry : allEntryList) {
-            CityInfoDisplayEntry dispEntry = new CityInfoDisplayEntry();
+            DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
 
             if ("要請".equals(entry.getState())) {
                 dispEntry.setIconText("要請");
