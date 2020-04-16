@@ -230,6 +230,17 @@
   "Reason" : "感染者数の増加",
   "URL" : [ "https://www3.nhk.or.jp/news/html/20200406/k10012370191000.html" ]
 }, {
+  "EntryDate" : "2020-04-16",
+  "Pref" : "日本国",
+  "City" : "全都道府県",
+  "StartDate" : "2020-04-16",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "緊急事態措置",
+  "TargetRange" : "全都道府県",
+  "Reason" : "感染症への対応",
+  "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202004/16corona.html" ]
+}, {
   "EntryDate" : "2020-04-05",
   "Pref" : "千葉県",
   "City" : "",
