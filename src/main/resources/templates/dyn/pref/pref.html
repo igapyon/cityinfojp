@@ -34,7 +34,7 @@
                     <div class="card-body" style="padding:6px 20px 6px 20px;">
                         <div th:each="dispSearchButton : ${dispSearchButtonList}" th:remove="tag">
                             <a th:class="${'btn btn-sm btn-outline-' + (dispSearchButton.primary ? 'primary' : 'secondary')}"
-                                th:href="${dispSearchButton.searchUrl}">[[${dispSearchButton.text}]]</a>
+                                th:href="${dispSearchButton.searchUrl}" target="_blank">[[${dispSearchButton.text}]]</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <hr />
 
                 <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-                
+
                 <div th:insert="dyn/fragment/dispentrylist :: dispentrylist-fragment" th:remove="tag" />
             </div>
         </div>
