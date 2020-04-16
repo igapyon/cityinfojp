@@ -33,7 +33,7 @@
                     <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索</div>
                     <div class="card-body" style="padding:6px 20px 6px 20px;">
                         <div th:each="dispSearchButton : ${dispSearchButtonList}" th:remove="tag">
-                            <a class="btn btn-sm btn-outline-dark"
+                            <a th:class="${'btn btn-sm btn-outline-' + (dispSearchButton.primary ? 'primary' : 'secondary')}"
                                 th:href="${dispSearchButton.searchUrl}">[[${dispSearchButton.text}]]</a>
                         </div>
                     </div>

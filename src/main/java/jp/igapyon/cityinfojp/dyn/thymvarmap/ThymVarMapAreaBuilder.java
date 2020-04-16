@@ -71,7 +71,7 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
                         List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
                         ThymVarMapIndexBuilder.sortEntryList(allEntryList);
 
-                        // pref で絞り込み
+                        // cityinfo の数を pref でカウントアップ
                         for (CityInfoEntry lookup : allEntryList) {
                             if (prefEntry.getName().equals(lookup.getPref())) {
                                 dispPref.setInfoCount(dispPref.getInfoCount() + 1);
