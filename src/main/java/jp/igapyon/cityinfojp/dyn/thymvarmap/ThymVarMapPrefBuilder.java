@@ -76,6 +76,16 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
                     boolean isPrimary = true;
                     for (String url : prefUrl.getUrl()) {
                         DisplaySearchButton button = new DisplaySearchButton();
+                        button.setText("緊急");
+                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
+                                + "+after:" + sdf.format(searchBaseDate) + "+緊急");
+                        button.setPrimary(isPrimary);
+                        isPrimary = false;
+                        dispSearchButtonList.add(button);
+                    }
+                    isPrimary = true;
+                    for (String url : prefUrl.getUrl()) {
+                        DisplaySearchButton button = new DisplaySearchButton();
                         button.setText("宣言");
                         button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
                                 + "+after:" + sdf.format(searchBaseDate) + "+宣言");
