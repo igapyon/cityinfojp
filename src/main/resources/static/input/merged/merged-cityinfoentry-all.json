@@ -21,6 +21,17 @@
   "Reason" : "緊急事態宣言対象地域が生活圏を受け",
   "URL" : [ "https://www.sankei.com/life/news/200407/lif2004070135-n1.html" ]
 }, {
+  "EntryDate" : "2020-04-17",
+  "Pref" : "岩手県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "外出自粛",
+  "TargetRange" : "緊急事態宣言の対象地域から来た人",
+  "Reason" : "緊急事態宣言発令を受け",
+  "URL" : [ "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/027/496/covid19_poster.pdf" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "東京都",
   "City" : "",
@@ -64,6 +75,28 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.nishinippon.co.jp/item/n/598435/" ]
+}, {
+  "EntryDate" : "2020-04-17",
+  "Pref" : "宮城県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "Reason" : "感染症",
+  "URL" : [ "https://www.pref.miyagi.jp/site/chiji-kaiken/kk-200413.html" ]
+}, {
+  "EntryDate" : "2020-04-17",
+  "Pref" : "福島県",
+  "City" : "",
+  "StartDate" : "2020-04-21",
+  "EndDate" : "2020-05-06",
+  "State" : "休校",
+  "Target" : "県立高等学校・中学校及び特別支援学校",
+  "TargetRange" : "",
+  "Reason" : "感染症",
+  "URL" : [ "https://www.pref.fukushima.lg.jp/site/edu/covid-19.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "茨城県",
@@ -219,6 +252,17 @@
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373441000.html" ]
 }, {
+  "EntryDate" : "2020-04-17",
+  "Pref" : "山形県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "県外との往来",
+  "TargetRange" : "",
+  "Reason" : "感染症",
+  "URL" : [ "https://www.pref.yamagata.jp/ou/bosai/020072/kochibou/coronavirus/pdf/flyer.pdf" ]
+}, {
   "EntryDate" : "2020-04-06",
   "Pref" : "兵庫県",
   "City" : "",
@@ -240,6 +284,17 @@
   "TargetRange" : "全都道府県",
   "Reason" : "感染症への対応",
   "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202004/16corona.html" ]
+}, {
+  "EntryDate" : "2020-04-17",
+  "Pref" : "秋田県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛、県外からの移動",
+  "TargetRange" : "",
+  "Reason" : "感染症",
+  "URL" : [ "https://www.pref.akita.lg.jp/pages/archive/49208" ]
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "千葉県",
