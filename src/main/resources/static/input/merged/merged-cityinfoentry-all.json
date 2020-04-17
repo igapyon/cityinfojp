@@ -10,6 +10,17 @@
   "Reason" : "感染拡大",
   "URL" : [ "https://www3.nhk.or.jp/lnews/aomori/20200410/6080008148.html" ]
 }, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "福井県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "福井県緊急事態宣言",
+  "TargetRange" : "",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "https://www.pref.fukui.lg.jp/doc/kenkou/covid19_chiji.html" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "栃木県",
   "City" : "宇都宮市",
@@ -42,6 +53,17 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.bousai.metro.tokyo.lg.jp/1007617/1007632.html", "https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "長野県",
+  "City" : "長野圏域、松本圏域",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "宣言",
+  "Target" : "警戒宣言",
+  "TargetRange" : "長野圏域、松本圏域",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/20200414keikaisengen.pdf" ]
 }, {
   "EntryDate" : "2020-04-09",
   "Pref" : "神奈川県",
@@ -142,6 +164,17 @@
   "Reason" : "緊急事態措置",
   "URL" : [ "https://www3.nhk.or.jp/shutoken-news/20200407/1000046977.html" ]
 }, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "岐阜県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "休止要請",
+  "TargetRange" : "協力依頼を行う施設",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/gifu-kinkyu-sochi.data/taisyoshisetsu-reizi.pdf" ]
+}, {
   "EntryDate" : "2020-04-13",
   "Pref" : "北海道",
   "City" : "北海道, 札幌",
@@ -196,6 +229,28 @@
   "TargetRange" : "",
   "Reason" : "指示のテスト用のダミーデータ",
   "URL" : [ "https://github.com/igapyon/cityinfojp" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "静岡県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "都道府県を跨いだ移動",
+  "TargetRange" : "",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "http://www.pref.shizuoka.jp/kinkyu/civid-19-tijikomennto-0413.html" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "富山県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "県主催のイベント等の開催自粛",
+  "TargetRange" : "クラスター発生の３条件を満たすもの",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "http://www.pref.toyama.jp/cms_sec/1200/kj00021591.html" ]
 }, {
   "EntryDate" : "2020-04-08",
   "Pref" : "茨城県",
@@ -285,6 +340,17 @@
   "Reason" : "感染症への対応",
   "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202004/16corona.html" ]
 }, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "石川県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "緊急事態宣言",
+  "TargetRange" : "",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "https://www.pref.ishikawa.lg.jp/library_documents/kjs200413.pdf" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "秋田県",
   "City" : "",
@@ -295,6 +361,17 @@
   "TargetRange" : "",
   "Reason" : "感染症",
   "URL" : [ "https://www.pref.akita.lg.jp/pages/archive/49208" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "新潟県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛、都道府県をまたぐ人の移動",
+  "TargetRange" : "",
+  "Reason" : "感染症の拡大防止",
+  "URL" : [ "https://www.pref.niigata.lg.jp/sec/kikitaisaku/raiken.html" ]
 }, {
   "EntryDate" : "2020-04-05",
   "Pref" : "千葉県",
