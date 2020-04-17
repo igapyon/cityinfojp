@@ -79,6 +79,26 @@ public class MySitemapGenerator {
             url.setPriority("0.4");
         }
 
+        // arch
+        {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/arch.html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
+            url.setPriority("0.2");
+        }
+
+        // faq
+        {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/faq.html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
+            url.setPriority("0.2");
+        }
+
         // link
         {
             SitemapInfoUrl url = new SitemapInfoUrl();
