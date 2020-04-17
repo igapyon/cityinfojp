@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://cityinfojp.herokuapp.com/</loc>
-<lastmod>2020-04-17T21:41:16+09:00</lastmod>
+<lastmod>2020-04-17T22:30:47+09:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
@@ -255,6 +255,16 @@
 <loc>https://cityinfojp.herokuapp.com/contributor.html</loc>
 <changefreq>monthly</changefreq>
 <priority>0.4</priority>
+</url>
+<url>
+<loc>https://cityinfojp.herokuapp.com/arch.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.2</priority>
+</url>
+<url>
+<loc>https://cityinfojp.herokuapp.com/faq.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.2</priority>
 </url>
 <url>
 <loc>https://cityinfojp.herokuapp.com/link.html</loc>
