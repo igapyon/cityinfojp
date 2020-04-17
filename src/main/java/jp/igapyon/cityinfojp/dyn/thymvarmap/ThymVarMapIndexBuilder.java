@@ -153,7 +153,10 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         });
     }
 
-    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList) {
+    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList)
+            throws IOException {
+        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+
         List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
         for (CityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
@@ -184,6 +187,13 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
                     + (null == entry.getCity() || entry.getCity().trim().length() == 0 //
                             ? "" //
                             : " (" + entry.getCity() + ")"));
+
+            for (PrefEntry pref : prefList) {
+                if (pref.getName().equals(entry.getPref())) {
+                    dispEntry.setPrefUrl("/pref/" + pref.getNameen().toLowerCase() + ".html");
+                    break;
+                }
+            }
 
             String descText = "";
             descText = "(" + entry.getEntryDate() + "起票) " + entry.getTarget() + " "

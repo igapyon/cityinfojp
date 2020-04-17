@@ -27,8 +27,20 @@ public class DisplayCityInfoEntry {
     private String iconColor;
     private String iconTextColor;
     private String titleText;
+    /**
+     * タイトル行から都道府県へのリンク
+     */
+    private String prefUrl;
     private String descText;
     private List<String> url;
+
+    public String getPrefUrl() {
+        return prefUrl;
+    }
+
+    public void setPrefUrl(String prefUrl) {
+        this.prefUrl = prefUrl;
+    }
 
     public String getIconText() {
         return iconText;

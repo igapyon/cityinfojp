@@ -18,11 +18,22 @@
                             th:remove="tag" /></text>
                 </svg>
                 <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <strong class="d-block text-gray-dark"><span th:text="${dispEntry.titleText}"
-                            th:remove="tag" /></strong>
+                    <strong class="d-block text-gray-dark">
+                        <div th:if="${dispEntry.prefUrl == null or dispEntry.prefUrl == ''}" th:remove="tag">
+                            <!--/* 都道府県リンクがない場合 */-->
+                            <span th:text="${dispEntry.titleText}" th:remove="tag" />
+                        </div>
+                        <div th:if="${!(dispEntry.prefUrl == null or dispEntry.prefUrl == '')}" th:remove="tag">
+                            <!--/* 都道府県リンクがある場合 */-->
+                            <a th:href="${dispEntry.prefUrl}">
+                                <span th:text="${dispEntry.titleText}" th:remove="tag" />
+                            </a>
+                        </div>
+                    </strong>
                     <span th:text="${dispEntry.descText}" th:remove="tag" />
                     <div th:each="url : ${dispEntry.URL}" th:remove="tag">
-                        , <a th:href="${url}" class="btn btn-sm btn-outline-primary" style="padding: 0px 4px 0px 4px" target="_blank">Link</a>
+                        , <a th:href="${url}" class="btn btn-sm btn-outline-primary" style="padding: 0px 4px 0px 4px"
+                            target="_blank">Link</a>
                     </div>
                 </p>
             </div>
