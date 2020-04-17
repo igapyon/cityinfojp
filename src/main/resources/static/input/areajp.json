@@ -2,7 +2,9 @@
     {
         "name": "日本国",
         "nameen": "Japan",
-        "pref": []
+        "pref": [
+            "00"
+        ]
     },
     {
         "name": "北海道",
