@@ -15,6 +15,9 @@
  */
 package jp.igapyon.cityinfojp.dyn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * HTMLレンダリング用のエントリ
  * 
@@ -24,6 +27,15 @@ public class DisplayPrefEntry {
     private String text;
     private int infoCount = 0;
     private String url;
+
+    /**
+     * リンク集のみで利用
+     */
+    private List<String> urlList = new ArrayList<>();
+
+    public List<String> getUrlList() {
+        return urlList;
+    }
 
     public String getText() {
         return text;
