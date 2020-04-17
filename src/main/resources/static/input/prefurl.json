@@ -2,10 +2,10 @@
     {
         "name": "日本国",
         "url": [
-            "https://kanpou.npb.go.jp/",
             "https://www.kantei.go.jp/",
             "https://www.mhlw.go.jp/",
-            "https://www.meti.go.jp/"
+            "https://www.meti.go.jp/",
+            "https://kanpou.npb.go.jp/"
         ]
     },
     {
