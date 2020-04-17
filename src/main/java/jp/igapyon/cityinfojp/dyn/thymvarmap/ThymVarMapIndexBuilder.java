@@ -100,7 +100,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
             dispArea.setNameen(entry.getNameen());
             dispArea.setUrl("/pref/" + entry.getNameen().toLowerCase() + ".html");
 
-            System.err.println(entry.getName() + ":" + entry.getNameen());
+            // System.err.println(entry.getName() + ":" + entry.getNameen());
             for (String look : entry.getPref()) {
                 for (PrefEntry prefLookup : prefList) {
                     if (look.equals(prefLookup.getCode())) {
@@ -110,7 +110,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
                         newPref.setUrl("/pref/" + prefLookup.getNameen().toLowerCase());
                     }
                 }
-                System.err.println("  " + look);
+                // System.err.println("  " + look);
             }
         }
 

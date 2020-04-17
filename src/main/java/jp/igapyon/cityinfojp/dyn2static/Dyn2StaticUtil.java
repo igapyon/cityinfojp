@@ -15,6 +15,7 @@
  */
 package jp.igapyon.cityinfojp.dyn2static;
 
+import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -30,6 +31,7 @@ public class Dyn2StaticUtil {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
         templateEngine.setEnableSpringELCompiler(true);
+        templateEngine.addDialect(new Java8TimeDialect());
 
         return templateEngine;
     }
