@@ -21,7 +21,16 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 public class Dyn2StaticUtil {
+    /**
+     * 注意: シングルトン対応のため特殊な手法を利用しています。
+     */
+    private static SpringTemplateEngine engine = null;
+
     public static SpringTemplateEngine getStandaloneSpringTemplateEngine() {
+        if (engine != null) {
+            return engine;
+        }
+
         final ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
         templateResolver.setPrefix("templates/");
         templateResolver.setSuffix(".html");
@@ -33,6 +42,7 @@ public class Dyn2StaticUtil {
         templateEngine.setEnableSpringELCompiler(true);
         templateEngine.addDialect(new Java8TimeDialect());
 
+        engine = templateEngine;
         return templateEngine;
     }
 }
