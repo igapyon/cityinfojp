@@ -23,7 +23,7 @@ class AreaEntryUtilTest {
             dispArea.setName(entry.getName());
             dispArea.setNameen(entry.getNameen());
 
-            System.err.println(entry.getName() + ":" + entry.getNameen());
+            // System.err.println(entry.getName() + ":" + entry.getNameen());
             for (String look : entry.getPref()) {
                 for (PrefEntry prefLookup : prefList) {
                     if (look.equals(prefLookup.getCode())) {
@@ -33,7 +33,7 @@ class AreaEntryUtilTest {
                         newPref.setUrl("/pref/" + prefLookup.getNameen().toLowerCase());
                     }
                 }
-                System.err.println("  " + look);
+                // System.err.println("  " + look);
             }
         }
     }

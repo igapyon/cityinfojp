@@ -30,9 +30,9 @@ class CityInfoEntryTest {
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
                     new File("./src/main/resources/static/input/2020/202004/11-saitama-request-20200405a.json"));
             for (CityInfoEntry entry : entryList) {
-                System.err.println(entry.getState());
+                // System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
-                    System.err.println("  " + look);
+                    // System.err.println("  " + look);
                 }
             }
         }
@@ -40,9 +40,9 @@ class CityInfoEntryTest {
             List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
                     new File("./src/main/resources/static/input/2020/202004/12-chiba-closure-20200405a.json"));
             for (CityInfoEntry entry : entryList) {
-                System.err.println(entry.getState());
+                // System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
-                    System.err.println("  " + look);
+                    // System.err.println("  " + look);
                 }
             }
         }
