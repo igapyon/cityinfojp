@@ -64,8 +64,12 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
             jumbotron.setTitle("About");
+        } else if (body.startsWith("/dyn/arch")) {
+            jumbotron.setTitle("Architecture");
         } else if (body.startsWith("/dyn/contributor")) {
             jumbotron.setTitle("Contributor");
+        } else if (body.startsWith("/dyn/faq")) {
+            jumbotron.setTitle("FAQ");
         } else if (body.startsWith("/dyn/link")) {
             jumbotron.setTitle("関連リンク");
         } else if (body.startsWith("/dyn/policy")) {

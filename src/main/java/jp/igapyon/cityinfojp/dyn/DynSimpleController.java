@@ -27,7 +27,12 @@ import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
 
 @Controller
 public class DynSimpleController {
-    @GetMapping({ "/dyn/about.html", "/dyn/contributor.html", "/dyn/link.html", "/dyn/policy.html" })
+    @GetMapping({ "/dyn/about.html", //
+            "/dyn/arch.html", //
+            "/dyn/contributor.html", //
+            "/dyn/faq.html", //
+            "/dyn/link.html", //
+            "/dyn/policy.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
         new ThymVarMapSimpleBuilder(request.getRequestURI()).applyModelAttr(model);
 

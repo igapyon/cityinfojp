@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>Pref of cityinfo</title>
+    <title>cityinfojp Architecture</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="cityinfojp,cityinfo,pref,fact,city,info,oss,web">
+    <meta name="keywords" content="cityinfojp,cityinfo,arch,architecture,fact,city,info,oss,web">
     <meta name="description"
         content="cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。 当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。">
     <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
 
-    <!-- <link rel="canonical" href="https://cityinfojp.herokuapp.com/pref/tokyo.html"> -->
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/arch.html">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -45,11 +45,11 @@
                     </div>
                     <div>
                         <li
-                            class="nav-item active dropdown">
+                            class="nav-item dropdown">
                             
 
                             
-                                <a class="nav-link dropdown-toggle active"
+                                <a class="nav-link dropdown-toggle"
                                     href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">都道府県</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -126,7 +126,7 @@
         
         <div class="jumbotron">
             <div class="container">
-                <h1 class="display-3">富山県</h1>
+                <h1 class="display-3">Architecture</h1>
                 <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。
                     当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。
                 </p>
@@ -136,42 +136,53 @@
     
 
         <div class="container">
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <div class="card">
-                    <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索</div>
-                    <div class="card-body" style="padding:6px 20px 6px 20px;">
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:http%3A%2F%2Fwww.pref.toyama.jp%2F+after:2020-04-10+緊急" target="_blank">緊急</a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:http%3A%2F%2Fwww.pref.toyama.jp%2F+after:2020-04-10+宣言" target="_blank">宣言</a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:http%3A%2F%2Fwww.pref.toyama.jp%2F+after:2020-04-10+要請" target="_blank">要請</a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:http%3A%2F%2Fwww.pref.toyama.jp%2F+after:2020-04-10+休校" target="_blank">休校</a>
-                        
-                    </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>開発言語</h2>
+                    <p>cityinfojp は プログラミング言語<a href="https://openjdk.java.net/">Java</a> を利用して開発しています。</p>
                 </div>
-
-                <hr />
-
-                <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-
-                
-        
-    
+                <div class="col-md-4">
+                    <h2>ビルドシステム</h2>
+                    <p>cityinfojp は <a href="https://maven.apache.org/">Maven</a> をビルドシステムとして利用しています。
+                        詳しくは <a href="https://github.com/igapyon/cityinfojp/blob/master/pom.xml">pom.xml</a> を参照ください。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>フレームワーク</h2>
+                    <p>cityinfojp は <a href="https://spring.io/projects/spring-boot">Spring Boot</a> をフレームワークとして利用しています。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>HTML レンダリング</h2>
+                    <p>cityinfojp は <a href="https://www.thymeleaf.org/">Thymeleaf</a> を HTML レンダリングエンジンとして利用しています。
+                        ビルドプロセスのなかで Thymeleaf テンプレートから 静的 HTML へコンバートしています。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Webフロントエンド</h2>
+                    <p>cityinfojp は <a href="https://getbootstrap.com/">Bootstrap</a> を フロントエンド・コンポーネント・ライブラリとして利用しています。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>データ形式</h2>
+                    <p>cityinfojp は <a href="https://www.json.org/">JSON</a> をデータフォーマットとして原則利用しています。
+                        JSON ファイルの読み書きには <a href="https://github.com/FasterXML/jackson">Jackson</a> ライブラリを利用しています。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>開発作業場所</h2>
+                    <p>cityinfojp は <a href="https://github.com/igapyon/cityinfojp">GitHub</a> を開発拠点としています。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Web ホスト</h2>
+                    <p>cityinfojp は <a href="https://www.heroku.com/home">Heroku</a> ホスティングサービスを利用しています。</p>
+                </div>
             </div>
-        </div>
+            <hr>
+        </div> <!-- /container -->
     </main>
 
     <footer class="container">
-        <p>&copy; cityinfojp 2020</p>
+        <p>&copy; cityinfojp 2020 : 2020-04-17 21:41</p>
     </footer>
 
     <!-- Bootstrap JavaScript -->
