@@ -98,6 +98,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
             dispAreaList.add(dispArea);
             dispArea.setName(entry.getName());
             dispArea.setNameen(entry.getNameen());
+            dispArea.setUrl("/pref/" + entry.getNameen().toLowerCase() + ".html");
 
             System.err.println(entry.getName() + ":" + entry.getNameen());
             for (String look : entry.getPref()) {

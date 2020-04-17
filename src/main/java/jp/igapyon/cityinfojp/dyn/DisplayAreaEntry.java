@@ -26,7 +26,16 @@ import java.util.List;
 public class DisplayAreaEntry {
     private String name;
     private String nameen;
+    private String url;
     private List<DisplayPrefEntry> prefList = new ArrayList<>();
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getName() {
         return name;
