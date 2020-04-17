@@ -29,11 +29,17 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
+import jp.igapyon.cityinfojp.dyn.DisplayAreaEntry;
 import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
+import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.input.entry.AreaEntry;
+import jp.igapyon.cityinfojp.input.entry.AreaEntryUtil;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -50,6 +56,8 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         List<CityInfoEntry> allEntryList = buildEntityList();
         sortEntryList(allEntryList);
         List<DisplayCityInfoEntry> dispEntryList = entryList2DispEntryList(allEntryList);
+
+        result.put("dispAreaList", buildAreaList());
 
         result.put("dispEntryList", dispEntryList);
 
@@ -73,6 +81,39 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         NavbarBean navbar = NavbarUtil.buildNavbar(null);
         navbar.getItemList().get(0).setCurrent(true);
         return navbar;
+    }
+
+    /**
+     * エリア一覧を取得する。
+     * @return 表示用のエリア一覧。
+     * @throws IOException
+     */
+    public static List<DisplayAreaEntry> buildAreaList() throws IOException {
+        List<DisplayAreaEntry> dispAreaList = new ArrayList<>();
+
+        List<AreaEntry> areaList = AreaEntryUtil.readEntryListFromClasspath();
+        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+        for (AreaEntry entry : areaList) {
+            DisplayAreaEntry dispArea = new DisplayAreaEntry();
+            dispAreaList.add(dispArea);
+            dispArea.setName(entry.getName());
+            dispArea.setNameen(entry.getNameen());
+
+            System.err.println(entry.getName() + ":" + entry.getNameen());
+            for (String look : entry.getPref()) {
+                for (PrefEntry prefLookup : prefList) {
+                    if (look.equals(prefLookup.getCode())) {
+                        DisplayPrefEntry newPref = new DisplayPrefEntry();
+                        dispArea.getPrefList().add(newPref);
+                        newPref.setText(prefLookup.getName());
+                        newPref.setUrl("/pref/" + prefLookup.getNameen().toLowerCase());
+                    }
+                }
+                System.err.println("  " + look);
+            }
+        }
+
+        return dispAreaList;
     }
 
     public static List<CityInfoEntry> buildEntityList() throws IOException {
