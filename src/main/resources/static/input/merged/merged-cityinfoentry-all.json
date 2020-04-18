@@ -252,6 +252,17 @@
   "Reason" : "緊急事態措置",
   "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti.html" ]
 }, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "千葉県",
+  "City" : "",
+  "StartDate" : "2020-04-14",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "施設の使用、イベント開催の停止",
+  "TargetRange" : "",
+  "Reason" : "感染症流行の防止",
+  "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/shisetsu.html" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "東京都",
   "City" : "",
