@@ -26,11 +26,17 @@ import jp.igapyon.sitemapgenerator4j.SitemapInfo;
 import jp.igapyon.sitemapgenerator4j.SitemapInfoUrl;
 
 /**
+ * このサイトの sitemap.xml を生成します。
  * 
- * @see https://www.sitemaps.org/protocol.html
  * @author Toshiki Iga
  */
 public class MySitemapGenerator {
+    /**
+     * このサイトの sitemap.xml 生成のエントリポイント。
+     * 
+     * @param args アプリ起動引数。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     public static void main(String[] args) throws IOException {
         SitemapGenerator4j gen = new SitemapGenerator4j();
         SitemapInfo entry = new SitemapInfo();
@@ -109,6 +115,7 @@ public class MySitemapGenerator {
             url.setPriority("0.2");
         }
 
+        // ソースディレクトリ内の sitemap.xml ファイルを作成/更新。
         gen.write(entry, new File("./src/main/resources/static/sitemap.xml"));
     }
 }
