@@ -138,16 +138,17 @@
         <div class="container">
             <div class="my-3 p-3 bg-white rounded shadow-sm">
                 <div class="card">
-                    <div data-toggle="tooltip" data-placement="top"
-                        title="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
-                        <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索
+                    <div data-toggle="tooltip" data-placement="top" <div class="card-header"
+                        style="padding:3px 20px 3px 20px;">いますぐ検索
+                        <span data-toggle="popover" data-placement="top"
+                            data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
                             <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
                                     clip-rule="evenodd" />
                             </svg>
-                        </div>
+                        </span>
                     </div>
                     <div class="card-body" style="padding:6px 20px 6px 20px;">
                         
@@ -223,6 +224,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
 </body>
 
 </html>
