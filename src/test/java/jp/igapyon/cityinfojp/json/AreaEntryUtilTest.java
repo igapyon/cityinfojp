@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import jp.igapyon.cityinfojp.dyn.DisplayAreaEntry;
-import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.disp.DisplayAreaEntry;
+import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonAreaEntry;
 import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;

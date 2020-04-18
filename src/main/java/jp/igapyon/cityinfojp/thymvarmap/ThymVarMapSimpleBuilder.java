@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;

@@ -32,8 +32,8 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
-import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
-import jp.igapyon.cityinfojp.dyn.DisplaySearchButton;
+import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
+import jp.igapyon.cityinfojp.disp.DisplaySearchButton;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;

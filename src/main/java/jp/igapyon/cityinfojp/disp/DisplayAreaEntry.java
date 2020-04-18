@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn;
+package jp.igapyon.cityinfojp.disp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * HTMLレンダリング用のエントリ
+ * area の HTML レンダリング用のエントリ
  * 
  * @author Toshiki Iga
  */

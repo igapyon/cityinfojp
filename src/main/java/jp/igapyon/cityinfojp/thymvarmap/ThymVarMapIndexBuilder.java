@@ -29,9 +29,9 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 
-import jp.igapyon.cityinfojp.dyn.DisplayAreaEntry;
-import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
-import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.disp.DisplayAreaEntry;
+import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
+import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonAreaEntry;

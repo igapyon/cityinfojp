@@ -13,27 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn;
+package jp.igapyon.cityinfojp.disp;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * HTMLレンダリング用の県検索ボタン
+ * pref の HTML レンダリング用のエントリ
  * 
  * @author Toshiki Iga
  */
-public class DisplaySearchButton {
+public class DisplayPrefEntry {
     private String text;
-    private String searchUrl;
+    private int infoCount = 0;
+    private String url;
+
     /**
-     * 最初のボタンのみprimary.
+     * リンク集のみで利用
      */
-    private boolean primary = false;
+    private List<String> urlList = new ArrayList<>();
 
-    public boolean isPrimary() {
-        return primary;
-    }
-
-    public void setPrimary(boolean primary) {
-        this.primary = primary;
+    public List<String> getUrlList() {
+        return urlList;
     }
 
     public String getText() {
@@ -44,11 +45,20 @@ public class DisplaySearchButton {
         this.text = text;
     }
 
-    public String getSearchUrl() {
-        return searchUrl;
+    public int getInfoCount() {
+        return infoCount;
     }
 
-    public void setSearchUrl(String searchUrl) {
-        this.searchUrl = searchUrl;
+    public void setInfoCount(int count) {
+        this.infoCount = count;
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 }
