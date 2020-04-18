@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ import org.springframework.ui.Model;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 
-public class ThymVarMapUtil {
+public class ThVarMapUtil {
 
     /**
      * 与えられた map 情報を Context に設定します。

@@ -13,45 +13,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn2static;
+package jp.igapyon.cityinfojp.th2static;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.json.JsonPrefEntry;
-import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
-import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapPrefBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapAreaBuilder;
 
-public class Dyn2StaticPrefProcessor {
+public class Th2StaticAreaProcessor {
 
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Th2StaticUtil.getStandaloneSpringTemplateEngine();
 
-        dyn2staticPrefList(templateEngine);
+        dyn2staticAreaList(templateEngine);
     }
 
-    static void dyn2staticPrefList(SpringTemplateEngine templateEngine) throws IOException {
-        System.err.println("都道府県 html を静的ファイル化.");
-
-        // pref ごとに処理
+    static void dyn2staticAreaList(SpringTemplateEngine templateEngine) throws IOException {
+        // areaごと静的ページ
 
         try {
-            List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
-            for (JsonPrefEntry pref : prefList) {
+            for (int index = 0; index < ThVarMapAreaBuilder.AREA_INFO.length; index++) {
                 final IContext ctx = new Context();
 
-                new ThymVarMapPrefBuilder(pref.getNameen(), pref.getName()).applyContextVariable(ctx);
+                String[] area = ThVarMapAreaBuilder.AREA_INFO[index];
 
-                String result = templateEngine.process("/dyn/pref/pref", ctx);
+                new ThVarMapAreaBuilder(area[0], area[1], ThVarMapAreaBuilder.AREA_PREF_CODES[index])
+                        .applyContextVariable(ctx);
+
+                String result = templateEngine.process("/dyn/pref/area", ctx);
                 FileUtils.writeStringToFile(
-                        new File("src/main/resources/static/pref/" + pref.getNameen().toLowerCase() + ".html"), result,
-                        "UTF-8");
+                        new File("src/main/resources/static/pref/" + area[0].toLowerCase() + ".html"), result, "UTF-8");
             }
         } catch (IOException ex) {
             System.err.println("Unexpected exception: " + ex.toString());

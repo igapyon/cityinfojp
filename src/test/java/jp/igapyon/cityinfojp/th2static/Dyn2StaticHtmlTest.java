@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn2static;
+package jp.igapyon.cityinfojp.th2static;
 
 import org.junit.jupiter.api.Test;
 
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntryMergeProcessor;
+import jp.igapyon.cityinfojp.th2static.Th2StaticAreaProcessor;
+import jp.igapyon.cityinfojp.th2static.Th2StaticIndexProcessor;
+import jp.igapyon.cityinfojp.th2static.Th2StaticPrefProcessor;
+import jp.igapyon.cityinfojp.th2static.Th2StaticSimpleProcessor;
 
 class Dyn2StaticHtmlTest {
 
@@ -28,12 +32,12 @@ class Dyn2StaticHtmlTest {
 
         // その次に個別の生成
 
-        Dyn2StaticIndexProcessor.main(new String[] { "this" });
+        Th2StaticIndexProcessor.main(new String[] { "this" });
 
-        Dyn2StaticAreaProcessor.main(new String[] { "this" });
+        Th2StaticAreaProcessor.main(new String[] { "this" });
 
-        Dyn2StaticPrefProcessor.main(new String[] { "this" });
+        Th2StaticPrefProcessor.main(new String[] { "this" });
 
-        Dyn2StaticSimpleProcessor.main(new String[] { "this" });
+        Th2StaticSimpleProcessor.main(new String[] { "this" });
     }
 }

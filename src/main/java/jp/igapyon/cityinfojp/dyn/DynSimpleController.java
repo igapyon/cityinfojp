@@ -23,7 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapSimpleBuilder;
 
 @Controller
 public class DynSimpleController {
@@ -34,8 +34,8 @@ public class DynSimpleController {
             "/dyn/link.html", //
             "/dyn/policy.html" })
     public String index(Model model, HttpServletRequest request) throws IOException {
-        new ThymVarMapSimpleBuilder(request.getRequestURI()).applyModelAttr(model);
+        new ThVarMapSimpleBuilder(request.getRequestURI()).applyModelAttr(model);
 
-        return ThymVarMapSimpleBuilder.getPathStringWithoutExt(request.getRequestURI());
+        return ThVarMapSimpleBuilder.getPathStringWithoutExt(request.getRequestURI());
     }
 }

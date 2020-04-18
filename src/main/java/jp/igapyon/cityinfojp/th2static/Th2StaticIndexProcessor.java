@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn2static;
+package jp.igapyon.cityinfojp.th2static;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,11 +23,11 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapIndexBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapIndexBuilder;
 
-public class Dyn2StaticIndexProcessor {
+public class Th2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Th2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticIndex(templateEngine);
     }
@@ -37,7 +37,7 @@ public class Dyn2StaticIndexProcessor {
 
         final IContext ctx = new Context();
 
-        new ThymVarMapIndexBuilder().applyContextVariable(ctx);
+        new ThVarMapIndexBuilder().applyContextVariable(ctx);
 
         String result = templateEngine.process("/dyn/index", ctx);
         FileUtils.writeStringToFile(new File("src/main/resources/static/index.html"), result, "UTF-8");

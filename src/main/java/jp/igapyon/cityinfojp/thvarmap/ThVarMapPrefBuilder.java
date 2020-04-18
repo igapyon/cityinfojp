@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,8 +34,8 @@ import org.springframework.core.io.ClassPathResource;
 
 import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.disp.DisplaySearchButton;
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
@@ -46,11 +46,11 @@ import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
  * 
  * 都道府県の単位でビルドします。
  */
-public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
+public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
     private String prefNameen;
     String prefName;
 
-    public ThymVarMapPrefBuilder(String prefNameen, String prefName) {
+    public ThVarMapPrefBuilder(String prefNameen, String prefName) {
         this.prefNameen = prefNameen;
         this.prefName = prefName;
     }
@@ -64,8 +64,8 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         try {
             result.put("dispSearchButtonList", buildSearchButtonList(prefName));
 
-            List<JsonCityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
-            ThymVarMapIndexBuilder.sortEntryList(allEntryList);
+            List<JsonCityInfoEntry> allEntryList = ThVarMapIndexBuilder.buildEntityList();
+            ThVarMapIndexBuilder.sortEntryList(allEntryList);
 
             // pref で絞り込み
             List<JsonCityInfoEntry> entryList = new ArrayList<>();
@@ -76,7 +76,7 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
             }
 
             // 絞り込み後のデータを利用
-            List<DisplayCityInfoEntry> dispEntryList = ThymVarMapIndexBuilder.entryList2DispEntryList(entryList);
+            List<DisplayCityInfoEntry> dispEntryList = ThVarMapIndexBuilder.entryList2DispEntryList(entryList);
 
             // Prefでしぼりこみ
             result.put("dispEntryList", dispEntryList);

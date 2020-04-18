@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn2static;
+package jp.igapyon.cityinfojp.th2static;
 
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
-public class Dyn2StaticUtil {
+public class Th2StaticUtil {
     /**
      * 注意: シングルトン対応のため特殊な手法を利用しています。
      */

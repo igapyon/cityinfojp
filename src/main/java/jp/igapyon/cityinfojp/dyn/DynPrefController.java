@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
-import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapPrefBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapPrefBuilder;
 
 @Controller
 public class DynPrefController {
@@ -49,7 +49,7 @@ public class DynPrefController {
             ex.printStackTrace();
         }
 
-        new ThymVarMapPrefBuilder(pref, prefName).applyModelAttr(model);
+        new ThVarMapPrefBuilder(pref, prefName).applyModelAttr(model);
 
         return "dyn/pref/pref";
     }

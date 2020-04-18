@@ -37,12 +37,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
-import jp.igapyon.cityinfojp.thymvarmap.NavbarUtil;
+import jp.igapyon.cityinfojp.thvarmap.NavbarUtil;
 
 /**
  * データエントリ画面(/dataentry.html)のコントローラ。

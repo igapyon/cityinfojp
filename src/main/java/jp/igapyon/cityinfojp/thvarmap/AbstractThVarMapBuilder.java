@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -26,7 +26,7 @@ import org.thymeleaf.context.IContext;
  *
  * @author Toshiki Iga
  */
-public abstract class AbstractThymVarMapBuilder {
+public abstract class AbstractThVarMapBuilder {
     protected abstract LinkedHashMap<String, Object> buildVarMap() throws IOException;
 
     /**
@@ -36,7 +36,7 @@ public abstract class AbstractThymVarMapBuilder {
      */
     public void applyContextVariable(IContext ctx) throws IOException {
         LinkedHashMap<String, Object> map = buildVarMap();
-        ThymVarMapUtil.applyContextVariable(ctx, map);
+        ThVarMapUtil.applyContextVariable(ctx, map);
     }
 
     /**
@@ -46,6 +46,6 @@ public abstract class AbstractThymVarMapBuilder {
      */
     public void applyModelAttr(Model model) throws IOException {
         LinkedHashMap<String, Object> map = buildVarMap();
-        ThymVarMapUtil.applyModelAttr(model, map);
+        ThVarMapUtil.applyModelAttr(model, map);
     }
 }

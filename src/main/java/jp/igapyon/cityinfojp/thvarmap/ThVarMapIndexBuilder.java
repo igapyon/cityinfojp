@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,8 +32,8 @@ import org.springframework.core.io.ClassPathResource;
 import jp.igapyon.cityinfojp.disp.DisplayAreaEntry;
 import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonAreaEntry;
 import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
@@ -46,7 +46,7 @@ import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
  * 
  * Indexの単位でビルドします。
  */
-public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
+public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
     /**
      * 変数をビルド。
      */

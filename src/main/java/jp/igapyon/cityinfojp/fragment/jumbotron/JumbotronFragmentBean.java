@@ -13,29 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn.fragment.navbar;
+package jp.igapyon.cityinfojp.fragment.jumbotron;
 
-import java.util.ArrayList;
-import java.util.List;
+public class JumbotronFragmentBean {
+    private String title = "cityinfojp";
 
-public class NavbarDropdownBean {
-    private String text;
-
-    private List<NavbarItemBean> itemList = new ArrayList<>();
-
-    public String getText() {
-        return text;
+    public String getTitle() {
+        return title;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public List<NavbarItemBean> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(List<NavbarItemBean> itemList) {
-        this.itemList = itemList;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

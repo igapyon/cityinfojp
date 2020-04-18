@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -32,7 +32,7 @@ import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
  * 
  * エリアの単位でビルドします。
  */
-public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
+public class ThVarMapAreaBuilder extends AbstractThVarMapBuilder {
     public static final String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" },
             { "chubu", "中部" }, { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" },
             { "kyushuokinawa", "九州沖縄" } };
@@ -45,7 +45,7 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
     private String areaName;
     private String[] prefs;
 
-    public ThymVarMapAreaBuilder(String areaId, String areaName, String[] prefs) {
+    public ThVarMapAreaBuilder(String areaId, String areaName, String[] prefs) {
         this.areaId = areaId;
         this.areaName = areaName;
         this.prefs = prefs;
@@ -68,8 +68,8 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
                         dispPref.setText(prefEntry.getName());
                         dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
 
-                        List<JsonCityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
-                        ThymVarMapIndexBuilder.sortEntryList(allEntryList);
+                        List<JsonCityInfoEntry> allEntryList = ThVarMapIndexBuilder.buildEntityList();
+                        ThVarMapIndexBuilder.sortEntryList(allEntryList);
 
                         // cityinfo の数を pref でカウントアップ
                         for (JsonCityInfoEntry lookup : allEntryList) {
@@ -89,9 +89,9 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
 
         // "dispEntryList"は不要
 
-        result.put("jumbotron", ThymVarMapPrefBuilder.getJumbotronBean(areaName));
+        result.put("jumbotron", ThVarMapPrefBuilder.getJumbotronBean(areaName));
 
-        result.put("navbar", ThymVarMapPrefBuilder.getNavbarBean(areaId));
+        result.put("navbar", ThVarMapPrefBuilder.getNavbarBean(areaId));
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         result.put("processDateTime", dtf.format(LocalDateTime.now()));

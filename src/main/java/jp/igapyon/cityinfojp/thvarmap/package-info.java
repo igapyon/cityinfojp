@@ -1,4 +1,4 @@
 /**
  * Thymeleaf のキー値マッピングを処理する機能。
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -23,8 +23,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
@@ -35,10 +35,10 @@ import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
  * 
  * ベーシックな変数をビルドします。
  */
-public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
+public class ThVarMapSimpleBuilder extends AbstractThVarMapBuilder {
     private String sourcePath;
 
-    public ThymVarMapSimpleBuilder(String sourcePath) {
+    public ThVarMapSimpleBuilder(String sourcePath) {
         this.sourcePath = sourcePath;
     }
 

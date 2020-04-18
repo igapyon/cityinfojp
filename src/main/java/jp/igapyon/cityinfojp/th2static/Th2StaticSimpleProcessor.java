@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn2static;
+package jp.igapyon.cityinfojp.th2static;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,11 +23,11 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapSimpleBuilder;
 
-public class Dyn2StaticSimpleProcessor {
+public class Th2StaticSimpleProcessor {
     public static final void main(String[] args) throws IOException {
-        SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
+        SpringTemplateEngine templateEngine = Th2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
         dyn2staticSimple(templateEngine, "/dyn/arch", "src/main/resources/static/arch.html");
@@ -43,7 +43,7 @@ public class Dyn2StaticSimpleProcessor {
 
         final IContext ctx = new Context();
 
-        new ThymVarMapSimpleBuilder(sourcePath).applyContextVariable(ctx);
+        new ThVarMapSimpleBuilder(sourcePath).applyContextVariable(ctx);
 
         String result = templateEngine.process(sourcePath, ctx);
         FileUtils.writeStringToFile(new File(targetPath), result, "UTF-8");

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn.fragment.navbar;
+package jp.igapyon.cityinfojp.fragment.navbar;
 
 public class NavbarItemBean {
     private String text = "Menu1";

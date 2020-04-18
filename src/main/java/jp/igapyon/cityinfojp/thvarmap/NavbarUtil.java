@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.thymvarmap;
+package jp.igapyon.cityinfojp.thvarmap;
 
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarItemBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarDropdownBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarItemBean;
 
 public class NavbarUtil {
     public static NavbarBean buildNavbar(String pref) {
