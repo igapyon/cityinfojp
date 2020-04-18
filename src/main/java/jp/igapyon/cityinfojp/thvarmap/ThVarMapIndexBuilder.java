@@ -48,8 +48,12 @@ import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
  */
 public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
     /**
-     * 変数をビルド。
+     * Thymeleaf のオンライン処理・バッチ処理の両方で利用可能なキー値マップを構成。
+     * 
+     * @return 抽象化されたキー値マップ。
+     * @throws IOException 入出力例外が発生した場合。
      */
+    @Override
     protected LinkedHashMap<String, Object> buildVarMap() throws IOException {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
@@ -86,7 +90,7 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
     /**
      * エリア一覧を取得する。
      * @return 表示用のエリア一覧。
-     * @throws IOException
+     * @throws IOException 入出力例外が発生した場合。
      */
     public static List<DisplayAreaEntry> buildAreaList() throws IOException {
         List<DisplayAreaEntry> dispAreaList = new ArrayList<>();

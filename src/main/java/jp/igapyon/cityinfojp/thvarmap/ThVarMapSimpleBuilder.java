@@ -43,8 +43,11 @@ public class ThVarMapSimpleBuilder extends AbstractThVarMapBuilder {
     }
 
     /**
-     * 変数をビルド。
+     * Thymeleaf のオンライン処理・バッチ処理の両方で利用可能なキー値マップを構成。
+     * 
+     * @return 抽象化されたキー値マップ。
      */
+    @Override
     protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 

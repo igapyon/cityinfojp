@@ -56,8 +56,11 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
     }
 
     /**
-     * final String name, final Object value
+     * Thymeleaf のオンライン処理・バッチ処理の両方で利用可能なキー値マップを構成。
+     * 
+     * @return 抽象化されたキー値マップ。
      */
+    @Override
     protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
@@ -182,8 +185,10 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
     }
 
     /**
-     * 特殊
+     * 検索ボタンのリストを生成。
      * 
+     * @param prefName 都道府県名。
+     * @return 表示用検索ボタンのリスト。
      * @throws IOException 入出力例外が発生。
      */
     @SuppressWarnings("deprecation")
