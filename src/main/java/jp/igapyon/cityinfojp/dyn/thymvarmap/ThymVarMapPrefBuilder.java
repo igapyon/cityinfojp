@@ -58,44 +58,11 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
     /**
      * final String name, final Object value
      */
-    @SuppressWarnings("deprecation")
     protected LinkedHashMap<String, Object> buildVarMap() {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         try {
-            // 基準日
-            final Date searchBaseDate = new Date(System.currentTimeMillis() - (3 * 24 * 60 * 60 * 1000));
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-            // 検索ボタン生成
-            List<DisplaySearchButton> dispSearchButtonList = new ArrayList<>();
-            result.put("dispSearchButtonList", dispSearchButtonList);
-            List<PrefUrlEntry> urlList = PrefUrlEntryUtil.readEntryListFromClasspath();
-            for (PrefUrlEntry prefUrl : urlList) {
-                if (prefName.equals(prefUrl.getName())) {
-                    for (String url : prefUrl.getUrl()) {
-                        DisplaySearchButton button = new DisplaySearchButton();
-                        button.setText("宣言");
-                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url) + "+after:"
-                                + sdf.format(searchBaseDate) + "+宣言");
-                        dispSearchButtonList.add(button);
-                    }
-                    for (String url : prefUrl.getUrl()) {
-                        DisplaySearchButton button = new DisplaySearchButton();
-                        button.setText("要請");
-                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode( url) + "+after:"
-                                + sdf.format(searchBaseDate) + "+要請");
-                        dispSearchButtonList.add(button);
-                    }
-                    for (String url : prefUrl.getUrl()) {
-                        DisplaySearchButton button = new DisplaySearchButton();
-                        button.setText("休校");
-                        button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode( url) + "+after:"
-                                + sdf.format(searchBaseDate) + "+休校");
-                        dispSearchButtonList.add(button);
-                    }
-                }
-            }
+            result.put("dispSearchButtonList", buildSearchButtonList(prefName));
 
             List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
             ThymVarMapIndexBuilder.sortEntryList(allEntryList);
@@ -212,5 +179,66 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         }
 
         return dispEntryList;
+    }
+
+    /**
+     * 特殊
+     * 
+     * @throws IOException 入出力例外が発生。
+     */
+    @SuppressWarnings("deprecation")
+    public static List<DisplaySearchButton> buildSearchButtonList(String prefName) throws IOException {
+        // 基準日
+        final Date searchBaseDate = new Date(System.currentTimeMillis() - (7 * 24 * 60 * 60 * 1000));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        // 検索ボタン生成
+        List<DisplaySearchButton> dispSearchButtonList = new ArrayList<>();
+        List<PrefUrlEntry> urlList = PrefUrlEntryUtil.readEntryListFromClasspath();
+        for (PrefUrlEntry prefUrl : urlList) {
+            if (prefName.equals(prefUrl.getName())) {
+                boolean isPrimary = true;
+                for (String url : prefUrl.getUrl()) {
+                    DisplaySearchButton button = new DisplaySearchButton();
+                    button.setText("緊急");
+                    button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
+                            + "+after:" + sdf.format(searchBaseDate) + "+緊急");
+                    button.setPrimary(isPrimary);
+                    isPrimary = false;
+                    dispSearchButtonList.add(button);
+                }
+                isPrimary = true;
+                for (String url : prefUrl.getUrl()) {
+                    DisplaySearchButton button = new DisplaySearchButton();
+                    button.setText("宣言");
+                    button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
+                            + "+after:" + sdf.format(searchBaseDate) + "+宣言");
+                    button.setPrimary(isPrimary);
+                    isPrimary = false;
+                    dispSearchButtonList.add(button);
+                }
+                isPrimary = true;
+                for (String url : prefUrl.getUrl()) {
+                    DisplaySearchButton button = new DisplaySearchButton();
+                    button.setText("要請");
+                    button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
+                            + "+after:" + sdf.format(searchBaseDate) + "+要請");
+                    button.setPrimary(isPrimary);
+                    isPrimary = false;
+                    dispSearchButtonList.add(button);
+                }
+                isPrimary = true;
+                for (String url : prefUrl.getUrl()) {
+                    DisplaySearchButton button = new DisplaySearchButton();
+                    button.setText("休校");
+                    button.setSearchUrl("https://www.google.com/search?pws=0&q=site:" + URLEncoder.encode(url)
+                            + "+after:" + sdf.format(searchBaseDate) + "+休校");
+                    button.setPrimary(isPrimary);
+                    isPrimary = false;
+                    dispSearchButtonList.add(button);
+                }
+            }
+        }
+        return dispSearchButtonList;
     }
 }

@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
 import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
 import jp.igapyon.sitemapgenerator4j.SitemapInfo;
 import jp.igapyon.sitemapgenerator4j.SitemapInfoUrl;
@@ -33,6 +35,7 @@ public class MySitemapGenerator {
         SitemapGenerator4j gen = new SitemapGenerator4j();
         SitemapInfo entry = new SitemapInfo();
 
+        // トップ index
         {
             SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
@@ -42,6 +45,7 @@ public class MySitemapGenerator {
             url.setPriority("0.8");
         }
 
+        // about
         {
             SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
@@ -51,6 +55,51 @@ public class MySitemapGenerator {
             url.setPriority("0.6");
         }
 
+        // pref
+        for (PrefEntry prefEntry : PrefEntryUtil.readEntryListFromClasspath()) {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Weekly);
+            url.setPriority("0.5");
+        }
+
+        // area
+        // TODO TBD FIXME
+        // TODO 先に area を JSON化
+
+        // contributor
+        {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/contributor.html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
+            url.setPriority("0.4");
+        }
+
+        // arch
+        {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/arch.html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
+            url.setPriority("0.2");
+        }
+
+        // faq
+        {
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/faq.html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Monthly);
+            url.setPriority("0.2");
+        }
+
+        // link
         {
             SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);

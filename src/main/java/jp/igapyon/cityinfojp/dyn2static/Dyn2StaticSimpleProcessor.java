@@ -30,14 +30,16 @@ public class Dyn2StaticSimpleProcessor {
         SpringTemplateEngine templateEngine = Dyn2StaticUtil.getStandaloneSpringTemplateEngine();
 
         dyn2staticSimple(templateEngine, "/dyn/about", "src/main/resources/static/about.html");
+        dyn2staticSimple(templateEngine, "/dyn/arch", "src/main/resources/static/arch.html");
         dyn2staticSimple(templateEngine, "/dyn/contributor", "src/main/resources/static/contributor.html");
+        dyn2staticSimple(templateEngine, "/dyn/faq", "src/main/resources/static/faq.html");
         dyn2staticSimple(templateEngine, "/dyn/link", "src/main/resources/static/link.html");
         dyn2staticSimple(templateEngine, "/dyn/policy", "src/main/resources/static/policy.html");
     }
 
     static void dyn2staticSimple(SpringTemplateEngine templateEngine, String sourcePath, String targetPath)
             throws IOException {
-        System.err.println(sourcePath + " を静的ファイル化.");
+        System.err.println("convert thymeleaf: dynamic to static: " + sourcePath);
 
         final IContext ctx = new Context();
 

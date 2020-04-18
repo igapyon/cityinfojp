@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,16 +31,43 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class CityInfoEntryMergeProcessor {
     public static final void main(String[] args) throws IOException {
-        Collection<File> files = FileUtils.listFiles(new File("./src/main/resources/static/input/2020/"),
-                new String[] { "json" }, true);
+        Collection<File> filesCollection = FileUtils.listFiles( //
+                new File("./src/main/resources/static/input/2020/"), new String[] { "json" }, true);
+        List<File> fileList = new ArrayList<>();
+        fileList.addAll(filesCollection);
+        Collections.sort(fileList, new Comparator<File>() {
+            @Override
+            public int compare(File left, File right) {
+                return left.getAbsolutePath().compareTo(right.getAbsolutePath());
+            }
+        });
+
         List<CityInfoEntry> mergedEntryList = new ArrayList<CityInfoEntry>();
-        for (Iterator<File> ite = files.iterator(); ite.hasNext();) {
+        for (Iterator<File> ite = fileList.iterator(); ite.hasNext();) {
             File look = ite.next();
 
             System.err.println("merging:" + look.getAbsolutePath());
             {
                 List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(look);
                 mergedEntryList.addAll(entryList);
+
+                // Verify
+                for (CityInfoEntry cityInfo : entryList) {
+                    for (String checkUrl : cityInfo.getURL()) {
+                        boolean isUrlValid = false;
+                        List<PrefUrlEntry> prefUrlList = PrefUrlEntryUtil.readEntryListFromClasspath();
+                        for (PrefUrlEntry prefUrl : prefUrlList) {
+                            for (String lookUrl : prefUrl.getUrl()) {
+                                if (checkUrl.startsWith(lookUrl)) {
+                                    isUrlValid = true;
+                                }
+                            }
+                        }
+                        if (isUrlValid == false) {
+                            System.err.println("  Non org based URL: " + checkUrl);
+                        }
+                    }
+                }
             }
 
         }

@@ -29,14 +29,24 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h2>リンク</h2>
+                <div class="col-md-8">
+                    <h2>一次情報源として扱うサイト</h2>
+                    <h3>都道府県などの公式サイト</h3>
                     <ul>
-                        <li><a href="https://github.com/igapyon/cityinfojp">cityinfojp のソースコード</a></li>
+                        <div th:each="pref : ${prefList}" th:remove="tag">
+                            <li>
+                                <a>[[${pref.text}]]</a>
+                                <ul>
+                                    <div th:each="url : ${pref.urlList}" th:remove="tag">
+                                        <li><a th:href="${url}" th:text="${url}" target="_blank"></a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </div>
-            <hr>
+            <hr />
         </div> <!-- /container -->
     </main>
 

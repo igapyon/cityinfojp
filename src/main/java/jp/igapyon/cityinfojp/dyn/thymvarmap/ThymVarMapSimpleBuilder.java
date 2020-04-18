@@ -15,12 +15,20 @@
  */
 package jp.igapyon.cityinfojp.dyn.thymvarmap;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
+import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.input.entry.PrefEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.input.entry.PrefUrlEntry;
+import jp.igapyon.cityinfojp.input.entry.PrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -47,6 +55,31 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         result.put("processDateTime", dtf.format(LocalDateTime.now()));
 
+        // リンク集のみ特別
+        // TODO これは別途のクラスに根っこから分けた方がよさそう。
+        if (sourcePath.startsWith("/dyn/link")) {
+            try {
+                List<DisplayPrefEntry> prefList = new ArrayList<>();
+                List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
+                for (PrefEntry prefEntry : prefAllList) {
+                    DisplayPrefEntry dispPref = new DisplayPrefEntry();
+                    prefList.add(dispPref);
+                    dispPref.setText(prefEntry.getName());
+                    dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
+
+                    List<PrefUrlEntry> prefUrlEntryList = PrefUrlEntryUtil.readEntryListFromClasspath();
+                    for (PrefUrlEntry urlEntry : prefUrlEntryList) {
+                        if (prefEntry.getName().equals(urlEntry.getName())) {
+                            dispPref.getUrlList().addAll(urlEntry.getUrl());
+                        }
+                    }
+                }
+                result.put("prefList", prefList);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
         return result;
     }
 
@@ -64,8 +97,12 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
             jumbotron.setTitle("About");
+        } else if (body.startsWith("/dyn/arch")) {
+            jumbotron.setTitle("Architecture");
         } else if (body.startsWith("/dyn/contributor")) {
             jumbotron.setTitle("Contributor");
+        } else if (body.startsWith("/dyn/faq")) {
+            jumbotron.setTitle("FAQ");
         } else if (body.startsWith("/dyn/link")) {
             jumbotron.setTitle("関連リンク");
         } else if (body.startsWith("/dyn/policy")) {

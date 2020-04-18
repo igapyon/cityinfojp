@@ -11,7 +11,7 @@ class PrefUrlEntryUtilTest {
     void test() throws IOException {
         List<PrefUrlEntry> entryList = PrefUrlEntryUtil.readEntryListFromClasspath();
         for (PrefUrlEntry entry : entryList) {
-            System.err.println(entry.getName() + ":" + entry.getUrl().get(0));
+            // System.err.println(entry.getName() + ":" + entry.getUrl().get(0));
         }
     }
 }

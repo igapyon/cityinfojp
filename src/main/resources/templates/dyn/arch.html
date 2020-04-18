@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>cityinfojp Architecture</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="cityinfojp,cityinfo,arch,architecture,fact,city,info,oss,web">
+    <meta name="description"
+        content="cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。 当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。">
+    <meta name="author" content="Toshiki Iga, and cityinfojp contributors">
+
+    <link rel="canonical" href="https://cityinfojp.herokuapp.com/arch.html">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div th:insert="dyn/fragment/navbar :: navbar-fragment" th:remove="tag" />
+
+    <main role="main">
+        <div th:insert="dyn/fragment/jumbotron :: jumbotron-fragment" th:remove="tag" />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>開発言語</h2>
+                    <p>cityinfojp は プログラミング言語<a href="https://openjdk.java.net/">Java</a> を利用して開発しています。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>ビルドシステム</h2>
+                    <p>cityinfojp は <a href="https://maven.apache.org/">Maven</a> をビルドシステムとして利用しています。
+                        <div class="card">
+                            <div class="card-header" style="padding: 5px 20px 5px 20px">
+                                ビルドおよび実行方法
+                            </div>
+                            <div class="card-body" style="padding: 5px 20px 5px 20px;">
+                                <p class="card-text"><small>mvn test<br />
+                                        mvn spring-boot:run</small></p>
+                            </div>
+                        </div>
+                        <p>詳しくは <a href="https://github.com/igapyon/cityinfojp/blob/master/pom.xml">pom.xml</a> を参照ください。
+                        </p>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>フレームワーク</h2>
+                    <p>cityinfojp は <a href="https://spring.io/projects/spring-boot">Spring Boot</a> をフレームワークとして利用しています。
+                        2020-04-18 時点の使用バージョンは 2.2.6 です。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>HTML レンダリング</h2>
+                    <p>cityinfojp は <a href="https://www.thymeleaf.org/">Thymeleaf</a> を HTML レンダリングエンジンとして利用しています。
+                        ビルドプロセスのなかで Thymeleaf テンプレートから 静的 HTML へコンバートしています。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Webフロントエンド</h2>
+                    <p>cityinfojp は <a href="https://getbootstrap.com/">Bootstrap</a> を フロントエンド・コンポーネント・ライブラリとして利用しています。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>データ形式</h2>
+                    <p>cityinfojp は <a href="https://www.json.org/">JSON</a> をデータフォーマットとして原則利用しています。
+                        JSON ファイルの読み書きには <a href="https://github.com/FasterXML/jackson">Jackson</a> ライブラリを利用しています。</p>
+                </div>
+                <div class="col-md-4">
+                    <h2>開発作業場所</h2>
+                    <p>cityinfojp は <a href="https://github.com/igapyon/cityinfojp">GitHub</a> を開発拠点としています。
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Web ホスト</h2>
+                    <p>cityinfojp は <a href="https://www.heroku.com/home">Heroku</a> ホスティングサービスを利用しています。</p>
+                </div>
+            </div>
+            <hr>
+        </div> <!-- /container -->
+    </main>
+
+    <footer class="container">
+        <p>&copy; cityinfojp 2020</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

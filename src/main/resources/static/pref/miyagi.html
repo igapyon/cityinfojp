@@ -138,27 +138,70 @@
         <div class="container">
             <div class="my-3 p-3 bg-white rounded shadow-sm">
                 <div class="card">
-                    <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索</div>
+                    <div data-toggle="tooltip" data-placement="top" <div class="card-header"
+                        style="padding:3px 20px 3px 20px;">いますぐ検索
+                        <span data-toggle="popover" data-placement="top"
+                            data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
+                            <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                    </div>
                     <div class="card-body" style="padding:6px 20px 6px 20px;">
                         
-                            <a class="btn btn-sm btn-outline-dark"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-13+宣言">宣言</a>
+                            <a class="btn btn-sm btn-outline-primary"
+                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-11+緊急" target="_blank">緊急</a>
                         
                         
-                            <a class="btn btn-sm btn-outline-dark"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-13+要請">要請</a>
+                            <a class="btn btn-sm btn-outline-primary"
+                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-11+宣言" target="_blank">宣言</a>
                         
                         
-                            <a class="btn btn-sm btn-outline-dark"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-13+休校">休校</a>
+                            <a class="btn btn-sm btn-outline-primary"
+                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-11+要請" target="_blank">要請</a>
+                        
+                        
+                            <a class="btn btn-sm btn-outline-primary"
+                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.miyagi.jp%2F+after:2020-04-11+休校" target="_blank">休校</a>
                         
                     </div>
                 </div>
 
                 <hr />
 
-                <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+                <h6 class="border-bottom border-gray pb-2 mb-0">最近登録された情報</h6>
+
                 
+        <div>
+            <div class="media text-muted pt-3">
+                <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder">
+                    <title>休校</title>
+                    <rect width="100%" height="100%" fill="#17a2b8" /><text x="25%" y="50%"
+                        fill="#ffffff" dy=".3em">休校</text>
+                </svg>
+                <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <strong class="d-block text-gray-dark">
+                        
+                        
+                            
+                            <a href="/pref/miyagi.html">
+                                宮城県
+                            </a>
+                        
+                    </strong>
+                    (2020-04-17起票) 県立学校  2020-05-06まで : 感染症
+                    
+                        , <a href="https://www.pref.miyagi.jp/site/chiji-kaiken/kk-200413.html" class="btn btn-sm btn-outline-primary" style="padding: 0px 4px 0px 4px"
+                            target="_blank">Link</a>
+                    
+                </p>
+            </div>
+        </div>
+    
             </div>
         </div>
     </main>
@@ -177,6 +220,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
 </body>
 
 </html>
