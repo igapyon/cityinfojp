@@ -23,7 +23,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapIndexBuilder;
 
 public class Dyn2StaticIndexProcessor {
     public static final void main(String[] args) throws IOException {

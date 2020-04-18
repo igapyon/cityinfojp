@@ -21,7 +21,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapIndexBuilder;
 
 @Controller
 public class DynIndexController {

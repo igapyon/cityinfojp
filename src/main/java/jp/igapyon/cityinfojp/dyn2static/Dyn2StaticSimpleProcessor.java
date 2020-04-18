@@ -23,7 +23,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapSimpleBuilder;
 
 public class Dyn2StaticSimpleProcessor {
     public static final void main(String[] args) throws IOException {

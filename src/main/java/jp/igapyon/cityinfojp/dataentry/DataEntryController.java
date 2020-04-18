@@ -39,10 +39,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.NavbarUtil;
 import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.thymvarmap.NavbarUtil;
 
 /**
  * データエントリ画面(/dataentry.html)のコントローラ。

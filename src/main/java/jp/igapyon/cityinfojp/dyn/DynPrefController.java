@@ -23,9 +23,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapPrefBuilder;
 import jp.igapyon.cityinfojp.input.entry.PrefEntry;
 import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapPrefBuilder;
 
 @Controller
 public class DynPrefController {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.dyn.thymvarmap;
+package jp.igapyon.cityinfojp.thymvarmap;
 
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarDropdownBean;

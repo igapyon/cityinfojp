@@ -23,7 +23,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapAreaBuilder;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapAreaBuilder;
 
 public class Dyn2StaticAreaProcessor {
 

@@ -23,7 +23,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapSimpleBuilder;
+import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapSimpleBuilder;
 
 @Controller
 public class DynSimpleController {
