@@ -19,8 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
 import jp.igapyon.sitemapgenerator4j.SitemapInfo;
 import jp.igapyon.sitemapgenerator4j.SitemapInfoUrl;
@@ -62,7 +62,7 @@ public class MySitemapGenerator {
         }
 
         // pref
-        for (PrefEntry prefEntry : PrefEntryUtil.readEntryListFromClasspath()) {
+        for (JsonPrefEntry prefEntry : JsonPrefEntryUtil.readEntryListFromClasspath()) {
             SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/pref/" + prefEntry.getNameen().toLowerCase() + ".html");

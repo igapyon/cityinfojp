@@ -23,9 +23,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -59,8 +59,8 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
 
         List<DisplayPrefEntry> prefList = new ArrayList<>();
         try {
-            List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
-            for (PrefEntry prefEntry : prefAllList) {
+            List<JsonPrefEntry> prefAllList = JsonPrefEntryUtil.readEntryListFromClasspath();
+            for (JsonPrefEntry prefEntry : prefAllList) {
                 for (String lookPrefCode : prefs) {
                     if (lookPrefCode.equals(prefEntry.getCode())) {
                         DisplayPrefEntry dispPref = new DisplayPrefEntry();
@@ -68,11 +68,11 @@ public class ThymVarMapAreaBuilder extends AbstractThymVarMapBuilder {
                         dispPref.setText(prefEntry.getName());
                         dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
 
-                        List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
+                        List<JsonCityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
                         ThymVarMapIndexBuilder.sortEntryList(allEntryList);
 
                         // cityinfo の数を pref でカウントアップ
-                        for (CityInfoEntry lookup : allEntryList) {
+                        for (JsonCityInfoEntry lookup : allEntryList) {
                             if (prefEntry.getName().equals(lookup.getPref())) {
                                 dispPref.setInfoCount(dispPref.getInfoCount() + 1);
                             }

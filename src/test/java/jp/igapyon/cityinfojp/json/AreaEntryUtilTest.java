@@ -1,4 +1,4 @@
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import jp.igapyon.cityinfojp.dyn.DisplayAreaEntry;
 import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 
 class AreaEntryUtilTest {
 
@@ -15,9 +19,9 @@ class AreaEntryUtilTest {
     void test() throws IOException {
         List<DisplayAreaEntry> dispAreaList = new ArrayList<>();
 
-        List<AreaEntry> areaList = AreaEntryUtil.readEntryListFromClasspath();
-        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-        for (AreaEntry entry : areaList) {
+        List<JsonAreaEntry> areaList = JsonAreaEntryUtil.readEntryListFromClasspath();
+        List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+        for (JsonAreaEntry entry : areaList) {
             DisplayAreaEntry dispArea = new DisplayAreaEntry();
             dispAreaList.add(dispArea);
             dispArea.setName(entry.getName());
@@ -25,7 +29,7 @@ class AreaEntryUtilTest {
 
             // System.err.println(entry.getName() + ":" + entry.getNameen());
             for (String look : entry.getPref()) {
-                for (PrefEntry prefLookup : prefList) {
+                for (JsonPrefEntry prefLookup : prefList) {
                     if (look.equals(prefLookup.getCode())) {
                         DisplayPrefEntry newPref = new DisplayPrefEntry();
                         dispArea.getPrefList().add(newPref);

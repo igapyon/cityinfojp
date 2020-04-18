@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input;
+package jp.igapyon.cityinfojp.json;
 
 import org.junit.jupiter.api.Test;
 
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntryMergeProcessor;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntryMergeProcessor;
 
 class MergeCityInfoEntryTest {
     @Test
     void contextLoads() throws Exception {
         // JSONを一括マージします。
-        CityInfoEntryMergeProcessor.main(new String[] { "this" });
+        JsonCityInfoEntryMergeProcessor.main(new String[] { "this" });
     }
 }

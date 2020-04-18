@@ -34,12 +34,12 @@ import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.input.entry.AreaEntry;
-import jp.igapyon.cityinfojp.input.entry.AreaEntryUtil;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -53,7 +53,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
     protected LinkedHashMap<String, Object> buildVarMap() throws IOException {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
-        List<CityInfoEntry> allEntryList = buildEntityList();
+        List<JsonCityInfoEntry> allEntryList = buildEntityList();
         sortEntryList(allEntryList);
         List<DisplayCityInfoEntry> dispEntryList = entryList2DispEntryList(allEntryList);
 
@@ -91,9 +91,9 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
     public static List<DisplayAreaEntry> buildAreaList() throws IOException {
         List<DisplayAreaEntry> dispAreaList = new ArrayList<>();
 
-        List<AreaEntry> areaList = AreaEntryUtil.readEntryListFromClasspath();
-        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-        for (AreaEntry entry : areaList) {
+        List<JsonAreaEntry> areaList = JsonAreaEntryUtil.readEntryListFromClasspath();
+        List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+        for (JsonAreaEntry entry : areaList) {
             DisplayAreaEntry dispArea = new DisplayAreaEntry();
             dispAreaList.add(dispArea);
             dispArea.setName(entry.getName());
@@ -102,7 +102,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
 
             // System.err.println(entry.getName() + ":" + entry.getNameen());
             for (String look : entry.getPref()) {
-                for (PrefEntry prefLookup : prefList) {
+                for (JsonPrefEntry prefLookup : prefList) {
                     if (look.equals(prefLookup.getCode())) {
                         DisplayPrefEntry newPref = new DisplayPrefEntry();
                         dispArea.getPrefList().add(newPref);
@@ -117,8 +117,8 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         return dispAreaList;
     }
 
-    public static List<CityInfoEntry> buildEntityList() throws IOException {
-        List<CityInfoEntry> allEntryList = new ArrayList<CityInfoEntry>();
+    public static List<JsonCityInfoEntry> buildEntityList() throws IOException {
+        List<JsonCityInfoEntry> allEntryList = new ArrayList<JsonCityInfoEntry>();
 
         // 個別エントリではなくマージ済みjsonファイルを利用して読み込み。
         try (InputStream is = new ClassPathResource("static/input/merged/merged-cityinfoentry-all.json")
@@ -132,16 +132,16 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
                 }
                 buf.append(new String(copyBuf, 0, length));
             }
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
+            List<JsonCityInfoEntry> entryList = JsonCityInfoEntryUtil.readEntryList(buf.toString());
             allEntryList.addAll(entryList);
         }
         return allEntryList;
     }
 
-    public static void sortEntryList(final List<CityInfoEntry> allEntryList) {
-        Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
+    public static void sortEntryList(final List<JsonCityInfoEntry> allEntryList) {
+        Collections.sort(allEntryList, new Comparator<JsonCityInfoEntry>() {
             @Override
-            public int compare(CityInfoEntry left, CityInfoEntry right) {
+            public int compare(JsonCityInfoEntry left, JsonCityInfoEntry right) {
                 if (left == null && right == null) {
                     return 0;
                 }
@@ -163,12 +163,12 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         });
     }
 
-    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList)
+    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<JsonCityInfoEntry> allEntryList)
             throws IOException {
-        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+        List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
 
         List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
-        for (CityInfoEntry entry : allEntryList) {
+        for (JsonCityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
 
             if ("要請".equals(entry.getState())) {
@@ -198,7 +198,7 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
                             ? "" //
                             : " (" + entry.getCity() + ")"));
 
-            for (PrefEntry pref : prefList) {
+            for (JsonPrefEntry pref : prefList) {
                 if (pref.getName().equals(entry.getPref())) {
                     dispEntry.setPrefUrl("/pref/" + pref.getNameen().toLowerCase() + ".html");
                     break;

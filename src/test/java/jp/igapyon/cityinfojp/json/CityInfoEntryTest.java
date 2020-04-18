@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.File;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
 
 class CityInfoEntryTest {
     @Test
     void contextLoads() throws Exception {
         {
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
+            List<JsonCityInfoEntry> entryList = JsonCityInfoEntryUtil.readEntryList(
                     new File("./src/main/resources/static/input/2020/202004/11-saitama-request-20200405a.json"));
-            for (CityInfoEntry entry : entryList) {
+            for (JsonCityInfoEntry entry : entryList) {
                 // System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
                     // System.err.println("  " + look);
@@ -37,9 +37,9 @@ class CityInfoEntryTest {
             }
         }
         {
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(
+            List<JsonCityInfoEntry> entryList = JsonCityInfoEntryUtil.readEntryList(
                     new File("./src/main/resources/static/input/2020/202004/12-chiba-closure-20200405a.json"));
-            for (CityInfoEntry entry : entryList) {
+            for (JsonCityInfoEntry entry : entryList) {
                 // System.err.println(entry.getState());
                 for (String look : entry.getURL()) {
                     // System.err.println("  " + look);

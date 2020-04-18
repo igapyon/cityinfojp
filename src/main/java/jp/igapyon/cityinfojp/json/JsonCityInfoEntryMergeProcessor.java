@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +29,7 @@ import org.apache.commons.io.FileUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-public class CityInfoEntryMergeProcessor {
+public class JsonCityInfoEntryMergeProcessor {
     public static final void main(String[] args) throws IOException {
         Collection<File> filesCollection = FileUtils.listFiles( //
                 new File("./src/main/resources/static/input/2020/"), new String[] { "json" }, true);
@@ -42,21 +42,21 @@ public class CityInfoEntryMergeProcessor {
             }
         });
 
-        List<CityInfoEntry> mergedEntryList = new ArrayList<CityInfoEntry>();
+        List<JsonCityInfoEntry> mergedEntryList = new ArrayList<JsonCityInfoEntry>();
         for (Iterator<File> ite = fileList.iterator(); ite.hasNext();) {
             File look = ite.next();
 
             System.err.println("merging:" + look.getAbsolutePath());
             {
-                List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(look);
+                List<JsonCityInfoEntry> entryList = JsonCityInfoEntryUtil.readEntryList(look);
                 mergedEntryList.addAll(entryList);
 
                 // Verify
-                for (CityInfoEntry cityInfo : entryList) {
+                for (JsonCityInfoEntry cityInfo : entryList) {
                     for (String checkUrl : cityInfo.getURL()) {
                         boolean isUrlValid = false;
-                        List<PrefUrlEntry> prefUrlList = PrefUrlEntryUtil.readEntryListFromClasspath();
-                        for (PrefUrlEntry prefUrl : prefUrlList) {
+                        List<JsonPrefUrlEntry> prefUrlList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+                        for (JsonPrefUrlEntry prefUrl : prefUrlList) {
                             for (String lookUrl : prefUrl.getUrl()) {
                                 if (checkUrl.startsWith(lookUrl)) {
                                     isUrlValid = true;

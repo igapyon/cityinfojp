@@ -25,10 +25,10 @@ import java.util.List;
 import jp.igapyon.cityinfojp.dyn.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
-import jp.igapyon.cityinfojp.input.entry.PrefUrlEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefUrlEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -60,15 +60,15 @@ public class ThymVarMapSimpleBuilder extends AbstractThymVarMapBuilder {
         if (sourcePath.startsWith("/dyn/link")) {
             try {
                 List<DisplayPrefEntry> prefList = new ArrayList<>();
-                List<PrefEntry> prefAllList = PrefEntryUtil.readEntryListFromClasspath();
-                for (PrefEntry prefEntry : prefAllList) {
+                List<JsonPrefEntry> prefAllList = JsonPrefEntryUtil.readEntryListFromClasspath();
+                for (JsonPrefEntry prefEntry : prefAllList) {
                     DisplayPrefEntry dispPref = new DisplayPrefEntry();
                     prefList.add(dispPref);
                     dispPref.setText(prefEntry.getName());
                     dispPref.setUrl("/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
 
-                    List<PrefUrlEntry> prefUrlEntryList = PrefUrlEntryUtil.readEntryListFromClasspath();
-                    for (PrefUrlEntry urlEntry : prefUrlEntryList) {
+                    List<JsonPrefUrlEntry> prefUrlEntryList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+                    for (JsonPrefUrlEntry urlEntry : prefUrlEntryList) {
                         if (prefEntry.getName().equals(urlEntry.getName())) {
                             dispPref.getUrlList().addAll(urlEntry.getUrl());
                         }

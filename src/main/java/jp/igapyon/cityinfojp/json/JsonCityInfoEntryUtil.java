@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,14 +24,14 @@ import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class CityInfoEntryUtil {
-    public static List<CityInfoEntry> readEntryList(File jsonInputFile) throws IOException {
+public class JsonCityInfoEntryUtil {
+    public static List<JsonCityInfoEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");
         return readEntryList(jsonInput);
     }
 
-    public static List<CityInfoEntry> readEntryList(String jsonInput) throws IOException {
+    public static List<JsonCityInfoEntry> readEntryList(String jsonInput) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return Arrays.asList(mapper.readValue(jsonInput, CityInfoEntry[].class));
+        return Arrays.asList(mapper.readValue(jsonInput, JsonCityInfoEntry[].class));
     }
 }

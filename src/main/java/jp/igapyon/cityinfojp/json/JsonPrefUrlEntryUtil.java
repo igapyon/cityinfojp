@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,8 +28,8 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class PrefUrlEntryUtil {
-    public static List<PrefUrlEntry> readEntryListFromClasspath() throws IOException {
+public class JsonPrefUrlEntryUtil {
+    public static List<JsonPrefUrlEntry> readEntryListFromClasspath() throws IOException {
         try (InputStream is = new ClassPathResource("static/input/prefurl.json").getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
             StringBuffer buf = new StringBuffer();
@@ -45,13 +45,13 @@ public class PrefUrlEntryUtil {
         }
     }
 
-    public static List<PrefUrlEntry> readEntryList(File jsonInputFile) throws IOException {
+    public static List<JsonPrefUrlEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");
         return readEntryList(jsonInput);
     }
 
-    public static List<PrefUrlEntry> readEntryList(String jsonInput) throws IOException {
+    public static List<JsonPrefUrlEntry> readEntryList(String jsonInput) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return Arrays.asList(mapper.readValue(jsonInput, PrefUrlEntry[].class));
+        return Arrays.asList(mapper.readValue(jsonInput, JsonPrefUrlEntry[].class));
     }
 }

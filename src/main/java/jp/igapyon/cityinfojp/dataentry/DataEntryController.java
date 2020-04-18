@@ -39,9 +39,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.cityinfojp.thymvarmap.NavbarUtil;
 
 /**
@@ -88,15 +88,15 @@ public class DataEntryController {
         model.addAttribute("dataentry", form);
 
         try {
-            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
             model.addAttribute("prefList", prefList);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
-            CityInfoEntry entry = form2Entry(form);
-            List<CityInfoEntry> entryList = new ArrayList<>();
+            JsonCityInfoEntry entry = form2Entry(form);
+            List<JsonCityInfoEntry> entryList = new ArrayList<>();
             entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -107,8 +107,8 @@ public class DataEntryController {
         return "dataentry";
     }
 
-    static CityInfoEntry form2Entry(DataEntryForm form) {
-        CityInfoEntry entry = new CityInfoEntry();
+    static JsonCityInfoEntry form2Entry(DataEntryForm form) {
+        JsonCityInfoEntry entry = new JsonCityInfoEntry();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         entry.setEntryDate(dtf.format(LocalDateTime.now()));
@@ -142,8 +142,8 @@ public class DataEntryController {
         byte[] resultData = new byte[0];
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
-            CityInfoEntry entry = form2Entry(form);
-            List<CityInfoEntry> entryList = new ArrayList<>();
+            JsonCityInfoEntry entry = form2Entry(form);
+            List<JsonCityInfoEntry> entryList = new ArrayList<>();
             entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -175,8 +175,8 @@ public class DataEntryController {
         }
 
         String prefString = "99-dummy";
-        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-        for (PrefEntry pref : prefList) {
+        List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+        for (JsonPrefEntry pref : prefList) {
             if (pref.getName().equals(form.getPref())) {
                 prefString = pref.getCode() + "-" + pref.getNameen().toLowerCase();
                 break;

@@ -24,8 +24,8 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapPrefBuilder;
 
 public class Dyn2StaticPrefProcessor {
@@ -42,8 +42,8 @@ public class Dyn2StaticPrefProcessor {
         // pref ごとに処理
 
         try {
-            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-            for (PrefEntry pref : prefList) {
+            List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+            for (JsonPrefEntry pref : prefList) {
                 final IContext ctx = new Context();
 
                 new ThymVarMapPrefBuilder(pref.getNameen(), pref.getName()).applyContextVariable(ctx);

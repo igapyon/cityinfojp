@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.File;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 
 class PrefEntryTest {
     @Test
     void contextLoads() throws Exception {
         {
-            List<PrefEntry> entryList = PrefEntryUtil
+            List<JsonPrefEntry> entryList = JsonPrefEntryUtil
                     .readEntryList(new File("./src/main/resources/static/input/prefjp.json"));
-            for (PrefEntry entry : entryList) {
+            for (JsonPrefEntry entry : entryList) {
                 // System.err.println(entry.getCode() + ":" + entry.getName() + ":"
                 //  + (entry.getNameen() == null ? "" : entry.getNameen()));
             }

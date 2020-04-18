@@ -36,10 +36,10 @@ import jp.igapyon.cityinfojp.dyn.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.dyn.DisplaySearchButton;
 import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntryUtil;
-import jp.igapyon.cityinfojp.input.entry.PrefUrlEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefUrlEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -64,12 +64,12 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         try {
             result.put("dispSearchButtonList", buildSearchButtonList(prefName));
 
-            List<CityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
+            List<JsonCityInfoEntry> allEntryList = ThymVarMapIndexBuilder.buildEntityList();
             ThymVarMapIndexBuilder.sortEntryList(allEntryList);
 
             // pref で絞り込み
-            List<CityInfoEntry> entryList = new ArrayList<>();
-            for (CityInfoEntry lookup : allEntryList) {
+            List<JsonCityInfoEntry> entryList = new ArrayList<>();
+            for (JsonCityInfoEntry lookup : allEntryList) {
                 if (prefName.equals(lookup.getPref())) {
                     entryList.add(lookup);
                 }
@@ -107,8 +107,8 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         return navbar;
     }
 
-    public static List<CityInfoEntry> buildEntityList() throws IOException {
-        List<CityInfoEntry> allEntryList = new ArrayList<CityInfoEntry>();
+    public static List<JsonCityInfoEntry> buildEntityList() throws IOException {
+        List<JsonCityInfoEntry> allEntryList = new ArrayList<JsonCityInfoEntry>();
 
         // 個別エントリではなくマージ済みjsonファイルを利用して読み込み。
         try (InputStream is = new ClassPathResource("static/input/merged/merged-cityinfoentry-all.json")
@@ -122,16 +122,16 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
                 }
                 buf.append(new String(copyBuf, 0, length));
             }
-            List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(buf.toString());
+            List<JsonCityInfoEntry> entryList = JsonCityInfoEntryUtil.readEntryList(buf.toString());
             allEntryList.addAll(entryList);
         }
         return allEntryList;
     }
 
-    public static void sortEntryList(final List<CityInfoEntry> allEntryList) {
-        Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
+    public static void sortEntryList(final List<JsonCityInfoEntry> allEntryList) {
+        Collections.sort(allEntryList, new Comparator<JsonCityInfoEntry>() {
             @Override
-            public int compare(CityInfoEntry left, CityInfoEntry right) {
+            public int compare(JsonCityInfoEntry left, JsonCityInfoEntry right) {
                 if (left.getEntryDate().compareTo(right.getEntryDate()) != 0) {
                     // 降順
                     return -left.getEntryDate().compareTo(right.getEntryDate());
@@ -143,9 +143,9 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
         });
     }
 
-    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<CityInfoEntry> allEntryList) {
+    public static List<DisplayCityInfoEntry> entryList2DispEntryList(final List<JsonCityInfoEntry> allEntryList) {
         List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
-        for (CityInfoEntry entry : allEntryList) {
+        for (JsonCityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
 
             if ("要請".equals(entry.getState())) {
@@ -194,8 +194,8 @@ public class ThymVarMapPrefBuilder extends AbstractThymVarMapBuilder {
 
         // 検索ボタン生成
         List<DisplaySearchButton> dispSearchButtonList = new ArrayList<>();
-        List<PrefUrlEntry> urlList = PrefUrlEntryUtil.readEntryListFromClasspath();
-        for (PrefUrlEntry prefUrl : urlList) {
+        List<JsonPrefUrlEntry> urlList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+        for (JsonPrefUrlEntry prefUrl : urlList) {
             if (prefName.equals(prefUrl.getName())) {
                 boolean isPrimary = true;
                 for (String url : prefUrl.getUrl()) {

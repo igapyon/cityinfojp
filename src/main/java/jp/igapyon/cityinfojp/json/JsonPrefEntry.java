@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -27,19 +26,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**
- * 都道府県のURL情報のエントリー。
+ * JSON の prefjp.json にアクセスするための Bean。
  * 
- * http://www.jsonschema2pojo.org/ をもちいて生成。
+ * http://www.jsonschema2pojo.org/ でベースを生成。
+ * 
+ * @author Tosihki Iga
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "name", "url" })
-public class PrefUrlEntry {
+public class JsonPrefEntry {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonPropertyOrder({ "code", "name", "nameen" })
+    @JsonProperty("code")
+    private String code;
+
     @JsonProperty("name")
     private String name;
-    @JsonProperty("url")
-    private List<String> url = null;
+
+    @JsonProperty("nameen")
+    private String nameen;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("code")
+    public String getCode() {
+        return code;
+    }
+
+    @JsonProperty("code")
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     @JsonProperty("name")
     public String getName() {
@@ -51,14 +67,14 @@ public class PrefUrlEntry {
         this.name = name;
     }
 
-    @JsonProperty("url")
-    public List<String> getUrl() {
-        return url;
+    @JsonProperty("nameen")
+    public String getNameen() {
+        return nameen;
     }
 
-    @JsonProperty("url")
-    public void setUrl(List<String> url) {
-        this.url = url;
+    @JsonProperty("nameen")
+    public void setNameen(String nameen) {
+        this.nameen = nameen;
     }
 
     @JsonAnyGetter

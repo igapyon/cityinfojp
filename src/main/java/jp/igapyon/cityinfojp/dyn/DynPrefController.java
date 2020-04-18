@@ -23,8 +23,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.cityinfojp.thymvarmap.ThymVarMapPrefBuilder;
 
 @Controller
@@ -37,8 +37,8 @@ public class DynPrefController {
 
         String prefName = "";
         try {
-            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-            for (PrefEntry prefEntry : prefList) {
+            List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+            for (JsonPrefEntry prefEntry : prefList) {
                 if (prefEntry.getNameen().equalsIgnoreCase(pref)) {
                     prefName = prefEntry.getName();
                     break;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,9 +28,9 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AreaEntryUtil {
-    public static List<AreaEntry> readEntryListFromClasspath() throws IOException {
-        try (InputStream is = new ClassPathResource("static/input/areajp.json").getInputStream();
+public class JsonPrefEntryUtil {
+    public static List<JsonPrefEntry> readEntryListFromClasspath() throws IOException {
+        try (InputStream is = new ClassPathResource("static/input/prefjp.json").getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
             StringBuffer buf = new StringBuffer();
             char[] copyBuf = new char[8192];
@@ -45,13 +45,13 @@ public class AreaEntryUtil {
         }
     }
 
-    public static List<AreaEntry> readEntryList(File jsonInputFile) throws IOException {
+    public static List<JsonPrefEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");
         return readEntryList(jsonInput);
     }
 
-    public static List<AreaEntry> readEntryList(String jsonInput) throws IOException {
+    public static List<JsonPrefEntry> readEntryList(String jsonInput) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return Arrays.asList(mapper.readValue(jsonInput, AreaEntry[].class));
+        return Arrays.asList(mapper.readValue(jsonInput, JsonPrefEntry[].class));
     }
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jp.igapyon.cityinfojp.input.entry;
+package jp.igapyon.cityinfojp.json;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,9 +26,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * JSON の areajp.json にアクセスするための Bean。
+ * 
+ * http://www.jsonschema2pojo.org/ でベースを生成。
+ * 
+ * @author Tosihki Iga
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "name", "nameen", "pref" })
-public class AreaEntry {
+public class JsonAreaEntry {
 
     @JsonProperty("name")
     private String name;
