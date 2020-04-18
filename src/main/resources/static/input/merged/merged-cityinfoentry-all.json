@@ -44,6 +44,17 @@
   "URL" : [ "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/027/496/covid19_poster.pdf" ]
 }, {
   "EntryDate" : "2020-04-18",
+  "Pref" : "茨城県",
+  "City" : "",
+  "StartDate" : "2020-04-18",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "県の緊急事態措置",
+  "URL" : [ "https://www.pref.ibaraki.jp/1saigai/2019-ncov/kinkyu.html" ]
+}, {
+  "EntryDate" : "2020-04-18",
   "Pref" : "奈良県",
   "City" : "",
   "StartDate" : "",
@@ -88,6 +99,17 @@
   "URL" : [ "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/04/10/documents/27_00.pdf", "https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" ]
 }, {
   "EntryDate" : "2020-04-18",
+  "Pref" : "埼玉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "Reason" : "感染拡大の防止",
+  "URL" : [ "https://www.pref.saitama.lg.jp/e2201/coronavirus/index.html" ]
+}, {
+  "EntryDate" : "2020-04-18",
   "Pref" : "長野県",
   "City" : "長野圏域、松本圏域",
   "StartDate" : "",
@@ -119,6 +141,17 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言の発令に伴う",
   "URL" : [ "https://www.pref.gunma.jp/07/z87g_00028.html" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "栃木県",
+  "City" : "",
+  "StartDate" : "2020-04-18",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "http://www.pref.tochigi.lg.jp/e04/kinkyuzitaisochi0417.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "福岡県",
