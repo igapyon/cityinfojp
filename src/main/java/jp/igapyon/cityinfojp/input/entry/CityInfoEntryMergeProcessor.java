@@ -39,6 +39,24 @@ public class CityInfoEntryMergeProcessor {
             {
                 List<CityInfoEntry> entryList = CityInfoEntryUtil.readEntryList(look);
                 mergedEntryList.addAll(entryList);
+
+                // Verify
+                for (CityInfoEntry cityInfo : entryList) {
+                    for (String checkUrl : cityInfo.getURL()) {
+                        boolean isUrlValid = false;
+                        List<PrefUrlEntry> prefUrlList = PrefUrlEntryUtil.readEntryListFromClasspath();
+                        for (PrefUrlEntry prefUrl : prefUrlList) {
+                            for (String lookUrl : prefUrl.getUrl()) {
+                                if (checkUrl.startsWith(lookUrl)) {
+                                    isUrlValid = true;
+                                }
+                            }
+                        }
+                        if (isUrlValid == false) {
+                            System.err.println("  Non org based URL: " + checkUrl);
+                        }
+                    }
+                }
             }
 
         }
