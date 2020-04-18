@@ -142,13 +142,23 @@ public class ThymVarMapIndexBuilder extends AbstractThymVarMapBuilder {
         Collections.sort(allEntryList, new Comparator<CityInfoEntry>() {
             @Override
             public int compare(CityInfoEntry left, CityInfoEntry right) {
+                if (left == null && right == null) {
+                    return 0;
+                }
+                if (left == null) {
+                    return -1;
+                }
+                if (right == null) {
+                    return 1;
+                }
+
                 if (left.getEntryDate().compareTo(right.getEntryDate()) != 0) {
                     // 降順
                     return -left.getEntryDate().compareTo(right.getEntryDate());
                 }
 
                 // TODO 同日エントリのソート順が未記述
-                return -1;
+                return 0;
             }
         });
     }
