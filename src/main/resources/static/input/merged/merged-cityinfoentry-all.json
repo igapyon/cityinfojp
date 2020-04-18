@@ -374,6 +374,17 @@
   "URL" : [ "https://www.pref.kyoto.jp/kyorindai/shingatakorona.html" ]
 }, {
   "EntryDate" : "2020-04-18",
+  "Pref" : "愛知県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "愛知県緊急事態宣言",
+  "URL" : [ "https://www.pref.aichi.jp/uploaded/attachment/331080.pdf" ]
+}, {
+  "EntryDate" : "2020-04-18",
   "Pref" : "島根県",
   "City" : "",
   "StartDate" : "2020-04-16",
@@ -493,6 +504,17 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.nikkei.com/article/DGXMZO57959650R10C20A4EA3000/" ]
+}, {
+  "EntryDate" : "2020-04-18",
+  "Pref" : "北海道",
+  "City" : "札幌市",
+  "StartDate" : "2020-04-14",
+  "EndDate" : "2020-05-06",
+  "State" : "休校",
+  "Target" : "市が所管する小・中・高校等",
+  "TargetRange" : "",
+  "Reason" : "感染リスクを下げる",
+  "URL" : [ "http://www.pref.hokkaido.lg.jp/hf/kth/kak/kyoudousengen.pdf" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "群馬県",
