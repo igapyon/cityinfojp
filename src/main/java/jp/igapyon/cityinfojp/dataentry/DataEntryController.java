@@ -51,11 +51,33 @@ import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
  */
 @Controller
 public class DataEntryController {
+    /**
+     * データエントリ /dataentry.html への GET リクエストを処理します。
+     * 
+     * こちらは通常系の入り口としていったん入る場所です。
+     * 
+     * @param model モデル。
+     * @param form フォーム。
+     * @param result バインド結果。
+     * @return 次画面名。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = { "/dataentry.html" }, method = { RequestMethod.GET })
     public String dataentryhtml(Model model, DataEntryForm form, BindingResult result) throws IOException {
         return dataentry(model, form, result);
     }
 
+    /**
+     * データエントリ /dataentry への GET/POST リクエストを処理します。
+     * 
+     * こちらはポストした後に何度も到達することを許容する入り口でしたが、現状は /dataentry.html で完結するようになっています。
+     * 
+     * @param model モデル。
+     * @param form フォーム。
+     * @param result バインド結果。
+     * @return 次画面名。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = { "/dataentry" }, params = { "update" }, method = { RequestMethod.GET, RequestMethod.POST })
     public String dataentry(Model model, DataEntryForm form, BindingResult result) throws IOException {
 
@@ -106,6 +128,15 @@ public class DataEntryController {
         return entry;
     }
 
+    /**
+     * データエントリの結果を JSON 形式でダウンロードするリクエストを処理します。
+     *
+     * @param model モデル。
+     * @param form フォーム。
+     * @param response HTTP レスポンス。
+     * @return 必ず null を戻します。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = "/dataentry", params = "download", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     public String dataentryDownload(Model model, DataEntryForm form, HttpServletResponse response) throws IOException {
         byte[] resultData = new byte[0];
@@ -167,12 +198,22 @@ public class DataEntryController {
         return null;
     }
 
+    /**
+     * 画面描画用の Jumbotron フラグメント Bean オブジェクトを生成します。
+     * 
+     * @return Jumbotron を表示するための情報。
+     */
     public static JumbotronFragmentBean getJumbotronBean() {
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
         jumbotron.setTitle("Data Entry");
         return jumbotron;
     }
 
+    /**
+     * 画面描画用の Navbar Bean オブジェクトを生成します。
+     * 
+     * @return Navbar Bean の情報。
+     */
     public static NavbarBean getNavbarBean() {
         NavbarBean navbar = NavbarUtil.buildNavbar(null);
         navbar.getItemList().get(3).setCurrent(true);
