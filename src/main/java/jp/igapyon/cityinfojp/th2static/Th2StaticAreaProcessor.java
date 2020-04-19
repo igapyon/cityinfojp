@@ -17,12 +17,15 @@ package jp.igapyon.cityinfojp.th2static;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
 import jp.igapyon.cityinfojp.thvarmap.ThVarMapAreaBuilder;
 
 public class Th2StaticAreaProcessor {
@@ -33,25 +36,25 @@ public class Th2StaticAreaProcessor {
         dyn2staticAreaList(templateEngine);
     }
 
+    /**
+     * Area ごとページを生成します。
+     * 
+     * @param templateEngine テンプレートエンジン。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     static void dyn2staticAreaList(SpringTemplateEngine templateEngine) throws IOException {
         // areaごと静的ページ
 
-        try {
-            for (int index = 0; index < ThVarMapAreaBuilder.AREA_INFO.length; index++) {
-                final IContext ctx = new Context();
+        List<JsonAreaEntry> areaEntryList = JsonAreaEntryUtil.readEntryListFromClasspath();
+        for (JsonAreaEntry areaEntry : areaEntryList) {
+            final IContext ctx = new Context();
 
-                String[] area = ThVarMapAreaBuilder.AREA_INFO[index];
+            new ThVarMapAreaBuilder(areaEntry).applyContextVariable(ctx);
 
-                new ThVarMapAreaBuilder(area[0], area[1], ThVarMapAreaBuilder.AREA_PREF_CODES[index])
-                        .applyContextVariable(ctx);
-
-                String result = templateEngine.process("/dyn/pref/area", ctx);
-                FileUtils.writeStringToFile(
-                        new File("src/main/resources/static/pref/" + area[0].toLowerCase() + ".html"), result, "UTF-8");
-            }
-        } catch (IOException ex) {
-            System.err.println("Unexpected exception: " + ex.toString());
-            ex.printStackTrace();
+            String result = templateEngine.process("/dyn/pref/area", ctx);
+            FileUtils.writeStringToFile(
+                    new File("src/main/resources/static/pref/" + areaEntry.getNameen().toLowerCase() + ".html"), result,
+                    "UTF-8");
         }
     }
 }

@@ -45,7 +45,7 @@ import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.cityinfojp.thvarmap.ThNavbarUtil;
 
 /**
- * データエントリ画面(/dataentry.html)のコントローラ。
+ * データエントリ画面(/dataentry.html)と動的処理(/dataentry)のコントローラ。
  * 
  * @author Toshiki Iga
  */
@@ -54,7 +54,7 @@ public class DataEntryController {
     /**
      * データエントリ /dataentry.html への GET リクエストを処理します。
      * 
-     * こちらは通常系の入り口としていったん入る場所です。
+     * こちらは通常系の入り口としていったん入る場所です。htmlファイルのフリをします。
      * 
      * @param model モデル。
      * @param form フォーム。
@@ -64,13 +64,14 @@ public class DataEntryController {
      */
     @RequestMapping(value = { "/dataentry.html" }, method = { RequestMethod.GET })
     public String dataentryhtml(Model model, DataEntryForm form, BindingResult result) throws IOException {
+        // しなし内容は 動的処理 /dataentry を GET したのと同じ挙動とします。
         return dataentry(model, form, result);
     }
 
     /**
      * データエントリ /dataentry への GET/POST リクエストを処理します。
      * 
-     * こちらはポストした後に何度も到達することを許容する入り口でしたが、現状は /dataentry.html で完結するようになっています。
+     * こちらは動的処理の入り口としています。ここに直接入ってくるのは、html画面で パラメータ「update」で GET されてきたケースです。(POSTも受付けます)
      * 
      * @param model モデル。
      * @param form フォーム。
@@ -107,6 +108,12 @@ public class DataEntryController {
         return "dataentry";
     }
 
+    /**
+     * Form の内容を JSON Bean 形式に変換します。
+     * 
+     * @param form フォーム Bean。
+     * @return JSON Bean 形式。
+     */
     static JsonCityInfoEntry form2Entry(DataEntryForm form) {
         JsonCityInfoEntry entry = new JsonCityInfoEntry();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -130,6 +137,8 @@ public class DataEntryController {
 
     /**
      * データエントリの結果を JSON 形式でダウンロードするリクエストを処理します。
+     *
+     * こちらは動的処理の入り口でダウンロード処理です。バイナリダウンロードを戻します。
      *
      * @param model モデル。
      * @param form フォーム。

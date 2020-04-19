@@ -23,6 +23,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
@@ -33,22 +34,14 @@ import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
  * エリアの単位でビルドします。
  */
 public class ThVarMapAreaBuilder extends AbstractThVarMapBuilder {
-    public static final String[][] AREA_INFO = new String[][] { { "tohoku", "東北" }, { "kanto", "関東" },
-            { "chubu", "中部" }, { "kinki", "近畿" }, { "chugoku", "中国" }, { "shikoku", "四国" },
-            { "kyushuokinawa", "九州沖縄" } };
-    public static final String[][] AREA_PREF_CODES = new String[][] { { "02", "03", "04", "05", "06", "07" },
-            { "08", "09", "10", "11", "12", "13", "14" }, { "15", "16", "17", "18", "19", "20", "21", "22", "23" },
-            { "24", "25", "26", "27", "28", "29", "30" }, { "31", "32", "33", "34", "35" }, { "36", "37", "38", "39" },
-            { "40", "41", "42", "43", "44", "45", "46", "47" } };
-
     private String areaId;
     private String areaName;
-    private String[] prefs;
+    private List<String> prefs;
 
-    public ThVarMapAreaBuilder(String areaId, String areaName, String[] prefs) {
-        this.areaId = areaId;
-        this.areaName = areaName;
-        this.prefs = prefs;
+    public ThVarMapAreaBuilder(JsonAreaEntry areaEntry) {
+        this.areaId = areaEntry.getNameen();
+        this.areaName = areaEntry.getName();
+        this.prefs = areaEntry.getPref();
     }
 
     /**
