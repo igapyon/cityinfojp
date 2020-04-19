@@ -31,6 +31,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import jp.igapyon.cityinfojp.disp.DisplayAreaEntry;
 import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
+import jp.igapyon.cityinfojp.disp.DisplayCityInfoUrlEntry;
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
@@ -223,7 +224,11 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 descText += " : " + entry.getReason();
             }
             dispEntry.setDescText(descText);
-            dispEntry.setUrls(entry.getURL());
+            for (String url : entry.getURL()) {
+                DisplayCityInfoUrlEntry infourl = new DisplayCityInfoUrlEntry();
+                dispEntry.getUrlList().add(infourl);
+                infourl.setUrl(url);
+            }
             dispEntryList.add(dispEntry);
         }
 
