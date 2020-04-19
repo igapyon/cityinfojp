@@ -15,6 +15,11 @@
  */
 package jp.igapyon.cityinfojp.fragment.navbar;
 
+/**
+ * Thymeleaf + Bootstrap の Navbar にぶら下がるメニューアイテム のための Bean.
+ * 
+ * @author Toshiki Iga
+ */
 public class NavbarItemBean {
     private String text = "Menu1";
     private String href = "#";

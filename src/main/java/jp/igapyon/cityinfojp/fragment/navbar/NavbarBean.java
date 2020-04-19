@@ -18,6 +18,11 @@ package jp.igapyon.cityinfojp.fragment.navbar;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Thymeleaf + Bootstrap の Navbar Fragment のための Bean.
+ * 
+ * @author Toshiki Iga
+ */
 public class NavbarBean {
     private String text = "NavbarMenu";
 

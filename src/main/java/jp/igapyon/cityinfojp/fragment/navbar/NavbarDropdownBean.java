@@ -18,6 +18,11 @@ package jp.igapyon.cityinfojp.fragment.navbar;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Thymeleaf + Bootstrap の Navbar にぶら下がるメニューアイテムのドロップダウン のための Bean.
+ * 
+ * @author Toshiki Iga
+ */
 public class NavbarDropdownBean {
     private String text;
 

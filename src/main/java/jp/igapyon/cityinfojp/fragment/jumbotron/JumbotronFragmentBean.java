@@ -15,6 +15,11 @@
  */
 package jp.igapyon.cityinfojp.fragment.jumbotron;
 
+/**
+ * Thymeleaf + Bootstrap の Jumbotron Fragment のための Bean.
+ * 
+ * @author Toshiki Iga
+ */
 public class JumbotronFragmentBean {
     private String title = "cityinfojp";
 
