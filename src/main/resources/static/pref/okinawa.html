@@ -136,117 +136,167 @@
     
 
         <div class="container">
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <div class="card">
-                    <div data-toggle="tooltip" data-placement="top" <div class="card-header"
-                        style="padding:3px 20px 3px 20px;">いますぐ検索
-                        <span data-toggle="popover" data-placement="top"
-                            data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
-                            <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="card-body" style="padding:6px 20px 6px 20px;">
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+緊急" target="_blank">緊急
-                                <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header" style="padding:3px 20px 3px 20px;">公式サイト
+                            <span data-toggle="popover" data-placement="top"
+                                data-content="地方自治体など組織による公式Webサイトにジャンプできます。">
+                                <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
-                                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-                                        clip-rule="evenodd" />
-                                </svg> <svg class="bi bi-box-arrow-up-right" width="1em" height="1em"
-                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                        d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
                                         clip-rule="evenodd" />
                                 </svg>
-                            </a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+宣言" target="_blank">宣言
-                                <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+                            </span>
+                        </div>
+
+                        <div class="card-body" style="padding:6px 20px 6px 20px;">
+                            
+                                <a class="btn btn-sm btn-outline-primary"
+                                    href="https://www.pref.okinawa.jp/" target="_blank">公式
+                                    <svg class="bi bi-bookmark-check" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4.5 2a.5.5 0 00-.5.5v11.066l4-2.667 4 2.667V8.5a.5.5 0 011 0v6.934l-5-3.333-5 3.333V2.5A1.5 1.5 0 014.5 1h4a.5.5 0 010 1h-4z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M15.854 2.146a.5.5 0 010 .708l-3 3a.5.5 0 01-.708 0l-1.5-1.5a.5.5 0 01.708-.708L12.5 4.793l2.646-2.647a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            
+                        </div>
+                    </div> <!-- card -->
+                </div>
+                <div class="col-md-6">
+
+
+
+                    <div class="card">
+                        <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索
+                            <span data-toggle="popover" data-placement="top"
+                                data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
+                                <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
-                                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-                                        clip-rule="evenodd" />
-                                </svg> <svg class="bi bi-box-arrow-up-right" width="1em" height="1em"
-                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                        d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
                                         clip-rule="evenodd" />
                                 </svg>
-                            </a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+要請" target="_blank">要請
-                                <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-                                        clip-rule="evenodd" />
-                                </svg> <svg class="bi bi-box-arrow-up-right" width="1em" height="1em"
-                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        
-                        
-                            <a class="btn btn-sm btn-outline-primary"
-                                href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+休校" target="_blank">休校
-                                <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
-                                        clip-rule="evenodd" />
-                                </svg> <svg class="bi bi-box-arrow-up-right" width="1em" height="1em"
-                                    viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
-                                        clip-rule="evenodd" />
-                                    <path fill-rule="evenodd"
-                                        d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        
+                            </span>
+                        </div>
+                        <div class="card-body" style="padding:6px 20px 6px 20px;">
+                            
+                                <a class="btn btn-sm btn-outline-primary"
+                                    href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+緊急" target="_blank">緊急
+                                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            
+                            
+                                <a class="btn btn-sm btn-outline-primary"
+                                    href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+宣言" target="_blank">宣言
+                                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            
+                            
+                                <a class="btn btn-sm btn-outline-primary"
+                                    href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+要請" target="_blank">要請
+                                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            
+                            
+                                <a class="btn btn-sm btn-outline-primary"
+                                    href="https://www.google.com/search?pws=0&amp;q=site:https%3A%2F%2Fwww.pref.okinawa.jp%2F+after:2020-04-12+休校" target="_blank">休校
+                                    <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <hr />
+            <hr />
 
-                <h6 class="border-bottom border-gray pb-2 mb-0">最近登録された情報</h6>
+            <h6 class="border-bottom border-gray pb-2 mb-0">登録された情報</h6>
 
-                
+            
         <div>
             <div class="media text-muted pt-3">
                 <svg class="bd-placeholder-img mr-2 rounded" width="64" height="32" xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +346,6 @@
             </div>
         </div>
     
-            </div>
         </div>
     </main>
 

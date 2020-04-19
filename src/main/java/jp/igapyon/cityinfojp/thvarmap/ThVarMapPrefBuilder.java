@@ -57,6 +57,8 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         try {
+            result.put("dispOfficialButtonList", buildOfficialButtonList(prefName));
+
             result.put("dispSearchButtonList", buildSearchButtonList(prefName));
 
             List<JsonCityInfoEntry> allEntryList = ThVarMapIndexBuilder.buildEntityList();
@@ -100,6 +102,33 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
         NavbarBean navbar = ThNavbarUtil.buildNavbar(pref);
         navbar.getItemList().get(1).setCurrent(true);
         return navbar;
+    }
+
+    /**
+     * 公式ボタンのリストを生成。
+     * 
+     * @param prefName 都道府県名。
+     * @return 表示用検索ボタンのリスト。
+     * @throws IOException 入出力例外が発生。
+     */
+    public static List<DisplaySearchButton> buildOfficialButtonList(String prefName) throws IOException {
+        // 公式ボタン生成
+        List<DisplaySearchButton> dispSearchButtonList = new ArrayList<>();
+        List<JsonPrefUrlEntry> urlList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+        for (JsonPrefUrlEntry prefUrl : urlList) {
+            if (prefName.equals(prefUrl.getName())) {
+                boolean isPrimary = true;
+                for (String url : prefUrl.getUrl()) {
+                    DisplaySearchButton button = new DisplaySearchButton();
+                    button.setText("公式");
+                    button.setSearchUrl(url);
+                    button.setPrimary(isPrimary);
+                    isPrimary = false;
+                    dispSearchButtonList.add(button);
+                }
+            }
+        }
+        return dispSearchButtonList;
     }
 
     /**
