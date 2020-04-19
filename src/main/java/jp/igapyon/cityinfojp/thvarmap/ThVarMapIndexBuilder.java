@@ -41,6 +41,8 @@ import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -172,6 +174,16 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
             throws IOException {
         List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
 
+        List<String> allOfficialUrlList = new ArrayList<>();
+        {
+            List<JsonPrefUrlEntry> prefUrlList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+            for (JsonPrefUrlEntry prefurl : prefUrlList) {
+                for (String url : prefurl.getUrl()) {
+                    allOfficialUrlList.add(url);
+                }
+            }
+        }
+
         List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
         for (JsonCityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
@@ -228,8 +240,15 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 DisplayCityInfoUrlEntry infourl = new DisplayCityInfoUrlEntry();
                 dispEntry.getUrlList().add(infourl);
                 infourl.setUrl(url);
+
                 // URL が公式サイトのものか判定
-                infourl.setOfficial(true); // FIXME TODO
+                for (String lookup : allOfficialUrlList) {
+                    if (url.startsWith(lookup)) {
+                        infourl.setOfficial(true);
+                        break;
+                    }
+                }
+
                 if (url.toLowerCase().endsWith(".pdf") //
                         || url.toLowerCase().endsWith(".xlsx") //
                         || url.toLowerCase().endsWith(".xls") //
