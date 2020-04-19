@@ -18,11 +18,19 @@ package jp.igapyon.cityinfojp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * この Web アプリ (Spring Boot アプリケーション) のエントリポイントです。
+ * 
+ * @author Toshiki Iga
+ */
 @SpringBootApplication
 public class CityinfojpApplication {
-
+    /**
+     * この Web サイトを起動するメインのエントリポイントです。
+     * 
+     * @param args アプリ起動引数。
+     */
     public static void main(String[] args) {
         SpringApplication.run(CityinfojpApplication.class, args);
     }
-
 }
