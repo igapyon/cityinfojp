@@ -1,0 +1,12 @@
+[ {
+  "EntryDate" : "2020-04-19",
+  "Pref" : "宮城県",
+  "City" : "",
+  "StartDate" : "2020-04-17",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "政府の緊急事態宣言",
+  "URL" : [ "https://www.pref.miyagi.jp/site/covid-19/" ]
+} ]

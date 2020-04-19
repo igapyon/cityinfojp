@@ -164,7 +164,7 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                     return -left.getEntryDate().compareTo(right.getEntryDate());
                 }
 
-                // TODO 同日エントリのソート順が未記述
+                // Note: 同日エントリのソート順は記述していない点に注意。
                 return 0;
             }
         });
