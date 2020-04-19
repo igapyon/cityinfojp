@@ -82,7 +82,7 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
     }
 
     public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar(null);
+        NavbarBean navbar = ThNavbarUtil.buildNavbar(null);
         navbar.getItemList().get(0).setCurrent(true);
         return navbar;
     }

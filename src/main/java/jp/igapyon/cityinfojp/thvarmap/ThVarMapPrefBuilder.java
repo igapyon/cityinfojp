@@ -105,7 +105,7 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
     }
 
     public static NavbarBean getNavbarBean(String pref) {
-        NavbarBean navbar = NavbarUtil.buildNavbar(pref);
+        NavbarBean navbar = ThNavbarUtil.buildNavbar(pref);
         navbar.getItemList().get(1).setCurrent(true);
         return navbar;
     }

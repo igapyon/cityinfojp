@@ -19,7 +19,12 @@ import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.fragment.navbar.NavbarDropdownBean;
 import jp.igapyon.cityinfojp.fragment.navbar.NavbarItemBean;
 
-public class NavbarUtil {
+/**
+ * このサイト用の Navbar を構築するためのユーティリィ。
+ *
+ * @author Toshiki Iga
+ */
+public class ThNavbarUtil {
     public static NavbarBean buildNavbar(String pref) {
         NavbarBean navbar = new NavbarBean();
         navbar.setText("cityinfojp");

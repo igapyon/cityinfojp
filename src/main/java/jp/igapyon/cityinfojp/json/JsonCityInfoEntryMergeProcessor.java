@@ -29,6 +29,11 @@ import org.apache.commons.io.FileUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+/**
+ * JSON の 都市情報 の JSON を1つにまとめあげるためのマージ処理。
+ * 
+ * @author Tosihki Iga
+ */
 public class JsonCityInfoEntryMergeProcessor {
     public static final void main(String[] args) throws IOException {
         Collection<File> filesCollection = FileUtils.listFiles( //

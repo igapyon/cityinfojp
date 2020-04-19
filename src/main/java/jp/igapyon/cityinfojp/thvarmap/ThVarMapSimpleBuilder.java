@@ -116,7 +116,7 @@ public class ThVarMapSimpleBuilder extends AbstractThVarMapBuilder {
     }
 
     public static NavbarBean getNavbarBean(String requestURI) {
-        NavbarBean navbar = NavbarUtil.buildNavbar(null);
+        NavbarBean navbar = ThNavbarUtil.buildNavbar(null);
         String body = getPathStringWithoutExt(requestURI);
         if (body.startsWith("/dyn/about")) {
             navbar.getItemList().get(4).setCurrent(true);

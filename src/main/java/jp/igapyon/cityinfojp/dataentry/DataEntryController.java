@@ -42,7 +42,7 @@ import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
-import jp.igapyon.cityinfojp.thvarmap.NavbarUtil;
+import jp.igapyon.cityinfojp.thvarmap.ThNavbarUtil;
 
 /**
  * データエントリ画面(/dataentry.html)のコントローラ。
@@ -215,7 +215,7 @@ public class DataEntryController {
      * @return Navbar Bean の情報。
      */
     public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar(null);
+        NavbarBean navbar = ThNavbarUtil.buildNavbar(null);
         navbar.getItemList().get(3).setCurrent(true);
         return navbar;
     }
