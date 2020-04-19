@@ -24,6 +24,11 @@ import org.apache.commons.io.FileUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * JSON の 都市情報 にアクセスするための Bean のユーティリティ。
+ * 
+ * @author Tosihki Iga
+ */
 public class JsonCityInfoEntryUtil {
     public static List<JsonCityInfoEntry> readEntryList(File jsonInputFile) throws IOException {
         String jsonInput = FileUtils.readFileToString(jsonInputFile, "UTF-8");

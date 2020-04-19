@@ -28,6 +28,11 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * JSON の prefjp.json にアクセスするための Bean のユーティリティ。
+ * 
+ * @author Tosihki Iga
+ */
 public class JsonPrefEntryUtil {
     public static List<JsonPrefEntry> readEntryListFromClasspath() throws IOException {
         try (InputStream is = new ClassPathResource("static/input/prefjp.json").getInputStream();

@@ -28,6 +28,11 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * JSON の prefurl.json にアクセスするための Bean のユーティリティ。
+ * 
+ * @author Tosihki Iga
+ */
 public class JsonPrefUrlEntryUtil {
     public static List<JsonPrefUrlEntry> readEntryListFromClasspath() throws IOException {
         try (InputStream is = new ClassPathResource("static/input/prefurl.json").getInputStream();
