@@ -31,6 +31,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import jp.igapyon.cityinfojp.disp.DisplayAreaEntry;
 import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
+import jp.igapyon.cityinfojp.disp.DisplayCityInfoUrlEntry;
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
 import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
@@ -40,6 +41,8 @@ import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefUrlEntryUtil;
 
 /**
  * Thymeleaf の Var map をビルドします。
@@ -171,6 +174,16 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
             throws IOException {
         List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
 
+        List<String> allOfficialUrlList = new ArrayList<>();
+        {
+            List<JsonPrefUrlEntry> prefUrlList = JsonPrefUrlEntryUtil.readEntryListFromClasspath();
+            for (JsonPrefUrlEntry prefurl : prefUrlList) {
+                for (String url : prefurl.getUrl()) {
+                    allOfficialUrlList.add(url);
+                }
+            }
+        }
+
         List<DisplayCityInfoEntry> dispEntryList = new ArrayList<DisplayCityInfoEntry>();
         for (JsonCityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
@@ -223,7 +236,31 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 descText += " : " + entry.getReason();
             }
             dispEntry.setDescText(descText);
-            dispEntry.setUrls(entry.getURL());
+            for (String url : entry.getURL()) {
+                DisplayCityInfoUrlEntry infourl = new DisplayCityInfoUrlEntry();
+                dispEntry.getUrlList().add(infourl);
+                infourl.setUrl(url);
+
+                // URL が公式サイトのものか判定
+                for (String lookup : allOfficialUrlList) {
+                    if (url.startsWith(lookup)) {
+                        infourl.setOfficial(true);
+                        break;
+                    }
+                }
+
+                if (url.toLowerCase().endsWith(".pdf") //
+                        || url.toLowerCase().endsWith(".xlsx") //
+                        || url.toLowerCase().endsWith(".xls") //
+                        || url.toLowerCase().endsWith(".docx") //
+                        || url.toLowerCase().endsWith(".doc") //
+                        || url.toLowerCase().endsWith(".pptx") //
+                        || url.toLowerCase().endsWith(".ppt") //
+                ) {
+                    // URL が PDF のようなファイルのものか判定
+                    infourl.setFile(true);
+                }
+            }
             dispEntryList.add(dispEntry);
         }
 

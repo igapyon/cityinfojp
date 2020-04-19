@@ -15,6 +15,7 @@
  */
 package jp.igapyon.cityinfojp.disp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,7 +33,7 @@ public class DisplayCityInfoEntry {
      */
     private String prefUrl;
     private String descText;
-    private List<String> url;
+    private List<DisplayCityInfoUrlEntry> urlList = new ArrayList<>();
 
     public String getPrefUrl() {
         return prefUrl;
@@ -74,12 +75,12 @@ public class DisplayCityInfoEntry {
         this.descText = descText;
     }
 
-    public List<String> getURL() {
-        return url;
+    public List<DisplayCityInfoUrlEntry> getUrlList() {
+        return urlList;
     }
 
-    public void setUrls(List<String> url) {
-        this.url = url;
+    public void setUrlList(List<DisplayCityInfoUrlEntry> url) {
+        this.urlList = url;
     }
 
     public String getIconTextColor() {
