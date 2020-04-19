@@ -228,6 +228,19 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 DisplayCityInfoUrlEntry infourl = new DisplayCityInfoUrlEntry();
                 dispEntry.getUrlList().add(infourl);
                 infourl.setUrl(url);
+                // URL が公式サイトのものか判定
+                infourl.setOfficial(true); // FIXME TODO
+                if (url.toLowerCase().endsWith(".pdf") //
+                        || url.toLowerCase().endsWith(".xlsx") //
+                        || url.toLowerCase().endsWith(".xls") //
+                        || url.toLowerCase().endsWith(".docx") //
+                        || url.toLowerCase().endsWith(".doc") //
+                        || url.toLowerCase().endsWith(".pptx") //
+                        || url.toLowerCase().endsWith(".ppt") //
+                ) {
+                    // URL が PDF のようなファイルのものか判定
+                    infourl.setFile(true);
+                }
             }
             dispEntryList.add(dispEntry);
         }

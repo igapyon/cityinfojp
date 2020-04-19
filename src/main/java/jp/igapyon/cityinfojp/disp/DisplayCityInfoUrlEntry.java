@@ -23,6 +23,15 @@ package jp.igapyon.cityinfojp.disp;
 public class DisplayCityInfoUrlEntry {
     private String url = "https://example.org/";
     private boolean official = false;
+    private boolean file = false;
+
+    public boolean isFile() {
+        return file;
+    }
+
+    public void setFile(boolean file) {
+        this.file = file;
+    }
 
     public String getUrl() {
         return url;
