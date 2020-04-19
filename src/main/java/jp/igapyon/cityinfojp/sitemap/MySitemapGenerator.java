@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
 import jp.igapyon.cityinfojp.json.JsonPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
@@ -72,8 +74,20 @@ public class MySitemapGenerator {
         }
 
         // area
-        // TODO TBD FIXME
-        // TODO 先に area を JSON化
+        for (JsonAreaEntry areaEntry : JsonAreaEntryUtil.readEntryListFromClasspath()) {
+            if ("japan".equalsIgnoreCase(areaEntry.getNameen()) //
+                    || "hokkaido".equalsIgnoreCase(areaEntry.getNameen())) {
+                // 日本と北海道はスキップします。
+                continue;
+            }
+
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/pref/" + areaEntry.getNameen().toLowerCase() + ".html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Weekly);
+            url.setPriority("0.5");
+        }
 
         // contributor
         {
