@@ -10,6 +10,7 @@
     <div th:fragment="jumbotron-fragment" th:object="${jumbotron}" th:remove="tag">
         <div class="jumbotron">
             <div class="container">
+                <br />
                 <h1 class="display-3"><span th:text="*{title}" th:remove="tag" /></h1>
                 <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積して表示する Webサイトです。
                     <a href="/about.html">

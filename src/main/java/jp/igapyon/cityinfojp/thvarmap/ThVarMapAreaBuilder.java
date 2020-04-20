@@ -19,9 +19,12 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
+import jp.igapyon.cityinfojp.disp.DisplayCityInfoEntry;
 import jp.igapyon.cityinfojp.disp.DisplayPrefEntry;
 import jp.igapyon.cityinfojp.json.JsonAreaEntry;
 import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
@@ -50,11 +53,11 @@ public class ThVarMapAreaBuilder extends AbstractThVarMapBuilder {
      * @return 抽象化されたキー値マップ。
      */
     @Override
-    protected LinkedHashMap<String, Object> buildVarMap() {
+    protected LinkedHashMap<String, Object> buildVarMap() throws IOException {
         LinkedHashMap<String, Object> result = new LinkedHashMap<>();
 
         List<DisplayPrefEntry> prefList = new ArrayList<>();
-        try {
+        {
             List<JsonPrefEntry> prefAllList = JsonPrefEntryUtil.readEntryListFromClasspath();
             for (JsonPrefEntry prefEntry : prefAllList) {
                 for (String lookPrefCode : prefs) {
@@ -76,14 +79,35 @@ public class ThVarMapAreaBuilder extends AbstractThVarMapBuilder {
                     }
                 }
             }
-        } catch (IOException ex) {
-            System.err.println("Unexpected exception: " + ex.toString());
-            ex.printStackTrace();
         }
 
         result.put("prefList", prefList);
 
-        // "dispEntryList"は不要
+        // "dispEntryList"
+        List<JsonCityInfoEntry> allEntryList = ThVarMapIndexBuilder.buildEntityList();
+        ThVarMapIndexBuilder.sortEntryList(allEntryList);
+
+        // pref で絞り込み
+        List<JsonCityInfoEntry> entryList = new ArrayList<>();
+        Map<String, String> mapTargetPref = new HashMap<>();
+        List<JsonPrefEntry> prefAllList = JsonPrefEntryUtil.readEntryListFromClasspath();
+        for (JsonPrefEntry prefEntry : prefAllList) {
+            for (String prefCode : prefs) {
+                if (prefCode.equals(prefEntry.getCode())) {
+                    mapTargetPref.put(prefEntry.getName(), prefEntry.getNameen());
+                }
+            }
+        }
+        for (JsonCityInfoEntry look : allEntryList) {
+            if (mapTargetPref.get(look.getPref()) != null) {
+                entryList.add(look);
+            }
+        }
+
+        // 絞り込み後のデータを利用
+        List<DisplayCityInfoEntry> dispEntryList = ThVarMapIndexBuilder.entryList2DispEntryList(entryList);
+
+        result.put("dispEntryList", dispEntryList);
 
         result.put("jumbotron", ThVarMapPrefBuilder.getJumbotronBean(areaName));
 
