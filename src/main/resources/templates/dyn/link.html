@@ -40,7 +40,7 @@
                                     <div th:each="url : ${pref.urlList}" th:remove="tag">
                                         <li><a th:href="${url}" target="_blank">
                                                 <span th:text="${url}" th:remove="tag" />
-                                                <div th:insert="dyn/fragment/bootstrap-svg-icon :: arrow-up-right"
+                                                <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right"
                                                     th:remove="tag" />
                                             </a></li>
                                     </div>
