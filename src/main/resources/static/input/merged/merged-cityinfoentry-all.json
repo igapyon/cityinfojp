@@ -329,6 +329,17 @@
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/04/10/documents/27_00.pdf", "https://www3.nhk.or.jp/news/html/20200407/k10012371551000.html" ]
 }, {
+  "EntryDate" : "2020-04-21",
+  "Pref" : "東京都",
+  "City" : "練馬区",
+  "StartDate" : "2020-04-20",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "保育園",
+  "TargetRange" : "登録自粛",
+  "Reason" : "コロナウィルス拡大防止のため",
+  "URL" : [ "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/hoiku/news/hoikuryou56gatu.files/20200420hoikuryou_kunai.pdf", "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kyoiku/oshirase/korona.html" ]
+}, {
   "EntryDate" : "2020-04-09",
   "Pref" : "神奈川県",
   "City" : "",
