@@ -55,7 +55,6 @@
 			<version>0.5.0</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/com.rometools/rome -->
 		<dependency>
 			<groupId>com.rometools</groupId>
