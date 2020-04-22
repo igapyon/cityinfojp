@@ -40,7 +40,7 @@ import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
 import jp.igapyon.cityinfojp.thvarmap.ThVarMapIndexBuilder;
 
 /**
- * このサイトの sitemap.xml を生成します。
+ * このサイトの rss を生成します。
  * 
  * @author Toshiki Iga
  */
