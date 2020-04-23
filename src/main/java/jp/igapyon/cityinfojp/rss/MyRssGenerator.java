@@ -57,14 +57,14 @@ public class MyRssGenerator {
         ThVarMapIndexBuilder.sortEntryList(jsonentryList);
 
         SyndFeed syndFeed = MyRssGenerator.entryList2SyndFeed(jsonentryList);
-        MyRssGenerator.write(syndFeed, new File("./src/main/resources/static/index-all.rdf"));
+        MyRssGenerator.write(syndFeed, new File("./src/main/resources/static/index-all.rss"));
     }
 
     protected static SyndFeed entryList2SyndFeed(List<JsonCityInfoEntry> jsonentryList) throws IOException {
         List<DisplayCityInfoEntry> dispEntryList = ThVarMapIndexBuilder.entryList2DispEntryList(jsonentryList);
 
         SyndFeed feed = new SyndFeedImpl();
-        feed.setFeedType("rss_1.0");
+        feed.setFeedType("rss_2.0");
 
         feed.setTitle("cityinfojp Feed Recently");
         feed.setLink("https://cityinfojp.herokuapp.com/");
@@ -77,7 +77,6 @@ public class MyRssGenerator {
             final DisplayCityInfoEntry dispEntry = dispEntryList.get(index);
 
             SyndEntry entry = new SyndEntryImpl();
-            entry.setUri("rss" + index);
             entry.setTitle("[" + dispEntry.getIconText() + "] " + dispEntry.getTitleText());
             entry.setLink(dispEntry.getUrlList().get(0).getUrl());
             try {
