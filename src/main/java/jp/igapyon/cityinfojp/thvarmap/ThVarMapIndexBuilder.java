@@ -200,6 +200,10 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 dispEntry.setIconText("休校");
                 dispEntry.setIconColor("#17a2b8");
                 dispEntry.setIconTextColor("#ffffff");
+            } else if ("閉鎖".equals(entry.getState())) {
+                dispEntry.setIconText("閉鎖");
+                dispEntry.setIconColor("#17a2b8");
+                dispEntry.setIconTextColor("#ffffff");
             } else if ("宣言".equals(entry.getState())) {
                 dispEntry.setIconText("宣言");
                 dispEntry.setIconColor("#6610f2");

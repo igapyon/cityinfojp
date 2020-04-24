@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,10 +104,11 @@
               <label for="stete">ステータス</label>
               <select class="custom-select d-block w-100" id="state" required th:field="*{state}">
                 <option value="">Choose...</option>
-                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
-                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
-                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
                 <option th:value="宣言" th:text="宣言" th:selected="${dataentry.state == '宣言'}" />
+                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
+                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
+                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
+                <option th:value="閉鎖" th:text="閉鎖" th:selected="${dataentry.state == '閉鎖'}" />
               </select>
               <div class="invalid-feedback">
                 Please select a valid state.
