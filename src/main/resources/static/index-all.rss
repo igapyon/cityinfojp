@@ -5,6 +5,22 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[休校] 群馬県</title>
+      <link>https://www.pref.gunma.jp/03/x0100599.html</link>
+      <description>(2020-04-24起票) 県立学校  : 感染症拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.gunma.jp/03/x0100599.html</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 群馬県</title>
+      <link>https://www.pref.gunma.jp/houdou/cl02_00001.html</link>
+      <description>(2020-04-24起票) 外出自粛要請  : 感染症拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.gunma.jp/houdou/cl02_00001.html</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[要請] 埼玉県</title>
       <link>https://www.pref.saitama.lg.jp/a0001/news/page/2020/0423-04.html</link>
       <description>(2020-04-24起票) 外出自粛など  2020-04-25から 2020-04-06まで : STAY HOME 週間</description>
