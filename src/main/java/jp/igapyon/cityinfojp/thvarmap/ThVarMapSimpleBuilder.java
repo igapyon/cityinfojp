@@ -118,14 +118,16 @@ public class ThVarMapSimpleBuilder extends AbstractThVarMapBuilder {
     public static NavbarBean getNavbarBean(String requestURI) {
         NavbarBean navbar = ThNavbarUtil.buildNavbar(null);
         String body = getPathStringWithoutExt(requestURI);
-        if (body.startsWith("/dyn/about")) {
+        if (body.startsWith("/dyn/about") //
+                || body.startsWith("/dyn/policy") //
+                || body.startsWith("/dyn/arch") //
+                || body.startsWith("/dyn/faq") //
+        ) {
             navbar.getItemList().get(4).setCurrent(true);
         } else if (body.startsWith("/dyn/contributor")) {
             navbar.getItemList().get(3).setCurrent(true);
         } else if (body.startsWith("/dyn/link")) {
             navbar.getItemList().get(2).setCurrent(true);
-        } else if (body.startsWith("/dyn/policy")) {
-            navbar.getItemList().get(4).setCurrent(true);
         }
         return navbar;
     }
