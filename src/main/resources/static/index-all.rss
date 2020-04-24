@@ -5,6 +5,14 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[宣言] 秋田県</title>
+      <link>https://www.pref.akita.lg.jp/pages/archive/49322</link>
+      <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.akita.lg.jp/pages/archive/49322</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[休校] 群馬県</title>
       <link>https://www.pref.gunma.jp/03/x0100599.html</link>
       <description>(2020-04-24起票) 県立学校  : 感染症拡大防止</description>
@@ -50,6 +58,14 @@
       <description>(2020-04-24起票) 外出自粛など  2020-04-25から 2020-04-06まで : STAY HOME 週間</description>
       <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
       <guid>https://www.pref.kanagawa.jp/docs/bu4/stayhomeweek.html</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[宣言] 新潟県</title>
+      <link>https://www.pref.niigata.lg.jp/sec/bosaikikaku/niigata-tohoku-kyoudou.html</link>
+      <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.niigata.lg.jp/sec/bosaikikaku/niigata-tohoku-kyoudou.html</guid>
       <dc:date>2020-04-23T15:00:00Z</dc:date>
     </item>
     <item>

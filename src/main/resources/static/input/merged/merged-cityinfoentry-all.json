@@ -131,6 +131,17 @@
   "Reason" : "政府の緊急事態宣言",
   "URL" : [ "https://www.pref.miyagi.jp/site/covid-19/" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "秋田県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.akita.lg.jp/pages/archive/49322" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "秋田県",
   "City" : "",
@@ -438,6 +449,17 @@
   "TargetRange" : "",
   "Reason" : "STAY HOME 週間",
   "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/stayhomeweek.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "新潟県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.niigata.lg.jp/sec/bosaikikaku/niigata-tohoku-kyoudou.html" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "新潟県",
