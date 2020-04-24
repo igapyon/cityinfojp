@@ -32,9 +32,11 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header" style="padding:3px 20px 3px 20px;">公式サイト
-                            <span data-toggle="popover" data-placement="top"
-                                data-content="地方自治体など組織による公式Webサイトにジャンプできます。">
-                                <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                            <span style="font-size: 1.5em">
+                                <span data-toggle="popover" data-placement="top"
+                                    data-content="地方自治体など組織による公式Webサイトにジャンプできます。">
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                                </span>
                             </span>
                         </div>
 
@@ -57,7 +59,9 @@
                         <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索
                             <span data-toggle="popover" data-placement="top"
                                 data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
-                                <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                                <span style="font-size: 1.5em">
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                                </span>
                             </span>
                         </div>
                         <div class="card-body" style="padding:6px 20px 6px 20px;">
