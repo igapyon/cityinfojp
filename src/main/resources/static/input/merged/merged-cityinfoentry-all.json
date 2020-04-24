@@ -307,6 +307,17 @@
   "Reason" : "感染症拡散防止",
   "URL" : [ "https://www.pref.saitama.lg.jp/a0401/covid19/gwtokihonhoushin0420.html" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "埼玉県",
+  "City" : "",
+  "StartDate" : "2020-04-25",
+  "EndDate" : "2020-04-06",
+  "State" : "要請",
+  "Target" : "外出自粛など",
+  "TargetRange" : "",
+  "Reason" : "STAY HOME 週間",
+  "URL" : [ "https://www.pref.saitama.lg.jp/a0001/news/page/2020/0423-04.html" ]
+}, {
   "EntryDate" : "2020-04-05",
   "Pref" : "千葉県",
   "City" : "",
@@ -340,6 +351,17 @@
   "Reason" : "感染症流行の防止",
   "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/shisetsu.html" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "千葉県",
+  "City" : "",
+  "StartDate" : "2020-04-25",
+  "EndDate" : "2020-04-06",
+  "State" : "要請",
+  "Target" : "外出自粛など",
+  "TargetRange" : "",
+  "Reason" : "STAY HOME 週間",
+  "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/kyodo-cp.html" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "東京都",
   "City" : "",
@@ -362,6 +384,17 @@
   "Reason" : "コロナウィルス拡大防止のため",
   "URL" : [ "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/hoiku/news/hoikuryou56gatu.files/20200420hoikuryou_kunai.pdf", "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kyoiku/oshirase/korona.html" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "東京都",
+  "City" : "",
+  "StartDate" : "2020-04-25",
+  "EndDate" : "2020-04-06",
+  "State" : "要請",
+  "Target" : "外出自粛など",
+  "TargetRange" : "",
+  "Reason" : "STAY HOME 週間",
+  "URL" : [ "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/04/23/19.html" ]
+}, {
   "EntryDate" : "2020-04-09",
   "Pref" : "神奈川県",
   "City" : "",
@@ -372,6 +405,17 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/covid19/20200407_policy.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "神奈川県",
+  "City" : "",
+  "StartDate" : "2020-04-25",
+  "EndDate" : "2020-04-06",
+  "State" : "要請",
+  "Target" : "外出自粛など",
+  "TargetRange" : "",
+  "Reason" : "STAY HOME 週間",
+  "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/stayhomeweek.html" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "新潟県",
