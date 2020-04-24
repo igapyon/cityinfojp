@@ -131,6 +131,17 @@
   "Reason" : "政府の緊急事態宣言",
   "URL" : [ "https://www.pref.miyagi.jp/site/covid-19/" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "秋田県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.akita.lg.jp/pages/archive/49322" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "秋田県",
   "City" : "",
@@ -252,6 +263,17 @@
   "Reason" : "緊急事態宣言を受け",
   "URL" : [ "https://www.jomo-news.co.jp/news/gunma/society/205021" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "群馬県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "休校",
+  "Target" : "県立学校",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.gunma.jp/03/x0100599.html" ]
+}, {
   "EntryDate" : "2020-04-09",
   "Pref" : "群馬県",
   "City" : "",
@@ -262,6 +284,17 @@
   "TargetRange" : "",
   "Reason" : "緊急事態宣言の発令に伴う",
   "URL" : [ "https://www.pref.gunma.jp/07/z87g_00028.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "群馬県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.gunma.jp/houdou/cl02_00001.html" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "埼玉県",
@@ -416,6 +449,17 @@
   "TargetRange" : "",
   "Reason" : "STAY HOME 週間",
   "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/stayhomeweek.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "新潟県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.niigata.lg.jp/sec/bosaikikaku/niigata-tohoku-kyoudou.html" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "新潟県",
