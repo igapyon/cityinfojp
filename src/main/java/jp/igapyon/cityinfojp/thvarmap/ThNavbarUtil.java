@@ -34,6 +34,8 @@ public class ThNavbarUtil {
             item.setText("Home");
             item.setHref("/index.html");
         }
+
+        // 都道府県
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
@@ -117,23 +119,52 @@ public class ThNavbarUtil {
                 dropdownMenuItem.setCurrent(true);
             }
         }
+
+        // Link
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("Link");
             item.setHref("/link.html");
         }
+
+        // Contributor
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("Contributor");
             item.setHref("/contributor.html");
         }
+
+        // About
         {
             NavbarItemBean item = new NavbarItemBean();
             navbar.getItemList().add(item);
             item.setText("About");
-            item.setHref("/about.html");
+            item.setDropdown(true);
+
+            NavbarDropdownBean dropdown = new NavbarDropdownBean();
+            item.setDropdownBean(dropdown);
+
+            NavbarItemBean dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("About");
+            dropdownMenuItem.setHref("/about.html");
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("Policy");
+            dropdownMenuItem.setHref("/policy.html");
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("Architecture");
+            dropdownMenuItem.setHref("/arch.html");
+
+            dropdownMenuItem = new NavbarItemBean();
+            dropdown.getItemList().add(dropdownMenuItem);
+            dropdownMenuItem.setText("FAQ");
+            dropdownMenuItem.setHref("/faq.html");
         }
 
         return navbar;
