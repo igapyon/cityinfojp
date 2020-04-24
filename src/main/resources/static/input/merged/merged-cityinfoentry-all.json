@@ -571,6 +571,17 @@
   "Reason" : "感染症の防止",
   "URL" : [ "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00014.htm" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "滋賀県",
+  "City" : "大津市",
+  "StartDate" : "2020-04-25",
+  "EndDate" : "2020-05-06",
+  "State" : "閉鎖",
+  "Target" : "本庁舎閉鎖",
+  "TargetRange" : "",
+  "Reason" : "集団感染の発生",
+  "URL" : [ "https://www.city.otsu.lg.jp/kenko/2020/c/c/33147.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "滋賀県",
   "City" : "",
