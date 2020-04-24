@@ -65,6 +65,17 @@
   "Reason" : "感染症の防止",
   "URL" : [ "http://www.pref.hokkaido.lg.jp/hf/kth/kak/kinkixyuuzitai0417.pdf" ]
 }, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "青森県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.aomori.lg.jp/tohoku_nigata_kyodo.pdf" ]
+}, {
   "EntryDate" : "2020-04-13",
   "Pref" : "青森県",
   "City" : "青森市",
@@ -86,6 +97,17 @@
   "TargetRange" : "",
   "Reason" : "政府の緊急事態宣言",
   "URL" : [ "https://www.pref.aomori.lg.jp/koho/R020228message.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "岩手県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.iwate.jp/kensei/seisaku/bunken/kouiki/1029464.html" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "岩手県",
@@ -119,6 +141,17 @@
   "TargetRange" : "",
   "Reason" : "感染症",
   "URL" : [ "https://www.pref.miyagi.jp/site/chiji-kaiken/kk-200413.html" ]
+}, {
+  "EntryDate" : "2020-04-24",
+  "Pref" : "宮城県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "宣言",
+  "Target" : "東北・新潟緊急共同宣言",
+  "TargetRange" : "",
+  "Reason" : "感染拡大防止",
+  "URL" : [ "https://www.pref.miyagi.jp/release/ho20200424-2.html" ]
 }, {
   "EntryDate" : "2020-04-19",
   "Pref" : "宮城県",

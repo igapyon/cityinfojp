@@ -5,6 +5,30 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[宣言] 青森県</title>
+      <link>https://www.pref.aomori.lg.jp/tohoku_nigata_kyodo.pdf</link>
+      <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.aomori.lg.jp/tohoku_nigata_kyodo.pdf</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[宣言] 岩手県</title>
+      <link>https://www.pref.iwate.jp/kensei/seisaku/bunken/kouiki/1029464.html</link>
+      <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.iwate.jp/kensei/seisaku/bunken/kouiki/1029464.html</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[宣言] 宮城県</title>
+      <link>https://www.pref.miyagi.jp/release/ho20200424-2.html</link>
+      <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
+      <pubDate>Thu, 23 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.miyagi.jp/release/ho20200424-2.html</guid>
+      <dc:date>2020-04-23T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[宣言] 秋田県</title>
       <link>https://www.pref.akita.lg.jp/pages/archive/49322</link>
       <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>
