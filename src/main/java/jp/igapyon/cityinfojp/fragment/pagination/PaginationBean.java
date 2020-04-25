@@ -29,6 +29,14 @@ public class PaginationBean {
 
     private List<PaginationItemBean> itemList = new ArrayList<>();
 
+    public boolean hasPrev() {
+        return prevItem != null;
+    }
+
+    public boolean hasNext() {
+        return nextItem != null;
+    }
+
     public PaginationItemBean getPrevItem() {
         return prevItem;
     }

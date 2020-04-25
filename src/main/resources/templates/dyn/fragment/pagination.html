@@ -10,8 +10,8 @@
     <div th:fragment="pagination-fragment" th:object="${pagination}" th:remove="tag">
         <nav aria-label="Pref page navigation">
             <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
+                <li th:class="${'page-item' + (pagination.hasPrev() ? '' : ' disabled')}">
+                    <a class="page-link" th:href="${pagination.hasPrev() ? pagination.prevItem.url : '#'}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
@@ -24,8 +24,8 @@
                 <li class="page-item disabled"><a class="page-link" href="#">宮城</a></li>
                 <li class="page-item"><a class="page-link" href="#">秋田</a></li>
                 <li class="page-item"><a class="page-link" href="#">山形</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
+                <li th:class="${'page-item' + (pagination.hasNext() ? '' : ' disabled')}">
+                    <a class="page-link" th:href="${pagination.hasNext() ? pagination.nextItem.url : '#'}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
