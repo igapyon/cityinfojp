@@ -46,6 +46,46 @@ public class ThPaginationUtil {
             }
         }
 
+        int currentIndex = -1;
+        for (int index = 0; index < pagination.getItemList().size(); index++) {
+            if (pagination.getItemList().get(index).isCurrent()) {
+                currentIndex = index;
+                break;
+            }
+        }
+
+        int fromIndex = -1;
+        if (currentIndex < 2) {
+            fromIndex = 0;
+        } else {
+            if (currentIndex > pagination.getItemList().size() - 3) {
+                fromIndex = pagination.getItemList().size();
+            } else {
+                fromIndex = currentIndex - 2;
+            }
+        }
+
+        int toIndex = -1;
+        if (currentIndex > pagination.getItemList().size() - 3) {
+            toIndex = pagination.getItemList().size();
+        } else {
+            if (currentIndex < 2) {
+                toIndex = 5 - currentIndex;
+            } else {
+                toIndex = currentIndex + 2;
+            }
+        }
+
+        // 余分な部分を除去。
+        for (int pointer = pagination.getItemList().size() - 1; pointer > toIndex; pointer--) {
+            pagination.getItemList().remove(pointer);
+        }
+
+        // 余分な部分を除去。
+        for (int counter = fromIndex; counter > 0; counter--) {
+            pagination.getItemList().remove(0);
+        }
+
         return pagination;
     }
 }
