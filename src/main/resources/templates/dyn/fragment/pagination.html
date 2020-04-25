@@ -9,7 +9,7 @@
 <body>
     <div th:fragment="pagination-fragment" th:object="${pagination}" th:remove="tag">
         <nav aria-label="Pref page navigation">
-            <ul class="pagination justify-content-center">
+            <ul class="pagination pagination-sm justify-content-center">
                 <li th:class="${'page-item' + (pagination.hasPrev() ? '' : ' disabled')}">
                     <a class="page-link" th:href="${pagination.hasPrev() ? pagination.prevItem.url : '#'}"
                         aria-label="Previous">
