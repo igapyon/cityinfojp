@@ -24,25 +24,25 @@ import java.util.List;
  * @author Toshiki Iga
  */
 public class PaginationBean {
-    private boolean prevExists = false;
-    private boolean nextExists = false;
+    private PaginationItemBean prevItem;
+    private PaginationItemBean nextItem;
 
     private List<PaginationItemBean> itemList = new ArrayList<>();
 
-    public boolean isPrevExists() {
-        return prevExists;
+    public PaginationItemBean getPrevItem() {
+        return prevItem;
     }
 
-    public void setPrevExists(boolean prevExists) {
-        this.prevExists = prevExists;
+    public void setPrevItem(PaginationItemBean prevItem) {
+        this.prevItem = prevItem;
     }
 
-    public boolean isNextExists() {
-        return nextExists;
+    public PaginationItemBean getNextItem() {
+        return nextItem;
     }
 
-    public void setNextExists(boolean nextExists) {
-        this.nextExists = nextExists;
+    public void setNextItem(PaginationItemBean nextItem) {
+        this.nextItem = nextItem;
     }
 
     public List<PaginationItemBean> getItemList() {
