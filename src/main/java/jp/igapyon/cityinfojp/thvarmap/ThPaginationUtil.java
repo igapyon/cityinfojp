@@ -107,6 +107,18 @@ public class ThPaginationUtil {
             pagination.getItemList().remove(0);
         }
 
+        // 文字列を短く
+        for (PaginationItemBean item : pagination.getItemList()) {
+            if (item.getTitle().endsWith("国") //
+                    || item.getTitle().endsWith("都") //
+                    || item.getTitle().endsWith("道") //
+                    || item.getTitle().endsWith("府") //
+                    || item.getTitle().endsWith("県") //
+            ) {
+                item.setTitle(item.getTitle().substring(0, item.getTitle().length() - 1));
+            }
+        }
+
         return pagination;
     }
 }
