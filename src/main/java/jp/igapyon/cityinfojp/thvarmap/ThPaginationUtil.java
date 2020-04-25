@@ -97,12 +97,12 @@ public class ThPaginationUtil {
             }
         }
 
-        // 余分な部分を除去。
+        // 余分な部分を除去。先に後ろの方から除去。
         for (int pointer = pagination.getItemList().size() - 1; pointer > toIndex; pointer--) {
             pagination.getItemList().remove(pointer);
         }
 
-        // 余分な部分を除去。
+        // 余分な部分を除去。後に最初の方から除去。
         for (int counter = fromIndex; counter > 0; counter--) {
             pagination.getItemList().remove(0);
         }
