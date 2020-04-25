@@ -15,8 +15,8 @@
  */
 package jp.igapyon.cityinfojp.thvarmap;
 
-import jp.igapyon.cityinfojp.fragment.navbar.pagination.PaginationBean;
-import jp.igapyon.cityinfojp.fragment.navbar.pagination.PaginationItemBean;
+import jp.igapyon.cityinfojp.fragment.pagination.PaginationBean;
+import jp.igapyon.cityinfojp.fragment.pagination.PaginationItemBean;
 
 /**
  * このサイト用の Pagination を構築するためのユーティリィ。
