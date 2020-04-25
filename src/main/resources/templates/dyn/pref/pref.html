@@ -28,6 +28,26 @@
         <div th:insert="dyn/fragment/jumbotron :: jumbotron-fragment" th:remove="tag" />
 
         <div class="container">
+            <nav aria-label="Pref page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">青森</a></li>
+                    <li class="page-item"><a class="page-link" href="#">岩手</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">宮城</a></li>
+                    <li class="page-item"><a class="page-link" href="#">秋田</a></li>
+                    <li class="page-item"><a class="page-link" href="#">山形</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
             <div class="row mb-2">
                 <div class="col-md-6">
                     <div class="card">
