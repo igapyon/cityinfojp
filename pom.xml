@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>jp.igapyon</groupId>
 	<artifactId>cityinfojp</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<name>cityinfojp</name>
 	<description>Web app for city info based on Spring Boot/Thymeleaf.</description>
 
