@@ -8,13 +8,16 @@
 
 <body>
     <div th:fragment="jumbotron-fragment" th:object="${jumbotron}" th:remove="tag">
-        <div class="jumbotron">
+        <div class="jumbotron" style="padding:5rem 2rem 1rem 2rem;">
             <div class="container">
                 <h1 class="display-3"><span th:text="*{title}" th:remove="tag" /></h1>
-                <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。
-                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。
+                <p>自治体など組織による都市情報ファクトを淡々と集積
+                    <a href="/about.html">
+                        <span style="font-size: 1.5em">
+                            <div th:insert="dyn/fragment/bootstrap-svg-icon :: question-circle" th:remove="tag" />
+                        </span>
+                    </a>
                 </p>
-                <p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more &raquo;</a></p>
             </div>
         </div>
     </div>

@@ -19,18 +19,26 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonAreaEntry;
+import jp.igapyon.cityinfojp.json.JsonAreaEntryUtil;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
 import jp.igapyon.sitemapgenerator4j.SitemapGenerator4j;
 import jp.igapyon.sitemapgenerator4j.SitemapInfo;
 import jp.igapyon.sitemapgenerator4j.SitemapInfoUrl;
 
 /**
+ * このサイトの sitemap.xml を生成します。
  * 
- * @see https://www.sitemaps.org/protocol.html
  * @author Toshiki Iga
  */
 public class MySitemapGenerator {
+    /**
+     * このサイトの sitemap.xml 生成のエントリポイント。
+     * 
+     * @param args アプリ起動引数。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     public static void main(String[] args) throws IOException {
         SitemapGenerator4j gen = new SitemapGenerator4j();
         SitemapInfo entry = new SitemapInfo();
@@ -56,7 +64,7 @@ public class MySitemapGenerator {
         }
 
         // pref
-        for (PrefEntry prefEntry : PrefEntryUtil.readEntryListFromClasspath()) {
+        for (JsonPrefEntry prefEntry : JsonPrefEntryUtil.readEntryListFromClasspath()) {
             SitemapInfoUrl url = new SitemapInfoUrl();
             entry.getUrlList().add(url);
             url.setLoc("https://cityinfojp.herokuapp.com/pref/" + prefEntry.getNameen().toLowerCase() + ".html");
@@ -66,8 +74,20 @@ public class MySitemapGenerator {
         }
 
         // area
-        // TODO TBD FIXME
-        // TODO 先に area を JSON化
+        for (JsonAreaEntry areaEntry : JsonAreaEntryUtil.readEntryListFromClasspath()) {
+            if ("japan".equalsIgnoreCase(areaEntry.getNameen()) //
+                    || "hokkaido".equalsIgnoreCase(areaEntry.getNameen())) {
+                // 日本と北海道はスキップします。
+                continue;
+            }
+
+            SitemapInfoUrl url = new SitemapInfoUrl();
+            entry.getUrlList().add(url);
+            url.setLoc("https://cityinfojp.herokuapp.com/pref/" + areaEntry.getNameen().toLowerCase() + ".html");
+            // 更新日付は出力しない
+            url.setChangefreq(SitemapInfoUrl.Changefreq.Weekly);
+            url.setPriority("0.5");
+        }
 
         // contributor
         {
@@ -109,6 +129,7 @@ public class MySitemapGenerator {
             url.setPriority("0.2");
         }
 
+        // ソースディレクトリ内の sitemap.xml ファイルを作成/更新。
         gen.write(entry, new File("./src/main/resources/static/sitemap.xml"));
     }
 }

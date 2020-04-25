@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,9 +35,10 @@
             <div class="row">
               <div class="col-md-10 mb-3">
                 <button class="btn btn-primary btn-lg" type="submit" name="download">JSON Download</button>
-                <p><small>生成したファイルを <a
-                      href="https://github.com/igapyon/cityinfojp/tree/devel/src/main/resources/static/input/2020">github</a>
-                    に Pull request することでデータ投入を実現</small></p>
+                <span data-toggle="popover" data-placement="top"
+                  data-content="ここで生成したファイルを GitHub に Pull request することでデータ投入を実現できます。">
+                  <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                </span>
               </div>
             </div>
             <div class="row">
@@ -103,10 +104,11 @@
               <label for="stete">ステータス</label>
               <select class="custom-select d-block w-100" id="state" required th:field="*{state}">
                 <option value="">Choose...</option>
-                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
-                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
-                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
                 <option th:value="宣言" th:text="宣言" th:selected="${dataentry.state == '宣言'}" />
+                <option th:value="指示" th:text="指示" th:selected="${dataentry.state == '指示'}" />
+                <option th:value="要請" th:text="要請" th:selected="${dataentry.state == '要請'}" />
+                <option th:value="休校" th:text="休校" th:selected="${dataentry.state == '休校'}" />
+                <option th:value="閉鎖" th:text="閉鎖" th:selected="${dataentry.state == '閉鎖'}" />
               </select>
               <div class="invalid-feedback">
                 Please select a valid state.
@@ -169,7 +171,9 @@
 
   <div class="container">
     <div class="row">
-      <p><a class="btn btn-secondary" href="/policy.html" role="button">データポリシー &raquo;</a></p>
+      <div class="col-md-8 order-md-1">
+        <p><a class="btn btn-secondary" href="/policy.html" role="button">データポリシー &raquo;</a></p>
+      </div>
     </div>
   </div>
 
@@ -195,10 +199,17 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ja.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
     rel="stylesheet" type="text/css">
+
   <script type="text/javascript">
     $('.datepicker').datepicker({
       format: 'yyyy-mm-dd'
     });
+  </script>
+
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
   </script>
 </body>
 

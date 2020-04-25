@@ -21,13 +21,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import jp.igapyon.cityinfojp.dyn.thymvarmap.ThymVarMapIndexBuilder;
+import jp.igapyon.cityinfojp.thvarmap.ThVarMapIndexBuilder;
 
 @Controller
 public class DynIndexController {
     @GetMapping({ "/dyn", "/dyn/", "/dyn/index.html" })
     public String index(Model model) throws IOException {
-        new ThymVarMapIndexBuilder().applyModelAttr(model);
+        new ThVarMapIndexBuilder().applyModelAttr(model);
 
         return "dyn/index";
     }

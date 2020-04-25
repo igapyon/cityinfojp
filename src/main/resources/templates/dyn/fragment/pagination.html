@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment for Pagination</title>
+</head>
+
+<body>
+    <div th:fragment="pagination-fragment" th:object="${pagination}" th:remove="tag">
+        <nav aria-label="Pref page navigation">
+            <ul class="pagination justify-content-center">
+                <li th:class="${'page-item' + (pagination.hasPrev() ? '' : ' disabled')}">
+                    <a class="page-link" th:href="${pagination.hasPrev() ? pagination.prevItem.url : '#'}"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <div th:each="item : *{itemList}" th:remove="tag">
+                    <li th:class="${'page-item' + (item.current ? ' disabled' : '')}"><a class="page-link"
+                            th:href="${item.url}"><span th:text="${item.title}" th:remove="tag" /></a></li>
+                </div>
+                <li th:class="${'page-item' + (pagination.hasNext() ? '' : ' disabled')}">
+                    <a class="page-link" th:href="${pagination.hasNext() ? pagination.nextItem.url : '#'}"
+                        aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

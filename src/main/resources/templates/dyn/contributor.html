@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,8 +58,10 @@
               <li>github が作業場所</li>
               <li>Pull request で投入</li>
             </ul>
-            <a class="btn btn-lg btn-block btn-primary" href="https://github.com/igapyon/cityinfojp"
-              role="button">作業場所</a>
+            <a class="btn btn-lg btn-block btn-secondary" href="https://github.com/igapyon/cityinfojp" role="button"
+              target="_blank">作業場所
+              <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right" th:remove="tag" />
+            </a>
           </div>
         </div>
         <div class="card-deck mb-3 text-center">
@@ -75,8 +77,10 @@
                 <li>github が作業場所</li>
                 <li>Issues で意見交流</li>
               </ul>
-              <a class="btn btn-lg btn-block btn-primary" href="https://github.com/igapyon/cityinfojp/issues"
-                role="button">作業場所</a>
+              <a class="btn btn-lg btn-block btn-secondary" href="https://github.com/igapyon/cityinfojp/issues"
+                role="button" target="_blank">作業場所
+                <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right" th:remove="tag" />
+              </a>
             </div>
           </div>
         </div>
@@ -90,12 +94,14 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>First Contributor</th>
+                <th>Initial Contributor</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Toshiki Iga</td>
+                <td><a href="https://github.com/igapyon" target="_blank">Toshiki Iga
+                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right" th:remove="tag" />
+                  </a></td>
               </tr>
             </tbody>
           </table>
@@ -110,7 +116,9 @@
             </thead>
             <tbody>
               <tr>
-                <td>TBD</td>
+                <td><a href="https://github.com/ymoto" target="_blank">ymoto
+                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right" th:remove="tag" />
+                  </a> (first contributor)</td>
               </tr>
             </tbody>
           </table>
@@ -125,7 +133,9 @@
             </thead>
             <tbody>
               <tr>
-                <td>TBD</td>
+                <td><a href="https://github.com/itakua" target="_blank">itakua
+                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right" th:remove="tag" />
+                  </a> (first contributor)</td>
               </tr>
             </tbody>
           </table>

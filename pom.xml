@@ -11,12 +11,13 @@
 	</parent>
 	<groupId>jp.igapyon</groupId>
 	<artifactId>cityinfojp</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<name>cityinfojp</name>
 	<description>Web app for city info based on Spring Boot/Thymeleaf.</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -53,7 +54,44 @@
 			<artifactId>sitemapgenerator4j</artifactId>
 			<version>0.5.0</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.rometools/rome -->
+		<dependency>
+			<groupId>com.rometools</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.12.2</version>
+		</dependency>
 	</dependencies>
+
+	<!-- ref: http://maven.apache.org/guides/mini/guide-central-repository-upload.html -->
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<!-- scm placeholder -->
+
+	<!-- ref: https://maven.apache.org/pom.html#Developers -->
+	<developers>
+		<developer>
+			<id>igapyon</id>
+			<name>Toshiki Iga</name>
+			<email>igapyon@gmail.com</email>
+			<url>http://www.igapyon.jp/</url>
+			<roles>
+				<role>lead</role>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-9</timezone>
+			<properties>
+				<picUrl>http://www.igapyon.jp/igapyon/diary/images/iga200306.jpg</picUrl>
+			</properties>
+		</developer>
+	</developers>
 
 	<build>
 		<plugins>

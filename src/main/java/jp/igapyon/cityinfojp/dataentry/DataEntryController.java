@@ -37,20 +37,48 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-import jp.igapyon.cityinfojp.dyn.fragment.JumbotronFragmentBean;
-import jp.igapyon.cityinfojp.dyn.fragment.navbar.NavbarBean;
-import jp.igapyon.cityinfojp.dyn.thymvarmap.NavbarUtil;
-import jp.igapyon.cityinfojp.input.entry.CityInfoEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntry;
-import jp.igapyon.cityinfojp.input.entry.PrefEntryUtil;
+import jp.igapyon.cityinfojp.fragment.jumbotron.JumbotronFragmentBean;
+import jp.igapyon.cityinfojp.fragment.navbar.NavbarBean;
+import jp.igapyon.cityinfojp.json.JsonCityInfoEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntry;
+import jp.igapyon.cityinfojp.json.JsonPrefEntryUtil;
+import jp.igapyon.cityinfojp.thvarmap.ThNavbarUtil;
 
+/**
+ * データエントリ画面(/dataentry.html)と動的処理(/dataentry)のコントローラ。
+ * 
+ * @author Toshiki Iga
+ */
 @Controller
 public class DataEntryController {
+    /**
+     * データエントリ /dataentry.html への GET リクエストを処理します。
+     * 
+     * こちらは通常系の入り口としていったん入る場所です。htmlファイルのフリをします。
+     * 
+     * @param model モデル。
+     * @param form フォーム。
+     * @param result バインド結果。
+     * @return 次画面名。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = { "/dataentry.html" }, method = { RequestMethod.GET })
     public String dataentryhtml(Model model, DataEntryForm form, BindingResult result) throws IOException {
+        // しなし内容は 動的処理 /dataentry を GET したのと同じ挙動とします。
         return dataentry(model, form, result);
     }
 
+    /**
+     * データエントリ /dataentry への GET/POST リクエストを処理します。
+     * 
+     * こちらは動的処理の入り口としています。ここに直接入ってくるのは、html画面で パラメータ「update」で GET されてきたケースです。(POSTも受付けます)
+     * 
+     * @param model モデル。
+     * @param form フォーム。
+     * @param result バインド結果。
+     * @return 次画面名。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = { "/dataentry" }, params = { "update" }, method = { RequestMethod.GET, RequestMethod.POST })
     public String dataentry(Model model, DataEntryForm form, BindingResult result) throws IOException {
 
@@ -61,15 +89,15 @@ public class DataEntryController {
         model.addAttribute("dataentry", form);
 
         try {
-            List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
+            List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
             model.addAttribute("prefList", prefList);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
-            CityInfoEntry entry = form2Entry(form);
-            List<CityInfoEntry> entryList = new ArrayList<>();
+            JsonCityInfoEntry entry = form2Entry(form);
+            List<JsonCityInfoEntry> entryList = new ArrayList<>();
             entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -80,8 +108,14 @@ public class DataEntryController {
         return "dataentry";
     }
 
-    static CityInfoEntry form2Entry(DataEntryForm form) {
-        CityInfoEntry entry = new CityInfoEntry();
+    /**
+     * Form の内容を JSON Bean 形式に変換します。
+     * 
+     * @param form フォーム Bean。
+     * @return JSON Bean 形式。
+     */
+    static JsonCityInfoEntry form2Entry(DataEntryForm form) {
+        JsonCityInfoEntry entry = new JsonCityInfoEntry();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         entry.setEntryDate(dtf.format(LocalDateTime.now()));
@@ -101,13 +135,24 @@ public class DataEntryController {
         return entry;
     }
 
+    /**
+     * データエントリの結果を JSON 形式でダウンロードするリクエストを処理します。
+     *
+     * こちらは動的処理の入り口でダウンロード処理です。バイナリダウンロードを戻します。
+     *
+     * @param model モデル。
+     * @param form フォーム。
+     * @param response HTTP レスポンス。
+     * @return 必ず null を戻します。
+     * @throws IOException 入出力例外が発生した場合。
+     */
     @RequestMapping(value = "/dataentry", params = "download", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
     public String dataentryDownload(Model model, DataEntryForm form, HttpServletResponse response) throws IOException {
         byte[] resultData = new byte[0];
 
         if (form.getPref() != null && form.getPref().trim().length() > 0) {
-            CityInfoEntry entry = form2Entry(form);
-            List<CityInfoEntry> entryList = new ArrayList<>();
+            JsonCityInfoEntry entry = form2Entry(form);
+            List<JsonCityInfoEntry> entryList = new ArrayList<>();
             entryList.add(entry);
             ObjectMapper mapper = new ObjectMapper();
             mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -139,8 +184,8 @@ public class DataEntryController {
         }
 
         String prefString = "99-dummy";
-        List<PrefEntry> prefList = PrefEntryUtil.readEntryListFromClasspath();
-        for (PrefEntry pref : prefList) {
+        List<JsonPrefEntry> prefList = JsonPrefEntryUtil.readEntryListFromClasspath();
+        for (JsonPrefEntry pref : prefList) {
             if (pref.getName().equals(form.getPref())) {
                 prefString = pref.getCode() + "-" + pref.getNameen().toLowerCase();
                 break;
@@ -162,14 +207,24 @@ public class DataEntryController {
         return null;
     }
 
+    /**
+     * 画面描画用の Jumbotron フラグメント Bean オブジェクトを生成します。
+     * 
+     * @return Jumbotron を表示するための情報。
+     */
     public static JumbotronFragmentBean getJumbotronBean() {
         JumbotronFragmentBean jumbotron = new JumbotronFragmentBean();
         jumbotron.setTitle("Data Entry");
         return jumbotron;
     }
 
+    /**
+     * 画面描画用の Navbar Bean オブジェクトを生成します。
+     * 
+     * @return Navbar Bean の情報。
+     */
     public static NavbarBean getNavbarBean() {
-        NavbarBean navbar = NavbarUtil.buildNavbar(null);
+        NavbarBean navbar = ThNavbarUtil.buildNavbar(null);
         navbar.getItemList().get(3).setCurrent(true);
         return navbar;
     }

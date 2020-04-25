@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,35 +28,64 @@
         <div th:insert="dyn/fragment/jumbotron :: jumbotron-fragment" th:remove="tag" />
 
         <div class="container">
-            <div class="my-3 p-3 bg-white rounded shadow-sm">
-                <div class="card">
-                    <div data-toggle="tooltip" data-placement="top" <div class="card-header"
-                        style="padding:3px 20px 3px 20px;">いますぐ検索
-                        <span data-toggle="popover" data-placement="top"
-                            data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
-                            <svg class="bi bi-exclamation-circle-fill" width="1em" height="1em" viewBox="0 0 16 16"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M16 8A8 8 0 110 8a8 8 0 0116 0zM8 4a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 4zm.002 6a1 1 0 100 2 1 1 0 000-2z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="card-body" style="padding:6px 20px 6px 20px;">
-                        <div th:each="dispSearchButton : ${dispSearchButtonList}" th:remove="tag">
-                            <a th:class="${'btn btn-sm btn-outline-' + (dispSearchButton.primary ? 'primary' : 'secondary')}"
-                                th:style="${(dispSearchButton.primary ? '' : 'padding:2px 4px 2px 4px;')}"
-                                th:href="${dispSearchButton.searchUrl}" target="_blank">[[${dispSearchButton.text}]]</a>
+            <div th:insert="dyn/fragment/pagination :: pagination-fragment" th:remove="tag" />
+
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header" style="padding:3px 20px 3px 20px;">公式サイト
+                            <span style="font-size: 1.5em">
+                                <span data-toggle="popover" data-placement="top"
+                                    data-content="地方自治体など組織による公式Webサイトにジャンプできます。">
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="card-body" style="padding:6px 20px 6px 20px;">
+                            <div th:each="dispSearchButton : ${dispOfficialButtonList}" th:remove="tag">
+                                <a th:class="${'btn btn-sm btn-outline-' + (dispSearchButton.primary ? 'primary' : 'secondary')}"
+                                    th:style="${(dispSearchButton.primary ? '' : 'padding:2px 4px 2px 4px;')}"
+                                    th:href="${dispSearchButton.searchUrl}" target="_blank">[[${dispSearchButton.text}]]
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: bookmark-check"
+                                        th:remove="tag" />
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right"
+                                        th:remove="tag" />
+                                </a>
+                            </div>
+                        </div>
+                    </div> <!-- card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header" style="padding:3px 20px 3px 20px;">いますぐ検索
+                            <span data-toggle="popover" data-placement="top"
+                                data-content="Google を利用して所定の文字列の最新情報を検索します。パーソナライズOFFで最近追加または更新されたと思われるもののみ結果に表示します。なお、複数の公式組織 Web サイトが対象の場合は、同じ文字列で複数のボタン(Webサイト分)が生成されます。">
+                                <span style="font-size: 1.5em">
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: info-circle" th:remove="tag" />
+                                </span>
+                            </span>
+                        </div>
+                        <div class="card-body" style="padding:6px 20px 6px 20px;">
+                            <div th:each="dispSearchButton : ${dispSearchButtonList}" th:remove="tag">
+                                <a th:class="${'btn btn-sm btn-outline-' + (dispSearchButton.primary ? 'primary' : 'secondary')}"
+                                    th:style="${(dispSearchButton.primary ? '' : 'padding:2px 4px 2px 4px;')}"
+                                    th:href="${dispSearchButton.searchUrl}" target="_blank">[[${dispSearchButton.text}]]
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: search" th:remove="tag" />
+                                    <div th:insert="dyn/fragment/bootstrap-svg-icon :: box-arrow-up-right"
+                                        th:remove="tag" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <hr />
-
-                <h6 class="border-bottom border-gray pb-2 mb-0">最近登録された情報</h6>
-
-                <div th:insert="dyn/fragment/dispentrylist :: dispentrylist-fragment" th:remove="tag" />
             </div>
+
+            <hr />
+
+            <h6 class="border-bottom border-gray pb-2 mb-0">登録された情報</h6>
+
+            <div th:insert="dyn/fragment/dispentrylist :: dispentrylist-fragment" th:remove="tag" />
         </div>
     </main>
 

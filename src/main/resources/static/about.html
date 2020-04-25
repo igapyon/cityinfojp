@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,7 +24,7 @@
 <body>
     
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">cityinfojp</a>
+            <a class="navbar-brand" href="/index.html">cityinfojp</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
                 aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <div>
+                    
                         <li
                             class="nav-item">
                             
@@ -42,8 +42,8 @@
 
                             
                         </li>
-                    </div>
-                    <div>
+                    
+                    
                         <li
                             class="nav-item dropdown">
                             
@@ -83,8 +83,8 @@
                                 </div>
                             
                         </li>
-                    </div>
-                    <div>
+                    
+                    
                         <li
                             class="nav-item">
                             
@@ -94,8 +94,8 @@
 
                             
                         </li>
-                    </div>
-                    <div>
+                    
+                    
                         <li
                             class="nav-item">
                             
@@ -105,19 +105,33 @@
 
                             
                         </li>
-                    </div>
-                    <div>
+                    
+                    
                         <li
-                            class="nav-item active">
-                            
-                                <a class="nav-link" href="/about.html">
-                                    About<span class="sr-only">
-                                        (current)</span></a>
+                            class="nav-item active dropdown">
                             
 
                             
+                                <a class="nav-link dropdown-toggle active"
+                                    href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">About</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                    <div>
+                                        <a class="dropdown-item" href="/about.html">About</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/policy.html">Policy</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/arch.html">Architecture</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item" href="/faq.html">FAQ</a>
+                                    </div>
+                                </div>
+                            
                         </li>
-                    </div>
+                    
                 </ul>
             </div>
         </nav>
@@ -125,13 +139,24 @@
 
     <main role="main">
         
-        <div class="jumbotron">
+        <div class="jumbotron" style="padding:5rem 2rem 1rem 2rem;">
             <div class="container">
                 <h1 class="display-3">About</h1>
-                <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。
-                    当面は日本の行政(県・市・町・村)からの外出自粛要請や学校の休校情報などの情報を収集して表示します。
+                <p>自治体など組織による都市情報ファクトを淡々と集積
+                    <a href="/about.html">
+                        <span style="font-size: 1.5em">
+                            
+        <svg class="bi bi-question-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+                clip-rule="evenodd" />
+            <path
+                d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+        </svg>
+    
+                        </span>
+                    </a>
                 </p>
-                <p><a class="btn btn-primary btn-lg" href="/about.html" role="button">Learn more &raquo;</a></p>
             </div>
         </div>
     
@@ -140,7 +165,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h2>cityinfojp の目的</h2>
-                    <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積する Webサイトです。<br />
+                    <p>cityinfojp は自治体などの組織による都市情報のファクトを淡々と集積して表示する Webサイトです。<br />
                         ファクトにのみ着眼し解説や論評といった情報は扱いません。
                         ファクトは地方自治体など一次情報源に近いレベルを優先して収集します。
                     </p>
@@ -155,25 +180,61 @@
                     <p>cityinfojp はオープンソースです。実現するソースコードのすべてが github 上で公開されます。
                         オープンソース (OSS) ライセンスの理解と同意により、開発への参加・再利用・改変などが可能です。
                     </p>
-                    <p><a class="btn btn-secondary" href="https://github.com/igapyon/cityinfojp/" role="button">github
-                            を開く &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="/contributor.html" role="button">Contributor</a></p>
+                    <p><a class="btn btn-secondary" href="https://github.com/igapyon/cityinfojp/" role="button"
+                            target="_blank">github を開く
+                            
+        <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                clip-rule="evenodd" />
+        </svg>
+    
+                        </a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>データの集積</h2>
                     <p>自治体などの組織による都市情報のファクトを淡々と集積します。</p>
-                    <p><a class="btn btn-primary" href="/policy.html" role="button">データポリシー &raquo;</a></p>
-                    <p><a class="btn btn-secondary" href="/dataentry.html" role="button">データ生成 &raquo;</a></p>
-                    <p><a class="btn btn-secondary" target="_blank" href="https://github.com/igapyon/cityinfojp/blob/devel/src/main/resources/static/input/merged/merged-cityinfoentry-all.json" role="button">生成後の全データ &raquo;</a></p>
+                    <p><a class="btn btn-primary" href="/policy.html" role="button">データポリシー</a></p>
+                    <p><a class="btn btn-secondary" href="/dataentry.html" role="button">データ生成</a></p>
+                    <p><a class="btn btn-secondary" target="_blank"
+                            href="https://github.com/igapyon/cityinfojp/blob/devel/src/main/resources/static/input/merged/merged-cityinfoentry-all.json"
+                            role="button">生成後の全データ
+                            
+        <svg class="bi bi-cloud-download" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M4.887 5.2l-.964-.165A2.5 2.5 0 103.5 10H6v1H3.5a3.5 3.5 0 11.59-6.95 5.002 5.002 0 119.804 1.98A2.501 2.501 0 0113.5 11H10v-1h3.5a1.5 1.5 0 00.237-2.981L12.7 6.854l.216-1.028a4 4 0 10-7.843-1.587l-.185.96z" />
+            <path fill-rule="evenodd"
+                d="M5 12.5a.5.5 0 01.707 0L8 14.793l2.293-2.293a.5.5 0 11.707.707l-2.646 2.646a.5.5 0 01-.708 0L5 13.207a.5.5 0 010-.707z"
+                clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 6z" clip-rule="evenodd" />
+        </svg>
+    
+                            
+        <svg class="bi bi-box-arrow-up-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+                clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+                clip-rule="evenodd" />
+        </svg>
+    
+                        </a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>FAQ</h2>
                     <p>よくある質問、想定される質問を FAQ にまとめています。</p>
-                    <p><a class="btn btn-secondary" href="/faq.html" role="button">FAQ &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="/faq.html" role="button">FAQ</a></p>
                 </div>
                 <div class="col-md-4">
                     <h2>開発言語など</h2>
                     <p>cityinfojp は Java / Spring Boot などを用いて開発されています。</p>
-                    <p><a class="btn btn-secondary" href="/arch.html" role="button">アーキテクチャ &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="/arch.html" role="button">アーキテクチャ</a></p>
                 </div>
             </div>
             <hr>
@@ -181,7 +242,7 @@
     </main>
 
     <footer class="container">
-        <p>&copy; cityinfojp 2020 : 2020-04-18 16:10</p>
+        <p>&copy; cityinfojp 2020 : 2020-04-25 12:17</p>
     </footer>
 
     <!-- Bootstrap JavaScript -->
