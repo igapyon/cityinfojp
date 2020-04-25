@@ -82,6 +82,8 @@ public class ThVarMapPrefBuilder extends AbstractThVarMapBuilder {
 
             result.put("navbar", getNavbarBean(prefNameen));
 
+            result.put("pagination", ThPaginationUtil.buildPagination());
+
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
             result.put("processDateTime", dtf.format(LocalDateTime.now()));
         } catch (IOException ex) {
