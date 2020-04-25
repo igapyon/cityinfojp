@@ -17,7 +17,7 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <div th:each="item : *{itemList}">
+                    <div th:each="item : *{itemList}" th:remove="tag">
                         <li
                             th:class="${'nav-item' + (item.current ? ' active' : '') + (item.dropdown ? ' dropdown' : '')}">
                             <span th:if="${item.dropdown == false}" th:remove="tag">
