@@ -59,7 +59,7 @@ public class ThPaginationUtil {
             fromIndex = 0;
         } else {
             if (currentIndex > pagination.getItemList().size() - 3) {
-                fromIndex = pagination.getItemList().size();
+                fromIndex = pagination.getItemList().size() - 5;
             } else {
                 fromIndex = currentIndex - 2;
             }
@@ -70,7 +70,7 @@ public class ThPaginationUtil {
             toIndex = pagination.getItemList().size();
         } else {
             if (currentIndex < 2) {
-                toIndex = 5 - currentIndex;
+                toIndex = 4;
             } else {
                 toIndex = currentIndex + 2;
             }
