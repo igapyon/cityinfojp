@@ -5,6 +5,38 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[要請] 茨城県</title>
+      <link>https://www.pref.ibaraki.jp/kikaku/seisaku/seisaku/200424kitakantokmessage.html</link>
+      <description>(2020-04-25起票) 外出自粛要請  2020-05-06まで : 北関東三県共同・緊急メッセージ</description>
+      <pubDate>Fri, 24 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.ibaraki.jp/kikaku/seisaku/seisaku/200424kitakantokmessage.html</guid>
+      <dc:date>2020-04-24T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 栃木県</title>
+      <link>http://www.pref.tochigi.lg.jp/e04/20200424chijimessage.html</link>
+      <description>(2020-04-25起票) 外出自粛要請  2020-05-06まで : 北関東三県共同・緊急メッセージ</description>
+      <pubDate>Fri, 24 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>http://www.pref.tochigi.lg.jp/e04/20200424chijimessage.html</guid>
+      <dc:date>2020-04-24T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 群馬県</title>
+      <link>https://www.pref.gunma.jp/houdou/cl02_00001.html</link>
+      <description>(2020-04-25起票) 外出自粛要請  2020-05-06まで : 北関東三県共同・緊急メッセージ</description>
+      <pubDate>Fri, 24 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.gunma.jp/houdou/cl02_00001.html</guid>
+      <dc:date>2020-04-24T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 長崎県</title>
+      <link>https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/kansensho/corona_onegai/</link>
+      <description>(2020-04-25起票) 外出自粛要請  : 緊急事態宣言</description>
+      <pubDate>Fri, 24 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/kansensho/corona_onegai/</guid>
+      <dc:date>2020-04-24T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[宣言] 青森県</title>
       <link>https://www.pref.aomori.lg.jp/tohoku_nigata_kyodo.pdf</link>
       <description>(2020-04-24起票) 東北・新潟緊急共同宣言  2020-05-06まで : 感染拡大防止</description>

@@ -263,6 +263,17 @@
   "Reason" : "県の緊急事態措置",
   "URL" : [ "https://www.pref.ibaraki.jp/1saigai/2019-ncov/kinkyu.html" ]
 }, {
+  "EntryDate" : "2020-04-25",
+  "Pref" : "茨城県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "北関東三県共同・緊急メッセージ",
+  "URL" : [ "https://www.pref.ibaraki.jp/kikaku/seisaku/seisaku/200424kitakantokmessage.html" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "栃木県",
   "City" : "宇都宮市",
@@ -284,6 +295,17 @@
   "TargetRange" : "",
   "Reason" : "感染拡大防止",
   "URL" : [ "http://www.pref.tochigi.lg.jp/e04/kinkyuzitaisochi0417.html" ]
+}, {
+  "EntryDate" : "2020-04-25",
+  "Pref" : "栃木県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "北関東三県共同・緊急メッセージ",
+  "URL" : [ "http://www.pref.tochigi.lg.jp/e04/20200424chijimessage.html" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "群馬県",
@@ -327,6 +349,17 @@
   "Target" : "外出自粛要請",
   "TargetRange" : "",
   "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.gunma.jp/houdou/cl02_00001.html" ]
+}, {
+  "EntryDate" : "2020-04-25",
+  "Pref" : "群馬県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "北関東三県共同・緊急メッセージ",
   "URL" : [ "https://www.pref.gunma.jp/houdou/cl02_00001.html" ]
 }, {
   "EntryDate" : "2020-04-18",
@@ -977,6 +1010,17 @@
   "TargetRange" : "県立中学校・高等学校・特別支援学校",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.nagasaki.jp/bunrui/kanko-kyoiku-bunka/kyoikukikannado/http-www-pref-nagasaki-jp-bunrui-kanko-kyoiku-bunka-kyoikukikannado/429139.html" ]
+}, {
+  "EntryDate" : "2020-04-25",
+  "Pref" : "長崎県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "要請",
+  "Target" : "外出自粛要請",
+  "TargetRange" : "",
+  "Reason" : "緊急事態宣言",
+  "URL" : [ "https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/kansensho/corona_onegai/" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "熊本県",
