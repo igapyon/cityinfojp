@@ -15,11 +15,15 @@ cityinfojp について詳しくは About ページを参照ください。
 
 - https://cityinfojp.herokuapp.com/
 
-## ソースコード
+## ソース
 
-ソースコード一式は GitHub 上に公開しています。
+ソースコード一式は GitHub 上に公開しています。Apache ライセンスで公開します。
 
 - https://github.com/igapyon/cityinfojp
+
+## データ
+
+データは、クリエイティブコモンズ 表示 4.0 国際 (CC BY 4.0) で収集・公開します。
 
 # リリース
 
