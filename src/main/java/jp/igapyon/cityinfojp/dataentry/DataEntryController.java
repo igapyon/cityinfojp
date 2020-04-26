@@ -163,7 +163,7 @@ public class DataEntryController {
         // 指示 
         // instruct
         //
-        // 宣言
+        // 宣言（指定）
         // declare
         //
         // 要請
@@ -175,11 +175,15 @@ public class DataEntryController {
         String state = "other";
         if ("指示".equals(form.getState())) {
             state = "instruct";
-        } else if ("宣言".equals(form.getState())) {
+        } else if ("宣言".equals(form.getState()) //
+                || "指定".equals(form.getState()) //
+        ) {
             state = "declare";
         } else if ("要請".equals(form.getState())) {
             state = "request";
-        } else if ("休校".equals(form.getState()) || "閉鎖".equals(form.getState())) {
+        } else if ("休校".equals(form.getState()) //
+                || "閉鎖".equals(form.getState()) //
+        ) {
             state = "closure";
         }
 
