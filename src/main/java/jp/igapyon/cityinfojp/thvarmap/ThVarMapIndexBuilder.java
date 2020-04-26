@@ -189,23 +189,23 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
 
             if ("要請".equals(entry.getState())) {
-                dispEntry.setIconText("要請");
+                dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#ffc107");
                 dispEntry.setIconTextColor("#000000");
             } else if ("指示".equals(entry.getState())) {
-                dispEntry.setIconText("指示");
+                dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#dc3545");
                 dispEntry.setIconTextColor("#ffffff");
-            } else if ("休校".equals(entry.getState())) {
-                dispEntry.setIconText("休校");
+            } else if ("休校".equals(entry.getState()) //
+                    || "閉鎖".equals(entry.getState()) //
+            ) {
+                dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#17a2b8");
                 dispEntry.setIconTextColor("#ffffff");
-            } else if ("閉鎖".equals(entry.getState())) {
-                dispEntry.setIconText("閉鎖");
-                dispEntry.setIconColor("#17a2b8");
-                dispEntry.setIconTextColor("#ffffff");
-            } else if ("宣言".equals(entry.getState())) {
-                dispEntry.setIconText("宣言");
+            } else if ("宣言".equals(entry.getState()) //
+                    || "指定".equals(entry.getState()) //
+            ) {
+                dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#6610f2");
                 dispEntry.setIconTextColor("#ffffff");
             } else {

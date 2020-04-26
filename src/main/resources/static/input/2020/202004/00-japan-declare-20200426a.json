@@ -1,0 +1,12 @@
+[ {
+  "EntryDate" : "2020-04-26",
+  "Pref" : "日本国",
+  "City" : "埼玉県、千葉県、東京都、神奈川県、大阪府、兵庫県、福岡県、北海道、茨城県、石川県、岐阜県、愛知県、京都府",
+  "StartDate" : "2020-04-16",
+  "EndDate" : "",
+  "State" : "指定",
+  "Target" : "特定警戒都道府県",
+  "TargetRange" : "",
+  "Reason" : "感染症対策",
+  "URL" : [ "https://www.kantei.go.jp/jp/singi/novel_coronavirus/th_siryou/sidai_r020422.pdf" ]
+} ]
