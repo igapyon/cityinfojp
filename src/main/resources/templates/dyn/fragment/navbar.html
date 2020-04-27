@@ -32,7 +32,7 @@
                                     th:href="${item.href}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"><span th:text="${item.text}" th:remove="tag" /></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                    <div th:each="dropdownItem : ${item.dropdownBean.itemList}">
+                                    <div th:each="dropdownItem : ${item.dropdownBean.itemList}" th:remove="tag">
                                         <a class="dropdown-item" th:href="${dropdownItem.href}"><span
                                                 th:text="${dropdownItem.text}" th:remove="tag" /></a>
                                     </div>
