@@ -8,7 +8,7 @@
 
 <body>
     <div th:fragment="dispentrylist-fragment" th:object="${dispEntryList}" th:remove="tag">
-        <div th:each="dispEntry : ${dispEntryList}">
+        <div th:each="dispEntry,stat : ${dispEntryList}" th:unless="${stat.index > 50}" th:remove="tag">
             <div class="media text-muted pt-3">
                 <div th:insert="dyn/fragment/bootstrap-svg-icon :: placeholder-img" th:remove="tag" />
                 <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">

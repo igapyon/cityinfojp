@@ -65,7 +65,7 @@
               <label for="pref">都道府県</label>
               <select class="custom-select d-block w-100" id="pref" required th:field="*{pref}">
                 <option value="">Choose...</option>
-                <div th:each="pref : ${prefList}">
+                <div th:each="pref : ${prefList}" th:remove="tag">
                   <option th:value="${pref.name}" th:text="${pref.name}" th:selected="${dataentry.pref == pref.name}" />
                 </div>
               </select>
