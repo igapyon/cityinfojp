@@ -5,6 +5,14 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[要請] 高知県</title>
+      <link>http://www.pref.kochi.lg.jp/soshiki/111301/files/2020022100234/file_2020422316437_1.pdf</link>
+      <description>(2020-04-29起票) 来訪自粛要請  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>http://www.pref.kochi.lg.jp/soshiki/111301/files/2020022100234/file_2020422316437_1.pdf</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[願い] 福岡県</title>
       <link>https://www.pref.fukuoka.lg.jp/site/chiji-kisha/teirei-kishakaiken20200427.html</link>
       <description>(2020-04-29起票) 来訪自粛 九州山口各県 2020-05-06まで : 感染症拡大防止</description>

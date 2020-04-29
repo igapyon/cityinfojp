@@ -967,6 +967,17 @@
   "Reason" : "感染症の防止",
   "URL" : [ "https://www.pref.kochi.lg.jp/soshiki/010101/files/2020030300305/file_20204175213917_1.pdf" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "高知県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛要請",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "http://www.pref.kochi.lg.jp/soshiki/111301/files/2020022100234/file_2020422316437_1.pdf" ]
+}, {
   "EntryDate" : "2020-04-07",
   "Pref" : "福岡県",
   "City" : "",
