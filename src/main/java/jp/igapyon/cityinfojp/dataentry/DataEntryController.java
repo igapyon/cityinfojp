@@ -179,7 +179,9 @@ public class DataEntryController {
                 || "指定".equals(form.getState()) //
         ) {
             state = "declare";
-        } else if ("要請".equals(form.getState())) {
+        } else if ("要請".equals(form.getState()) //
+                || "願い".equals(form.getState()) //
+        ) {
             state = "request";
         } else if ("休校".equals(form.getState()) //
                 || "閉鎖".equals(form.getState()) //
