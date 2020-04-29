@@ -5,6 +5,14 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[願い] 沖縄県</title>
+      <link>https://www.pref.okinawa.jp/site/chijiko/kohokoryu/koho/2020_new_korona_virs.html</link>
+      <description>(2020-04-29起票) 来訪自粛 連休期間 2020-05-06まで : 感染症防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.okinawa.jp/site/chijiko/kohokoryu/koho/2020_new_korona_virs.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[指定] 日本国 (埼玉県、千葉県、東京都、神奈川県、大阪府、兵庫県、福岡県、北海道、茨城県、石川県、岐阜県、愛知県、京都府)</title>
       <link>https://www.kantei.go.jp/jp/singi/novel_coronavirus/th_siryou/sidai_r020422.pdf</link>
       <description>(2020-04-26起票) 特定警戒都道府県  2020-04-16から : 感染症対策</description>
