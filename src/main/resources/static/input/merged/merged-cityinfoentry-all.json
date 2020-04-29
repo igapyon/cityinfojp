@@ -76,6 +76,17 @@
   "Reason" : "感染症の防止",
   "URL" : [ "http://www.pref.hokkaido.lg.jp/hf/kth/kak/kinkixyuuzitai0417.pdf" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "北海道",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "http://www.pref.hokkaido.lg.jp/ss/tkk/hodo/kaiken/r2/020423signage-02.pdf" ]
+}, {
   "EntryDate" : "2020-04-24",
   "Pref" : "青森県",
   "City" : "",
@@ -240,6 +251,17 @@
   "TargetRange" : "",
   "Reason" : "政府の緊急事態宣言",
   "URL" : [ "https://www.pref.fukushima.lg.jp/sec/21045c/governor-message.html" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "福島県",
+  "City" : "",
+  "StartDate" : "2020-04-16",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "緊急事態措置",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.fukushima.lg.jp/uploaded/attachment/382472.pdf" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "茨城県",
@@ -471,6 +493,17 @@
   "TargetRange" : "",
   "Reason" : "STAY HOME 週間",
   "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/kyodo-cp.html" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "千葉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.chiba.lg.jp/seisaku/press/2020/documents/kinkyuyousei.pdf" ]
 }, {
   "EntryDate" : "2020-04-07",
   "Pref" : "東京都",
