@@ -188,7 +188,8 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
         for (JsonCityInfoEntry entry : allEntryList) {
             DisplayCityInfoEntry dispEntry = new DisplayCityInfoEntry();
 
-            if ("要請".equals(entry.getState())) {
+            if ("要請".equals(entry.getState()) //
+                    || "願い".equals(entry.getState())) {
                 dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#ffc107");
                 dispEntry.setIconTextColor("#000000");
