@@ -989,6 +989,17 @@
   "Reason" : "国の緊急事態宣言",
   "URL" : [ "https://www.pref.fukuoka.lg.jp/contents/kitatikugosingatakoronasoti.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "福岡県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.fukuoka.lg.jp/site/chiji-kisha/teirei-kishakaiken20200427.html" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "佐賀県",
   "City" : "",
@@ -1010,6 +1021,17 @@
   "TargetRange" : "",
   "Reason" : "感染症の防止",
   "URL" : [ "https://www.pref.saga.lg.jp/kiji00374042/3_74042_166853_up_7lso5mq2.pdf" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "佐賀県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "http://www.saga-chiji.jp/kaiken2/20200428/happyo/" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "長崎県",
@@ -1033,6 +1055,17 @@
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/kansensho/corona_onegai/" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "長崎県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.nagasaki.jp/object/kenkaranooshirase/oshirase/438489.html" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "熊本県",
   "City" : "",
@@ -1044,6 +1077,17 @@
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.kumamoto.jp/kiji_32491.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "熊本県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.kumamoto.jp/kiji_32686.html" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "大分県",
   "City" : "",
@@ -1054,6 +1098,17 @@
   "TargetRange" : "海外渡航並びに緊急事態宣言区域",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.oita.jp/uploaded/attachment/2078079.pdf" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "大分県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "http://www.pref.oita.jp/soshiki/13070/tozan-jishuku.html" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "宮崎県",
@@ -1077,6 +1132,17 @@
   "Reason" : "感染症拡散防止",
   "URL" : [ "http://www.pref.miyazaki.lg.jp/fukushihoken/kense/shingikai/covid19/documents/51231_20200419091413-1.pdf" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "宮崎県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.miyazaki.lg.jp/sogoseisaku/kense/koho/documents/51358_20200424193211-1.pdf" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "鹿児島県",
   "City" : "",
@@ -1087,6 +1153,17 @@
   "TargetRange" : "",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.kagoshima.jp/aa02/move/1ch/chijikaiken020416.html" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "鹿児島県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "九州山口各県",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.kagoshima.jp/ae06/kenko-fukushi/kenko-iryo/kansen/kansensho/documents/76148_20200426140249-1.pdf" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "沖縄県",
