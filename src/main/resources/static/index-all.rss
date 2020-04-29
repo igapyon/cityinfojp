@@ -5,6 +5,102 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[願い] 新潟県</title>
+      <link>https://www.pref.niigata.lg.jp/sec/chiikiseisaku/kyoudousengen.html</link>
+      <description>(2020-04-29起票) 来訪自粛 中央日本四県（新潟･長野･山梨･静岡） 2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.niigata.lg.jp/sec/chiikiseisaku/kyoudousengen.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 岐阜県</title>
+      <link>https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/kinkyu_3pref_0428message.html</link>
+      <description>(2020-04-29起票) 越県移動自粛 愛知・岐阜・三重 2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/kinkyu_3pref_0428message.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 三重県</title>
+      <link>https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00016.htm</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00016.htm</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 滋賀県</title>
+      <link>https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/yakuzi/311627.html</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/yakuzi/311627.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 兵庫県</title>
+      <link>https://web.pref.hyogo.lg.jp/governor/g_comment20200424.html</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://web.pref.hyogo.lg.jp/governor/g_comment20200424.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 和歌山県</title>
+      <link>https://www.pref.wakayama.lg.jp/chiji/message/20200427.html</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.wakayama.lg.jp/chiji/message/20200427.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 鳥取県</title>
+      <link>https://www.pref.tottori.lg.jp/item/1207715.htm</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.tottori.lg.jp/item/1207715.htm</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[願い] 島根県</title>
+      <link>https://www.pref.shimane.lg.jp/admin/region/access/kotsuu/idouzisyuku.html</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.shimane.lg.jp/admin/region/access/kotsuu/idouzisyuku.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 岡山県</title>
+      <link>https://www.pref.okayama.jp/uploaded/attachment/270520.pdf</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.okayama.jp/uploaded/attachment/270520.pdf</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 山口県</title>
+      <link>https://www.pref.yamaguchi.lg.jp/cms/a10000/chizikai/zenkokutijikai.html</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.yamaguchi.lg.jp/cms/a10000/chizikai/zenkokutijikai.html</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 徳島県</title>
+      <link>https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5036747/</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5036747/</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 香川県</title>
+      <link>https://www.pref.kagawa.lg.jp/content/dir2/dir2_12/dir2_12_1/wnxkuo200428111216.shtml</link>
+      <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
+      <pubDate>Tue, 28 Apr 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.kagawa.lg.jp/content/dir2/dir2_12/dir2_12_1/wnxkuo200428111216.shtml</guid>
+      <dc:date>2020-04-28T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[要請] 高知県</title>
       <link>http://www.pref.kochi.lg.jp/soshiki/111301/files/2020022100234/file_2020422316437_1.pdf</link>
       <description>(2020-04-29起票) 来訪自粛要請  2020-05-06まで : 感染症拡大防止</description>

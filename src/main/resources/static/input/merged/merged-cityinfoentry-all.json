@@ -549,6 +549,17 @@
   "Reason" : "感染症の拡大防止",
   "URL" : [ "https://www.pref.niigata.lg.jp/sec/kikitaisaku/raiken.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "新潟県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "中央日本四県（新潟･長野･山梨･静岡）",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.niigata.lg.jp/sec/chiikiseisaku/kyoudousengen.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "富山県",
   "City" : "",
@@ -670,6 +681,17 @@
   "Reason" : "感染症拡散防止",
   "URL" : [ "https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/covid_gifu_hijyojitai.data/20200410covid_gifu_hijyo_taisaku.pdf" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "岐阜県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "越県移動自粛",
+  "TargetRange" : "愛知・岐阜・三重",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.gifu.lg.jp/kinkyu-juyo-joho/kinkyu_3pref_0428message.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "静岡県",
   "City" : "",
@@ -736,6 +758,17 @@
   "Reason" : "感染症の防止",
   "URL" : [ "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00014.htm" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "三重県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000067_00016.htm" ]
+}, {
   "EntryDate" : "2020-04-24",
   "Pref" : "滋賀県",
   "City" : "大津市",
@@ -757,6 +790,17 @@
   "TargetRange" : "",
   "Reason" : "感染症の拡大防止",
   "URL" : [ "https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/yakuzi/310983.html" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "滋賀県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.shiga.lg.jp/ippan/kenkouiryouhukushi/yakuzi/311627.html" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "京都府",
@@ -813,6 +857,17 @@
   "Reason" : "緊急事態宣言",
   "URL" : [ "https://www3.nhk.or.jp/news/html/20200407/k10012373971000.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "兵庫県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://web.pref.hyogo.lg.jp/governor/g_comment20200424.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "奈良県",
   "City" : "",
@@ -835,6 +890,17 @@
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.wakayama.lg.jp/prefg/011900/d00203907.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "和歌山県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.wakayama.lg.jp/chiji/message/20200427.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "鳥取県",
   "City" : "",
@@ -845,6 +911,17 @@
   "TargetRange" : "",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.tottori.lg.jp/item/1196924.htm" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "鳥取県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.tottori.lg.jp/item/1207715.htm" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "島根県",
@@ -857,6 +934,17 @@
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.shimane.lg.jp/emergency/shingata_taisaku/taiou.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "島根県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "願い",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.shimane.lg.jp/admin/region/access/kotsuu/idouzisyuku.html" ]
+}, {
   "EntryDate" : "2020-04-18",
   "Pref" : "岡山県",
   "City" : "",
@@ -867,6 +955,17 @@
   "TargetRange" : "",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.okayama.jp/uploaded/attachment/270309.pdf" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "岡山県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.okayama.jp/uploaded/attachment/270520.pdf" ]
 }, {
   "EntryDate" : "2020-04-18",
   "Pref" : "広島県",
@@ -890,6 +989,17 @@
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.yamaguchi.lg.jp/cms/a15200/kansensyou/202004170001.html" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "山口県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.yamaguchi.lg.jp/cms/a10000/chizikai/zenkokutijikai.html" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "徳島県",
   "City" : "",
@@ -912,6 +1022,17 @@
   "Reason" : "感染症拡散防止",
   "URL" : [ "https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5036747/" ]
 }, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "徳島県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5036747/" ]
+}, {
   "EntryDate" : "2020-04-17",
   "Pref" : "香川県",
   "City" : "",
@@ -922,6 +1043,17 @@
   "TargetRange" : "",
   "Reason" : "感染症拡大防止",
   "URL" : [ "https://www.pref.kagawa.lg.jp/content/dir1/dir1_6/dir1_6_1/wupnqp200414195032.shtml" ]
+}, {
+  "EntryDate" : "2020-04-29",
+  "Pref" : "香川県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "要請",
+  "Target" : "来訪自粛",
+  "TargetRange" : "",
+  "Reason" : "感染症拡大防止",
+  "URL" : [ "https://www.pref.kagawa.lg.jp/content/dir2/dir2_12/dir2_12_1/wnxkuo200428111216.shtml" ]
 }, {
   "EntryDate" : "2020-04-17",
   "Pref" : "愛媛県",
