@@ -1373,4 +1373,26 @@
   "TargetRange" : "連休期間",
   "Reason" : "感染症防止",
   "URL" : [ "https://www.pref.okinawa.jp/site/chijiko/kohokoryu/koho/2020_new_korona_virs.html" ]
+}, {
+  "EntryDate" : "2020-05-05",
+  "Pref" : "日本国",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "宣言",
+  "Target" : "緊急事態宣言",
+  "TargetRange" : "緊急事態宣言を延長",
+  "Reason" : "感染症対策",
+  "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html" ]
+}, {
+  "EntryDate" : "2020-05-05",
+  "Pref" : "日本国",
+  "City" : "埼玉県、千葉県、東京都、神奈川県、大阪府、兵庫県、福岡県、北海道、茨城県、石川県、岐阜県、愛知県、京都府",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "指定",
+  "Target" : "特定警戒都道府県",
+  "TargetRange" : "極力８割の接触削減",
+  "Reason" : "感染症対策",
+  "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html" ]
 } ]

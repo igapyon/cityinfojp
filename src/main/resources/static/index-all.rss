@@ -5,6 +5,22 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[宣言] 日本国</title>
+      <link>https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html</link>
+      <description>(2020-05-05起票) 緊急事態宣言 緊急事態宣言を延長 2020-05-31まで : 感染症対策</description>
+      <pubDate>Mon, 04 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html</guid>
+      <dc:date>2020-05-04T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[指定] 日本国 (埼玉県、千葉県、東京都、神奈川県、大阪府、兵庫県、福岡県、北海道、茨城県、石川県、岐阜県、愛知県、京都府)</title>
+      <link>https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html</link>
+      <description>(2020-05-05起票) 特定警戒都道府県 極力８割の接触削減 2020-05-31まで : 感染症対策</description>
+      <pubDate>Mon, 04 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html</guid>
+      <dc:date>2020-05-04T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[要請] 北海道</title>
       <link>http://www.pref.hokkaido.lg.jp/ss/tkk/hodo/kaiken/r2/020423signage-02.pdf</link>
       <description>(2020-04-29起票) 来訪自粛  2020-05-06まで : 感染症拡大防止</description>
