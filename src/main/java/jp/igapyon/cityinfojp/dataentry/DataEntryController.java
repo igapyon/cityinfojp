@@ -187,6 +187,9 @@ public class DataEntryController {
                 || "閉鎖".equals(form.getState()) //
         ) {
             state = "closure";
+        } else if ("終了".equals(form.getState()) //
+        ) {
+            state = "end";
         }
 
         String prefString = "99-dummy";
