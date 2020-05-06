@@ -1395,4 +1395,15 @@
   "TargetRange" : "極力８割の接触削減",
   "Reason" : "感染症対策",
   "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "青森県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-06",
+  "State" : "終了",
+  "Target" : "休業要請等",
+  "TargetRange" : "",
+  "Reason" : "感染症対策",
+  "URL" : [ "https://www.pref.aomori.lg.jp/koho/R020228message.html" ]
 } ]

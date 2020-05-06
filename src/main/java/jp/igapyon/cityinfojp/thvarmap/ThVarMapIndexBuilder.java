@@ -209,6 +209,11 @@ public class ThVarMapIndexBuilder extends AbstractThVarMapBuilder {
                 dispEntry.setIconText(entry.getState());
                 dispEntry.setIconColor("#6610f2");
                 dispEntry.setIconTextColor("#ffffff");
+            } else if ("終了".equals(entry.getState()) //
+            ) {
+                dispEntry.setIconText(entry.getState());
+                dispEntry.setIconColor("#6c757d");
+                dispEntry.setIconTextColor("#ffffff");
             } else {
                 dispEntry.setIconText("その他");
                 dispEntry.setIconColor("#6c757d");
