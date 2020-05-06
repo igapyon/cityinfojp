@@ -1,0 +1,12 @@
+[ {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "兵庫県",
+  "City" : "",
+  "StartDate" : "2020-04-07",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "緊急事態措置",
+  "TargetRange" : "外出自粛、イベント開催自粛、施設の使用制限",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://web.pref.hyogo.lg.jp/kk03/coronataishohoushin0413.html" ]
+} ]

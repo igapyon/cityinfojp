@@ -1406,4 +1406,114 @@
   "TargetRange" : "",
   "Reason" : "感染症対策",
   "URL" : [ "https://www.pref.aomori.lg.jp/koho/R020228message.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "茨城県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-17",
+  "State" : "要請",
+  "Target" : "各種要請の延長",
+  "TargetRange" : "外出自粛要請、休業要請、その他の措置",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.ibaraki.jp/somu/hodo/hodo/20200504chiji.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "埼玉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "各種要請の延長",
+  "TargetRange" : "外出自粛要請、営業自粛要請、その他の措置",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.saitama.lg.jp/a0701/message20200504.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "千葉県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "各種要請の延長",
+  "TargetRange" : "外出自粛要請、営業自粛要請など",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.chiba.lg.jp/kenfuku/kansenshou/ncov/soti-7.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "東京都",
+  "City" : "",
+  "StartDate" : "2020-05-07",
+  "EndDate" : "2020-05-31",
+  "State" : "休校",
+  "Target" : "都立学校",
+  "TargetRange" : "",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/05/05/documents/06_00.pdf" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "神奈川県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "",
+  "State" : "願い",
+  "Target" : "外出自粛、休業お願いの延長",
+  "TargetRange" : "外出自粛、休業など",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.kanagawa.jp/docs/bu4/covid19/200505_message.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "愛知県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "宣言",
+  "Target" : "緊急事態宣言の延長",
+  "TargetRange" : "緊急事態宣言、緊急事態措置",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.aichi.jp/site/covid19-aichi/covid19-aichi.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "京都府",
+  "City" : "",
+  "StartDate" : "2020-04-17",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "京都府緊急事態措置の延長",
+  "TargetRange" : "外出自粛、イベント開催自粛、施設の使用制限",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.kyoto.jp/kikikanri/news/coronavirus-sengengaiyo_0505ver.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "大阪府",
+  "City" : "",
+  "StartDate" : "2020-05-07",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "大阪府緊急事態措置",
+  "TargetRange" : "外出自粛、イベント開催自粛、施設の使用制限",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "http://www.pref.osaka.lg.jp/attach/38112/00000000/kinkyuzitaisochi0507.pdf" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "兵庫県",
+  "City" : "",
+  "StartDate" : "2020-04-07",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "緊急事態措置",
+  "TargetRange" : "外出自粛、イベント開催自粛、施設の使用制限",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://web.pref.hyogo.lg.jp/kk03/coronataishohoushin0413.html" ]
+}, {
+  "EntryDate" : "2020-05-06",
+  "Pref" : "福岡県",
+  "City" : "",
+  "StartDate" : "",
+  "EndDate" : "2020-05-31",
+  "State" : "要請",
+  "Target" : "緊急事態措置の延長",
+  "TargetRange" : "外出自粛、休業協力など",
+  "Reason" : "緊急事態宣言の延長",
+  "URL" : [ "https://www.pref.fukuoka.lg.jp/contents/covid19emergency-details.html#0504emergency" ]
 } ]
