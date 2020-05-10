@@ -5,6 +5,38 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[終了] 岩手県</title>
+      <link>https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/029/678/20200505_oshirase.pdf</link>
+      <description>(2020-05-10起票) 休業協力要請  2020-05-06まで : 感染症対策</description>
+      <pubDate>Sat, 09 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/029/678/20200505_oshirase.pdf</guid>
+      <dc:date>2020-05-09T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 秋田県</title>
+      <link>https://www.pref.akita.lg.jp/pages/archive/49581</link>
+      <description>(2020-05-10起票) 休業要請  2020-05-07から 2020-05-14まで : 感染症対策</description>
+      <pubDate>Sat, 09 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.akita.lg.jp/pages/archive/49581</guid>
+      <dc:date>2020-05-09T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 山形県</title>
+      <link>https://www.pref.yamagata.jp/ou/bosai/020072/kochibou/coronavirus/coronavirus-kinnkyuu.html</link>
+      <description>(2020-05-10起票) 営業自粛要請  2020-05-11から 2020-05-14まで : 感染症対策</description>
+      <pubDate>Sat, 09 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.yamagata.jp/ou/bosai/020072/kochibou/coronavirus/coronavirus-kinnkyuu.html</guid>
+      <dc:date>2020-05-09T15:00:00Z</dc:date>
+    </item>
+    <item>
+      <title>[要請] 福島県</title>
+      <link>https://www.pref.fukushima.lg.jp/uploaded/attachment/383986.pdf</link>
+      <description>(2020-05-10起票) 外出自粛要請  2020-05-07から 2020-05-31まで : 感染症対策</description>
+      <pubDate>Sat, 09 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.pref.fukushima.lg.jp/uploaded/attachment/383986.pdf</guid>
+      <dc:date>2020-05-09T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[終了] 青森県</title>
       <link>https://www.pref.aomori.lg.jp/koho/R020228message.html</link>
       <description>(2020-05-06起票) 休業要請等  2020-05-06まで : 感染症対策</description>
