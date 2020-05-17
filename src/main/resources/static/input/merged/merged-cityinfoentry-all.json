@@ -1396,6 +1396,17 @@
   "Reason" : "感染症対策",
   "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/04corona.html" ]
 }, {
+  "EntryDate" : "2020-05-17",
+  "Pref" : "日本国",
+  "City" : "北海道、埼玉県、千葉県、東京都、神奈川県、京都府、大阪府、兵庫県を除く３９県",
+  "StartDate" : "",
+  "EndDate" : "2020-05-14",
+  "State" : "終了",
+  "Target" : "緊急事態宣言を解除",
+  "TargetRange" : "",
+  "Reason" : "新規感染者の減少",
+  "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/14corona.html" ]
+}, {
   "EntryDate" : "2020-05-06",
   "Pref" : "青森県",
   "City" : "",
