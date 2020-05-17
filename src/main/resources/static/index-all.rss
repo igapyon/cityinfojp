@@ -5,6 +5,14 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[終了] 日本国 (北海道、埼玉県、千葉県、東京都、神奈川県、京都府、大阪府、兵庫県を除く３９県)</title>
+      <link>https://www.kantei.go.jp/jp/98_abe/actions/202005/14corona.html</link>
+      <description>(2020-05-17起票) 緊急事態宣言を解除  2020-05-14まで : 新規感染者の減少</description>
+      <pubDate>Sat, 16 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.kantei.go.jp/jp/98_abe/actions/202005/14corona.html</guid>
+      <dc:date>2020-05-16T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[終了] 岩手県</title>
       <link>https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/029/678/20200505_oshirase.pdf</link>
       <description>(2020-05-10起票) 休業協力要請  2020-05-06まで : 感染症対策</description>
