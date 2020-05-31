@@ -5,6 +5,14 @@
     <link>https://cityinfojp.herokuapp.com/</link>
     <description>This feed is updated data entry info regarding cityinfojp.</description>
     <item>
+      <title>[終了] 日本国 (東京都、千葉県、神奈川県、埼玉県、北海道)</title>
+      <link>https://www.kantei.go.jp/jp/98_abe/actions/202005/25corona.html</link>
+      <description>(2020-05-31起票) 緊急事態措置を解除  2020-04-07から 2020-05-25まで : 感染状況、医療提供体制、監視体制の解除基準による</description>
+      <pubDate>Sat, 30 May 2020 15:00:00 GMT</pubDate>
+      <guid>https://www.kantei.go.jp/jp/98_abe/actions/202005/25corona.html</guid>
+      <dc:date>2020-05-30T15:00:00Z</dc:date>
+    </item>
+    <item>
       <title>[終了] 日本国 (大阪府、京都府、兵庫県)</title>
       <link>https://www.kantei.go.jp/jp/98_abe/actions/202005/21bura.html</link>
       <description>(2020-05-23起票) 緊急事態宣言の解除  2020-05-21まで : 感染症の状況</description>
