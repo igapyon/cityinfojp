@@ -1418,6 +1418,17 @@
   "Reason" : "感染症の状況",
   "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/21bura.html" ]
 }, {
+  "EntryDate" : "2020-05-31",
+  "Pref" : "日本国",
+  "City" : "東京都、千葉県、神奈川県、埼玉県、北海道",
+  "StartDate" : "2020-04-07",
+  "EndDate" : "2020-05-25",
+  "State" : "終了",
+  "Target" : "緊急事態措置を解除",
+  "TargetRange" : "",
+  "Reason" : "感染状況、医療提供体制、監視体制の解除基準による",
+  "URL" : [ "https://www.kantei.go.jp/jp/98_abe/actions/202005/25corona.html" ]
+}, {
   "EntryDate" : "2020-05-06",
   "Pref" : "青森県",
   "City" : "",
