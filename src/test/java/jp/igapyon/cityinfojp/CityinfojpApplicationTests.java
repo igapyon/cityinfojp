@@ -15,11 +15,18 @@
  */
 package jp.igapyon.cityinfojp;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-// @SpringBootTest
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
 class CityinfojpApplicationTests {
     @Test
     void contextLoads() {
+        try (ConfigurableApplicationContext context = SpringApplication.run(CityinfojpApplication.class,
+                "--server.address=127.0.0.1", "--server.port=0")) {
+            assertTrue(context.isActive());
+        }
     }
 }

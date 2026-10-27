@@ -21,7 +21,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.context.IContext;
-import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import jp.igapyon.cityinfojp.thvarmap.ThVarMapIndexBuilder;
 

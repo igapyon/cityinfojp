@@ -17,7 +17,7 @@ package jp.igapyon.cityinfojp.dyn;
 
 import java.io.IOException;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +36,8 @@ public class DynSimpleController {
     public String index(Model model, HttpServletRequest request) throws IOException {
         new ThVarMapSimpleBuilder(request.getRequestURI()).applyModelAttr(model);
 
-        return ThVarMapSimpleBuilder.getPathStringWithoutExt(request.getRequestURI());
+        String viewName = ThVarMapSimpleBuilder.getPathStringWithoutExt(request.getRequestURI());
+        // Classpath template names must be relative, including inside an executable JAR.
+        return viewName.startsWith("/") ? viewName.substring(1) : viewName;
     }
 }
